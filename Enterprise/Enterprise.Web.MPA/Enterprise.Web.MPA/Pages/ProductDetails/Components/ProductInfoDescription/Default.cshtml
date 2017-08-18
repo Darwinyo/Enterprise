@@ -1,0 +1,29 @@
+﻿@model Enterprise.Web.MPA.Models.ProductDetail.ProductDetailDescriptionComponentModel
+
+<ul class="product-info-description-header">
+    <li class="product-info-tab-header-item product-info-tab-header-item-active">
+        <div class="product-info-tab-link">Description</div>
+    </li>
+    <li class="product-info-tab-header-item">
+        <div class="product-info-tab-link">Comments</div>
+    </li>
+</ul>
+<div class="product-info-description-content">
+    <div class="product-info-item">
+        <div class="product-info-description">
+            <span>
+                @Model.Description
+            </span>
+        </div>
+        <div class="product-info-table">
+            @foreach (var item in Model.DetailsProduct)
+            {
+                <div class="product-info-table-row">
+                    <div class="product-info-table-head">@item.Title</div>
+                    <div class="product-info-table-content">@item.Value</div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>

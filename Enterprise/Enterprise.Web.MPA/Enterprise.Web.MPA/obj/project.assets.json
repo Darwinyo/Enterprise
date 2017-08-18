@@ -5083,6 +5083,16 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Enterprise.Web.MPA.BusinessLogics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Enterprise.Web.MPA.BusinessLogics.dll": {}
+        }
+      },
       "Enterprise.Web.MPA.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -13817,6 +13827,11 @@
         "windowsazure.storage.nuspec"
       ]
     },
+    "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+      "type": "project",
+      "path": "../../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj",
+      "msbuildProject": "../../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj"
+    },
     "Enterprise.Web.MPA.Models/1.0.0": {
       "type": "project",
       "path": "../Enterprise.Web.MPA.Models/Enterprise.Web.MPA.Models.csproj",
@@ -13825,6 +13840,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Enterprise.Web.MPA.BusinessLogics >= 1.0.0",
       "Enterprise.Web.MPA.Models >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0-preview2-final",
       "Microsoft.NETCore.App >= 2.0.0-preview2-25407-01"
@@ -13862,6 +13878,9 @@
           "projectReferences": {
             "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj": {
               "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj"
+            },
+            "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj": {
+              "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj"
             }
           }
         }

@@ -1872,10 +1872,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Enterprise\\Enterprise.Models\\Enterprise.Models.csproj",
+      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Models\\Enterprise.Models.csproj",
       "projectName": "Enterprise.Models",
-      "projectPath": "C:\\Enterprise\\Enterprise.Models\\Enterprise.Models.csproj",
-      "outputPath": "C:\\Enterprise\\Enterprise.Models\\obj\\",
+      "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Models\\Enterprise.Models.csproj",
+      "outputPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Models\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.0"
