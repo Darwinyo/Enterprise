@@ -1,11 +1,11 @@
 # Multi Platform Apps
 
+MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
+
 
 SPA project written using Angular4
 
-
-MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
-
+<img src="/Enterprise/Documentation/Web/Images/Homepage-Carousels.png" Width=500/><img src="/Enterprise/Documentation/Web/Images/Homepage-Filters.png" Width=500/><img src="/Enterprise/Documentation/Web/Images/Homepage-ProductGrid.png" Width=500/>
 
 Mobile project written using Xamarin.Forms, .NET Standard 1.0
 
