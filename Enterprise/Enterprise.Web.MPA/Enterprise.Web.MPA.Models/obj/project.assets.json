@@ -209,11 +209,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj",
+      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj",
       "projectName": "Enterprise.Web.MPA.Models",
-      "projectPath": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj",
+      "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj",
       "packagesPath": "C:\\Users\\PISGuest\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\obj\\",
+      "outputPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PISGuest\\AppData\\Roaming\\NuGet\\NuGet.Config",

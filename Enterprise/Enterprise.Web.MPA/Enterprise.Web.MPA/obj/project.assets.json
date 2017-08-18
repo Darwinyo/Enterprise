@@ -13839,11 +13839,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\Enterprise.Web.MPA.csproj",
+      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\Enterprise.Web.MPA.csproj",
       "projectName": "Enterprise.Web.MPA",
-      "projectPath": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\Enterprise.Web.MPA.csproj",
+      "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\Enterprise.Web.MPA.csproj",
       "packagesPath": "C:\\Users\\PISGuest\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\obj\\",
+      "outputPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PISGuest\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13860,8 +13860,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj": {
-              "projectPath": "D:\\Projects\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj"
+            "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj": {
+              "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj"
             }
           }
         }
