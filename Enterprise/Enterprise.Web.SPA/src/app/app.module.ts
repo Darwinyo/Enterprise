@@ -1,4 +1,5 @@
-import { ProductDetailsDescriptionComponent } from './components/product-details-description/product-details-description.component';
+import { ProductInfoDescriptionComponent } from './components/product-info-description/product-info-description.component';
+
 import { ProductInfoImagesComponent } from './components/product-info-images/product-info-images.component';
 import { ProductInfoDetailsComponent } from './components/product-info-details/product-info-details.component';
 import { ProductDetailsComponent } from './containers/product-details/product-details.component';
@@ -48,7 +49,7 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     ProductDetailsComponent,
     ProductInfoDetailsComponent,
     ProductInfoImagesComponent,
-    ProductDetailsDescriptionComponent,
+    ProductInfoDescriptionComponent,
 
     ErrorNotFoundComponent
   ],
