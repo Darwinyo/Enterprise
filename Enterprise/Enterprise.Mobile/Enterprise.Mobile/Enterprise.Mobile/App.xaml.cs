@@ -13,7 +13,7 @@ namespace Enterprise.Mobile
         {
             InitializeComponent();
 
-            MainPage = new Pages.Product.ProductDetailsPage();
+            MainPage = new Pages.Home();
         }
 
         protected override void OnStart()

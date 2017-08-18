@@ -2,9 +2,9 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.CarouselView\library_project_imports\assets</ResolvedAssetDirectory>
@@ -13,8 +13,8 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.CarouselView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

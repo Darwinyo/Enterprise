@@ -114,7 +114,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
-		"Enterprise.Models.dll",
+		"Enterprise.Mobile.Models.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

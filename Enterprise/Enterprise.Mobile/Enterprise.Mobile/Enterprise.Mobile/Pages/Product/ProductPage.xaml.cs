@@ -1,4 +1,4 @@
-﻿using Enterprise.Models.Product;
+﻿using Enterprise.Mobile.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;

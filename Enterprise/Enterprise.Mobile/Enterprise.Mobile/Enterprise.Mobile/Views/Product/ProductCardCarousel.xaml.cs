@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Enterprise.Models.Product;
+using Enterprise.Mobile.Models.Product;
 
 namespace Enterprise.Mobile.Views.Product
 {

@@ -1,7 +1,0 @@
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\bin\Debug\netstandard2.0\Enterprise.Models.deps.json
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\bin\Debug\netstandard2.0\Enterprise.Models.dll
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\bin\Debug\netstandard2.0\Enterprise.Models.pdb
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\obj\Debug\netstandard2.0\Enterprise.Models.csprojResolveAssemblyReference.cache
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\obj\Debug\netstandard2.0\Enterprise.Models.AssemblyInfo.cs
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\obj\Debug\netstandard2.0\Enterprise.Models.dll
-C:\Users\PISGuest\Documents\Visual Studio 2017\Projects\Enterprise\Enterprise.Models\obj\Debug\netstandard2.0\Enterprise.Models.pdb

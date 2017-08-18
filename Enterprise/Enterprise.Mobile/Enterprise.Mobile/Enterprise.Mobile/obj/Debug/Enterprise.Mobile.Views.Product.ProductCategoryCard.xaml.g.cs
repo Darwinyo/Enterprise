@@ -11,8 +11,8 @@
 namespace Enterprise.Mobile.Views.Product {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Views\\Product" +
-        "\\ProductCategoryCard.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise." +
+        "Mobile\\Views\\Product\\ProductCategoryCard.xaml")]
     public partial class ProductCategoryCard : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

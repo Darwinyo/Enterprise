@@ -2366,10 +2366,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -4797,10 +4797,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -7267,10 +7267,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -9707,10 +9707,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -12186,10 +12186,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -14626,10 +14626,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -17105,10 +17105,10 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
-          "Enterprise.Models": "1.0.0"
+          "Enterprise.Mobile.Models": "1.0.0"
         }
       },
-      "Enterprise.Models/1.0.0": {
+      "Enterprise.Mobile.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
@@ -23749,10 +23749,10 @@
       "path": "../Enterprise.Mobile/Enterprise.Mobile.csproj",
       "msbuildProject": "../Enterprise.Mobile/Enterprise.Mobile.csproj"
     },
-    "Enterprise.Models/1.0.0": {
+    "Enterprise.Mobile.Models/1.0.0": {
       "type": "project",
-      "path": "../../../Enterprise.Models/Enterprise.Models.csproj",
-      "msbuildProject": "../../../Enterprise.Models/Enterprise.Models.csproj"
+      "path": "../../Enterprise.Mobile.Models/Enterprise.Mobile.Models.csproj",
+      "msbuildProject": "../../Enterprise.Mobile.Models/Enterprise.Mobile.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -23768,16 +23768,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\Enterprise.Mobile.UWP.csproj",
+      "projectUniqueName": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\Enterprise.Mobile.UWP.csproj",
       "projectName": "Enterprise.Mobile.UWP",
-      "projectPath": "C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\Enterprise.Mobile.UWP.csproj",
-      "projectJsonPath": "C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\project.json",
+      "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\Enterprise.Mobile.UWP.csproj",
+      "projectJsonPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.UWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.csproj": {
-              "projectPath": "C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.csproj"
+            "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.csproj": {
+              "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile.csproj"
             }
           }
         }

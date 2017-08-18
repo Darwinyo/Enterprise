@@ -11,8 +11,8 @@
 namespace Enterprise.Mobile.Views.Product {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Views\\Product" +
-        "\\ProductCardCarousel.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise." +
+        "Mobile\\Views\\Product\\ProductCardCarousel.xaml")]
     public partial class ProductCardCarousel : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

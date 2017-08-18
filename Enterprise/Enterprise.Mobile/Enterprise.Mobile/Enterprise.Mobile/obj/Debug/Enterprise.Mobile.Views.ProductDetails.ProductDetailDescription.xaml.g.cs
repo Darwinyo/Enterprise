@@ -11,8 +11,8 @@
 namespace Enterprise.Mobile.Views.ProductDetails {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Views\\Product" +
-        "Details\\ProductDetailDescription.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise." +
+        "Mobile\\Views\\ProductDetails\\ProductDetailDescription.xaml")]
     public partial class ProductDetailDescription : global::Xamarin.Forms.ContentView {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

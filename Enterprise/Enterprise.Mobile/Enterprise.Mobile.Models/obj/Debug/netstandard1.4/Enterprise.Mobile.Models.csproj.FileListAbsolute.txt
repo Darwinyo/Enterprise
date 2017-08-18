@@ -1,0 +1,6 @@
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\bin\Debug\netstandard1.4\Enterprise.Mobile.Models.deps.json
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\bin\Debug\netstandard1.4\Enterprise.Mobile.Models.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\bin\Debug\netstandard1.4\Enterprise.Mobile.Models.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\obj\Debug\netstandard1.4\Enterprise.Mobile.Models.AssemblyInfo.cs
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\obj\Debug\netstandard1.4\Enterprise.Mobile.Models.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.Models\obj\Debug\netstandard1.4\Enterprise.Mobile.Models.pdb

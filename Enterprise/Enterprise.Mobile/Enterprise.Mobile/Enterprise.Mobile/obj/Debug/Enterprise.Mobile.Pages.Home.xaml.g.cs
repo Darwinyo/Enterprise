@@ -11,8 +11,8 @@
 namespace Enterprise.Mobile.Pages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise.Mobile\\Pages\\Home.xa" +
-        "ml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Mobile\\Enterprise.Mobile\\Enterprise." +
+        "Mobile\\Pages\\Home.xaml")]
     public partial class Home : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
