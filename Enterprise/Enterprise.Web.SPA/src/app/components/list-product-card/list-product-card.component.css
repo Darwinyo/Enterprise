@@ -1,0 +1,40 @@
+#product-card-carousel{
+    width: 1200px;
+    height: 297px;
+    overflow: hidden;
+    position: relative;
+}
+#prev-btn{
+    background-image: url('/img/icons/arrow.png');
+    left: 0;
+}
+.btn-carousel{
+    background-repeat: no-repeat;
+    background-size: 50px;
+    margin-top: 110px;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 0.1rem 0.8rem 0 rgba(0,0,0,.12);
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: rgba(0,0,0,.8);
+    fill: rgba(0,0,0,.8);
+    background-color: #fff;
+    text-align: center;
+    transform: translate(0);
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#next-btn{
+    background-image: url('/img/icons/arrow_r.png');
+    right: 0;
+}

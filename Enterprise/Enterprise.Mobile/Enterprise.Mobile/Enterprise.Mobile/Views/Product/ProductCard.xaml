@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:priceConverter="clr-namespace:Enterprise.Mobile.Converters.Product"
+             x:Class="Enterprise.Mobile.Views.Product.ProductCard"
+             x:Name="productCard">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <priceConverter:PriceDecimalToUSDString x:Key="priceToString"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Frame x:Name="productCardFrame"
+             OutlineColor="Accent"
+             BackgroundColor="White"
+             Padding="0,0,0,0"
+             BindingContext="{x:Reference productCard}">
+            <Grid x:Name="productGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="15"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="productImg"
+                       Grid.ColumnSpan="2"
+                       Aspect="Fill">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                iOS="productimage.png"
+                                Android="productimage.png"
+                                WinPhone="Assets/productimage.png"/>
+                    </Image.Source>
+                </Image>
+                <Label x:Name="productNameLabel"
+                   Grid.Row="1" Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="14"
+                   Margin="10,0,0,-25"
+                   Text="{Binding Path=ProductName}"/>
+                <Label x:Name="priceLabel"
+                   Grid.Row="2" Grid.Column="0"
+                   TextColor="OrangeRed"
+                   FontSize="12"
+                   Margin="10,0,0,-25"
+                   Text="{Binding Price,Converter={StaticResource priceToString}}"/>
+            </Grid>
+
+        </Frame>
+
+    </ContentView.Content>
+</ContentView>

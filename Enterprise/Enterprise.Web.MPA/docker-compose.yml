@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  enterprise.web.mpa:
+    image: enterprise.web.mpa
+    build:
+      context: ./Enterprise.Web.MPA
+      dockerfile: Dockerfile

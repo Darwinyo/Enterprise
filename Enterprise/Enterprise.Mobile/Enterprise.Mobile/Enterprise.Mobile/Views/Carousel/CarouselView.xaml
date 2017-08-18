@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:viewmodels="clr-namespace:Enterprise.Mobile.ViewModels.Carousel"
+             x:Class="Enterprise.Mobile.Views.Carousel.CarouselView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <viewmodels:CarouselViewModel x:Key="carouselViewModel"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout BindingContext="{StaticResource carouselViewModel}"
+                     HeightRequest="500">
+            <control:CarouselView ItemsSource="{Binding ProductImages}">
+                <control:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImageUrl}"
+                                   Aspect="AspectFill"/>
+                    </DataTemplate>
+                </control:CarouselView.ItemTemplate>
+            </control:CarouselView>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

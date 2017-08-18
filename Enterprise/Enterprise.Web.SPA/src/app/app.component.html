@@ -1,0 +1,18 @@
+<!-- <div id="wrapper">
+    <sidebar></sidebar>
+    <div id="page-wrapper" class="gray-bg" [class.dashbard-1]="IsDashboardv1" *ngIf="!IsDashboardv3">
+        <navbar></navbar>
+        <router-outlet></router-outlet>
+        <app-footer *ngIf="!IsDashboardv1"></app-footer>
+    </div>
+    <div id="page-wrapper" class="gray-bg sidebar-content" *ngIf="IsDashboardv3">
+        <navbar></navbar>
+        <dashboard-v3></dashboard-v3>
+        <app-footer></app-footer>
+    </div>
+    <chat></chat>
+    <right-sidebar></right-sidebar>
+</div> -->
+<div class="gray-bg">
+    <router-outlet></router-outlet>
+</div>

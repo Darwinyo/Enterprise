@@ -1,0 +1,34 @@
+.filter-category{
+    width: 250px;
+}
+.filter-category-anchor{
+    font-size: 1.4rem;
+    color: black;
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 700;
+}
+.filter-category-anchor.active{
+    color: #1ab394;
+}
+.filter-category-div{
+    padding: .8rem 1rem .8rem 1.2rem;
+}
+.filter-category-header{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #1ab394;
+    height: 5rem;
+    line-height: 5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+.icon-category{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+    

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Enterprise.Web.MPA.Models.Filter.FilterProductModel>
+
+<div class="filter-product">
+    <a class="filter-product-header">
+        <span class="icon-filter-product">
+            <img src="~/images/icons/sort.png" width="20px" />
+        </span>
+        Filter Product
+    </a>
+    @foreach (Enterprise.Web.MPA.Models.Filter.FilterProductModel item in Model)
+    {
+        <div class="filter-product-div">
+            <div class="filter-product-title">@item.Category</div>
+            @foreach (Enterprise.Web.MPA.Models.Filter.FilterModel filterItem in item.FilterLists)
+            {
+                <div>
+                    <a class="filter-product-anchor">
+                        <span>
+                            @if (filterItem.Checked)
+                            {
+                                <img src="~/images/icons/checked.png" width="20px" />
+                            }
+                            else
+                            {
+                                <img src="~/images/icons/unchecked.png" width="20px" />
+                            }
+                        </span>
+                        @filterItem.Filter
+                    </a>
+                </div>
+            }
+        </div>
+
+    }
+</div>

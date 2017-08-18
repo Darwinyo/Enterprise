@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Enterprise.Mobile.ViewModels.Product"
+             xmlns:productView="clr-namespace:Enterprise.Mobile.Views.Product"
+             x:Class="Enterprise.Mobile.Pages.Home">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModels:ProductViewModel x:Key="productViewModel"/>
+            <Style x:Key="LabelHeader"  TargetType="Label">
+                <Setter Property="TextColor" Value="#ff5722"></Setter>
+                <Setter Property="FontSize" Value="Medium"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView BindingContext="{StaticResource productViewModel}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="255"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0">
+                    <Label Text="Category" Style="{StaticResource LabelHeader}"/>
+                    <productView:ProductCategoryCarouselView x:Name="pCarousel"
+                                                         CategoryList="{Binding Path=CategoryList}"
+                                                         HeightRequest="160"/>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.Row="1">
+                    <Label Text="Hot Product" Style="{StaticResource LabelHeader}"/>
+                    <productView:ProductCardCarouselView x:Name="pHotCarousel"
+                                                         ProductList="{Binding Path=HotProductList}"
+                                                         HeightRequest="255"/>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.Row="2">
+                    <Label Text="Recommended" Style="{StaticResource LabelHeader}"/>
+                    <productView:ProductGridView x:Name="pGrid"
+                                             ListProductCard="{Binding Path=ListProduct}"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

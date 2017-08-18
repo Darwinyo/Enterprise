@@ -1,0 +1,69 @@
+﻿@page
+@model IndexModel
+@addTagHelper *,Enterprise.Web.MPA
+
+@{
+}
+@section Style{
+    <link href="~/css/Product/product-card.component.css" rel="stylesheet" />
+    <link href="~/css/Product/product-category-card.component.css" rel="stylesheet" />
+    <link href="~/css/Product/list-product-category.component.css" rel="stylesheet" />
+    <link href="~/css/Product/list-product-card.component.css" rel="stylesheet" />
+    <link href="~/css/Product/filter-product-tail.component.css" rel="stylesheet" />
+    <link href="~/css/Product/sort-product.component.css" rel="stylesheet" />
+    <link href="~/css/Product/filter-category.component.css" rel="stylesheet" />
+    <link href="~/css/Product/filter-product.component.css" rel="stylesheet" />
+    <link href="~/css/Product/filter-product-tail.component.css" rel="stylesheet" />
+    <link href="~/css/Pages/home.component.css" rel="stylesheet" />
+    <link href="~/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet" />
+}
+<div>
+    <div class="products-carosel">
+        <div class="carousel-header">
+            <a class="carousel-header-anchor">
+                Categories
+            </a>
+        </div>
+        <vc:list-product-category-card list-category="@Model.CategoryList"></vc:list-product-category-card>
+    </div>
+    <div class="products-carosel">
+        <div class="carousel-header">
+            <a class="carousel-header-anchor">
+                Hot Products
+            </a>
+        </div>
+        <vc:list-product-card list-products="@Model.ProductList"></vc:list-product-card>
+    </div>
+    <div class="products-carosel">
+        <div class="carousel-header">
+            <a class="carousel-header-anchor">
+                Recommended Products
+            </a>
+        </div>
+        <vc:list-product-card list-products="@Model.ProductList"></vc:list-product-card>
+    </div>
+    <div class="product-recommended">
+        <div class="product-filter-holder">
+            <vc:filter-category list-filter="@Model.FilterCategories"></vc:filter-category>
+            <vc:filter-product filter-product-list="@Model.FilterProducts"></vc:filter-product>
+            <vc:filter-product-tail></vc:filter-product-tail>
+        </div>
+        <div class="product-grid-holder">
+            <div class="product-sort">
+                <vc:sort-product></vc:sort-product>
+            </div>
+            <div class="product-grid">
+                <vc:grid-product product-list="@Model.ProductList"></vc:grid-product>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <environment names="Development">
+        <script src="~/js/Product/carousel-card.component.js"></script>
+        <script src="~/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+
+    </environment>
+}

@@ -1,0 +1,19 @@
+<div class="filter-product">
+    <a class="filter-product-header">
+        <span class="icon-filter-product">
+            <img src="img/icons/sort.png" width="20px"/>
+        </span>
+        Filter Product
+    </a>
+     <div class="filter-product-div" *ngFor="let fil of filters">
+        <div class="filter-product-title">{{fil.category}}</div> 
+         <div *ngFor="let item of fil.filterarrays">
+            <a class="filter-product-anchor">
+                <span>
+                    <img [src]="item.checked ? 'img/icons/checked.png' : 'img/icons/unchecked.png'" width="20px"/>
+                </span>
+                {{item.filter}}
+            </a>
+        </div> 
+     </div>
+</div>

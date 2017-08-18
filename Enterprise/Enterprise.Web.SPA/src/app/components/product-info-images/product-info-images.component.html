@@ -1,0 +1,20 @@
+<div class="image-product-holder">
+    <div class="image-div">
+        <div class="product-image-placeholder"></div>
+        <div class="product-image" [ngStyle]="{'background-image': 'url(' + imageSelected + ')'}">
+        </div>
+    </div>
+    <div class="image-galery">
+        <div class="image-galery-options-holder">
+            <div class="image-galery-options">
+                <div class="image-item" *ngFor="let image of imagesGalery">
+                    <div class="image-item-wrapper">
+                        <div class="image-item-holder"></div>
+                        <div class="image-item-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></div>
+                        <div class="image-item-selected" *ngIf="itemSelected(image)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

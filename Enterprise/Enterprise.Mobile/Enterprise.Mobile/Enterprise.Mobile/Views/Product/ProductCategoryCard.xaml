@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Enterprise.Mobile.Views.Product.ProductCategoryCard"
+             x:Name="productCategoryCard">
+  <ContentView.Content>
+        <Frame x:Name="productCategoryFrame"
+             OutlineColor="Accent"
+             BackgroundColor="White"
+             Padding="0,0,0,0"
+             BindingContext="{x:Reference productCategoryCard}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="categoryImage"
+                       Aspect="Fill">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="productimage.png"
+                                    Android="productimage.png"
+                                    WinPhone="Assets/productimage.png"/>
+                    </Image.Source>
+                </Image>
+                <Label x:Name="categoryLabel"
+                       Margin="10,0,0,0"
+                       FontSize="12"
+                       Grid.Column="0" Grid.Row="1"
+                       Text="{Binding Path=Category}"/>
+            </Grid>
+        </Frame>
+  </ContentView.Content>
+</ContentView>

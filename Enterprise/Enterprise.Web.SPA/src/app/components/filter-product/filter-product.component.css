@@ -1,0 +1,44 @@
+.filter-product-anchor{
+    text-decoration: none;
+    color: rgba(0,0,0,.8);
+    padding: .8rem 0;
+}
+.filter-product-header{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #1ab394;
+    margin-top: 3rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.09);
+    text-decoration: none;
+    height: 5rem;
+    line-height: 5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.filter-product-div{
+    display: block;
+    color: rgba(0,0,0,.8);
+    line-height: 1.6;
+    font-size: 130%;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,.09);
+}
+.filter-product{
+    display: block;
+    padding: 2rem 0;
+    width: 250px;
+}
+.filter-product-title{
+    line-height: 1.2;
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    color: rgba(0,0,0,.8);
+    margin-bottom: 1rem;
+}
+.icon-filter-product{
+    margin-left: 10px;
+    margin-right: 10px;
+}

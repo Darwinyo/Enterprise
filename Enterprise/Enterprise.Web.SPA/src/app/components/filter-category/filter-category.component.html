@@ -1,0 +1,11 @@
+<div class="filter-category" >
+  <a class="filter-category-header">
+    <span class="icon-category">
+    <img src="img/icons/formatlist.png" width="20px"/>
+    </span>
+    Product Category
+  </a>
+  <div class="filter-category-div" *ngFor="let item of categories">
+    <a class="filter-category-anchor" [routerLink]="item.url" routerLinkActive="active">{{item.category}}</a>
+  </div>
+</div>

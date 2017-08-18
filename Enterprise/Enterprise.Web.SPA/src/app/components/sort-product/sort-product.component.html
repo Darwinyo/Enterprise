@@ -1,0 +1,21 @@
+<div class="sort-product">
+  <a class="sort-product-anchor" routerLink="/Sort/0" routerLinkActive="active">Popular</a>
+  <a class="sort-product-anchor" routerLink="/Sort/1" routerLinkActive="active">New</a>
+  <a class="sort-product-anchor" routerLink="/Sort/2" routerLinkActive="active">Best Selling</a>
+  <div class="sort-product-anchor" (click)="hover()">
+    <span>
+      <img [src]="hovered ? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="20px"/>
+    </span>
+    Price
+    <div class="sort-product-anchor-drop" *ngIf="hovered">
+      <ul class="sort-product-ul">
+        <li>
+          <a routerLink="/Sort/3" routerLinkActive="active">Highest Price</a>
+        </li>
+        <li>
+          <a routerLink="/Sort/4" routerLinkActive="active">Lowest Price</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

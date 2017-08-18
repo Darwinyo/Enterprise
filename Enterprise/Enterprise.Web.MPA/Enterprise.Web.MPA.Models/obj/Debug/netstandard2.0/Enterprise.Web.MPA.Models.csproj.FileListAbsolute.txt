@@ -1,0 +1,17 @@
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.deps.json
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.dll
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.pdb
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.csprojResolveAssemblyReference.cache
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.csproj.CoreCompileInputs.cache
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.AssemblyInfoInputs.cache
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.AssemblyInfo.cs
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.dll
+C:\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.pdb
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.deps.json
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.dll
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\bin\Debug\netstandard2.0\Enterprise.Web.MPA.Models.pdb
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.csproj.CoreCompileInputs.cache
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.AssemblyInfoInputs.cache
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.AssemblyInfo.cs
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.dll
+D:\Projects\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.Models\obj\Debug\netstandard2.0\Enterprise.Web.MPA.Models.pdb

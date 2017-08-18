@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Enterprise.Mobile.Views.ProductDetails.ProductDetailHeader"
+             x:Name="productDetail">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style x:Key="PriceLabelStyle"  TargetType="Label">
+                <Setter Property="TextColor" Value="#ff5722"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style x:Key="RatingLabelStyle"  TargetType="Label">
+                <Setter Property="TextColor" Value="#ff5722"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+            <Style x:Key="BaseLabelStyle"  TargetType="Label">
+                <Setter Property="TextColor" Value="#4a4a4a"/>
+                <Setter Property="FontSize" Value="Small"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout BindingContext="{Reference productDetail}">
+            <Label x:Name="TitleLabel"
+                   Text="{Binding Title}"
+                   Style="{StaticResource TitleLabelStyle}"/>
+            <Label x:Name="PriceLabel"
+                   Text="{Binding Price}"
+                   Style="{StaticResource PriceLabelStyle}"/>
+            <Label x:Name="RatingLabel"
+                   Text="{Binding Rating}"
+                   Style="{StaticResource RatingLabelStyle}"/>
+            <Label x:Name="ReviewLabel"
+                   Text="{Binding Review}"
+                   Style="{StaticResource BaseLabelStyle}"/>
+            <Label x:Name="ProductLocationLabel"
+                   Text="{Binding ProductLocation}"
+                   Style="{StaticResource BaseLabelStyle}"/>
+            <Label x:Name="ShippingLabel"
+                   Text="{Binding Shipping}"
+                   Style="{StaticResource BaseLabelStyle}"/>
+            <Label x:Name="ShippingPriceLabel"
+                   Text="{Binding ShippingPrice}"
+                   Style="{StaticResource BaseLabelStyle}"/>
+            <Label x:Name="FavoriteLabel"
+                   Text="{Binding Favorite}"
+                   Style="{StaticResource BaseLabelStyle}"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+@addTagHelper *,Enterprise.Web.MPA
+
+<div id="product-category-carousel">
+    <div id="marginleft">
+        @foreach (string item in Model)
+        {
+            <div>
+                <vc:product-category-card product-name="@item"></vc:product-category-card>
+            </div>
+        }
+    </div>
+    <span id="prev-btn" class="btn-carousel" onclick="prevbtnclicked($(this).siblings('div'))"></span>
+    <span id="next-btn" class="btn-carousel" onclick="nextbtnclicked($(this).siblings('div'),200,@Model.Count())"></span>
+</div>

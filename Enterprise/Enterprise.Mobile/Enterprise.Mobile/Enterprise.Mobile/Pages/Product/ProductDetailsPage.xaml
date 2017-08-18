@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewsCarousel="clr-namespace:Enterprise.Mobile.Views.Carousel"
+             xmlns:view="clr-namespace:Enterprise.Mobile.Views.ProductDetails"
+             x:Class="Enterprise.Mobile.Pages.Product.ProductDetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <viewsCarousel:CarouselView/>
+            <view:ProductDetailHeader Title="CPU"
+                                      Price="200.0"
+                                      Rating="4.4"
+                                      Review="2000"
+                                      ProductLocation="Jakarta"
+                                      Shipping="Bandung"
+                                      ShippingPrice="201.0"
+                                      Favorite="2131"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

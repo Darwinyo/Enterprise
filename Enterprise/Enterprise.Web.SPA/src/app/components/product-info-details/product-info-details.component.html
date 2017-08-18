@@ -1,0 +1,120 @@
+<div class="product-details">
+  <div class="product-header-holder">
+    <div class="product-header-holder-style">
+      <div class="product-details-header">
+        {{productTitle}}
+      </div>
+      <div class="product-details-price">
+        $ {{productPrice}}
+      </div>
+      <div class="product-details-rating">
+        <span *ngFor="let star of stars" class="starspan">
+                     <img [attr.src]="star" width="15" height="15"/>
+                </span>
+        <span class="rate-span">{{ratestar}} of 5 stars</span>
+        <span class="reviews-span">({{reviews}} Reviews)</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="product-details-shipping">
+    <span class="product-details-span">
+    <img src="img/icons/location.png" width="15" height="15"/>      
+    Product Location:
+    <div class="product-details-selectable-location">
+      <span>
+          {{location}}
+      </span>
+    </div>
+    </span>
+    <span class="product-details-span">
+      <img src="img/icons/shipping.png" width="15" height="15"/>
+      Deliver To: 
+      <div class="product-details-selectable" (click)="deliverClick()">
+        <div class="product-details-selectable-header">
+          <span>
+              {{deliver}}
+              <img [src]="dropped? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
+          </span>
+        </div>
+        <div class="dropdown-delivery" *ngIf="deliveryDropped">
+          <div class="searchbar">
+            <input class="searchbar-txtbox" type="textbox" placeholder="Search"/>
+          </div>
+          <div class="searchitems">
+            <ul class="searchitems-ul">
+              <li class="searchitem-li" *ngFor="let item of locations">
+                {{item}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </span>
+    <span class="product-details-span delivery-span">
+      <img src="img/icons/dollar.png" width="15" height="15"/>
+      Deliver Price: 
+      <div class="product-details-selectable" (click)="deliverPriceClick()">
+        <div class="product-details-selectable-header">
+          <span>
+            {{deliverPrice}}
+            <img [src]="droppedDeliveryPrice? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
+          </span>
+        </div>
+        <div class="dropdown-delivery" *ngIf="deliveryPriceDropped">
+            <div class="searchbar">
+              <input class="searchbar-txtbox" type="textbox" placeholder="Search"/>
+            </div>
+            <div class="searchitems">
+              <ul class="searchitems-ul">
+                <li class="searchitem-li" *ngFor="let item of deliveryOptions">
+                  {{item}}
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </span>
+  </div>
+  <div class="product-order">
+    <div class="product-details-variation">
+      <div class="variation-header">
+        Variation:
+      </div>
+      <div class="variation-body">
+        <div class="variation-item" *ngFor="let variation of variations">
+          {{variation}}
+        </div>
+      </div>
+    </div>
+    <div class="product-details-quantity">
+      <div class="quantity-header">Quantity: </div>
+      <div class="quantity-body">
+        <div class="quantity-body">
+          <div class="quantity-stepper">
+            <button class="stepper-btn">+</button>
+            <input type="text" class="quantity-stepper-txtbox" value="{{quantity}}" />
+            <button class="stepper-btn">-</button>
+          </div>
+          <div class="stockdiv">{{stock}} Stock</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-details-command-container">
+    <div class="product-details-buy">
+      <span>
+          <img src="img/icons/buy.png" width="15" height="15"/>
+            BUY NOW
+          </span>
+    </div>
+    <div class="product-details-addcart">
+      <span>
+          <img src="img/icons/add_cart.png" width="15" height="15"/>
+          ADD TO CART
+        </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Enterprise.Web.MPA.Models.Product.ProductCardComponentModel
+
+<a>
+    <div class="col-md-3 product-card product-card-grid">
+        <div class="ibox padding-control">
+            <div class="ibox-content product-box">
+                <div class="product-imitation">
+                    <img class="product-image" src="~/images/icons/productimage.png">
+                </div>
+                <div class="product-desc">
+                    <a href="#" class="product-name">@Model.ProductName</a>
+                    <div>
+                        <h3 class="PriceFont"><b>$ @Model.Price</b></h3>
+                    </div>
+                    <div class="small m-t-xs row">
+                        <div class="col-md-5">
+                            <span>
+                                <img src="~/images/icons/favorite.png" width="15" height="15" />
+                            </span> @Model.Favorites
+                        </div>
+                        <div class="col-md-7 starcell">
+                            @foreach (string star in Model.Stars)
+                            {
+                                <span class="starspan">
+                                    <img src="@star" width="15" height="15" />
+                                </span>
+                            }
+                            @(Model.Reviews)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>

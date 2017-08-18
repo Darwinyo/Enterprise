@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Enterprise.Web.MPA.Models.Product.ProductCardModel>
+@addTagHelper *,Enterprise.Web.MPA
+
+<div class="row grid-holder">
+    @foreach (Enterprise.Web.MPA.Models.Product.ProductCardModel item in Model)
+    {
+        <div>
+            <vc:product-card favorites="@item.Favorites"
+                             price="@item.Price"
+                             product-name="@item.ProductName"
+                             rate-star="@item.RateStar"
+                             reviews="@item.Reviews"></vc:product-card>
+        </div>
+    }
+</div>

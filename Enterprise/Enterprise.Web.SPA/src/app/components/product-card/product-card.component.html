@@ -1,0 +1,29 @@
+<a>
+  <div class="col-md-3 product-card" [class.product-card-grid]="isGrid">
+    <div class="ibox padding-control">
+      <div class="ibox-content product-box">
+        <div class="product-imitation">
+          <img class="product-image" src="img/icons/productimage.png">
+        </div>
+        <div class="product-desc">
+          <a href="#" class="product-name">{{productname}}</a>
+          <div>
+            <h3 class="PriceFont"><b>${{price}}</b></h3>
+          </div>
+          <div class="small m-t-xs row">
+            <div class="col-md-5">
+              <span>
+              <img src="img/icons/favorite.png" width="15" height="15"/>
+          </span> {{favorites}}
+            </div>
+            <div class="col-md-7 starcell">
+              <span *ngFor="let star of stars" class="starspan">
+              <img [attr.src]="star" width="15" height="15"/>
+            </span>({{reviews}})
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

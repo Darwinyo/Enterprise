@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Enterprise.Web.MPA.Models.Filter.FilterCategoryModel>
+<div class="filter-category">
+    <a class="filter-category-header">
+        <span class="icon-category">
+            <img src="~/images/icons/formatlist.png" width="20px" />
+        </span>
+        Product Category
+    </a>
+    @foreach (Enterprise.Web.MPA.Models.Filter.FilterCategoryModel item in Model)
+    {
+        <div class="filter-category-div">
+            <a class="filter-category-anchor" href="@item.Url">@item.Category</a>
+        </div>
+    }
+
+</div>
