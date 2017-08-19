@@ -39,6 +39,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\Product\PriceDecimalToUSDString.cs" />
+    <Compile Include="Helpers\Favorite\FavoriteHelper.cs" />
+    <Compile Include="Helpers\StarRate\StarRateHelper.cs" />
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -186,6 +188,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Enterprise.Mobile.BusinessLogics\Enterprise.Mobile.BusinessLogics.csproj">
+      <Project>{a1f5dafa-e15d-4018-9c02-a440c3540431}</Project>
+      <Name>Enterprise.Mobile.BusinessLogics</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Enterprise.Mobile.Models\Enterprise.Mobile.Models.csproj">
       <Project>{9f315811-39bc-4e67-b5d7-5787ecb5bcc7}</Project>
       <Name>Enterprise.Mobile.Models</Name>

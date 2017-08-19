@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Enterprise.Mobile.Helpers.StarRate;
+
 namespace Enterprise.Mobile.Views.ProductDetails
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,7 +36,12 @@ namespace Enterprise.Mobile.Views.ProductDetails
                 "Rating",
                 typeof(decimal),
                 typeof(ProductDetailHeader),
-                (decimal)0);
+                (decimal)0,
+                propertyChanged: (bindable, oldValue, newValue) =>
+                {
+                    ProductDetailHeader prod = (ProductDetailHeader)bindable;
+                    prod.InsertStars();
+                });
         public static readonly BindableProperty ReviewProperty =
             BindableProperty.Create(
                 "Review",
@@ -156,5 +163,33 @@ namespace Enterprise.Mobile.Views.ProductDetails
             }
         }
         #endregion
+        void InsertStars()
+        {
+            List<Image> stars = StarRateHelper.InitProductDetailStars(Rating);
+            Label starLabel = new Label()
+            {
+                Text = string.Format("{0}/5", Rating.ToString())
+            };
+            StackLayout StarStack = StarRateHelper.CreateProductDetailStarStack(stars);
+            Label reviewLabel = new Label()
+            {
+                Text = string.Format("({0})", Review.ToString())
+            };
+            Grid.SetColumn(StarStack, 0);
+            Grid.SetColumn(starLabel, 1);
+            Grid.SetColumn(reviewLabel, 2);
+            Grid grid = new Grid()
+            {
+                ColumnDefinitions = {
+                    new ColumnDefinition(){ Width=GridLength.Auto},
+                    new ColumnDefinition() { Width = GridLength.Auto },
+                    new ColumnDefinition() { Width = GridLength.Auto }
+                }
+            };
+            grid.Children.Add(StarStack);
+            grid.Children.Add(starLabel);
+            grid.Children.Add(reviewLabel);
+            stackStar.Children.Add(grid);
+        }
     }
 }

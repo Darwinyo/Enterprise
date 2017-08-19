@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewsCarousel="clr-namespace:Enterprise.Mobile.Views.Carousel"
              xmlns:view="clr-namespace:Enterprise.Mobile.Views.ProductDetails"
-             x:Class="Enterprise.Mobile.Pages.Product.ProductDetailsPage">
+             x:Class="Enterprise.Mobile.Pages.Product.ProductDetailsPage"
+             BackgroundColor="#f3f3f4">
     <ContentPage.Content>
         <StackLayout>
             <viewsCarousel:CarouselView/>
             <view:ProductDetailHeader Title="CPU"
                                       Price="200.0"
-                                      Rating="4.4"
                                       Review="2000"
+                                      Rating="4.4"
                                       ProductLocation="Jakarta"
                                       Shipping="Bandung"
                                       ShippingPrice="201.0"

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Enterprise.Mobile.Helpers.StarRate;
+using Enterprise.Mobile.Helpers.Favorite;
+
 namespace Enterprise.Mobile.Views.Product
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -20,95 +23,23 @@ namespace Enterprise.Mobile.Views.Product
             StarImages = new List<Image>();
             InitializeComponent();
         }
-        void InitStars(decimal starRate)
+        void PopulateStars(decimal starRate)
         {
-            for (int i = 1; i < 6; i++)
-            {
-                if (starRate >= i)
-                {
-                    string imagefile = GetImage(1);
-                    Image img = new Image()
-                    {
-                        Source = Device.OnPlatform(imagefile, imagefile, "Assets/" + imagefile),
-                        HeightRequest = 10,
-                        WidthRequest = 10,
-                        Margin = new Thickness(0,0,-6,0)
-                    };
-                    StarImages.Add(img);
-                }
-                else if (starRate > i - 1)
-                {
-                    string imagefile = GetImage(2);
-                    Image img = new Image()
-                    {
-                        Source = Device.OnPlatform(imagefile, imagefile, "Assets/" + imagefile),
-                        HeightRequest = 10,
-                        WidthRequest = 10,
-                        Margin = new Thickness(0, 0, -6, 0)
-                    };
-                    StarImages.Add(img);
-                }
-                else
-                {
-                    string imagefile = GetImage(3);
-                    Image img = new Image()
-                    {
-                        Source = Device.OnPlatform(imagefile, imagefile, "Assets/" + imagefile),
-                        HeightRequest = 10,
-                        WidthRequest = 10,
-                        Margin = new Thickness(0, 0, -6, 0)
-                    };
-                    StarImages.Add(img);
-                }
-            }
+            StarImages = StarRateHelper.InitStars(starRate);
             InsertStarRate();
+            InsertFavorites();
         }
-        string GetImage(int star)
+        
+        void InsertFavorites()
         {
-            switch (star)
-            {
-                case 1:
-                    return "fullstar.png";
-                case 2:
-                    return "halfstar.png";
-                default:
-                    return "nonestar.png";
-            }
+            StackLayout favoriteStack= FavoriteHelper.CreateFavoriteStack(Favorite);
+            Grid.SetColumn(favoriteStack, 0);
+            Grid.SetRow(favoriteStack, 3);
+            productGrid.Children.Add(favoriteStack);
         }
         void InsertStarRate()
         {
-            StackLayout starStack = new StackLayout()
-            {
-                HorizontalOptions = LayoutOptions.Start,
-                Orientation = StackOrientation.Horizontal,
-                Margin = new Thickness(-10, 0, 0, 0)
-            };
-            StackLayout favoriteStack = new StackLayout()
-            {
-                HorizontalOptions = LayoutOptions.Start,
-                Orientation = StackOrientation.Horizontal,
-                Margin=new Thickness(10,0,0,0)
-            };
-            Image favoriteImg = new Image()
-            {
-                Source = Device.OnPlatform<ImageSource>("favorite.png", "favorite.png", "Assets/favorite.png"),
-                HeightRequest = 10,
-                WidthRequest = 10
-            };
-            Label favoriteLabel = new Label()
-            {
-                Text = Favorite.ToString(),
-                FontSize=10,
-                Margin=new Thickness(-5,0,0,0)
-            };
-            favoriteStack.Children.Add(favoriteImg);
-            favoriteStack.Children.Add(favoriteLabel);
-            Grid.SetColumn(favoriteStack, 0);
-            Grid.SetRow(favoriteStack, 3);
-            foreach (Image item in StarImages)
-            {
-                starStack.Children.Add(item);
-            }
+            StackLayout starStack = StarRateHelper.CreateStarStack(StarImages);
             starStack.Children.Add(new Label()
             {
                 Text = "(" + Reviews + ")",
@@ -116,7 +47,6 @@ namespace Enterprise.Mobile.Views.Product
             });
             Grid.SetColumn(starStack, 1);
             Grid.SetRow(starStack, 3);
-            productGrid.Children.Add(favoriteStack);
             productGrid.Children.Add(starStack);
         }
 
@@ -147,7 +77,7 @@ namespace Enterprise.Mobile.Views.Product
                 propertyChanged: (bindable, oldValue, newValue) =>
                  {
                      ProductCard product = (ProductCard)bindable;
-                     product.InitStars((decimal)newValue);
+                     product.PopulateStars((decimal)newValue);
                  });
         public static readonly BindableProperty ReviewsProperty =
             BindableProperty.Create(

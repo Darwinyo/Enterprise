@@ -11,7 +11,7 @@
     </ContentView.Resources>
     <ContentView.Content>
         <StackLayout BindingContext="{StaticResource carouselViewModel}"
-                     HeightRequest="500">
+                     HeightRequest="300">
             <control:CarouselView ItemsSource="{Binding ProductImages}">
                 <control:CarouselView.ItemTemplate>
                     <DataTemplate>

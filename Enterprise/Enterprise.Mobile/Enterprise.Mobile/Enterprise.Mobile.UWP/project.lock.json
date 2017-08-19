@@ -2366,7 +2366,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -4797,7 +4805,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -7267,7 +7283,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -9707,7 +9731,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -12186,7 +12218,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -14626,7 +14666,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -17105,7 +17153,15 @@
       "Enterprise.Mobile/1.0.0": {
         "type": "project",
         "dependencies": {
+          "Enterprise.Mobile.BusinessLogics": "1.0.0",
           "Enterprise.Mobile.Models": "1.0.0"
+        }
+      },
+      "Enterprise.Mobile.BusinessLogics/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.0",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
         }
       },
       "Enterprise.Mobile.Models/1.0.0": {
@@ -23748,6 +23804,11 @@
       "type": "project",
       "path": "../Enterprise.Mobile/Enterprise.Mobile.csproj",
       "msbuildProject": "../Enterprise.Mobile/Enterprise.Mobile.csproj"
+    },
+    "Enterprise.Mobile.BusinessLogics/1.0.0": {
+      "type": "project",
+      "path": "../../Enterprise.Mobile.BusinessLogics/Enterprise.Mobile.BusinessLogics.csproj",
+      "msbuildProject": "../../Enterprise.Mobile.BusinessLogics/Enterprise.Mobile.BusinessLogics.csproj"
     },
     "Enterprise.Mobile.Models/1.0.0": {
       "type": "project",

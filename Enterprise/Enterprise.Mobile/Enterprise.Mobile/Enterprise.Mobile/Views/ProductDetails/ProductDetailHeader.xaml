@@ -2,7 +2,9 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Enterprise.Mobile.Views.ProductDetails.ProductDetailHeader"
-             x:Name="productDetail">
+             x:Name="productDetail"
+             Padding="10,10,10,10"
+             BackgroundColor="White">
     <ContentView.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleLabelStyle" TargetType="Label">
@@ -11,7 +13,7 @@
             </Style>
             <Style x:Key="PriceLabelStyle"  TargetType="Label">
                 <Setter Property="TextColor" Value="#ff5722"/>
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
             <Style x:Key="RatingLabelStyle"  TargetType="Label">
                 <Setter Property="TextColor" Value="#ff5722"/>
@@ -24,31 +26,123 @@
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
-        <StackLayout BindingContext="{Reference productDetail}">
-            <Label x:Name="TitleLabel"
+        <Grid  BindingContext="{Reference productDetail}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout x:Name="stackTitle"
+                         Grid.Row="0" Grid.Column="0">
+                <Label x:Name="TitleLabel"
                    Text="{Binding Title}"
                    Style="{StaticResource TitleLabelStyle}"/>
-            <Label x:Name="PriceLabel"
-                   Text="{Binding Price}"
+            </StackLayout>
+            <StackLayout x:Name="stackPrice"
+                         Grid.Row="1" Grid.Column="0">
+                <Label x:Name="PriceLabel"
+                   Text="{Binding Path=Price, StringFormat='$ {0}'}"
                    Style="{StaticResource PriceLabelStyle}"/>
-            <Label x:Name="RatingLabel"
-                   Text="{Binding Rating}"
-                   Style="{StaticResource RatingLabelStyle}"/>
-            <Label x:Name="ReviewLabel"
-                   Text="{Binding Review}"
-                   Style="{StaticResource BaseLabelStyle}"/>
-            <Label x:Name="ProductLocationLabel"
-                   Text="{Binding ProductLocation}"
-                   Style="{StaticResource BaseLabelStyle}"/>
-            <Label x:Name="ShippingLabel"
-                   Text="{Binding Shipping}"
-                   Style="{StaticResource BaseLabelStyle}"/>
-            <Label x:Name="ShippingPriceLabel"
-                   Text="{Binding ShippingPrice}"
-                   Style="{StaticResource BaseLabelStyle}"/>
-            <Label x:Name="FavoriteLabel"
-                   Text="{Binding Favorite}"
-                   Style="{StaticResource BaseLabelStyle}"/>
-        </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="stackStar"
+                             Grid.Row="2" Grid.Column="0"/>
+            <StackLayout x:Name="stackLocation"
+                         Grid.Row="3" Grid.Column="0">
+                <BoxView HeightRequest="0.3"
+                     Color="Black"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="15"
+                       WidthRequest="15">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="location.png"
+                                    Android="location.png"
+                                    WinPhone="Assets/location.png"/>
+                        </Image.Source>
+                    </Image>
+                    <Label x:Name="ProductLocationLabel"
+                           Grid.Column="1"
+                           Text="{Binding Path=ProductLocation, StringFormat='Product Location: {0}'}"
+                           Style="{StaticResource BaseLabelStyle}"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="stackShipping"
+                         Grid.Row="4" Grid.Column="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="15"
+                       WidthRequest="15">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="shipping.png"
+                                    Android="shipping.png"
+                                    WinPhone="Assets/shipping.png"/>
+                        </Image.Source>
+                    </Image>
+                    <Label x:Name="ShippingLabel"
+                           Grid.Column="1"
+                           Text="{Binding Path=Shipping, StringFormat='Deliver To: {0}'}"
+                           Style="{StaticResource BaseLabelStyle}"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="stackShippingPrice"
+                         Grid.Row="5" Grid.Column="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="15"
+                       WidthRequest="15">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="dollar.png"
+                                    Android="dollar.png"
+                                    WinPhone="Assets/dollar.png"/>
+                        </Image.Source>
+                    </Image>
+                    <Label x:Name="ShippingPriceLabel"
+                           Grid.Column="1"
+                           Text="{Binding Path=ShippingPrice, StringFormat='Deliver Price: $ {0}'}"
+                           Style="{StaticResource BaseLabelStyle}"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout x:Name="stackFavorite"
+                         Grid.Row="6" Grid.Column="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="15"
+                       WidthRequest="15">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="favorite.png"
+                                    Android="favorite.png"
+                                    WinPhone="Assets/favorite.png"/>
+                        </Image.Source>
+                    </Image>
+                    <Label x:Name="FavoriteLabel"
+                           Grid.Column="1"
+                           Text="{Binding Favorite}"
+                           Style="{StaticResource BaseLabelStyle}"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
     </ContentView.Content>
 </ContentView>

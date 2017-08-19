@@ -1,0 +1,7 @@
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\bin\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.deps.json
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\bin\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\bin\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\obj\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.csprojResolveAssemblyReference.cache
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\obj\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.AssemblyInfo.cs
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\obj\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile.BusinessLogics\obj\Debug\netstandard1.0\Enterprise.Mobile.BusinessLogics.pdb
