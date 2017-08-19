@@ -4,73 +4,83 @@
     <div class="product-header-holder">
         <div class="product-header-holder-style">
             <div class="product-details-header">
-                {{productTitle}}
+                @Model.ProductName
             </div>
             <div class="product-details-price">
-                $ {{productPrice}}
+                @Model.Price
             </div>
             <div class="product-details-rating">
-                <span *ngFor="let star of stars" class="starspan">
-                    <img [attr.src]="star" width="15" height="15" />
-                </span>
-                <span class="rate-span">{{ratestar}} of 5 stars</span>
-                <span class="reviews-span">({{reviews}} Reviews)</span>
+                @foreach (string star in Model.Stars)
+                {
+                    <span class="starspan">
+                        <img src="@star" width="15" height="15" />
+                    </span>
+                }
+                <span class="rate-span">@Model.RateStar of 5 stars</span>
+                <span class="reviews-span">(@Model.Reviews Reviews)</span>
             </div>
         </div>
     </div>
     <div class="product-details-shipping">
         <span class="product-details-span">
-            <img src="img/icons/location.png" width="15" height="15" />
+            <img src="~/images/icons/location.png" width="15" height="15" />
             Product Location:
             <div class="product-details-selectable-location">
                 <span>
-                    {{location}}
+                    @Model.Location
                 </span>
             </div>
         </span>
         <span class="product-details-span">
-            <img src="img/icons/shipping.png" width="15" height="15" />
+            <img src="~/images/icons/shipping.png" width="15" height="15" />
             Deliver To:
-            <div class="product-details-selectable" (click)="deliverClick()">
+            <div class="product-details-selectable" onclick="deliverClick()">
                 <div class="product-details-selectable-header">
                     <span>
-                        {{deliver}}
-                        <img [src]="dropped? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15" />
+                        @Model.Deliver
+                        <img id="deliverydropdown" src="~/images/icons/arrow_down.png" width="15" height="15" />
                     </span>
                 </div>
-                <div class="dropdown-delivery" *ngIf="deliveryDropped">
+
+                <div class="dropdown-delivery" hidden="hidden" id="deliverdropcontent">
                     <div class="searchbar">
                         <input class="searchbar-txtbox" type="textbox" placeholder="Search" />
                     </div>
                     <div class="searchitems">
                         <ul class="searchitems-ul">
-                            <li class="searchitem-li" *ngFor="let item of locations">
-                                {{item}}
-                            </li>
+                            @foreach (string item in Model.Locations)
+                            {
+                                <li class="searchitem-li">
+                                    @item
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
             </div>
         </span>
         <span class="product-details-span delivery-span">
-            <img src="img/icons/dollar.png" width="15" height="15" />
+            <img src="~/images/icons/dollar.png" width="15" height="15" />
             Deliver Price:
-            <div class="product-details-selectable" (click)="deliverPriceClick()">
+            <div class="product-details-selectable" onclick="deliverPriceClick()">
                 <div class="product-details-selectable-header">
                     <span>
-                        {{deliverPrice}}
-                        <img [src]="droppedDeliveryPrice? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15" />
+                        @Model.DeliverPrice
+                        <img id="deliverypricedropdown" src="~/images/icons/arrow_down.png" width="15" height="15" />
                     </span>
                 </div>
-                <div class="dropdown-delivery" *ngIf="deliveryPriceDropped">
+                <div class="dropdown-delivery" hidden="hidden" id="deliverpricecontent">
                     <div class="searchbar">
                         <input class="searchbar-txtbox" type="textbox" placeholder="Search" />
                     </div>
                     <div class="searchitems">
                         <ul class="searchitems-ul">
-                            <li class="searchitem-li" *ngFor="let item of deliveryOptions">
-                                {{item}}
-                            </li>
+                            @foreach (string item in Model.DeliveryOptions)
+                            {
+                                <li class="searchitem-li">
+                                    @item
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -83,9 +93,12 @@
                 Variation:
             </div>
             <div class="variation-body">
-                <div class="variation-item" *ngFor="let variation of variations">
-                    {{variation}}
-                </div>
+                @foreach (var item in Model.Variations)
+                {
+                    <div class="variation-item">
+                        @item
+                    </div>
+                }
             </div>
         </div>
         <div class="product-details-quantity">
@@ -94,10 +107,10 @@
                 <div class="quantity-body">
                     <div class="quantity-stepper">
                         <button class="stepper-btn">+</button>
-                        <input type="text" class="quantity-stepper-txtbox" value="{{quantity}}" />
+                        <input type="text" class="quantity-stepper-txtbox" value="@Model.Quantity" />
                         <button class="stepper-btn">-</button>
                     </div>
-                    <div class="stockdiv">{{stock}} Stock</div>
+                    <div class="stockdiv">@Model.Stock Stock</div>
                 </div>
             </div>
         </div>
@@ -105,13 +118,13 @@
     <div class="product-details-command-container">
         <div class="product-details-buy">
             <span>
-                <img src="img/icons/buy.png" width="15" height="15" />
+                <img src="~/images/icons/buy.png" width="15" height="15" />
                 BUY NOW
             </span>
         </div>
         <div class="product-details-addcart">
             <span>
-                <img src="img/icons/add_cart.png" width="15" height="15" />
+                <img src="~/images/icons/add_cart.png" width="15" height="15" />
                 ADD TO CART
             </span>
         </div>

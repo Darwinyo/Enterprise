@@ -1,4 +1,45 @@
 ﻿@page
 @model IndexModel
+@addTagHelper *,Enterprise.Web.MPA
 @{
+}
+@section Style{
+    <link href="~/css/ProductDetails/product-info-images.component.css" rel="stylesheet" />
+    <link href="~/css/ProductDetails/product-info-details.component.css" rel="stylesheet" />
+    <link href="~/css/ProductDetails/product-info-description.component.css" rel="stylesheet" />
+    <link href="~/css/Pages/product-details.component.css" rel="stylesheet" />
+}
+<div class="product-detail-upper-page">
+    <div class="product-detail-img-container">
+        <vc:product-info-images product-detail-image-model="@Model.ProductImages"></vc:product-info-images>
+    </div>
+    <div class="product-detail-container">
+        <vc:product-info-details deliver="@Model.ProductDetail.Delivery"
+                                 favorites="@Model.ProductDetail.Favorites"
+                                 ratestar="@Model.ProductDetail.RateStar"
+                                 variations="@Model.ProductDetail.Variations"
+                                 location="@Model.ProductDetail.Location"
+                                 locations="@Model.ProductDetail.Locations"
+                                 deliver-price="@Model.ProductDetail.DeliveryPrice"
+                                 delivery-options="@Model.ProductDetail.DeliveryOptions"
+                                 product-price="@Model.ProductDetail.Price"
+                                 product-title="@Model.ProductDetail.ProductName"
+                                 reviews="@Model.ProductDetail.Reviews"
+                                 stock="@Model.ProductDetail.Stock"></vc:product-info-details>
+
+    </div>
+</div>
+
+<div class="product-detail-description-container">
+    <vc:product-info-description description="@Model.ProductDescription.Description"
+                                 list-specs="@Model.ProductDescription.DetailsProduct"></vc:product-info-description>
+</div>
+
+@section Scripts{
+    <environment names="Development">
+        <script src="~/js/Product/ProductDetails/product-info-details.component.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+
+    </environment>
 }

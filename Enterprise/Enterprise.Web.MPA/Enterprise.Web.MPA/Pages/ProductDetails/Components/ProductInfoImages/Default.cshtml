@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model Enterprise.Web.MPA.Models.ProductDetail.ProductDetailImageModel
+@{ 
+    string selected = Model.ImagesGalery[0];
 }
+<div class="image-product-holder">
+    <div class="image-div">
+        <div class="product-image-placeholder"></div>
+        <div class="product-image" style="background-image: url(@Model.ImagesGalery[0])">
+        </div>
+    </div>
+    <div class="image-galery">
+        <div class="image-galery-options-holder">
+            <div class="image-galery-options">
+                @foreach (var image in Model.ImagesGalery)
+                {
+                    <div class="image-item">
+                        <div class="image-item-wrapper">
+                            <div class="image-item-holder"></div>
+                            <div class="image-item-image" style="background-image: url(@image)"></div>
+                            @if (image==selected)
+                            {
+                                <div class="image-item-selected"></div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

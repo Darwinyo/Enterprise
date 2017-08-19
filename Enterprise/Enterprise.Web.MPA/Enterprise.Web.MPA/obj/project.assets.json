@@ -13829,8 +13829,8 @@
     },
     "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
       "type": "project",
-      "path": "../../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj",
-      "msbuildProject": "../../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj"
+      "path": "../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj",
+      "msbuildProject": "../Enterprise.Web.MPA.BusinessLogics/Enterprise.Web.MPA.BusinessLogics.csproj"
     },
     "Enterprise.Web.MPA.Models/1.0.0": {
       "type": "project",
@@ -13876,11 +13876,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj": {
+              "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj"
+            },
             "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj": {
               "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.Models\\Enterprise.Web.MPA.Models.csproj"
-            },
-            "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj": {
-              "projectPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA.BusinessLogics\\Enterprise.Web.MPA.BusinessLogics.csproj"
             }
           }
         }

@@ -6,6 +6,7 @@ namespace Enterprise.Web.MPA.Models.ProductDetail
 {
     public class ProductDetailComponentModel:ProductDetailModel
     {
+        public string[] Stars { get; set; }
         public string Deliver { get; set; }
         public decimal DeliverPrice { get; set; }
         public int Quantity { get; set; }

@@ -1,0 +1,9 @@
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\bin\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.deps.json
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\bin\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\bin\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.csproj.CoreCompileInputs.cache
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.AssemblyInfoInputs.cache
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.AssemblyInfo.cs
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA.BusinessLogics\obj\Debug\netstandard2.0\Enterprise.Web.MPA.BusinessLogics.csprojResolveAssemblyReference.cache

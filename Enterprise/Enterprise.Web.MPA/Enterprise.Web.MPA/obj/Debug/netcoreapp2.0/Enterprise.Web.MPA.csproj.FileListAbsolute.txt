@@ -30,3 +30,5 @@ D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\obj\Debu
 D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\obj\Debug\netcoreapp2.0\Enterprise.Web.MPA.AssemblyInfo.cs
 D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\obj\Debug\netcoreapp2.0\Enterprise.Web.MPA.dll
 D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\obj\Debug\netcoreapp2.0\Enterprise.Web.MPA.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\bin\Debug\netcoreapp2.0\Enterprise.Web.MPA.BusinessLogics.dll
+D:\Projects\Enterprise\Enterprise\Enterprise.Web.MPA\Enterprise.Web.MPA\bin\Debug\netcoreapp2.0\Enterprise.Web.MPA.BusinessLogics.pdb

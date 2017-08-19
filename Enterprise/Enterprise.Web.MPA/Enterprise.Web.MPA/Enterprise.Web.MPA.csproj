@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Enterprise.Web.MPA.BusinessLogics\Enterprise.Web.MPA.BusinessLogics.csproj" />
+    <ProjectReference Include="..\Enterprise.Web.MPA.BusinessLogics\Enterprise.Web.MPA.BusinessLogics.csproj" />
     <ProjectReference Include="..\Enterprise.Web.MPA.Models\Enterprise.Web.MPA.Models.csproj" />
   </ItemGroup>
 

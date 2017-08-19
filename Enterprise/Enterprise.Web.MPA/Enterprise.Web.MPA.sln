@@ -9,7 +9,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.Web.MPA", "Enterprise.Web.MPA\Enterprise.Web.MPA.csproj", "{2EDC6D12-7454-4818-98AB-6119C7454644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Web.MPA.BusinessLogics", "..\Enterprise.Web.MPA.BusinessLogics\Enterprise.Web.MPA.BusinessLogics.csproj", "{F33C16A7-2420-4969-826F-640262AC0E14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Web.MPA.BusinessLogics", "Enterprise.Web.MPA.BusinessLogics\Enterprise.Web.MPA.BusinessLogics.csproj", "{258D67C2-7C12-4058-A060-385DB3D6A1A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{2EDC6D12-7454-4818-98AB-6119C7454644}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EDC6D12-7454-4818-98AB-6119C7454644}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EDC6D12-7454-4818-98AB-6119C7454644}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F33C16A7-2420-4969-826F-640262AC0E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F33C16A7-2420-4969-826F-640262AC0E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F33C16A7-2420-4969-826F-640262AC0E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F33C16A7-2420-4969-826F-640262AC0E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258D67C2-7C12-4058-A060-385DB3D6A1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258D67C2-7C12-4058-A060-385DB3D6A1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258D67C2-7C12-4058-A060-385DB3D6A1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258D67C2-7C12-4058-A060-385DB3D6A1A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

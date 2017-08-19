@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "Enterprise.Web.MPA/1.0.0": {
         "dependencies": {
+          "Enterprise.Web.MPA.BusinessLogics": "1.0.0",
           "Enterprise.Web.MPA.Models": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0-preview2-final",
           "Microsoft.NETCore.App": "2.0.0-preview2-25407-01"
@@ -4100,6 +4101,14 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+        "runtime": {
+          "Enterprise.Web.MPA.BusinessLogics.dll": {}
+        },
+        "compile": {
+          "Enterprise.Web.MPA.BusinessLogics.dll": {}
+        }
+      },
       "Enterprise.Web.MPA.Models/1.0.0": {
         "runtime": {
           "Enterprise.Web.MPA.Models.dll": {}
@@ -6374,6 +6383,11 @@
       "sha512": "sha512-ROkK4n4avempMURJtsydfnoJb6chOT8sm+oRDNG2tnVeXWWazAGpefPayUWQCDTDevsZ+44r4JOYN3eN7GRWmw==",
       "path": "windowsazure.storage/8.1.1",
       "hashPath": "windowsazure.storage.8.1.1.nupkg.sha512"
+    },
+    "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Enterprise.Web.MPA.Models/1.0.0": {
       "type": "project",

@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "bc91fd535dae81d68a2a9d298dcb065eaa8c86a7"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0-preview2-25401-01"
+        },
+        "runtime": {
+          "Enterprise.Web.MPA.BusinessLogics.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.Packaging.Tools/1.0.0-preview2-25401-01": {},
+      "NETStandard.Library/2.0.0-preview2-25401-01": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.Packaging.Tools": "1.0.0-preview2-25401-01"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Enterprise.Web.MPA.BusinessLogics/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ImezYX6SDwBWNjSZolkZOnFtNGdJWyTYupxqolI5PMnB7Ob3aYeNeHYIJf7XE7SYrOvdt6XN8A7THm7pX2QsWA==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Packaging.Tools/1.0.0-preview2-25401-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aDRr6J/QqlplwKBJPD5D2xGrXKr3g/+bIt2qiFZChk13A1z8/MSDESDZgB/UfnSWLkGCcMoYAaOK7+E3p4ejJA==",
+      "path": "microsoft.packaging.tools/1.0.0-preview2-25401-01",
+      "hashPath": "microsoft.packaging.tools.1.0.0-preview2-25401-01.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.0-preview2-25401-01": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ocbbbc3/qBNcZnFYkz5QJkIgLVbn/nCLYLz+XNSbsLBNfRpkxsz3vbTMxuN4LVX7i+iNoD+l1GI8OHgZPGgzZQ==",
+      "path": "netstandard.library/2.0.0-preview2-25401-01",
+      "hashPath": "netstandard.library.2.0.0-preview2-25401-01.nupkg.sha512"
+    }
+  }
+}

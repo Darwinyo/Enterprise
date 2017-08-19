@@ -43,6 +43,7 @@ namespace Enterprise.Web.MPA.ViewComponents.ProductInfoDetails
                 Quantity = 1,
                 Locations = locations,
                 DeliveryOptions = deliveryOptions,
+                Stars = BusinessLogics.StarRate.StarRateBusinessLogic.InitStars(ratestar)
             };
             return View(ProductDetailComponent);
         }
