@@ -60,3 +60,4 @@ D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile\bin\Debug\Enterprise.Mobile.Models.pdb
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile\bin\Debug\Enterprise.Mobile.BusinessLogics.dll
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile\bin\Debug\Enterprise.Mobile.BusinessLogics.pdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile\obj\Debug\Enterprise.Mobile.Cells.ProductSpecsCell.xaml.g.cs

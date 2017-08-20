@@ -142,3 +142,6 @@ D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\res\drawable\inteli7.jpeg
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\res\drawable\ryzen5.jpeg
+D:\Projects\Enterprise\Enterprise\Enterprise.Mobile\Enterprise.Mobile\Enterprise.Mobile.Android\obj\Debug\res\drawable\comment.png

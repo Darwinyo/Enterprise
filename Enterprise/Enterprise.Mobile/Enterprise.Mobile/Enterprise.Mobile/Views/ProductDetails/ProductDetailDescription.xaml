@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Enterprise.Mobile.Views.ProductDetails.ProductDetailDescription">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+             xmlns:cells="clr-namespace:Enterprise.Mobile.Cells"
+             x:Class="Enterprise.Mobile.Views.ProductDetails.ProductDetailDescription"
+             x:Name="productDetail"
+             BackgroundColor="White"
+             Padding="0,10,0,0">
+    <ContentView.Content>
+        <StackLayout BindingContext="{Reference productDetail}"
+                     Padding="10,10,10,10">
+            <Label x:Name="labelDescriptionTitle" Text="{Binding DescriptionTitle}" />
+            <Label x:Name="labelDescription" Text="{Binding Description}"/>
+            <TableView Intent="Data">
+                <TableRoot Title="Product Specs">
+                    <TableSection Title="Product Specs" x:Name="tableSection">
+                    </TableSection>
+                </TableRoot> 
+            </TableView>
+        </StackLayout>
   </ContentView.Content>
 </ContentView>

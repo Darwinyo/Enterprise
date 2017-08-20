@@ -18,19 +18,19 @@ namespace Enterprise.Mobile.ViewModels.Carousel
             {
                 new CarouselModel
                 {
-                    ImageUrl="productimage.png"
+                    ImageUrl="inteli7.jpeg"
                 },
                 new CarouselModel
                 {
-                    ImageUrl="productimage.png"
+                    ImageUrl="ryzen5.jpeg"
                 },
                 new CarouselModel
                 {
-                    ImageUrl="productimage.png"
+                    ImageUrl="inteli7.jpeg"
                 },
                 new CarouselModel
                 {
-                    ImageUrl="productimage.png"
+                    ImageUrl="ryzen5.jpeg"
                 },
                 new CarouselModel
                 {

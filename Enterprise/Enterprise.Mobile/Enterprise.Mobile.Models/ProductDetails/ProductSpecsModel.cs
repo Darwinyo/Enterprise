@@ -6,7 +6,7 @@ namespace Enterprise.Mobile.Models.ProductDetails
 {
     public class ProductSpecsModel
     {
-        public string Title { get; set; }
-        public string Value { get; set; }
+        public string ItemTitle { get; set; }
+        public string ItemValue { get; set; }
     }
 }

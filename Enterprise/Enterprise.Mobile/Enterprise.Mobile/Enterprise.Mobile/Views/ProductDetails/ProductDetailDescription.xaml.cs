@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Enterprise.Mobile.Cells;
 using Enterprise.Mobile.Models.ProductDetails;
 
 namespace Enterprise.Mobile.Views.ProductDetails
@@ -71,7 +72,19 @@ namespace Enterprise.Mobile.Views.ProductDetails
                 "ProductSpecs",
                 typeof(List<ProductSpecsModel>),
                 typeof(ProductDetailDescription),
-                null);
-#endregion
+                null,
+                propertyChanged: (bindable, oldValue, newValue) =>
+                {
+                    ProductDetailDescription desc = (ProductDetailDescription)bindable;
+                    desc.PopulateTableCell();
+                });
+        #endregion
+        void PopulateTableCell()
+        {
+            foreach (ProductSpecsModel item in ProductSpecs)
+            {
+                tableSection.Add(new ProductSpecsCell() { Title = item.ItemTitle, ItemValue = item.ItemValue });
+            }
+        }
     }
 }

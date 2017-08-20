@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Enterprise.Mobile.Models.ProductDetails;
+using Enterprise.Mobile.ViewModels.ProductDetails;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

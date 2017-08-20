@@ -28,12 +28,12 @@
     <ContentView.Content>
         <Grid  BindingContext="{Reference productDetail}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -55,7 +55,7 @@
                              Grid.Row="2" Grid.Column="0"/>
             <StackLayout x:Name="stackLocation"
                          Grid.Row="3" Grid.Column="0">
-                <BoxView HeightRequest="0.3"
+                <BoxView HeightRequest="0.2"
                      Color="Black"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -125,22 +125,62 @@
                          Grid.Row="6" Grid.Column="0">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Image HeightRequest="15"
-                       WidthRequest="15">
-                        <Image.Source>
-                            <OnPlatform x:TypeArguments="ImageSource"
+                    <Frame OutlineColor="Accent"
+                           BackgroundColor="White"
+                           HeightRequest="40"
+                           VerticalOptions="FillAndExpand"
+                           Padding="0,0,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image HeightRequest="25"
+                                   WidthRequest="25"
+                                   Margin="10,0,0,0">
+                                <Image.Source>
+                                    <OnPlatform x:TypeArguments="ImageSource"
                                     iOS="favorite.png"
                                     Android="favorite.png"
                                     WinPhone="Assets/favorite.png"/>
-                        </Image.Source>
-                    </Image>
-                    <Label x:Name="FavoriteLabel"
+                                </Image.Source>
+                            </Image>
+                            <Label Grid.Column="1" Text="Favorite " VerticalTextAlignment="Center" Style="{StaticResource BaseLabelStyle}"/>
+                            <Label x:Name="FavoriteLabel" Grid.Column="2"  VerticalTextAlignment="Center"
+                                   Margin="0,0,10,0"
+                                   HorizontalTextAlignment="End" Text="{Binding Favorite}"
+                                   Style="{StaticResource BaseLabelStyle}"/>
+                        </Grid>
+                    </Frame>
+                    <Frame OutlineColor="Accent"
                            Grid.Column="1"
-                           Text="{Binding Favorite}"
-                           Style="{StaticResource BaseLabelStyle}"/>
+                           BackgroundColor="White"
+                           HeightRequest="40"
+                           VerticalOptions="FillAndExpand"
+                           Padding="0,0,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image HeightRequest="25"
+                                   WidthRequest="25"
+                                   Margin="10,0,0,0">
+                                <Image.Source>
+                                    <OnPlatform x:TypeArguments="ImageSource"
+                                    iOS="comment.png"
+                                    Android="comment.png"
+                                    WinPhone="Assets/comment.png"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Grid.Column="1" Text="Comments" VerticalTextAlignment="Center" Style="{StaticResource BaseLabelStyle}"/>
+                        </Grid>
+                    </Frame>
+
                 </Grid>
             </StackLayout>
         </Grid>
