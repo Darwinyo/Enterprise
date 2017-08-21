@@ -1,0 +1,1010 @@
+City_Id,City_Name,Country_Id
+742,Ackley,1
+743,Ackworth,1
+744,Adair,1
+745,Adel,1
+746,Afton,1
+747,Agency,1
+748,Ainsworth,1
+749,Akron,1
+750,Albert City,1
+751,Albia,1
+752,Albion,1
+753,Alburnett,1
+754,Alden,1
+755,Alexander,1
+756,Algona,1
+757,Alleman,1
+758,Allerton,1
+759,Allison,1
+760,Alta,1
+761,Alta Vista,1
+762,Alton,1
+763,Altoona,1
+764,Alvord,1
+765,Amana,1
+766,Ames,1
+767,Anamosa,1
+768,Anderson,1
+769,Andover,1
+770,Andrew,1
+771,Anita,1
+772,Ankeny,1
+773,Anthon,1
+774,Aplington,1
+775,Arcadia,1
+776,Archer,1
+777,Aredale,1
+778,Arion,1
+779,Arispe,1
+780,Arlington,1
+781,Armstrong,1
+782,Arnolds Park,1
+783,Arthur,1
+784,Asbury,1
+785,Ashton,1
+786,Aspinwall,1
+787,Atalissa,1
+788,Athelstan,1
+789,Atkins,1
+790,Atlantic,1
+791,Auburn,1
+792,Audubon,1
+793,Aurelia,1
+794,Aurora,1
+795,Avoca,1
+796,Ayrshire,1
+797,Badger,1
+798,Bagley,1
+799,Baldwin,1
+800,Balltown,1
+801,Bancroft,1
+802,Bankston,1
+803,Barnes City,1
+804,Barnum,1
+805,Bartlett,1
+806,Bassett,1
+807,Batavia,1
+808,Battle Creek,1
+809,Baxter,1
+810,Bayard,1
+811,Beacon,1
+812,Beaconsfield,1
+813,Beaman,1
+814,Beaver,1
+815,Beaverdale,1
+816,Bedford,1
+817,Belle Plaine,1
+818,Bellevue,1
+819,Belmond,1
+820,Bennett,1
+821,Bentley,1
+822,Benton,1
+823,Berkley,1
+824,Bernard,1
+825,Bertram,1
+826,Bettendorf,1
+827,Bevington,1
+828,Birmingham,1
+829,Blairsburg,1
+830,Blairstown,1
+831,Blakesburg,1
+832,Blanchard,1
+833,Blencoe,1
+834,Blockton,1
+835,Bloomfield,1
+836,Blue Grass,1
+837,Bode,1
+838,Bolan,1
+839,Bonaparte,1
+840,Bondurant,1
+841,Boone,1
+842,Bouton,1
+843,Boxholm,1
+844,Boyden,1
+845,Braddyville,1
+846,Bradford,1
+847,Bradgate,1
+848,Brandon,1
+849,Brayton,1
+850,Breda,1
+851,Bridgewater,1
+852,Brighton,1
+853,Bristow,1
+854,Britt,1
+855,Bronson,1
+856,Brooklyn,1
+857,Brunsville,1
+858,Buckeye,1
+859,Buck Grove,1
+860,Buffalo,1
+861,Buffalo Center,1
+862,Burchinal,1
+863,Burlington,1
+864,Burr Oak,1
+865,Burt,1
+866,Bussey,1
+867,Calamus,1
+868,California Junction,1
+869,Callender,1
+870,Calmar,1
+871,Calumet,1
+872,Camanche,1
+873,Cambridge,1
+874,Cantril,1
+875,Carbon,1
+876,Carlisle,1
+877,Carpenter,1
+878,Carroll,1
+879,Carson,1
+880,Carter Lake,1
+881,Cascade,1
+882,Casey,1
+883,Castalia,1
+884,Castana,1
+885,Cedar Falls,1
+886,Cedar Rapids,1
+887,Center Junction,1
+888,Center Point,1
+889,Centerville,1
+890,Central City,1
+891,Centralia,1
+892,Chapin,1
+893,Chariton,1
+894,Charles City,1
+895,Charlotte,1
+896,Charter Oak,1
+897,Chatsworth,1
+898,Chelsea,1
+899,Cherokee,1
+900,Chester,1
+901,Chillicothe,1
+902,Churdan,1
+903,Cincinnati,1
+904,Clare,1
+905,Clarence,1
+906,Clarinda,1
+907,Clarion,1
+908,Clarksville,1
+909,Clayton,1
+910,Clearfield,1
+911,Clear Lake,1
+912,Cleghorn,1
+913,Clemons,1
+914,Clermont,1
+915,Climbing Hill,1
+916,Clinton,1
+917,Clio,1
+918,Clive,1
+919,Clutier,1
+920,Coalville,1
+921,Coburg,1
+922,Coggon,1
+923,Coin,1
+924,Colesburg,1
+925,Colfax,1
+926,College Springs,1
+927,Collins,1
+928,Colo,1
+929,Columbus City,1
+930,Columbus Junction,1
+931,Colwell,1
+932,Conesville,1
+933,Conrad,1
+934,Conroy,1
+935,Conway,1
+936,Coon Rapids,1
+937,Coppock,1
+938,Coralville,1
+939,Corley,1
+940,Corning,1
+941,Correctionville,1
+942,Corwith,1
+943,Corydon,1
+944,Cotter,1
+945,Coulter,1
+946,Council Bluffs,1
+947,Craig,1
+948,Crawfordsville,1
+949,Crescent,1
+950,Cresco,1
+951,Creston,1
+952,Cromwell,1
+953,Crystal Lake,1
+954,Cumberland,1
+955,Cumming,1
+956,Curlew,1
+957,Cushing,1
+958,Cylinder,1
+959,Dakota City,1
+960,Dallas Center,1
+961,Dana,1
+962,Danbury,1
+963,Danville,1
+964,Davenport,1
+965,Davis City,1
+966,Dawson,1
+967,Dayton,1
+968,Decatur City,1
+969,Decorah,1
+970,Dedham,1
+971,Deep River,1
+972,Defiance,1
+973,Delaware,1
+974,Delhi,1
+975,Delmar,1
+976,Deloit,1
+977,Delphos,1
+978,Delta,1
+979,Denison,1
+980,Denmark,1
+981,Denver,1
+982,Derby,1
+983,Des Moines,1
+984,De Soto,1
+985,DeWitt,1
+986,De Witt,1
+987,Dexter,1
+988,Diagonal,1
+989,Diamondhead Lake,1
+990,Dickens,1
+991,Dike,1
+992,Dixon,1
+993,Dolliver,1
+994,Donahue,1
+995,Donnellson,1
+996,Doon,1
+997,Douds,1
+998,Dougherty,1
+999,Dow City,1
+1000,Dows,1
+1001,Drakesville,1
+1002,Dubuque,1
+1003,Dumont,1
+1004,Duncan,1
+1005,Duncombe,1
+1006,Dundee,1
+1007,Dunkerton,1
+1008,Dunlap,1
+1009,Durango,1
+1010,Durant,1
+1011,Dyersville,1
+1012,Dysart,1
+1013,Eagle Grove,1
+1014,Earlham,1
+1015,Earling,1
+1016,Earlville,1
+1017,Early,1
+1018,East Amana,1
+1019,East Peru,1
+1020,Eddyville,1
+1021,Edgewood,1
+1022,Elberon,1
+1023,Eldon,1
+1024,Eldora,1
+1025,Eldridge,1
+1026,Elgin,1
+1027,Elkader,1
+1028,Elkhart,1
+1029,Elk Horn,1
+1030,Elkport,1
+1031,Elk Run Heights,1
+1032,Elliott,1
+1033,Ellston,1
+1034,Ellsworth,1
+1035,Elma,1
+1036,Ely,1
+1037,Emerson,1
+1038,Emmetsburg,1
+1039,Epworth,1
+1040,Essex,1
+1041,Estherville,1
+1042,Evansdale,1
+1043,Everly,1
+1044,Exira,1
+1045,Exline,1
+1046,Fairbank,1
+1047,Fairfax,1
+1048,Fairfield,1
+1049,Farley,1
+1050,Farmersburg,1
+1051,Farmington,1
+1052,Farnhamville,1
+1053,Farragut,1
+1054,Fayette,1
+1055,Fenton,1
+1056,Ferguson,1
+1057,Fertile,1
+1058,Floris,1
+1059,Floyd,1
+1060,Fonda,1
+1061,Fontanelle,1
+1062,Forest City,1
+1063,Fort Atkinson,1
+1064,Fort Dodge,1
+1065,Fort Madison,1
+1066,Fostoria,1
+1067,Franklin,1
+1068,Fraser,1
+1069,Fredericksburg,1
+1070,Frederika,1
+1071,Fredonia,1
+1072,Fremont,1
+1073,Fruitland,1
+1074,Frytown,1
+1075,Galt,1
+1076,Galva,1
+1077,Garber,1
+1078,Garden City,1
+1079,Garden Grove,1
+1080,Garnavillo,1
+1081,Garner,1
+1082,Garrison,1
+1083,Garwin,1
+1084,Geneva,1
+1085,George,1
+1086,Gibson,1
+1087,Gilbert,1
+1088,Gilbertville,1
+1089,Gillett Grove,1
+1090,Gilman,1
+1091,Gilmore City,1
+1092,Gladbrook,1
+1093,Glenwood,1
+1094,Glidden,1
+1095,Goldfield,1
+1096,Goodell,1
+1097,Goose Lake,1
+1098,Gowrie,1
+1099,Graettinger,1
+1100,Graf,1
+1101,Grafton,1
+1102,Grand Junction,1
+1103,Grand Mound,1
+1104,Grand River,1
+1105,Grandview,1
+1106,Granger,1
+1107,Grant,1
+1108,Granville,1
+1109,Gravity,1
+1110,Gray,1
+1111,Greeley,1
+1112,Greene,1
+1113,Greenfield,1
+1114,Green Mountain,1
+1115,Greenville,1
+1116,Grimes,1
+1117,Grinnell,1
+1118,Griswold,1
+1119,Grundy Center,1
+1120,Gruver,1
+1121,Guernsey,1
+1122,Guthrie Center,1
+1123,Guttenberg,1
+1124,Halbur,1
+1125,Hamburg,1
+1126,Hamilton,1
+1127,Hampton,1
+1128,Hancock,1
+1129,Hanlontown,1
+1130,Hansell,1
+1131,Harcourt,1
+1132,Hardy,1
+1133,Harlan,1
+1134,Harper,1
+1135,Harpers Ferry,1
+1136,Harris,1
+1137,Hartford,1
+1138,Hartley,1
+1139,Hartwick,1
+1140,Harvey,1
+1141,Hastings,1
+1142,Havelock,1
+1143,Haverhill,1
+1144,Hawarden,1
+1145,Hawkeye,1
+1146,Hayesville,1
+1147,Hayfield,1
+1148,Hazleton,1
+1149,Hedrick,1
+1150,Henderson,1
+1151,Hepburn,1
+1152,Hiawatha,1
+1153,High Amana,1
+1154,Hills,1
+1155,Hillsboro,1
+1156,Hinton,1
+1157,Holiday Lake,1
+1158,Holland,1
+1159,Holstein,1
+1160,Holy Cross,1
+1161,Homestead,1
+1162,Hopkinton,1
+1163,Hornick,1
+1164,Hospers,1
+1165,Houghton,1
+1166,Hubbard,1
+1167,Hudson,1
+1168,Hull,1
+1169,Humboldt,1
+1170,Humeston,1
+1171,Hutchins,1
+1172,Huxley,1
+1173,Ida Grove,1
+1174,Imogene,1
+1175,Independence,1
+1176,Indianola,1
+1177,Inwood,1
+1178,Ionia,1
+1179,Iowa City,1
+1180,Iowa Falls,1
+1181,Ireton,1
+1182,Irvington,1
+1183,Irwin,1
+1184,Jackson Junction,1
+1185,Jacksonville,1
+1186,Jamaica,1
+1187,Janesville,1
+1188,Jefferson,1
+1189,Jesup,1
+1190,Jewell Junction,1
+1191,Johnston,1
+1192,Joice,1
+1193,Jolley,1
+1194,Kalona,1
+1195,Kamrar,1
+1196,Kanawha,1
+1197,Kellerton,1
+1198,Kelley,1
+1199,Kellogg,1
+1200,Kensett,1
+1201,Kent,1
+1202,Keokuk,1
+1203,Keomah Village,1
+1204,Keosauqua,1
+1205,Keota,1
+1206,Keswick,1
+1207,Keystone,1
+1208,Kimballton,1
+1209,Kingsley,1
+1210,Kinross,1
+1211,Kirkman,1
+1212,Kirkville,1
+1213,Kiron,1
+1214,Klemme,1
+1215,Knierim,1
+1216,Knoxville,1
+1217,Lacona,1
+1218,Ladora,1
+1219,Lake City,1
+1220,Lake Mills,1
+1221,Lake Panorama,1
+1222,Lake Park,1
+1223,Lakeside,1
+1224,Lake View,1
+1225,Lakota,1
+1226,Lambs Grove,1
+1227,Lamoni,1
+1228,Lamont,1
+1229,La Motte,1
+1230,Lanesboro,1
+1231,Lansing,1
+1232,La Porte City,1
+1233,Larchwood,1
+1234,Larrabee,1
+1235,Latimer,1
+1236,Laurel,1
+1237,Laurens,1
+1238,Lawler,1
+1239,Lawton,1
+1240,Leando,1
+1241,Le Claire,1
+1242,Ledyard,1
+1243,Le Grand,1
+1244,Lehigh,1
+1245,Leighton,1
+1246,Leland,1
+1247,Le Mars,1
+1248,Lenox,1
+1249,Leon,1
+1250,Le Roy,1
+1251,Lester,1
+1252,Letts,1
+1253,Lewis,1
+1254,Libertyville,1
+1255,Lidderdale,1
+1256,Lime Springs,1
+1257,Lincoln,1
+1258,Linden,1
+1259,Lineville,1
+1260,Linn Grove,1
+1261,Lisbon,1
+1262,Liscomb,1
+1263,Little Cedar,1
+1264,Little Rock,1
+1265,Little Sioux,1
+1266,Livermore,1
+1267,Lockridge,1
+1268,Logan,1
+1269,Lohrville,1
+1270,Lone Rock,1
+1271,Lone Tree,1
+1272,Long Grove,1
+1273,Lorimor,1
+1274,Lost Nation,1
+1275,Loveland,1
+1276,Lovilia,1
+1277,Lowden,1
+1278,Low Moor,1
+1279,Luana,1
+1280,Lucas,1
+1281,Luther,1
+1282,Lu Verne,1
+1283,Luxemburg,1
+1284,Luzerne,1
+1285,Lynnville,1
+1286,Lytton,1
+1287,Macedonia,1
+1288,Macksburg,1
+1289,Madrid,1
+1290,Magnolia,1
+1291,Maharishi Vedic City,1
+1292,Malcom,1
+1293,Mallard,1
+1294,Maloy,1
+1295,Malvern,1
+1296,Manchester,1
+1297,Manilla,1
+1298,Manly,1
+1299,Manning,1
+1300,Manson,1
+1301,Mapleton,1
+1302,Maquoketa,1
+1303,Marathon,1
+1304,Marble Rock,1
+1305,Marcus,1
+1306,Marengo,1
+1307,Marion,1
+1308,Marne,1
+1309,Marquette,1
+1310,Marshalltown,1
+1311,Martelle,1
+1312,Martensdale,1
+1313,Martinsburg,1
+1314,Marysville,1
+1315,Mason City,1
+1316,Masonville,1
+1317,Massena,1
+1318,Matlock,1
+1319,Maurice,1
+1320,Maxwell,1
+1321,Maynard,1
+1322,Maysville,1
+1323,McCallsburg,1
+1324,McCausland,1
+1325,McClelland,1
+1326,McGregor,1
+1327,McIntire,1
+1328,Mechanicsville,1
+1329,Mediapolis,1
+1330,Melbourne,1
+1331,Melcher-Dallas,1
+1332,Melrose,1
+1333,Melvin,1
+1334,Menlo,1
+1335,Meriden,1
+1336,Merrill,1
+1337,Meservey,1
+1338,Meyer,1
+1339,Middle Amana,1
+1340,Middletown,1
+1341,Miles,1
+1342,Milford,1
+1343,Miller,1
+1344,Millersburg,1
+1345,Millerton,1
+1346,Milo,1
+1347,Milton,1
+1348,Minburn,1
+1349,Minden,1
+1350,Mineola,1
+1351,Mingo,1
+1352,Missouri Valley,1
+1353,Mitchell,1
+1354,Mitchellville,1
+1355,Modale,1
+1356,Mona,1
+1357,Mondamin,1
+1358,Monmouth,1
+1359,Monona,1
+1360,Monroe,1
+1361,Montezuma,1
+1362,Monticello,1
+1363,Montour,1
+1364,Montrose,1
+1365,Moorhead,1
+1366,Moorland,1
+1367,Moravia,1
+1368,Morley,1
+1369,Morning Sun,1
+1370,Morrison,1
+1371,Moulton,1
+1372,Mount Auburn,1
+1373,Mount Ayr,1
+1374,Mount Pleasant,1
+1375,Mount Sterling,1
+1376,Mount Union,1
+1377,Mount Vernon,1
+1378,Moville,1
+1379,Murray,1
+1380,Muscatine,1
+1381,Mystic,1
+1382,Nashua,1
+1383,Nemaha,1
+1384,Neola,1
+1385,Nevada,1
+1386,New Albin,1
+1387,Newell,1
+1388,Newhall,1
+1389,New Hampton,1
+1390,New Hartford,1
+1391,New Haven,1
+1392,New Liberty,1
+1393,New London,1
+1394,New Market,1
+1395,New Providence,1
+1396,New Sharon,1
+1397,Newton,1
+1398,New Vienna,1
+1399,New Virginia,1
+1400,Nichols,1
+1401,Nodaway,1
+1402,Nora Springs,1
+1403,Northboro,1
+1404,North Buena Vista,1
+1405,North English,1
+1406,North Liberty,1
+1407,North Washington,1
+1408,Northwood,1
+1409,Norwalk,1
+1410,Norway,1
+1411,Numa,1
+1412,Oakland,1
+1413,Oakland Acres,1
+1414,Oakville,1
+1415,Ocheyedan,1
+1416,Odebolt,1
+1417,Oelwein,1
+1418,Ogden,1
+1419,Okoboji,1
+1420,Olds,1
+1421,Olin,1
+1422,Ollie,1
+1423,Onawa,1
+1424,Onslow,1
+1425,Orange City,1
+1426,Orchard,1
+1427,Orient,1
+1428,Orleans,1
+1429,Osage,1
+1430,Osceola,1
+1431,Oskaloosa,1
+1432,Ossian,1
+1433,Osterdock,1
+1434,Otho,1
+1435,Oto,1
+1436,Otranto,1
+1437,Ottosen,1
+1438,Ottumwa,1
+1439,Owasa,1
+1440,Oxford,1
+1441,Oxford Junction,1
+1442,Oyens,1
+1443,Pacific Junction,1
+1444,Packwood,1
+1445,Palmer,1
+1446,Palo,1
+1447,Panama,1
+1448,Panora,1
+1449,Panorama Park,1
+1450,Parkersburg,1
+1451,Park View,1
+1452,Parnell,1
+1453,Paton,1
+1454,Patterson,1
+1455,Paullina,1
+1456,Pella,1
+1457,Peosta,1
+1458,Percival,1
+1459,Perry,1
+1460,Persia,1
+1461,Peterson,1
+1462,Pierson,1
+1463,Pilot Mound,1
+1464,Pioneer,1
+1465,Pisgah,1
+1466,Plainfield,1
+1467,Plano,1
+1468,Pleasant Hill,1
+1469,Pleasanton,1
+1470,Pleasant Plain,1
+1471,Pleasantville,1
+1472,Plover,1
+1473,Plymouth,1
+1474,Pocahontas,1
+1475,Polk City,1
+1476,Pomeroy,1
+1477,Popejoy,1
+1478,Portland,1
+1479,Portsmouth,1
+1480,Postville,1
+1481,Prairieburg,1
+1482,Prairie City,1
+1483,Prescott,1
+1484,Preston,1
+1485,Primghar,1
+1486,Princeton,1
+1487,Promise City,1
+1488,Protivin,1
+1489,Pulaski,1
+1490,Quasqueton,1
+1491,Quimby,1
+1492,Radcliffe,1
+1493,Rake,1
+1494,Ralston,1
+1495,Randalia,1
+1496,Randall,1
+1497,Randolph,1
+1498,Rathbun,1
+1499,Raymond,1
+1500,Readlyn,1
+1501,Reasnor,1
+1502,Redding,1
+1503,Redfield,1
+1504,Red Oak,1
+1505,Reinbeck,1
+1506,Rembrandt,1
+1507,Remsen,1
+1508,Renwick,1
+1509,Rhodes,1
+1510,Riceville,1
+1511,Richland,1
+1512,Rickardsville,1
+1513,Ricketts,1
+1514,Ridgeway,1
+1515,Rinard,1
+1516,Ringsted,1
+1517,Rippey,1
+1518,Riverdale,1
+1519,Riverside,1
+1520,River Sioux,1
+1521,Riverton,1
+1522,Robins,1
+1523,Rochester,1
+1524,Rock Falls,1
+1525,Rockford,1
+1526,Rock Rapids,1
+1527,Rock Valley,1
+1528,Rockwell,1
+1529,Rockwell City,1
+1530,Rodman,1
+1531,Rodney,1
+1532,Roland,1
+1533,Rolfe,1
+1534,Rome,1
+1535,Rose Hill,1
+1536,Roseville,1
+1537,Rossie,1
+1538,Rowan,1
+1539,Rowley,1
+1540,Royal,1
+1541,Rudd,1
+1542,Runnells,1
+1543,Russell,1
+1544,Ruthven,1
+1545,Rutland,1
+1546,Ryan,1
+1547,Sabula,1
+1548,Sac City,1
+1549,Sageville,1
+1550,Salem,1
+1551,Salix,1
+1552,Sanborn,1
+1553,Sandyville,1
+1554,Saylorville,1
+1555,Scarville,1
+1556,Schaller,1
+1557,Schleswig,1
+1558,Scranton,1
+1559,Searsboro,1
+1560,Sergeant Bluff,1
+1561,Sexton,1
+1562,Seymour,1
+1563,Shambaugh,1
+1564,Shannon City,1
+1565,Sharpsburg,1
+1566,Sheffield,1
+1567,Shelby,1
+1568,Sheldahl,1
+1569,Sheldon,1
+1570,Shell Rock,1
+1571,Shellsburg,1
+1572,Shenandoah,1
+1573,Sherrill,1
+1574,Shueyville,1
+1575,Sibley,1
+1576,Sidney,1
+1577,Sigourney,1
+1578,Silver City,1
+1579,Sioux Center,1
+1580,Sioux City,1
+1581,Sioux Rapids,1
+1582,Slater,1
+1583,Sloan,1
+1584,Smithland,1
+1585,Soldier,1
+1586,Solon,1
+1587,Somers,1
+1588,South Amana,1
+1589,South English,1
+1590,Spencer,1
+1591,Spillville,1
+1592,Spirit Lake,1
+1593,Spragueville,1
+1594,Springbrook,1
+1595,Spring Hill,1
+1596,Springville,1
+1597,Stacyville,1
+1598,Stanhope,1
+1599,Stanley,1
+1600,St. Ansgar,1
+1601,St. Anthony,1
+1602,Stanton,1
+1603,Stanwood,1
+1604,State Center,1
+1605,St. Benedict,1
+1606,St. Charles,1
+1607,St. Donatus,1
+1608,Steamboat Rock,1
+1609,St. Joseph,1
+1610,St. Lucas,1
+1611,St. Marys,1
+1612,Stockport,1
+1613,Stockton,1
+1614,St. Olaf,1
+1615,Stone City,1
+1616,Storm Lake,1
+1617,Story City,1
+1618,Stout,1
+1619,St. Paul,1
+1620,Stratford,1
+1621,Strawberry Point,1
+1622,Struble,1
+1623,Stuart,1
+1624,Sully,1
+1625,Sumner,1
+1626,Sun Valley Lake,1
+1627,Superior,1
+1628,Sutherland,1
+1629,Swaledale,1
+1630,Swan,1
+1631,Swea City,1
+1632,Swisher,1
+1633,Tabor,1
+1634,Tama,1
+1635,Templeton,1
+1636,Tennant,1
+1637,Terril,1
+1638,Thayer,1
+1639,Thompson,1
+1640,Thor,1
+1641,Thornburg,1
+1642,Thornton,1
+1643,Thurman,1
+1644,Tiffin,1
+1645,Tingley,1
+1646,Tipton,1
+1647,Titonka,1
+1648,Toeterville,1
+1649,Toledo,1
+1650,Toronto,1
+1651,Traer,1
+1652,Treynor,1
+1653,Tripoli,1
+1654,Truesdale,1
+1655,Truro,1
+1656,Turin,1
+1657,Twin Lakes,1
+1658,Udell,1
+1659,Underwood,1
+1660,Union,1
+1661,Unionville,1
+1662,University Heights,1
+1663,University Park,1
+1664,Urbana,1
+1665,Urbandale,1
+1666,Ute,1
+1667,Vail,1
+1668,Valeria,1
+1669,Van Horne,1
+1670,Van Meter,1
+1671,Van Wert,1
+1672,Varina,1
+1673,Ventura,1
+1674,Victor,1
+1675,Villisca,1
+1676,Vincent,1
+1677,Vining,1
+1678,Vinton,1
+1679,Volga,1
+1680,Wadena,1
+1681,Wahpeton,1
+1682,Walcott,1
+1683,Walford,1
+1684,Walker,1
+1685,Wallingford,1
+1686,Wall Lake,1
+1687,Walnut,1
+1688,Wapello,1
+1689,Washburn,1
+1690,Washington,1
+1691,Washta,1
+1692,Waterloo,1
+1693,Waterville,1
+1694,Watkins,1
+1695,Waucoma,1
+1696,Waukee,1
+1697,Waukon,1
+1698,Waverly,1
+1699,Wayland,1
+1700,Webb,1
+1701,Webster,1
+1702,Webster City,1
+1703,Weldon,1
+1704,Wellman,1
+1705,Wellsburg,1
+1706,Welton,1
+1707,Wesley,1
+1708,West Amana,1
+1709,West Bend,1
+1710,West Branch,1
+1711,West Burlington,1
+1712,West Chester,1
+1713,West Des Moines,1
+1714,Westfield,1
+1715,Westgate,1
+1716,West Liberty,1
+1717,West Okoboji,1
+1718,Weston,1
+1719,Westphalia,1
+1720,West Point,1
+1721,Westside,1
+1722,West Union,1
+1723,Westwood,1
+1724,What Cheer,1
+1725,Wheatland,1
+1726,Whiting,1
+1727,Whittemore,1
+1728,Whitten,1
+1729,Willey,1
+1730,Williams,1
+1731,Williamsburg,1
+1732,Williamson,1
+1733,Wilton,1
+1734,Windsor Heights,1
+1735,Winfield,1
+1736,Winterset,1
+1737,Winthrop,1
+1738,Wiota,1
+1739,Woden,1
+1740,Woodbine,1
+1741,Woodburn,1
+1742,Woodward,1
+1743,Woolstock,1
+1744,Worthington,1
+1745,Wyoming,1
+1746,Yale,1
+1747,Yetter,1
+1748,Yorktown,1
+1749,Zearing,1
+1750,Zwingle,1
