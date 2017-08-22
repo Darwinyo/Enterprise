@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>EnterpriseDB_Helper</Name>
+    <Name>EnterpriseDB_User</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{35fdc263-ffc7-4c73-9fb4-fc9bd004cf56}</ProjectGuid>
+    <ProjectGuid>{002505ee-05d7-4371-af42-ffcc9cd42c84}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>EnterpriseDB_Helper</RootNamespace>
-    <AssemblyName>EnterpriseDB_Helper</AssemblyName>
+    <RootNamespace>EnterpriseDB_User</RootNamespace>
+    <AssemblyName>EnterpriseDB_User</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -61,8 +61,6 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Tbl_Country.sql" />
-    <Build Include="dbo\Tables\Tbl_City.sql" />
-    <Build Include="dbo\Tables\Tbl_Periode.sql" />
+    <Build Include="dbo\Tables\Tbl_User.sql" />
   </ItemGroup>
 </Project>

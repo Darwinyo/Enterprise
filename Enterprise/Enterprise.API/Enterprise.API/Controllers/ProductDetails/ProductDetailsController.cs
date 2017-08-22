@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Enterprise.API.Controllers
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace Enterprise.API.Controllers.ProductDetails
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ProductDetailsController : Controller
     {
-        // GET api/values
+        // GET: api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {

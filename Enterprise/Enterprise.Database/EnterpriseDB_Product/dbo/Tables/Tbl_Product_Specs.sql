@@ -1,7 +1,11 @@
 ﻿CREATE TABLE [dbo].[Tbl_Product_Specs] (
-    [Product_Id]         INT           NOT NULL,
-    [Product_Spec_Title] VARCHAR (MAX) NOT NULL,
-    [Product_Spec_Value] VARCHAR (MAX) NOT NULL,
-    CONSTRAINT [FK_Product_Id_Specs] FOREIGN KEY ([Product_Id]) REFERENCES [dbo].[Tbl_Product] ([Product_Id])
+    [P_Spec_Id]          VARCHAR (36)  NOT NULL,
+    [Product_Id]         VARCHAR (36)  NOT NULL,
+    [Product_Spec_Title] VARCHAR (200) NOT NULL,
+    [Product_Spec_Value] VARCHAR (200) NOT NULL,
+    CONSTRAINT [PK_Tbl_Product_Specs] PRIMARY KEY CLUSTERED ([P_Spec_Id] ASC),
+    CONSTRAINT [FK_Tbl_Product_Specs_Tbl_Product] FOREIGN KEY ([Product_Id]) REFERENCES [dbo].[Tbl_Product] ([Product_Id])
 );
+
+
 

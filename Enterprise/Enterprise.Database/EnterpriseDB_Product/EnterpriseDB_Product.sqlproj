@@ -66,5 +66,7 @@
     <Build Include="dbo\Tables\Tbl_Product_Hot.sql" />
     <Build Include="dbo\Tables\Tbl_Product_Category.sql" />
     <Build Include="dbo\Tables\Tbl_Product.sql" />
+    <Build Include="dbo\Tables\Tbl_Product_Recommended.sql" />
+    <Build Include="dbo\Tables\Tbl_Product_Image.sql" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,10 @@
 ﻿CREATE TABLE [dbo].[Tbl_Product_Hot] (
-    [Product_Id] INT NOT NULL,
-    [Periode_Id] INT NOT NULL,
-    CONSTRAINT [FK_Product_Id_Hot] FOREIGN KEY ([Product_Id]) REFERENCES [dbo].[Tbl_Product] ([Product_Id])
+    [P_Hot_Id]   VARCHAR (36) NOT NULL,
+    [Product_Id] VARCHAR (36) NOT NULL,
+    [Periode_Id] VARCHAR (36) NOT NULL,
+    CONSTRAINT [PK_Tbl_Product_Hot] PRIMARY KEY CLUSTERED ([P_Hot_Id] ASC),
+    CONSTRAINT [FK_Tbl_Product_Hot_Tbl_Product] FOREIGN KEY ([Product_Id]) REFERENCES [dbo].[Tbl_Product] ([Product_Id])
 );
+
+
 

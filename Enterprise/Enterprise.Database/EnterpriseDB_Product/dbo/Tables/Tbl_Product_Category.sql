@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [dbo].[Tbl_Product_Category] (
-    [Category_Id]   INT         NOT NULL,
-    [Category_Name] VARCHAR (1) NOT NULL,
-    CONSTRAINT [PK_Category_Id] PRIMARY KEY CLUSTERED ([Category_Id] ASC)
+    [P_Category_Id] VARCHAR (36)  NOT NULL,
+    [Category_Name] VARCHAR (200) NOT NULL,
+    CONSTRAINT [PK_Tbl_Product_Category] PRIMARY KEY CLUSTERED ([P_Category_Id] ASC)
 );
+
+
 
