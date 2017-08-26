@@ -6,6 +6,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 {
     public partial class ProductContext : DbContext
     {
+        public virtual DbSet<TblCategory> TblCategory { get; set; }
         public virtual DbSet<TblProduct> TblProduct { get; set; }
         public virtual DbSet<TblProductCategory> TblProductCategory { get; set; }
         public virtual DbSet<TblProductHot> TblProductHot { get; set; }
@@ -14,17 +15,31 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         public virtual DbSet<TblProductSpecs> TblProductSpecs { get; set; }
         public virtual DbSet<TblProductVariations> TblProductVariations { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ProductContext(DbContextOptions<ProductContext> context):base(context)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-69R5JG5\TEST;Initial Catalog=EnterpriseDB_Product;Integrated Security=True");
-            }
-        }
 
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TblCategory>(entity =>
+            {
+                entity.HasKey(e => e.CategoryId);
+
+                entity.ToTable("Tbl_Category");
+
+                entity.Property(e => e.CategoryId)
+                    .HasColumnName("Category_Id")
+                    .HasMaxLength(36)
+                    .IsUnicode(false)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.CategoryName)
+                    .IsRequired()
+                    .HasColumnName("Category_Name")
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<TblProduct>(entity =>
             {
                 entity.HasKey(e => e.ProductId);
@@ -36,6 +51,10 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasMaxLength(36)
                     .IsUnicode(false)
                     .ValueGeneratedNever();
+
+                entity.Property(e => e.ProductDescription)
+                    .HasColumnName("Product_Description")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ProductFavorite).HasColumnName("Product_Favorite");
 
@@ -55,11 +74,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasColumnName("Product_Rating")
                     .HasColumnType("decimal(18, 0)");
 
-                entity.Property(e => e.ProductReview)
-                    .IsRequired()
-                    .HasColumnName("Product_Review")
-                    .HasMaxLength(36)
-                    .IsUnicode(false);
+                entity.Property(e => e.ProductReview).HasColumnName("Product_Review");
 
                 entity.Property(e => e.ProductStock).HasColumnName("Product_Stock");
             });
@@ -76,11 +91,29 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .IsUnicode(false)
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.CategoryName)
+                entity.Property(e => e.CategoryId)
                     .IsRequired()
-                    .HasColumnName("Category_Name")
-                    .HasMaxLength(200)
+                    .HasColumnName("Category_Id")
+                    .HasMaxLength(36)
                     .IsUnicode(false);
+
+                entity.Property(e => e.ProductId)
+                    .IsRequired()
+                    .HasColumnName("Product_Id")
+                    .HasMaxLength(36)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.TblProductCategory)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Tbl_Product_Category_Tbl_Category");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.TblProductCategory)
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Tbl_Product_Category_Tbl_Product");
             });
 
             modelBuilder.Entity<TblProductHot>(entity =>
@@ -88,6 +121,8 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PHotId);
 
                 entity.ToTable("Tbl_Product_Hot");
+
+                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PHotId)
                     .HasColumnName("P_Hot_Id")
@@ -132,10 +167,19 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasMaxLength(36)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ProductImage)
+                entity.Property(e => e.ProductImageUrl)
                     .IsRequired()
-                    .HasColumnName("Product_Image")
-                    .HasColumnType("image");
+                    .HasColumnName("Product_Image_Url");
+
+                entity.Property(e => e.ProductImageName)
+                    .IsRequired()
+                    .HasColumnName("Product_Image_Name")
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ProductImageSize)
+                    .IsRequired()
+                    .HasColumnName("Product_Image_Size");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.TblProductImage)
@@ -149,6 +193,8 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PRecommendId);
 
                 entity.ToTable("Tbl_Product_Recommended");
+
+                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PRecommendId)
                     .HasColumnName("P_Recommend_Id")
@@ -180,6 +226,8 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PSpecId);
 
                 entity.ToTable("Tbl_Product_Specs");
+
+                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PSpecId)
                     .HasColumnName("P_Spec_Id")
@@ -218,6 +266,8 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 
                 entity.ToTable("Tbl_Product_Variations");
 
+                entity.HasIndex(e => e.ProductId);
+
                 entity.Property(e => e.PVariationId)
                     .HasColumnName("P_Variation_Id")
                     .HasMaxLength(36)
@@ -233,12 +283,6 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.Property(e => e.ProductVariation)
                     .IsRequired()
                     .HasColumnName("Product_Variation")
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ProductVariationInStock)
-                    .IsRequired()
-                    .HasColumnName("Product_Variation_InStock")
                     .HasMaxLength(200)
                     .IsUnicode(false);
 

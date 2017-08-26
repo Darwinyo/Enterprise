@@ -3,5 +3,6 @@
   <PropertyGroup>
     <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
     <ShowAllFiles>true</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>FolderProfile</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

@@ -6,17 +6,12 @@ namespace Enterprise.DataLayers.EnterpriseDB_UserModel
 {
     public partial class UserContext : DbContext
     {
-        public virtual DbSet<TblUser> TblUser { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public UserContext(DbContextOptions<UserContext> dbContextOptions):base(dbContextOptions)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-69R5JG5\TEST;Initial Catalog=EnterpriseDB_User;Integrated Security=True");
-            }
-        }
 
+        }
+        public virtual DbSet<TblUser> TblUser { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TblUser>(entity =>

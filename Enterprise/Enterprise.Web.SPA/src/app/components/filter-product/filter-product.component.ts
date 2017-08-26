@@ -26,6 +26,7 @@ export class FilterProductComponent implements OnInit {
           checked: Math.round(Math.random()) === 1,
           filter: 'filter ' + i + ' ' + x
         });
+        console.log(filterarray);
       }
       filterProductModel.category = 'Category ' + i;
       filterProductModel.filterarrays = filterarray;

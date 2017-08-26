@@ -11,17 +11,10 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Packaging.Tools/1.0.0-preview2-25401-01": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Packaging.Tools.targets": {}
-        }
-      },
-      "NETStandard.Library/2.0.0-preview2-25401-01": {
+      "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.Packaging.Tools": "1.0.0-preview2-25401-01"
+          "Microsoft.NETCore.Platforms": "1.1.0"
         },
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -49,28 +42,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Packaging.Tools/1.0.0-preview2-25401-01": {
-      "sha512": "aDRr6J/QqlplwKBJPD5D2xGrXKr3g/+bIt2qiFZChk13A1z8/MSDESDZgB/UfnSWLkGCcMoYAaOK7+E3p4ejJA==",
+    "NETStandard.Library/2.0.0": {
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
       "type": "package",
-      "path": "microsoft.packaging.tools/1.0.0-preview2-25401-01",
-      "files": [
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "build/Microsoft.Packaging.Tools.Tasks.dll",
-        "build/Microsoft.Packaging.Tools.targets",
-        "build/System.Collections.Immutable.dll",
-        "build/System.Reflection.Metadata.dll",
-        "build/desktop/Microsoft.Packaging.Tools.Tasks.dll",
-        "build/desktop/System.Collections.Immutable.dll",
-        "build/desktop/System.Reflection.Metadata.dll",
-        "microsoft.packaging.tools.1.0.0-preview2-25401-01.nupkg.sha512",
-        "microsoft.packaging.tools.nuspec"
-      ]
-    },
-    "NETStandard.Library/2.0.0-preview2-25401-01": {
-      "sha512": "ocbbbc3/qBNcZnFYkz5QJkIgLVbn/nCLYLz+XNSbsLBNfRpkxsz3vbTMxuN4LVX7i+iNoD+l1GI8OHgZPGgzZQ==",
-      "type": "package",
-      "path": "netstandard.library/2.0.0-preview2-25401-01",
+      "path": "netstandard.library/2.0.0",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -189,19 +164,21 @@
         "build/netstandard2.0/ref/System.dll",
         "build/netstandard2.0/ref/mscorlib.dll",
         "build/netstandard2.0/ref/netstandard.dll",
+        "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.0-preview2-25401-01.nupkg.sha512",
+        "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.0-preview2-25401-01"
+      "NETStandard.Library >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PISGuest\\.nuget\\packages\\": {}
+    "C:\\Users\\PISGuest\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -215,6 +192,9 @@
       "packagesPath": "C:\\Users\\PISGuest\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\Enterprise\\Enterprise\\Enterprise.Web.MPA\\Enterprise.Web.MPA.BusinessLogics\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\PISGuest\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -244,7 +224,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0-preview2-25401-01",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },

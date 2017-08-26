@@ -1,4 +1,4 @@
 export interface FilterModel {
-    filter: string,
-    checked: boolean
+    filter: string;
+    checked: boolean;
 }

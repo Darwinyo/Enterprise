@@ -1,3 +1,4 @@
+import { ProductEditorComponent } from './../containers/product-editor/product-editor.component';
 import { ProductDetailsComponent } from './../containers/product-details/product-details.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -18,6 +19,7 @@ export const appRoutes: Routes = [
     { path: 'index', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, pathMatch: 'full' },
     { path: 'product-details', component: ProductDetailsComponent, pathMatch: 'full' },
+    { path: 'product-editor', component: ProductEditorComponent, pathMatch: 'full' },
     // { path: 'dashboard', loadChildren: '../modules/dashboard/dashboard.module#DashboardModule'},
     // { path: 'layouts', component: LayoutsComponent },
     // { path: 'graph-flot', component: GraphFlotComponent },

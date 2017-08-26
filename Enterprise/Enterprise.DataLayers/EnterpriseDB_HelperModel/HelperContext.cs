@@ -6,19 +6,14 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
 {
     public partial class HelperContext : DbContext
     {
+        public HelperContext(DbContextOptions<HelperContext> dbContextOptions):base(dbContextOptions)
+        {
+
+        }
         public virtual DbSet<TblCity> TblCity { get; set; }
         public virtual DbSet<TblCountry> TblCountry { get; set; }
         public virtual DbSet<TblPeriode> TblPeriode { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-69R5JG5\TEST;Initial Catalog=EnterpriseDB_Helper;Integrated Security=True");
-            }
-        }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TblCity>(entity =>
