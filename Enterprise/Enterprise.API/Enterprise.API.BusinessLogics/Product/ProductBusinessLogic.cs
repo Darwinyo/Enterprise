@@ -30,17 +30,17 @@ namespace Enterprise.API.BusinessLogics.Product
             {
                 ProductId = Guid.NewGuid().ToString(),
                 ProductName = jObject["productName"].ToString(),
-                ProductFavorite = (int)jObject["productFavorite"],
+                ProductFavorite = 0,
                 ProductLocation = (int)jObject["productLocation"],
                 ProductPrice = (decimal)jObject["productPrice"],
-                ProductRating = (decimal)jObject["productRating"],
-                ProductReview = (int)jObject["productReview"],
+                ProductRating = 0,
+                ProductReview = 0,
                 ProductStock = (int)jObject["productStock"],
                 ProductDescription = (string)jObject["productDescription"]
             };
-            if (jObject["productImages"] != null)
+            if (jObject["TblProductImage"] != null)
             {
-                List<byte[]> productImage = (List<byte[]>)jObject["productImages"].ToObject(typeof(List<byte[]>));
+                JObject[] productImage = (JObject[])jObject["TblProductImage"].ToObject(typeof(JObject[]));
                 List<TblProductImage> list = new List<TblProductImage>();
                 foreach (var item in productImage)
                 {
@@ -48,52 +48,54 @@ namespace Enterprise.API.BusinessLogics.Product
                     {
                         PImageId = Guid.NewGuid().ToString(),
                         Product=product,
-                        ProductImageUrl = item
+                        ProductImageName=item["productImageName"].ToString(),
+                        ProductImageUrl = item["productImageUrl"].ToString(),
+                        ProductImageSize=(int)item["productImageSize"]
                     });
                 }
                 product.TblProductImage = list;
             }
-            if (jObject["productCategory"] != null)
+            if (jObject["TblProductCategory"] != null)
             {
-                List<string> categories = (List<string>)jObject["productCategory"].ToObject(typeof(string));
+                JObject[] categories = (JObject[])jObject["TblProductCategory"].ToObject(typeof(JObject[]));
                 List<TblProductCategory> list = new List<TblProductCategory>();
-                foreach (string item in categories)
+                foreach (var item in categories)
                 {
                     list.Add(new TblProductCategory
                     {
                         Product = product,
                         PCategoryId = Guid.NewGuid().ToString(),
-                        Category = CategoryBusinessLogic.GetTblCategoryByName(item, context)
+                        Category = CategoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString(), context)
                     });
                 }
                 product.TblProductCategory = list;
             }
-            if (jObject["productSpecs"] != null)
+            if (jObject["TblProductSpecs"] != null)
             {
-                List<string[]> specs = (List<string[]>)jObject.ToObject(typeof(List<string[]>));
+                JObject[] specs = (JObject[])jObject["TblProductSpecs"].ToObject(typeof(JObject[]));
                 List<TblProductSpecs> list = new List<TblProductSpecs>();
-                foreach (string[] item in specs)
+                foreach (var item in specs)
                 {
                     list.Add(new TblProductSpecs
                     {
                         Product = product,
                         PSpecId = Guid.NewGuid().ToString(),
-                        ProductSpecTitle = item[0],
-                        ProductSpecValue = item[1]
+                        ProductSpecTitle = item["productSpecTitle"].ToString(),
+                        ProductSpecValue = item["productSpecValue"].ToString()
                     });
                 }
                 product.TblProductSpecs = list;
             }
-            if (jObject["productVariations"] != null)
+            if (jObject["TblProductVariations"] != null)
             {
-                List<string> variations = (List<string>)jObject["productVariations"].ToObject(typeof(List<string>));
+                JObject[] variations = (JObject[])jObject["TblProductVariations"].ToObject(typeof(JObject[]));
                 List<TblProductVariations> list = new List<TblProductVariations>();
-                foreach (string item in variations)
+                foreach (var item in variations)
                 {
                     list.Add(new TblProductVariations
                     {
                         Product = product,
-                        ProductVariation = item,
+                        ProductVariation = item["productVariation"].ToString(),
                         PVariationId = Guid.NewGuid().ToString()
                     });
                 }

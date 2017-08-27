@@ -169,7 +169,8 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 
                 entity.Property(e => e.ProductImageUrl)
                     .IsRequired()
-                    .HasColumnName("Product_Image_Url");
+                    .HasColumnName("Product_Image_Url")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ProductImageName)
                     .IsRequired()

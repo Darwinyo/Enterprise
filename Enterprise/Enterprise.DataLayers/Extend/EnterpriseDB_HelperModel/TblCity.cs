@@ -9,7 +9,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
     {
         public static List<TblCity> GetListOfCity(HelperContext context)
         {
-            return context.TblCity.ToList();
+            return context.TblCity.Where(x=>x.CountryId==2).ToList();
         }
     }
 }

@@ -27,19 +27,21 @@ export class ProductEditorComponent implements OnInit {
   productlocation: string;
   imagemodelarray: ImageModel[];
   categories: ProductCategoryModel[];
+  category: string[];
   dimension: string;
   weight: string;
   manufacturer: string;
   condition: string;
   pagetitle: string;
   constructor(
-    private service: ProductService,
+    private productService: ProductService,
     private cityService: CityService,
     private categoryService: CategoryService) {
     this.productModel = <ProductModel>{};
     this.imagemodelarray = [];
     this.locations = [];
     this.categories = [];
+    this.category = [];
     this.dimension = '';
     this.weight = '';
     this.manufacturer = '';
@@ -83,7 +85,7 @@ export class ProductEditorComponent implements OnInit {
     }
   }
   getCityId(cityname: string): number {
-    return this.locations.find(x => x.CityName === cityname).CityId;
+    return this.locations.find(x => x.cityName === cityname).cityId;
   }
   getCategoryId(categoryname: string): string {
     return this.categories.find(x => x.categoryName === categoryname).categoryId;
@@ -130,7 +132,9 @@ export class ProductEditorComponent implements OnInit {
           productSpecValue: this.condition
         }
       ],
-      TblProductVariations: this.convertStringToVariationArray(form.value['TblProductVariations'])
+      TblProductVariations: this.convertStringToVariationArray(form.value['variations'])
     }
+    console.log(this.productModel);
+    this.productService.CreateProduct(this.productModel).subscribe(x => console.log(x));
   }
 }
