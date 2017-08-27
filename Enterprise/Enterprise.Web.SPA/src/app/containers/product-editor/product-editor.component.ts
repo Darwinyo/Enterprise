@@ -70,9 +70,9 @@ export class ProductEditorComponent implements OnInit {
   populateImage() {
     this.inputelement = <HTMLInputElement>document.getElementById('imageupload');
     const filelist: FileList = this.inputelement.files;
-    let file: File;
+
     for (let i = 0; i < filelist.length; i++) {
-      file = filelist[i];
+      const file: File = filelist[i];
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
@@ -81,6 +81,7 @@ export class ProductEditorComponent implements OnInit {
           productImageName: file.name,
           productImageSize: file.size
         });
+        console.log(this.imagemodelarray)
       };
     }
   }
@@ -135,6 +136,6 @@ export class ProductEditorComponent implements OnInit {
       TblProductVariations: this.convertStringToVariationArray(form.value['variations'])
     }
     console.log(this.productModel);
-    this.productService.CreateProduct(this.productModel).subscribe(x => console.log(x));
+    this.productService.CreateProduct(this.productModel).subscribe();
   }
 }

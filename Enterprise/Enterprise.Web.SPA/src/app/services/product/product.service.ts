@@ -16,7 +16,7 @@ export class ProductService {
     CreateProduct(product: ProductModel) {
         const headers: Headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post(this.urlProductController, product, { headers: headers }).map(result => result.json());
+        return this.http.post(this.urlProductController, product, { headers: headers });
     }
     GetAllProduct(): Observable<ProductModel[]> {
         const headers: Headers = new Headers();
