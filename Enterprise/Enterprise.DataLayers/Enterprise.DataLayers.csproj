@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extend\EnterpriseDB_HelperModel\" />
     <Folder Include="Extend\EnterpriseDB_UserModel\" />
   </ItemGroup>
 

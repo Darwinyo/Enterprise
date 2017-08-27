@@ -3,14 +3,11 @@ import { ProductVariationModel } from './../product-variations/product-variation
 import { ProductSpecsModel } from './../product-specs/product-specs.model';
 import { ProductCategoryModel } from './../product-category/product-category.model';
 export interface ProductModel {
-    productFavorite: number;
-    productLocation: number;
     productName: string;
     productPrice: number;
-    productRating: number;
-    productReview: number;
     productStock: number;
     productDescription: string;
+    productLocation: number;
     TblProductCategory: ProductCategoryModel[];
     TblProductSpecs: ProductSpecsModel[];
     TblProductVariations: ProductVariationModel[];

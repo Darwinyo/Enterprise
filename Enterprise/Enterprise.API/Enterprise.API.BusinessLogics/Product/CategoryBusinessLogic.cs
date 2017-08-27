@@ -23,5 +23,9 @@ namespace Enterprise.API.BusinessLogics.Product
                 return PM.TblCategory.GetTblCategoryByName(categoryName, context);
             return null;
         }
+        public static List<PM.TblCategory> GetAllTblCategory(PM.ProductContext context)
+        {
+            return PM.TblCategory.GetAllTableCategory(context);
+        }
     }
 }

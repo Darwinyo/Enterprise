@@ -1,3 +1,5 @@
+import { CategoryService } from './services/category/category.service';
+import { CityService } from './services/city/city.service';
 import { ProductEditorComponent } from './containers/product-editor/product-editor.component';
 import { ProductService } from './services/product/product.service';
 import { ProductInfoDescriptionComponent } from './components/product-info-description/product-info-description.component';
@@ -9,6 +11,7 @@ import { ProductDetailsComponent } from './containers/product-details/product-de
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 // Modules
 
@@ -60,9 +63,10 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
   imports: [
     HttpModule,
     BrowserModule,
+    FormsModule,
     AppRouteModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,CityService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

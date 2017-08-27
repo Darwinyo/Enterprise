@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using PB = Enterprise.API.BusinessLogics.Product.CategoryBusinessLogic;
+using HM = Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using HB = Enterprise.API.BusinessLogics.City.CityBusinessLogic;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Enterprise.API.Controllers.Product
+namespace Enterprise.API.Controllers.City
 {
     [Route("api/[controller]")]
-    public class CategoryProductController : Controller
+    public class CityController : Controller
     {
-        private readonly PM.ProductContext _context;
-        public CategoryProductController(PM.ProductContext context)
+        private readonly HM.HelperContext _context;
+        public CityController(HM.HelperContext context)
         {
             _context = context;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<PM.TblCategory> Get()
+        public IEnumerable<HM.TblCity> Get()
         {
-            return PB.GetAllTblCategory(_context);
+            return HB.GetListOfCity(_context);
         }
 
         // GET api/values/5
@@ -35,7 +35,6 @@ namespace Enterprise.API.Controllers.Product
         [HttpPost]
         public void Post([FromBody]string value)
         {
-            PB.CheckAndInsertCategory(value, _context);
         }
 
         // PUT api/values/5

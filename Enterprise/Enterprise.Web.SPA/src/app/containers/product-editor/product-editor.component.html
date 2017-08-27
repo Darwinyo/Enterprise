@@ -5,81 +5,86 @@
       <div class="tabs-container">
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#tab-1"> Product info</a></li>
-          <li class=""><a data-toggle="tab" href="#tab-2"> Data</a></li>
-          <li class=""><a data-toggle="tab" href="#tab-3"> Discount</a></li>
+          <li class=""><a data-toggle="tab" href="#tab-2" (click)="changeCss()"> Data</a></li>
         </ul>
-        <div class="tab-content">
-          <div id="tab-1" class="tab-pane active">
-            <div class="panel-body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <div class="tab-content">
+            <div id="tab-1" class="tab-pane active">
+              <div class="panel-body">
 
-              <fieldset class="form-horizontal">
-                <div class="form-group"><label class="col-sm-2 control-label">Name:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="Product name"></div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Price:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="Product price"></div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Description:</label>
-                  <div class="col-sm-10">
-                    <div class="summernote">
-                      <h3>Lorem Ipsum is simply</h3>
-                      dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong>                      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                      it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                      when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                      survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                      unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                      passages, and more recently with
-                      <br/>
-
+                <fieldset class="form-horizontal">
+                  <div class="form-group"><label class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Product name" [(ngModel)]="productModel.productName"
+                        value="productModel.productName" name="productName"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Price:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="Product price" [(ngModel)]="productModel.productPrice"
+                        value="productModel.productPrice" name="productPrice"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Description:</label>
+                    <div class="col-sm-10">
+                      <textarea  class="form-control" [(ngModel)]="productModel.productDescription"
+                      value="productModel.productDescription" name="productDescription">
+                      </textarea>
                     </div>
                   </div>
-                </div>
-              </fieldset>
+                </fieldset>
 
-            </div>
-          </div>
-          <div id="tab-2" class="tab-pane">
-            <div class="panel-body">
-
-              <fieldset class="form-horizontal">
-                
-                <div class="form-group"><label class="col-sm-2 control-label">Stock:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="stock"></div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Location:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="location"></div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Category:</label>
-                  <div class="col-sm-10">
-                    <select class="form-control">
-                                                          <option>option 1</option>
-                                                          <option>option 2</option>
-                                                      </select>
-                  </div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Variations:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="Quantity"></div>
-                </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Specs:</label>
-                  <div class="col-sm-10"><input type="text" class="form-control" placeholder="2"></div>
-                </div>
-              </fieldset>
-
-
-            </div>
-          </div>
-          <div id="tab-3" class="tab-pane">
-            <div class="panel-body">
-              <form id="my-awesome-dropzone" class="dropzone" action="#">
-                <div class="dropzone-previews"></div>
-                <button type="submit" class="btn btn-primary pull-right">Submit this form!</button>
-              </form>
-              <div>
-                <div class="m text-right"><small>DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews: <a href="https://github.com/enyo/dropzone" target="_blank">https://github.com/enyo/dropzone</a></small>                  </div>
               </div>
             </div>
+            <div id="tab-2" class="tab-pane">
+              <div class="panel-body">
+
+                <fieldset class="form-horizontal">
+                  <div class="form-group"><label class="col-sm-2 control-label">Stock:</label>
+                    <div class="col-sm-10"><input type="number" class="form-control" placeholder="stock" [(ngModel)]="productModel.productStock"
+                        value="productModel.productStock" name="productStock"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Location:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" [(ngModel)]="productlocation" name="location">
+                                      <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+                                  </select>
+                    </div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Category:</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" multiple="multiple" [(ngModel)]="productModel.TblProductCategory.categoryName" name="category">
+                                      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                                  </select>
+                    </div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Variations:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="categoryA,categoryB,..." [(ngModel)]="variations"
+                        value="variations" name="variations">
+                    </div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Dimension:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="cm x cm x cm" [(ngModel)]="dimension" value="dimension"
+                        name="dimension"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Weight:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="weight" [(ngModel)]="weight" value="weight" name="weight"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Manufacturer:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="manufacturer" [(ngModel)]="manufacturer" value="manufacturer"
+                        name="manufacturer"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Condition:</label>
+                    <div class="col-sm-10"><input type="text" class="form-control" placeholder="condition" [(ngModel)]="condition" value="condition"
+                        name="condition"></div>
+                  </div>
+                  <div class="form-group"><label class="col-sm-2 control-label">Images:</label>
+                    <div class="col-sm-10"><input id="imageupload" multiple type="file" (change)="populateImage()"></div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
           </div>
-        </div>
+        </form>
+
       </div>
     </div>
   </div>

@@ -29,6 +29,7 @@
         "css/plugins/summernote/summernote-bs3.css",
         "css/plugins/dropzone/basic.css",
         "css/plugins/dropzone/dropzone.css",
+        "css/plugins/select2/select2.min.css",
         "css/animate.css",
         "css/style.css"
       ],
@@ -41,7 +42,8 @@
         "js/plugins/jquery-ui/jquery-ui.min.js",
         "js/plugins/ionRangeSlider/ion.rangeSlider.min.js",
         "js/plugins/summernote/summernote.min.js",
-        "js/plugins/dropzone/dropzone.js"
+        "js/plugins/dropzone/dropzone.js",
+        "js/plugins/select2/select2.full.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

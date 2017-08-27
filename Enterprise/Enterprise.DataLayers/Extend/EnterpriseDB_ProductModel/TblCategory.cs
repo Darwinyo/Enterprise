@@ -27,5 +27,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         {
             return context.TblCategory.Where(x => x.CategoryName == categoryName).LastOrDefault();
         }
+        public static List<TblCategory> GetAllTableCategory(ProductContext context)
+        {
+            return context.TblCategory.ToList();
+        }
     }
 }
