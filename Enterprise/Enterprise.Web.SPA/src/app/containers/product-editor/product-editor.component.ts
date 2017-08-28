@@ -70,7 +70,7 @@ export class ProductEditorComponent implements OnInit {
   populateImage() {
     this.inputelement = <HTMLInputElement>document.getElementById('imageupload');
     const filelist: FileList = this.inputelement.files;
-
+    this.imagemodelarray = [];
     for (let i = 0; i < filelist.length; i++) {
       const file: File = filelist[i];
       const reader = new FileReader();

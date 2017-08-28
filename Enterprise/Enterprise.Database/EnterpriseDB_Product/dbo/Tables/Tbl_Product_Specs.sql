@@ -9,3 +9,10 @@
 
 
 
+
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Tbl_Product_Specs_Product_Id]
+    ON [dbo].[Tbl_Product_Specs]([Product_Id] ASC);
+
