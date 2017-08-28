@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ProductCategoryModel } from './../../models/product/product-category/product-category.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 const pageLength = 1200;
 const itemLength = 150;
@@ -9,20 +10,12 @@ const itemLength = 150;
 })
 
 export class ListProductCategoryComponent implements OnInit {
-  items: string[];
+  @Input() categoryitems: ProductCategoryModel[];
   marginleft: number;
   constructor() {
-    this.items = [];
     this.marginleft = 0;
   }
-
   ngOnInit() {
-    this.fetchItems();
-  }
-  fetchItems() {
-    for (let i = 0; i < 20; i++) {
-      this.items[i] = 'Category ' + i;
-    }
   }
   prevbtnclicked() {
     if (0 < (this.marginleft + pageLength)) {
@@ -32,8 +25,8 @@ export class ListProductCategoryComponent implements OnInit {
     }
   }
   nextbtnclicked() {
-    if (this.marginleft - pageLength < ((this.items.length * -itemLength) + pageLength)) {
-      this.marginleft = (this.items.length * -itemLength) + pageLength;
+    if (this.marginleft - pageLength < ((this.categoryitems.length * -itemLength) + pageLength)) {
+      this.marginleft = (this.categoryitems.length * -itemLength) + pageLength;
     } else {
       this.marginleft -= pageLength;
     }

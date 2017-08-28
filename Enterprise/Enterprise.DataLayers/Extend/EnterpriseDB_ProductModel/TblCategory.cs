@@ -14,13 +14,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 return true;
             return false;
         }
-        public static int InsertCategory(string categoryName, ProductContext context)
+        public static int InsertCategory(TblCategory tblCategory, ProductContext context)
         {
-            context.Add(new TblCategory
-            {
-                CategoryId = Guid.NewGuid().ToString(),
-                CategoryName = categoryName
-            });
+            context.Add(tblCategory);
             return context.SaveChanges();
         }
         public static TblCategory GetTblCategoryByName(string categoryName, ProductContext context)

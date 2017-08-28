@@ -3,10 +3,10 @@
     <div class="ibox">
       <div class="ibox-content product-box">
         <div class="product-imitation">
-          <img class="product-category-image" src="img/icons/productimage.png">
+          <img class="product-category-image" [src]="productCategory.categoryImageUrl">
         </div>
         <div class="product-desc">
-          <a href="#" class="product-name text-center">{{productCategory}}</a>
+          <a href="#" class="product-name text-center">{{productCategory.categoryName}}</a>
         </div>
       </div>
     </div>

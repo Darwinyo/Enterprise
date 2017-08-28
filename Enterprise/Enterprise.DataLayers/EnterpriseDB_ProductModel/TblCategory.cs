@@ -12,6 +12,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 
         public string CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public string CategoryImageUrl { get; set; }
 
         public ICollection<TblProductCategory> TblProductCategory { get; set; }
     }

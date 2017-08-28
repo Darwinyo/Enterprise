@@ -38,6 +38,10 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasColumnName("Category_Name")
                     .HasMaxLength(200)
                     .IsUnicode(false);
+                entity.Property(e => e.CategoryImageUrl)
+                    .IsRequired()
+                    .HasColumnName("Category_Image_Url")
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<TblProduct>(entity =>

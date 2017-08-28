@@ -33,7 +33,7 @@ namespace Enterprise.API.Controllers.Product
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]object value)
         {
             PB.CheckAndInsertCategory(value, _context);
         }
