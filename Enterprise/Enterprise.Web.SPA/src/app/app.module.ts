@@ -1,3 +1,5 @@
+import { PeriodeService } from './services/periode/periode.service';
+import { PeriodeEditorComponent } from './containers/periode-editor/periode-editor.component';
 import { CategoryService } from './services/category/category.service';
 import { CityService } from './services/city/city.service';
 import { ProductEditorComponent } from './containers/product-editor/product-editor.component';
@@ -57,6 +59,7 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     ProductInfoImagesComponent,
     ProductInfoDescriptionComponent,
     ProductEditorComponent,
+    PeriodeEditorComponent,
 
     ErrorNotFoundComponent
   ],
@@ -66,7 +69,7 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     FormsModule,
     AppRouteModule
   ],
-  providers: [ProductService,CityService,CategoryService],
+  providers: [ProductService, CityService, CategoryService, PeriodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

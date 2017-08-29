@@ -9,10 +9,10 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         {
             TblProductCategory = new HashSet<TblProductCategory>();
             TblProductHot = new HashSet<TblProductHot>();
+            TblProductImage = new HashSet<TblProductImage>();
             TblProductRecommended = new HashSet<TblProductRecommended>();
             TblProductSpecs = new HashSet<TblProductSpecs>();
             TblProductVariations = new HashSet<TblProductVariations>();
-            TblProductImage = new HashSet<TblProductImage>();
         }
 
         public string ProductId { get; set; }
@@ -27,9 +27,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 
         public ICollection<TblProductCategory> TblProductCategory { get; set; }
         public ICollection<TblProductHot> TblProductHot { get; set; }
+        public ICollection<TblProductImage> TblProductImage { get; set; }
         public ICollection<TblProductRecommended> TblProductRecommended { get; set; }
         public ICollection<TblProductSpecs> TblProductSpecs { get; set; }
         public ICollection<TblProductVariations> TblProductVariations { get; set; }
-        public ICollection<TblProductImage> TblProductImage { get; set; }
     }
 }

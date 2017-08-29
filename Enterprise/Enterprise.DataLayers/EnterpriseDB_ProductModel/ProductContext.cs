@@ -15,7 +15,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         public virtual DbSet<TblProductSpecs> TblProductSpecs { get; set; }
         public virtual DbSet<TblProductVariations> TblProductVariations { get; set; }
 
-        public ProductContext(DbContextOptions<ProductContext> context):base(context)
+        public ProductContext(DbContextOptions<ProductContext> dbContextOptions):base(dbContextOptions)
         {
 
         }
@@ -33,14 +33,15 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .IsUnicode(false)
                     .ValueGeneratedNever();
 
+                entity.Property(e => e.CategoryImageUrl)
+                    .IsRequired()
+                    .HasColumnName("Category_Image_Url")
+                    .IsUnicode(false);
+
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
                     .HasColumnName("Category_Name")
                     .HasMaxLength(200)
-                    .IsUnicode(false);
-                entity.Property(e => e.CategoryImageUrl)
-                    .IsRequired()
-                    .HasColumnName("Category_Image_Url")
                     .IsUnicode(false);
             });
 
@@ -70,13 +71,11 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ProductPrice)
-                    .HasColumnName("Product_Price")
-                    .HasColumnType("decimal(18, 0)");
+                entity.Property(e => e.ProductPrice).HasColumnName("Product_Price");
 
                 entity.Property(e => e.ProductRating)
                     .HasColumnName("Product_Rating")
-                    .HasColumnType("decimal(18, 0)");
+                    .HasColumnType("decimal(18, 1)");
 
                 entity.Property(e => e.ProductReview).HasColumnName("Product_Review");
 
@@ -126,8 +125,6 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 
                 entity.ToTable("Tbl_Product_Hot");
 
-                entity.HasIndex(e => e.ProductId);
-
                 entity.Property(e => e.PHotId)
                     .HasColumnName("P_Hot_Id")
                     .HasMaxLength(36)
@@ -171,20 +168,18 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                     .HasMaxLength(36)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ProductImageUrl)
-                    .IsRequired()
-                    .HasColumnName("Product_Image_Url")
-                    .IsUnicode(false);
-
                 entity.Property(e => e.ProductImageName)
                     .IsRequired()
                     .HasColumnName("Product_Image_Name")
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ProductImageSize)
+                entity.Property(e => e.ProductImageSize).HasColumnName("Product_Image_Size");
+
+                entity.Property(e => e.ProductImageUrl)
                     .IsRequired()
-                    .HasColumnName("Product_Image_Size");
+                    .HasColumnName("Product_Image_Url")
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.TblProductImage)
@@ -198,8 +193,6 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PRecommendId);
 
                 entity.ToTable("Tbl_Product_Recommended");
-
-                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PRecommendId)
                     .HasColumnName("P_Recommend_Id")
@@ -231,8 +224,6 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PSpecId);
 
                 entity.ToTable("Tbl_Product_Specs");
-
-                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PSpecId)
                     .HasColumnName("P_Spec_Id")
@@ -270,8 +261,6 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.HasKey(e => e.PVariationId);
 
                 entity.ToTable("Tbl_Product_Variations");
-
-                entity.HasIndex(e => e.ProductId);
 
                 entity.Property(e => e.PVariationId)
                     .HasColumnName("P_Variation_Id")

@@ -6,14 +6,15 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
 {
     public partial class HelperContext : DbContext
     {
+        public virtual DbSet<TblCity> TblCity { get; set; }
+        public virtual DbSet<TblCountry> TblCountry { get; set; }
+        public virtual DbSet<TblPeriode> TblPeriode { get; set; }
+
         public HelperContext(DbContextOptions<HelperContext> dbContextOptions):base(dbContextOptions)
         {
 
         }
-        public virtual DbSet<TblCity> TblCity { get; set; }
-        public virtual DbSet<TblCountry> TblCountry { get; set; }
-        public virtual DbSet<TblPeriode> TblPeriode { get; set; }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TblCity>(entity =>

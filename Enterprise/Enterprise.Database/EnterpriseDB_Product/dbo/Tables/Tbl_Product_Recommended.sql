@@ -9,7 +9,8 @@
 
 
 
+
+
 GO
-CREATE NONCLUSTERED INDEX [IX_Tbl_Product_Recommended_Product_Id]
-    ON [dbo].[Tbl_Product_Recommended]([Product_Id] ASC);
+
 

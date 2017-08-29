@@ -1,0 +1,3 @@
+delete from dbo.Tbl_Product_Hot
+delete from dbo.Tbl_Product_Recommended
+delete from EnterpriseDB_Helper.dbo.Tbl_Periode
