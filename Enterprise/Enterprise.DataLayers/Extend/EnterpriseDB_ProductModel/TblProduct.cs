@@ -20,5 +20,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         {
             return context.TblProduct.Where(x => x.ProductId == ProductId).FirstOrDefault();
         }
+        public static List<TblProduct> GetListProductByListString(List<string> listProductId,ProductContext context)
+        {
+            return context.TblProduct.Where(x => listProductId.Contains(x.ProductId)).ToList();
+        }
     }
 }

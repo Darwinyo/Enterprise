@@ -1,3 +1,5 @@
+import { RecommendedProductService } from './services/recommended-product/recommended-product.service';
+import { HotProductService } from './services/hot-product/hot-product.service';
 import { PeriodeService } from './services/periode/periode.service';
 import { PeriodeEditorComponent } from './containers/periode-editor/periode-editor.component';
 import { CategoryService } from './services/category/category.service';
@@ -69,7 +71,14 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     FormsModule,
     AppRouteModule
   ],
-  providers: [ProductService, CityService, CategoryService, PeriodeService],
+  providers: [
+    ProductService,
+    CityService,
+    CategoryService,
+    PeriodeService,
+    HotProductService,
+    RecommendedProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,5 +17,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
                  , tblPeriode.PeriodeStartDate
                  , tblPeriode.PeriodeEndDate);
         }
+        public static string GetPeriodeId(DateTime dateTime,HelperContext context)
+        {
+            return context.TblPeriode.Where(x => x.PeriodeStartDate <= dateTime && x.PeriodeEndDate >= dateTime).FirstOrDefault().PeriodeId;
+        }
     }
 }

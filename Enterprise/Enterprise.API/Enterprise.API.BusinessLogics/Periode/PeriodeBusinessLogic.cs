@@ -25,5 +25,12 @@ namespace Enterprise.API.BusinessLogics.Periode
             }
             return false;
         }
+        public static string GetPeriodeId(string dateTime, HM.HelperContext context)
+        {
+            DateTime date;
+            if (DateTime.TryParse(dateTime, out date))
+                return HM.TblPeriode.GetPeriodeId(date, context);
+            return null;
+        }
     }
 }

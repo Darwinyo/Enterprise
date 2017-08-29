@@ -19,14 +19,13 @@ export class FilterProductComponent implements OnInit {
   }
   fetchFilters() {
     for (let i = 0; i < 5; i++) {
-      let filterProductModel: FilterProductModel = <FilterProductModel>{};
-      let filterarray: FilterModel[] = [];
+      const filterProductModel: FilterProductModel = <FilterProductModel>{};
+      const filterarray: FilterModel[] = [];
       for (let x = 0; x < 10; x++) {
         filterarray.push(<FilterModel>{
           checked: Math.round(Math.random()) === 1,
           filter: 'filter ' + i + ' ' + x
         });
-        console.log(filterarray);
       }
       filterProductModel.category = 'Category ' + i;
       filterProductModel.filterarrays = filterarray;

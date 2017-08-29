@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PeriodeService {
-    urlPeriodeController = 'http://localhost:63853/api/periode'
+    urlPeriodeController = 'http://localhost:63853/api/periode';
     constructor(private http: Http) { }
     CreateNewPeriode(periodeModel: PeriodeModel) {
         const headers: Headers = new Headers();
@@ -17,5 +17,10 @@ export class PeriodeService {
         return this.http.post(this.urlPeriodeController, periodeModel, { headers: headers }).map(
             (result) => result.json()
         )
-    }
+    };
+    GetCurrentPeriodeId(dateTime: string): Observable<string> {
+        return this.http.get(this.urlPeriodeController + '/' + dateTime).map(
+            (result) => result.json()
+        )
+    };
 }

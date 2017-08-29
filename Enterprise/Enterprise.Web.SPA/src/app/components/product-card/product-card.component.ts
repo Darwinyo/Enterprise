@@ -29,7 +29,7 @@ export class ProductCardComponent implements OnInit {
     this.productname = productCardModel.productname;
     this.favorites = productCardModel.favorites;
     this.reviews = productCardModel.reviews;
-    this.price=productCardModel.price;
+    this.price = productCardModel.price;
   }
   InitStars(rateStar) {
     for (let i = 1; i < 6; i++) {
