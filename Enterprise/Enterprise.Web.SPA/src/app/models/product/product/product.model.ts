@@ -6,8 +6,12 @@ export interface ProductModel {
     productName: string;
     productPrice: number;
     productStock: number;
+    productRating: number;
+    productFavorite: number;
+    productReview: number;
     productDescription: string;
     productLocation: number;
+    productFrontImage: string;
     TblProductCategory: ProductCategoryModel[];
     TblProductSpecs: ProductSpecsModel[];
     TblProductVariations: ProductVariationModel[];

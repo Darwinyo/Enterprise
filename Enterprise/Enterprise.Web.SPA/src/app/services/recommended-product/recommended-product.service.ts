@@ -12,7 +12,7 @@ export class RecommendedProductService {
     urlRecommendedProductController = 'http://localhost:63853/api/recommendedproduct';
     constructor(private http: Http) { }
 
-    GetRecommendedProductByPeriodeId(periodeId: string): Observable<ProductModel> {
+    GetRecommendedProductByPeriodeId(periodeId: string): Observable<ProductModel[]> {
         return this.http.get(this.urlRecommendedProductController + '/' + periodeId).map(
             (result) => result.json()
         )

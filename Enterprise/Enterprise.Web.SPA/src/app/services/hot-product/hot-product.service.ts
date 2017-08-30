@@ -11,7 +11,7 @@ import { ProductModel } from '../../models/product/product/product.model';
 export class HotProductService {
     urlHotProductController = 'http://localhost:63853/api/hotproduct';
     constructor(private http: Http) { }
-    GetHotProductByPeriodeId(periodeId: string): Observable<ProductModel> {
+    GetHotProductByPeriodeId(periodeId: string): Observable<ProductModel[]> {
         return this.http.get(this.urlHotProductController + '/' + periodeId).map(
             (result) => result.json()
         )

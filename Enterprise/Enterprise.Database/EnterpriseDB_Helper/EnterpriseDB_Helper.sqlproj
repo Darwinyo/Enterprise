@@ -59,10 +59,12 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Tbl_Country.sql" />
     <Build Include="dbo\Tables\Tbl_City.sql" />
     <Build Include="dbo\Tables\Tbl_Periode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Generate_Periode.sql" />
   </ItemGroup>
 </Project>

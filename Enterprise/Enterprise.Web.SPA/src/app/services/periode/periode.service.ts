@@ -20,7 +20,7 @@ export class PeriodeService {
     };
     GetCurrentPeriodeId(dateTime: string): Observable<string> {
         return this.http.get(this.urlPeriodeController + '/' + dateTime).map(
-            (result) => result.json()
+            (result) => result.text()
         )
     };
 }

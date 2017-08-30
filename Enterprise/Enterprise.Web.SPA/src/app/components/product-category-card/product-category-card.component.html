@@ -3,7 +3,9 @@
     <div class="ibox">
       <div class="ibox-content product-box">
         <div class="product-imitation">
-          <img class="product-category-image" [src]="productCategory.categoryImageUrl">
+          <div class="product-category-image-holder">
+              <img class="product-category-image" [src]="productCategory.categoryImageUrl">
+          </div>
         </div>
         <div class="product-desc">
           <a href="#" class="product-name text-center">{{productCategory.categoryName}}</a>

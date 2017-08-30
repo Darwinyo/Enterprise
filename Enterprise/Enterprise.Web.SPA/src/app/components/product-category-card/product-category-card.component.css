@@ -1,6 +1,4 @@
 .product-category-image{
-    height: 150px;
-    width: 100%;
 }
 .product-category-card{
     padding-right: 0px;
@@ -8,4 +6,9 @@
     padding-left: 0px;
     padding-top: 0px;
     width: 150px;
+}
+.product-category-image-holder{
+    height: 150px;
+    display: flex;
+    align-items: center;    
 }

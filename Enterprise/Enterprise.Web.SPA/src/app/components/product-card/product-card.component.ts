@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() productCard: ProductCardModel;
   @Input() isGrid;
+  imageUrl: string;
   price: number;
   ratestar: number;
   productname: string;
@@ -30,6 +31,7 @@ export class ProductCardComponent implements OnInit {
     this.favorites = productCardModel.favorites;
     this.reviews = productCardModel.reviews;
     this.price = productCardModel.price;
+    this.imageUrl=productCardModel.imageUrl;
   }
   InitStars(rateStar) {
     for (let i = 1; i < 6; i++) {

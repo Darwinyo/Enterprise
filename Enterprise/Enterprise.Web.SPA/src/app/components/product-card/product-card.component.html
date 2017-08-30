@@ -3,7 +3,10 @@
     <div class="ibox padding-control">
       <div class="ibox-content product-box">
         <div class="product-imitation">
-          <img class="product-image" src="img/icons/productimage.png">
+          <div class="product-image-container">
+
+            <img class="product-image" [src]="imageUrl">
+          </div>
         </div>
         <div class="product-desc">
           <a href="#" class="product-name">{{productname}}</a>

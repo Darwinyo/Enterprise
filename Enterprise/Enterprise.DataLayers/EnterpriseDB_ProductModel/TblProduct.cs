@@ -24,6 +24,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         public int ProductReview { get; set; }
         public int ProductStock { get; set; }
         public string ProductDescription { get; set; }
+        public string ProductFrontImage { get; set; }
 
         public ICollection<TblProductCategory> TblProductCategory { get; set; }
         public ICollection<TblProductHot> TblProductHot { get; set; }

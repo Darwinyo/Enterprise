@@ -22,7 +22,13 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         }
         public static List<TblProduct> GetListProductByListString(List<string> listProductId,ProductContext context)
         {
-            return context.TblProduct.Where(x => listProductId.Contains(x.ProductId)).ToList();
+            var x= context.TblProduct.Where(z => listProductId.Contains(z.ProductId)).ToList();
+            x.ForEach(z =>
+            {
+                z.TblProductHot = null;
+                z.TblProductRecommended = null;
+            });
+            return x;
         }
     }
 }

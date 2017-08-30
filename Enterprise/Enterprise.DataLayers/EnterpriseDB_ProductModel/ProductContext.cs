@@ -60,6 +60,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 entity.Property(e => e.ProductDescription)
                     .HasColumnName("Product_Description")
                     .IsUnicode(false);
+                entity.Property(e => e.ProductFrontImage)
+                    .HasColumnName("Product_Front_Image")
+                    .IsUnicode(false);
 
                 entity.Property(e => e.ProductFavorite).HasColumnName("Product_Favorite");
 

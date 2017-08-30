@@ -1,9 +1,13 @@
 .PriceFont{
     color: #ff5722;
 }
-.product-image{
-    width: 100%;
+.product-image-container{
     height: 200px;
+    align-items: center;
+    display: flex;
+    padding: 20px;    
+}
+.product-image{
 }
 .product-card{
     width: 200px;
