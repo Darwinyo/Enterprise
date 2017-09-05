@@ -1,12 +1,12 @@
 <div class="product-detail-upper-page">
     <div class="product-detail-img-container">
-        <app-product-info-images></app-product-info-images>
+        <app-product-info-images #productImage></app-product-info-images>
     </div>
     <div class="product-detail-container">
-        <app-product-info-details [productDetailsModel]="ProductItem"></app-product-info-details>
+        <app-product-info-details #productDetails></app-product-info-details>
     </div>
 </div>
 
 <div class="product-detail-description-container">
-    <app-product-info-description></app-product-info-description>
+    <app-product-info-description #productDescription></app-product-info-description>
 </div>

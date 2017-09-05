@@ -12,5 +12,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
             context.TblProductVariations.AddRange(listVariation);
             return context.SaveChanges();
         }
+        public static List<TblProductVariations> GetProductVariationByProductId(string productId,ProductContext context)
+        {
+            return context.TblProductVariations.Where(x=>x.ProductId==productId).ToList();
+        }
     }
 }

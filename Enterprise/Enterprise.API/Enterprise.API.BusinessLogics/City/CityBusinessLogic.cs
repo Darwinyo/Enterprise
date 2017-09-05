@@ -11,5 +11,9 @@ namespace Enterprise.API.BusinessLogics.City
         {
             return HM.TblCity.GetListOfCity(context);
         }
+        public static string GetCityById(int cityId, HM.HelperContext context)
+        {
+            return HM.TblCity.GetCityById(cityId, context);
+        }
     }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProductCardModel } from './../../models/product-card/product-card.model';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() productCard: ProductCardModel;
   @Input() isGrid;
+  productId: string;
   imageUrl: string;
   price: number;
   ratestar: number;
@@ -17,7 +19,7 @@ export class ProductCardComponent implements OnInit {
   reviews: number;
   stars: string[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.stars = [];
   }
 
@@ -26,12 +28,13 @@ export class ProductCardComponent implements OnInit {
     this.InitStars(this.ratestar);
   }
   MapData(productCardModel: ProductCardModel) {
+    this.productId = productCardModel.productId;
     this.ratestar = productCardModel.ratestar;
     this.productname = productCardModel.productname;
     this.favorites = productCardModel.favorites;
     this.reviews = productCardModel.reviews;
     this.price = productCardModel.price;
-    this.imageUrl=productCardModel.imageUrl;
+    this.imageUrl = productCardModel.imageUrl;
   }
   InitStars(rateStar) {
     for (let i = 1; i < 6; i++) {
@@ -43,5 +46,8 @@ export class ProductCardComponent implements OnInit {
         this.stars[i] = 'img/icons/nonestar.png';
       }
     }
+  }
+  RedirectToProductDetails() {
+    this.router.navigate(['product-details', this.productId])
   }
 }

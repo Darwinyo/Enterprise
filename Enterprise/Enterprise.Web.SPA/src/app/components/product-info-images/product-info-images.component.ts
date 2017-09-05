@@ -1,3 +1,4 @@
+import { ProductImageModel } from './../../models/product/product-image/product-image.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,22 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-info-images.component.css']
 })
 export class ProductInfoImagesComponent implements OnInit {
-  imagesGalery: string[];
+  imagesGalery: ProductImageModel[];
   imageSelected: string;
   constructor() {
-    this.imageSelected = 'img/product/ryzen5.jpeg';
-    this.imagesGalery = [
-      'img/product/ryzen5.jpeg',
-      'img/product/inteli7.jpeg',
-      'img/product/inteli7.jpeg',
-      'img/product/inteli7.jpeg'];
+    this.imageSelected = '';
   }
 
   ngOnInit() {
-
   }
-  itemSelected(image: string): boolean {
-    if (this.imageSelected === image) {
+  populateImages(productImageModel: ProductImageModel[]) {
+    this.imagesGalery = productImageModel;
+    this.imageSelected = this.imagesGalery[0].productImageUrl;
+  }
+  selectImage(image: ProductImageModel) {
+    this.imageSelected = image.productImageUrl;
+  }
+  itemSelected(image: ProductImageModel): boolean {
+    if (this.imageSelected === image.productImageUrl) {
       return true;
     } else {
       return false;

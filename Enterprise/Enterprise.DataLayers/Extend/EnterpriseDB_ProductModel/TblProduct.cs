@@ -16,7 +16,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         {
             return context.TblProduct.ToList();
         }
-        public static TblProduct GetListProductById(string ProductId, ProductContext context)
+        public static TblProduct GetProductById(string ProductId, ProductContext context)
         {
             return context.TblProduct.Where(x => x.ProductId == ProductId).FirstOrDefault();
         }

@@ -10,13 +10,13 @@
   <div class="product-info-item">
     <div class="product-info-description">
       <span>
-        {{description}}
+        {{descriptions}}
       </span>
     </div>
     <div class="product-info-table">
       <div class="product-info-table-row" *ngFor="let detail of detailsProduct">
-        <div class="product-info-table-head">{{detail.title}}</div>
-        <div class="product-info-table-content">{{detail.value}}</div>
+        <div class="product-info-table-head">{{detail.productSpecTitle}}</div>
+        <div class="product-info-table-content">{{detail.productSpecValue}}</div>
       </div>
     </div>
   </div>

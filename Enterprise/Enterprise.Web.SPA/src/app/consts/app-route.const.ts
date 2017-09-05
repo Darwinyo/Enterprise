@@ -19,7 +19,7 @@ import { ErrorNotFoundComponent } from '../containers/error-not-found/error-not-
 export const appRoutes: Routes = [
     { path: 'index', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, pathMatch: 'full' },
-    { path: 'product-details', component: ProductDetailsComponent, pathMatch: 'full' },
+    { path: 'product-details/:id', component: ProductDetailsComponent, pathMatch: 'full' },
     { path: 'product-editor', component: ProductEditorComponent, pathMatch: 'full' },
     { path: 'periode-editor', component: PeriodeEditorComponent, pathMatch: 'full' },
     // { path: 'dashboard', loadChildren: '../modules/dashboard/dashboard.module#DashboardModule'},

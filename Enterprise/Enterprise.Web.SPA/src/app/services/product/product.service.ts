@@ -22,4 +22,9 @@ export class ProductService {
         const headers: Headers = new Headers();
         return this.http.get(this.urlProductController).map(result => result.json());
     }
+    GetProductById(productId: string) {
+        return this.http.get(this.urlProductController + '/' + productId).map(
+            (result) => result.json()
+        )
+    }
 }

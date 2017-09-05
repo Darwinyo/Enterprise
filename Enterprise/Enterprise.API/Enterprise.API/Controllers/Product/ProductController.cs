@@ -30,7 +30,7 @@ namespace Enterprise.API.Controllers.Product
         [HttpGet("{id}")]
         public PM.TblProduct Get(string id)
         {
-            return PB.GetListProductById(id, _context);
+            return PB.GetProductById(id, _context);
         }
 
         // POST api/values

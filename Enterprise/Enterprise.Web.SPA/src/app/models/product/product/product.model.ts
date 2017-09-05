@@ -3,6 +3,7 @@ import { ProductVariationModel } from './../product-variations/product-variation
 import { ProductSpecsModel } from './../product-specs/product-specs.model';
 import { ProductCategoryModel } from './../product-category/product-category.model';
 export interface ProductModel {
+    productId: string;
     productName: string;
     productPrice: number;
     productStock: number;

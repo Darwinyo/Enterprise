@@ -29,6 +29,7 @@ export class ListProductCardComponent implements OnInit {
       }
       this.products.push(
         <ProductCardModel>{
+          productId: item.productId,
           productname: item.productName,
           price: item.productPrice,
           imageUrl: item.productFrontImage,

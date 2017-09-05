@@ -107,9 +107,9 @@ namespace Enterprise.API.BusinessLogics.Product
         {
             return PM.TblProduct.GetAllListProduct(context);
         }
-        public static PM.TblProduct GetListProductById(string ProductId,PM.ProductContext context)
+        public static PM.TblProduct GetProductById(string ProductId,PM.ProductContext context)
         {
-            return PM.TblProduct.GetListProductById(ProductId, context);
+            return PM.TblProduct.GetProductById(ProductId, context);
         }
     }
 }

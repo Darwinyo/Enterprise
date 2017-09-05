@@ -11,5 +11,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
         {
             return context.TblCity.Where(x=>x.CountryId==2).ToList();
         }
+        public static string GetCityById(int cityId,HelperContext context)
+        {
+            return context.TblCity.Where(x => x.CityId == cityId).FirstOrDefault().CityName;
+        }
     }
 }

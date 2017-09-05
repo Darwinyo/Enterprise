@@ -1,4 +1,5 @@
 export interface ProductCardModel {
+    productId: string;
     imageUrl: string;
     ratestar: number;
     productname: string;

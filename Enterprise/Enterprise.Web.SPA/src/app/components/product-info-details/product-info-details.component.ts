@@ -7,7 +7,6 @@ import { ProductInfoDetailsModel } from './../../models/product-info-details/pro
   styleUrls: ['./product-info-details.component.css']
 })
 export class ProductInfoDetailsComponent implements OnInit {
-  @Input() productDetailsModel: ProductInfoDetailsModel;
   productTitle: string;
   productPrice: number;
   stars: string[];
@@ -24,7 +23,6 @@ export class ProductInfoDetailsComponent implements OnInit {
   locations: string[];
   deliveryOptions: string[];
   constructor() {
-    this.productDetailsModel = <ProductInfoDetailsModel>{};
     this.productTitle = '';
     this.productPrice = 0;
     this.stars = [];
@@ -45,8 +43,6 @@ export class ProductInfoDetailsComponent implements OnInit {
   ngOnInit() {
     this.locations = ['Beijing', 'Shanghai', 'Xiamen', 'Suzhou', 'Nanjing', 'Hongkong', 'Taiwan', 'HeiLongJiang', 'GuangZhou'];
     this.deliveryOptions = ['JNE', 'Cargo', 'Airplane'];
-    this.fetchData(this.productDetailsModel);
-    this.InitStars(this.ratestar);
   }
   InitStars(rateStar) {
     for (let i = 1; i < 6; i++) {
@@ -59,7 +55,7 @@ export class ProductInfoDetailsComponent implements OnInit {
       }
     }
   }
-  fetchData(productInfoDetailModel: ProductInfoDetailsModel) {
+  InitData(productInfoDetailModel: ProductInfoDetailsModel) {
     this.productTitle = productInfoDetailModel.productTitle;
     this.productPrice = productInfoDetailModel.productPrice;
     this.ratestar = productInfoDetailModel.ratestar;
@@ -67,6 +63,7 @@ export class ProductInfoDetailsComponent implements OnInit {
     this.location = productInfoDetailModel.location;
     this.variations = productInfoDetailModel.variations;
     this.stock = productInfoDetailModel.stock;
+    this.InitStars(this.ratestar);
   }
   deliverClick() {
     this.deliveryDropped = !this.deliveryDropped;

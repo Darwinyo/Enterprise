@@ -28,7 +28,7 @@ namespace Enterprise.API.Controllers.City
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return HB.GetCityById(id, _context);
         }
 
         // POST api/values

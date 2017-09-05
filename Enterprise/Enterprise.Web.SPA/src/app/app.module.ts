@@ -1,16 +1,4 @@
-import { RecommendedProductService } from './services/recommended-product/recommended-product.service';
-import { HotProductService } from './services/hot-product/hot-product.service';
-import { PeriodeService } from './services/periode/periode.service';
-import { PeriodeEditorComponent } from './containers/periode-editor/periode-editor.component';
-import { CategoryService } from './services/category/category.service';
-import { CityService } from './services/city/city.service';
-import { ProductEditorComponent } from './containers/product-editor/product-editor.component';
-import { ProductService } from './services/product/product.service';
-import { ProductInfoDescriptionComponent } from './components/product-info-description/product-info-description.component';
 
-import { ProductInfoImagesComponent } from './components/product-info-images/product-info-images.component';
-import { ProductInfoDetailsComponent } from './components/product-info-details/product-info-details.component';
-import { ProductDetailsComponent } from './containers/product-details/product-details.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -34,12 +22,29 @@ import { HomeComponent } from './containers/home/home.component';
 import { GridProductComponent } from './components/grid-product/grid-product.component';
 import { SortProductComponent } from './components/sort-product/sort-product.component';
 import { FilterProductTailComponent } from './components/filter-product-tail/filter-product-tail.component';
+import { ProductInfoDescriptionComponent } from './components/product-info-description/product-info-description.component';
+import { ProductInfoImagesComponent } from './components/product-info-images/product-info-images.component';
+import { ProductInfoDetailsComponent } from './components/product-info-details/product-info-details.component';
+import { ProductDetailsComponent } from './containers/product-details/product-details.component';
+import { PeriodeEditorComponent } from './containers/periode-editor/periode-editor.component';
+import { ProductEditorComponent } from './containers/product-editor/product-editor.component';
 
 // Containers
 import { ErrorNotFoundComponent } from './containers/error-not-found/error-not-found.component';
 
 // Routes
 import { AppRouteModule } from './routes/app-route/app-route.module';
+
+// Services
+import { ProductImagesService } from './services/product-images/product-images.service';
+import { VariationsService } from './services/variations/variations.service';
+import { RecommendedProductService } from './services/recommended-product/recommended-product.service';
+import { HotProductService } from './services/hot-product/hot-product.service';
+import { PeriodeService } from './services/periode/periode.service';
+import { CategoryService } from './services/category/category.service';
+import { CityService } from './services/city/city.service';
+import { ProductService } from './services/product/product.service';
+import { ProductSpecsService } from './services/product-specs/product-specs.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +82,10 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     CategoryService,
     PeriodeService,
     HotProductService,
-    RecommendedProductService
+    RecommendedProductService,
+    VariationsService,
+    ProductImagesService,
+    ProductSpecsService
   ],
   bootstrap: [AppComponent]
 })

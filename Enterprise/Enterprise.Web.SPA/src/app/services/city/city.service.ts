@@ -14,4 +14,7 @@ export class CityService {
     GetListOfCity(): Observable<CityModel[]> {
         return this.http.get(this.urlCityController).map(result => result.json());
     }
+    GetCityById(cityId: number) {
+        return this.http.get(this.urlCityController + '/' + cityId).map(result => result.text());
+    }
 }
