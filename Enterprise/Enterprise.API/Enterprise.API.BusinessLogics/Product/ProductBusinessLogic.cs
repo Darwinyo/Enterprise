@@ -111,5 +111,9 @@ namespace Enterprise.API.BusinessLogics.Product
         {
             return PM.TblProduct.GetProductById(ProductId, context);
         }
+        public static void AddReview(string productId, ProductContext context)
+        {
+            PM.TblProduct.AddReview(productId, context);
+        }
     }
 }

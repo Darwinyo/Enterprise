@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Enterprise.DataLayers.Models;
 
 namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 {

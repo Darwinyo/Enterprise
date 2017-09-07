@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
 {
@@ -16,9 +17,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
         {
             return context.TblProduct.ToList();
         }
-        public static TblProduct GetProductById(string ProductId, ProductContext context)
+        public static TblProduct GetProductById(string productId, ProductContext context)
         {
-            return context.TblProduct.Where(x => x.ProductId == ProductId).FirstOrDefault();
+            return context.TblProduct.Where(x => x.ProductId == productId).FirstOrDefault();
         }
         public static List<TblProduct> GetListProductByListString(List<string> listProductId,ProductContext context)
         {
@@ -29,6 +30,11 @@ namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
                 z.TblProductRecommended = null;
             });
             return x;
+        }
+        public static void AddReview(string productId,ProductContext context)
+        {
+            context.Database.ExecuteSqlCommand("EXEC dbo.sp_AddReview @productId={0}",
+                productId);
         }
     }
 }

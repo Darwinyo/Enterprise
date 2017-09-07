@@ -9,10 +9,17 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="mongocsharpdriver" Version="2.4.4" />
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Extend\EnterpriseDB_UserModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
+    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Models\Enterprise.API.Models.csproj" />
   </ItemGroup>
 
 </Project>
