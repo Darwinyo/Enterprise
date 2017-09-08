@@ -27,7 +27,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
         {
             get
             {
-                return _database.GetCollection<TblProductComments>(Enum.GetName(typeof(EH.Enums.MongoDBCollectionEnum), EH.Enums.MongoDBCollectionEnum.Tbl_Product_Comments));
+                return _database.GetCollection<TblProductComments>(EH.Consts.MongoCollections.Tbl_Product_Comments);
             }
         }
     }

@@ -1,5 +1,34 @@
 # Multi Platform Apps
 
+These is Tech Stack that I Use To Build EnterpriseApp
+
+-Database
+--MSSQL
+--MongoDB
+--Firebase(Near Future)
+
+-Caching System
+--Redis
+
+-Real-Time
+--SignalR(.NetCore)
+
+-DataLayer
+--Entity Framework(.NetCore)
+--Linq
+
+-API (.NetCore)
+
+-MVC (.NetCore)
+
+-Angular 4
+
+-State Management
+--Redux(ngrx/store) (Near Future)
+
+-Etc
+
+
 MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
 
 

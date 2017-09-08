@@ -14,6 +14,8 @@ using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.DataLayers.EnterpriseDB_UserModel;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.API.Models.Settings;
+using Enterprise.SignalR.Hubs;
+using EH = Enterprise.API.Helpers;
 
 namespace Enterprise.API
 {
@@ -59,7 +61,10 @@ namespace Enterprise.API
             app.UseCors(builder =>
             builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
-            app.UseSignalR(route => { });
+            app.UseSignalR(route =>
+            {
+                route.MapHub<ChatHub>(EH.Consts.ServerHubPaths.chat);
+            });
         }
     }
 }
