@@ -30,7 +30,7 @@ namespace Enterprise.API
         {
             services.AddCors();
             services.AddMvc();
-
+            services.AddSignalR();
             services.AddDistributedRedisCache(option =>
             {
                 option.Configuration = "localhost";
@@ -59,6 +59,7 @@ namespace Enterprise.API
             app.UseCors(builder =>
             builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
+            app.UseSignalR(route => { });
         }
     }
 }
