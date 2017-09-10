@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Enterprise.DataLayers\Enterprise.DataLayers.csproj" />
+    <ProjectReference Include="..\..\Enterprise.Repository\Enterprise.Repository.csproj" />
   </ItemGroup>
 
 </Project>

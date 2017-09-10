@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using HM = Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using HB = Enterprise.API.BusinessLogics.Periode;
+using Enterprise.Services.Periode;
+using Enterprise.Services.Periode.Abstract;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Periode
@@ -12,10 +12,10 @@ namespace Enterprise.API.Controllers.Periode
     [Route("api/[controller]")]
     public class PeriodeController : Controller
     {
-        private readonly HM.HelperContext _context;
-        public PeriodeController(HM.HelperContext context)
+        private readonly IPeriodeService _periodeService;
+        public PeriodeController(IPeriodeService periodeService)
         {
-            _context = context;
+            _periodeService = periodeService;
         }
         // GET: api/values
         [HttpGet]
@@ -28,14 +28,15 @@ namespace Enterprise.API.Controllers.Periode
         [HttpGet("{id}")]
         public string Get(string id)
         {
-            return HB.PeriodeBusinessLogic.GetPeriodeId(id, _context);
+            return _periodeService.GetPeriodeId(id);
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]object value)
         {
-            HB.PeriodeBusinessLogic.CreatePeriode(value, _context);
+            _periodeService.InsertPeriode(value);
+            _periodeService.SavePeriode();
         }
 
         // PUT api/values/5

@@ -15,7 +15,21 @@ using Enterprise.DataLayers.EnterpriseDB_UserModel;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.API.Models.Settings;
 using Enterprise.SignalR.Hubs;
-using EH = Enterprise.API.Helpers;
+using Newtonsoft.Json.Serialization;
+using Enterprise.Repository.Abstract;
+using Enterprise.Repository.ProductRepository;
+using Enterprise.Repository.HelperRepository;
+using Enterprise.Repository.MongoRepository;
+using Enterprise.Services.Product.Abstract;
+using Enterprise.Services.Product;
+using Enterprise.Services.Mongo.Abstract;
+using Enterprise.Services.Mongo;
+using Enterprise.Services.City.Abstract;
+using Enterprise.Services.City;
+using Enterprise.Services.Periode.Abstract;
+using Enterprise.Services.Periode;
+using Enterprise.Services.ProductDetails.Abstract;
+using Enterprise.Services.ProductDetails;
 
 namespace Enterprise.API
 {
@@ -31,16 +45,23 @@ namespace Enterprise.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddMvc();
-            services.AddSignalR();
+            services.AddMvc().
+                AddJsonOptions(options =>
+                options.SerializerSettings.ContractResolver =
+                new DefaultContractResolver());
+
+            services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
+
+            #region session&caching
             services.AddDistributedRedisCache(option =>
             {
                 option.Configuration = "localhost";
                 option.InstanceName = "EnterpriseCache";
             });
-
             services.AddSession();
+            #endregion
 
+            #region dbcontext
             services.AddDbContext<ProductContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_Product")));
 
             services.AddDbContext<UserContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_User")));
@@ -52,6 +73,33 @@ namespace Enterprise.API
                 option.ConnectionString = Configuration.GetSection("MongoConnectionStrings:EnterpriseDB_Mongo:ConnectionString").Value;
                 option.Database = Configuration.GetSection("MongoConnectionStrings:EnterpriseDB_Mongo:Database").Value;
             });
+            #endregion
+
+            #region repository
+            services.AddScoped<ITblProductRepository, TblProductRepository>();
+            services.AddScoped<ITblProductCommentsRepository, TblProductCommentsRepository>();
+            services.AddScoped<ITblCategoryRepository, TblCategoryRepository>();
+            services.AddScoped<ITblCityRepository, TblCityRepository>();
+            services.AddScoped<ITblPeriodeRepository, TblPeriodeRepository>();
+            services.AddScoped<ITblProductHotRepository, TblProductHotRepository>();
+            services.AddScoped<ITblProductImageRepository, TblProductImageRepository>();
+            services.AddScoped<ITblProductRecommendedRepository, TblProductRecommendedRepository>();
+            services.AddScoped<ITblProductSpecsRepository, TblProductSpecsRepository>();
+            services.AddScoped<ITblProductVariationsRepository, TblProductVariationsRepository>();
+            #endregion
+
+            #region services
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductCommentService, ProductCommentService>();
+            services.AddScoped<IProductImageService, ProductImageService>();
+            services.AddScoped<IProductSpecsService, ProductSpecsService>();
+            services.AddScoped<IProductVariationService, ProductVariationService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IHotProductService, HotProductService>();
+            services.AddScoped<IRecommendedProductService, RecommendedProductService>();
+            services.AddScoped<ICityService, CityService>();
+            services.AddScoped<IPeriodeService, PeriodeService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,10 +109,7 @@ namespace Enterprise.API
             app.UseCors(builder =>
             builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
-            app.UseSignalR(route =>
-            {
-                route.MapHub<ChatHub>(EH.Consts.ServerHubPaths.chat);
-            });
+            app.UseSignalR();
         }
     }
 }

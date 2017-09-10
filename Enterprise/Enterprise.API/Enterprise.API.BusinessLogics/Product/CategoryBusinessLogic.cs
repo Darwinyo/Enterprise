@@ -1,29 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using System.Linq;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Newtonsoft.Json.Linq;
+using Enterprise.API.BusinessLogics.Product.Abstract;
+using Enterprise.Repository.Abstract;
+
 namespace Enterprise.API.BusinessLogics.Product
 {
-    public class CategoryBusinessLogic
+    public class CategoryBusinessLogic : ICategoryBusinessLogic
     {
-        public static bool CheckAndInsertCategory(object categoryObj, PM.ProductContext context)
+        public void CheckAndInsertCategory(object categoryObj, ITblCategoryRepository context)
         {
             if (categoryObj != null)
-                return false;
-            PM.TblCategory category = CreateCategory(categoryObj);
-            int res = 0;
-            if (PM.TblCategory.IsCategoryExists(category.CategoryName, context))
-                return true;
-            res = PM.TblCategory.InsertCategory(category, context);
-            if (res != 0)
-                return true;
-            return false;
+            {
+                TblCategory category = CreateCategory(categoryObj);
+                if (!IsCategoryExists(category.CategoryName, context))
+                    InsertCategory(category, context);
+            }
         }
-        public static PM.TblCategory CreateCategory(object categoryObj)
+        public TblCategory CreateCategory(object categoryObj)
         {
             JObject jObject = (JObject)categoryObj;
-            PM.TblCategory tblCategory = new PM.TblCategory
+            TblCategory tblCategory = new TblCategory
             {
                 CategoryId = Guid.NewGuid().ToString(),
                 CategoryImageUrl = jObject["categoryImageUrl"].ToString(),
@@ -31,15 +31,32 @@ namespace Enterprise.API.BusinessLogics.Product
             };
             return tblCategory;
         }
-        public static PM.TblCategory GetTblCategoryByName(string categoryName, PM.ProductContext context)
+        public TblCategory GetTblCategoryByName(string categoryName, ITblCategoryRepository context)
         {
-            if (CheckAndInsertCategory(categoryName, context))
-                return PM.TblCategory.GetTblCategoryByName(categoryName, context);
+            if (IsCategoryExists(categoryName,context))
+                return context.GetSingle(x=>x.CategoryName==categoryName);
             return null;
         }
-        public static List<PM.TblCategory> GetAllTblCategory(PM.ProductContext context)
+        public IEnumerable<TblCategory> GetAllTblCategory(ITblCategoryRepository context)
         {
-            return PM.TblCategory.GetAllTableCategory(context);
+            return context.GetAll();
+        }
+
+        public void InsertCategory(TblCategory entity, ITblCategoryRepository context)
+        {
+            context.Add(entity);
+        }
+
+        public bool IsCategoryExists(string categoryName, ITblCategoryRepository context)
+        {
+            if (context.FindBy(x => x.CategoryName == categoryName).Count() > 0)
+                return true;
+            return false;
+        }
+
+        public int SaveCategory(ITblCategoryRepository context)
+        {
+            return context.Commit();
         }
     }
 }

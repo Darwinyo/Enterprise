@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PB = Enterprise.API.BusinessLogics;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Services.Product;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Services.Product.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,10 +14,10 @@ namespace Enterprise.API.Controllers.Product
     [Route("api/[controller]")]
     public class HotProductController : Controller
     {
-        private readonly PM.ProductContext _context;
-        public HotProductController(PM.ProductContext context)
+        private readonly IHotProductService _hotProductService;
+        public HotProductController(IHotProductService hotProductService)
         {
-            _context = context;
+            _hotProductService = hotProductService;
         }
         // GET: api/values
         [HttpGet]
@@ -27,9 +28,9 @@ namespace Enterprise.API.Controllers.Product
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IEnumerable<PM.TblProduct> Get(string id)
+        public IEnumerable<TblProduct> Get(string id)
         {
-            return PB.Product.HotProductBusinessLogic.GetHotProductsByPeriodeId(id, _context);
+            return _hotProductService.GetHotProductsByPeriodeId(id);
         }
 
         // POST api/values

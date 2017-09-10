@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Repository.Abstract;
+
 namespace Enterprise.API.BusinessLogics.ProductDetails
 {
-    public class ProductImageBusinessLogic
+    public class ProductImageBusinessLogic:IProductImageBusinessLogic
     {
-        public static List<PM.TblProductImage> GetProductImageListByProductId(string productId, PM.ProductContext context)
+        public IEnumerable<TblProductImage> GetProductImageListByProductId(string productId, ITblProductImageRepository productImageRepository)
         {
             if (productId != string.Empty || productId != null)
-                return PM.TblProductImage.GetProductImageListByProductId(productId, context);
+                return productImageRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
             return null;
         }
     }

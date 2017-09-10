@@ -1,32 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Enterprise.API.BusinessLogics.Product.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.Product
 {
-    public class ProductBusinessLogic
+    public class ProductBusinessLogic : IProductBusinessLogic
     {
-        public static bool AddNewProduct(object obj, PM.ProductContext context)
+        public void AddNewProduct(object obj, ITblProductRepository context,ITblCategoryRepository categoryRepository)
         {
-            if (obj == null)
-                return false;
-            else
-            {
-                JObject jObject = (JObject)obj;
-                TblProduct product=CreateProductItem(jObject, context);
-                if (PM.TblProduct.AddNewProduct(product, context) != 0)
-                    return true;
-                return false;
-            }
-            
+            JObject jObject = (JObject)obj;
+            CategoryBusinessLogic categoryBusinessLogic = new CategoryBusinessLogic();
+            TblProduct product = CreateProductItem(jObject,categoryRepository,categoryBusinessLogic);
+            context.Add(product);
         }
-        public static TblProduct CreateProductItem(JObject jObject,ProductContext context)
+        public TblProduct CreateProductItem(JObject jObject, ITblCategoryRepository categoryRepository,CategoryBusinessLogic categoryBusinessLogic)
         {
-            PM.TblProduct product = new PM.TblProduct
+            TblProduct product = new TblProduct
             {
                 ProductId = Guid.NewGuid().ToString(),
                 ProductName = jObject["productName"].ToString(),
@@ -47,10 +39,10 @@ namespace Enterprise.API.BusinessLogics.Product
                     list.Add(new TblProductImage
                     {
                         PImageId = Guid.NewGuid().ToString(),
-                        Product=product,
-                        ProductImageName=item["productImageName"].ToString(),
+                        Product = product,
+                        ProductImageName = item["productImageName"].ToString(),
                         ProductImageUrl = item["productImageUrl"].ToString(),
-                        ProductImageSize=(int)item["productImageSize"]
+                        ProductImageSize = (int)item["productImageSize"]
                     });
                 }
                 product.TblProductImage = list;
@@ -65,7 +57,7 @@ namespace Enterprise.API.BusinessLogics.Product
                     {
                         Product = product,
                         PCategoryId = Guid.NewGuid().ToString(),
-                        Category = CategoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString(), context)
+                        Category = categoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString(), categoryRepository)
                     });
                 }
                 product.TblProductCategory = list;
@@ -103,17 +95,22 @@ namespace Enterprise.API.BusinessLogics.Product
             }
             return product;
         }
-        public static List<PM.TblProduct> GetAllListProduct(PM.ProductContext context)
+        public IEnumerable<TblProduct> GetAllListProduct(ITblProductRepository context)
         {
-            return PM.TblProduct.GetAllListProduct(context);
+            return context.GetAll();
         }
-        public static PM.TblProduct GetProductById(string ProductId,PM.ProductContext context)
+        public TblProduct GetProductById(string ProductId, ITblProductRepository context)
         {
-            return PM.TblProduct.GetProductById(ProductId, context);
+            return context.GetSingle(x => x.ProductId == ProductId);
         }
-        public static void AddReview(string productId, ProductContext context)
+        public void AddReview(string productId, ITblProductRepository context)
         {
-            PM.TblProduct.AddReview(productId, context);
+            context.AddReview(productId);
+        }
+
+        public int SaveProduct(ITblProductRepository context)
+        {
+            return context.Commit();
         }
     }
 }

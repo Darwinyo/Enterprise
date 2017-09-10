@@ -6,6 +6,7 @@ using System.Text;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
 using EH = Enterprise.API.Helpers;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
 {
@@ -19,7 +20,9 @@ namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
             _client = new MongoClient(option.Value.ConnectionString);
             if (_client != null)
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 _server = _client.GetServer();
+#pragma warning restore CS0618 // Type or member is obsolete
                 _database = _server.GetDatabase(option.Value.Database);
             }
         }
@@ -30,5 +33,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
                 return _database.GetCollection<TblProductComments>(EH.Consts.MongoCollections.Tbl_Product_Comments);
             }
         }
+
+        public EntityEntry Entry { get; set; }
     }
 }

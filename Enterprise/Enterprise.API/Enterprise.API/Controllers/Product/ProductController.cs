@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using PB = Enterprise.API.BusinessLogics.Product.ProductBusinessLogic;
-using Enterprise.API.Models;
+using Enterprise.Services.Product.Abstract;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Product
@@ -13,31 +12,32 @@ namespace Enterprise.API.Controllers.Product
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        private readonly PM.ProductContext _context;
+        private readonly IProductService _productService;
 
-        public ProductController(PM.ProductContext context)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<PM.TblProduct> Get()
+        public IEnumerable<TblProduct> Get()
         {
-            return PB.GetAllListProduct(_context);
+            return _productService.GetAllListProduct();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public PM.TblProduct Get(string id)
+        public TblProduct Get(string id)
         {
-            return PB.GetProductById(id, _context);
+            return _productService.GetProductById(id);
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]object value)
         {
-            PB.AddNewProduct(value, _context);
+            _productService.AddNewProduct(value);
+            _productService.SaveProduct();
         }
 
         // PUT api/values/5

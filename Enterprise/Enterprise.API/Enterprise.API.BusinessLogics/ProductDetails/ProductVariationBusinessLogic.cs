@@ -1,23 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using PM= Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using System.Linq;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.ProductDetails
 {
-    public class ProductVariationBusinessLogic
+    public class ProductVariationBusinessLogic:IProductVariationBusinessLogic
     {
-        public static int InsertNewVariations(List<PM.TblProductVariations> listVariation, PM.ProductContext context)
+        public void InsertNewVariations(IEnumerable<TblProductVariations> listVariation, ITblProductVariationsRepository productVariationsRepository)
         {
             if (listVariation != null)
-                return 0;
-            return PM.TblProductVariations.InsertNewVariations(listVariation, context);
+                foreach (var variation in listVariation)
+                {
+                    productVariationsRepository.Add(variation);
+                }
         }
-        public static List<PM.TblProductVariations> GetProductVariationByProductId(string productId, PM.ProductContext context)
+        public IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId, ITblProductVariationsRepository productVariationsRepository)
         {
-            return PM.TblProductVariations.GetProductVariationByProductId(productId, context);
+            return productVariationsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
+        }
+        public int SaveVariation(ITblProductVariationsRepository productVariationsRepository)
+        {
+            return productVariationsRepository.Commit();
         }
     }
 }

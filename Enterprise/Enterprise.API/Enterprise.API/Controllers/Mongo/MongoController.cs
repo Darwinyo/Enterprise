@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MB = Enterprise.API.BusinessLogics;
-using MM = Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Microsoft.Extensions.Options;
 using Enterprise.API.Models.Settings;
+using Enterprise.Services.Mongo.Abstract;
+using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Mongo
@@ -14,10 +14,10 @@ namespace Enterprise.API.Controllers.Mongo
     [Route("api/[controller]")]
     public class MongoController : Controller
     {
-        private readonly MM.MongoContext _context;
-        public MongoController(IOptions<MongoDBSettings> options)
+        private readonly IProductCommentService _productCommentService;
+        public MongoController(IProductCommentService productCommentService)
         {
-            _context = new MM.MongoContext(options);
+            _productCommentService = productCommentService;
         }
         // GET: api/values
         [HttpGet]
@@ -28,9 +28,9 @@ namespace Enterprise.API.Controllers.Mongo
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public List<MM.TblProductComments> Get(string id)
+        public IEnumerable<TblProductComments> Get(string id)
         {
-            return MB.Mongo.TblProductCommentsBusinessLogic.GetAllCommentListByProductIdAsync(id, _context);
+            return _productCommentService.GetAllCommentListByProductId(id);
         }
 
         // POST api/values

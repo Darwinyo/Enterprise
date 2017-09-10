@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Linq;
-using HM= Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.API.BusinessLogics.City.Abstract;
+using Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Repository.Abstract;
+
 namespace Enterprise.API.BusinessLogics.City
 {
-    public class CityBusinessLogic
+    public class CityBusinessLogic : ICityBusinessLogic
     {
-        public static List<HM.TblCity> GetListOfCity(HM.HelperContext context)
+        public string GetCityById(int cityId, ITblCityRepository cityRepository)
         {
-            return HM.TblCity.GetListOfCity(context);
+            return cityRepository.FindBy(x => x.CityId == cityId).FirstOrDefault().CityName;
         }
-        public static string GetCityById(int cityId, HM.HelperContext context)
+
+        public IEnumerable<TblCity> GetListOfCity(ITblCityRepository cityRepository)
         {
-            return HM.TblCity.GetCityById(cityId, context);
+            return cityRepository.GetAll();
         }
     }
 }

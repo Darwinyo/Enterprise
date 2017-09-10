@@ -1,20 +1,23 @@
-﻿using System;
+﻿using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Repository.ProductRepository;
 using System.Collections.Generic;
-using System.Text;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using System.Linq;
+using Enterprise.API.BusinessLogics.Product.Abstract;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.Product
 {
-    public class RecommendedProductBusinessLogic
+    public class RecommendedProductBusinessLogic:IRecommendedProductBusinessLogic
     {
-        public static List<PM.TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId, PM.ProductContext context)
+        public IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId, ITblProductRecommendedRepository productRecommendedRepository, ProductContext context)
         {
-            List<PM.TblProductRecommended> listRaw = PM.TblProductRecommended.GetRecommendedProductsByPeriodeId(PeriodeId, context);
-            if (listRaw.Count > 0)
+            List<TblProductRecommended> listRaw = productRecommendedRepository.FindBy(x => x.PeriodeId == PeriodeId).ToList();
+            if (listRaw.Count() > 0)
             {
                 List<string> list = new List<string>();
                 listRaw.ForEach(x => list.Add(x.ProductId));
-                return PM.TblProduct.GetListProductByListString(list, context);
+                TblProductRepository productRepository = new TblProductRepository(context);
+                return productRepository.GetListProductByListString(list);
             }
             return null;
         }

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using PB = Enterprise.API.BusinessLogics;
+using Enterprise.Services.Product;
+using Enterprise.Services.Product.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,10 +13,10 @@ namespace Enterprise.API.Controllers.ProductDetails
     [Route("api/[controller]")]
     public class ProductReviewController : Controller
     {
-        private readonly PM.ProductContext _context;
-        public ProductReviewController(PM.ProductContext context)
+        private readonly IProductService _productService;
+        public ProductReviewController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
         // GET: api/values
         [HttpGet]
@@ -36,7 +36,7 @@ namespace Enterprise.API.Controllers.ProductDetails
         [HttpPost]
         public void Post([FromBody]string value)
         {
-            PB.Product.ProductBusinessLogic.AddReview(value, _context);
+            _productService.AddReview(value);
         }
 
         // PUT api/values/5

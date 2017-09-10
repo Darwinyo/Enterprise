@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using PB = Enterprise.API.BusinessLogics;
+using Enterprise.Services.ProductDetails;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Services.ProductDetails.Abstract;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.ProductDetails
@@ -12,10 +13,10 @@ namespace Enterprise.API.Controllers.ProductDetails
     [Route("api/[controller]")]
     public class ProductVariationController : Controller
     {
-        private readonly PM.ProductContext _context;
-        public ProductVariationController(PM.ProductContext context)
+        private readonly IProductVariationService _productVariationService;
+        public ProductVariationController(IProductVariationService productVariationService)
         {
-            _context = context;
+            _productVariationService = productVariationService;
         }
         // GET: api/values
         [HttpGet]
@@ -26,9 +27,9 @@ namespace Enterprise.API.Controllers.ProductDetails
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public List<PM.TblProductVariations> Get(string id)
+        public IEnumerable<TblProductVariations> Get(string id)
         {
-            return PB.ProductDetails.ProductVariationBusinessLogic.GetProductVariationByProductId(id, _context);
+            return _productVariationService.GetProductVariationByProductId(id);
         }
 
         // POST api/values

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.API", "Enterprise.API\Enterprise.API.csproj", "{DDB3C22C-75C6-42D2-BC2F-BDC9E795801C}"
 EndProject
@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.DataLayers", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.API.Models", "Enterprise.API.Models\Enterprise.API.Models.csproj", "{6A07FBDD-9DDF-43F7-B2E3-774B51D7E17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.SignalR", "..\Enterprise.SignalR\Enterprise.SignalR.csproj", "{4BC8AA56-8FF3-42AD-AA5D-462E88328AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.SignalR", "..\Enterprise.SignalR\Enterprise.SignalR.csproj", "{4BC8AA56-8FF3-42AD-AA5D-462E88328AF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.Repository", "..\Enterprise.Repository\Enterprise.Repository.csproj", "{56FFC92B-FA85-4DA4-8D6E-FF641678DE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Services", "..\Enterprise.Services\Enterprise.Services.csproj", "{0229DDA2-C75E-4306-BE96-E865678B4177}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{4BC8AA56-8FF3-42AD-AA5D-462E88328AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BC8AA56-8FF3-42AD-AA5D-462E88328AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BC8AA56-8FF3-42AD-AA5D-462E88328AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56FFC92B-FA85-4DA4-8D6E-FF641678DE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56FFC92B-FA85-4DA4-8D6E-FF641678DE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56FFC92B-FA85-4DA4-8D6E-FF641678DE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56FFC92B-FA85-4DA4-8D6E-FF641678DE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0229DDA2-C75E-4306-BE96-E865678B4177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0229DDA2-C75E-4306-BE96-E865678B4177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0229DDA2-C75E-4306-BE96-E865678B4177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0229DDA2-C75E-4306-BE96-E865678B4177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

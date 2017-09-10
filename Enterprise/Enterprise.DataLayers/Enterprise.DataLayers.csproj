@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extend\EnterpriseDB_UserModel\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Enterprise.API\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
     <ProjectReference Include="..\Enterprise.API\Enterprise.API.Models\Enterprise.API.Models.csproj" />
   </ItemGroup>

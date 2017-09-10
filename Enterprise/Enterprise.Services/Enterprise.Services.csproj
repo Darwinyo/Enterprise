@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enterprise.API\Enterprise.API.BusinessLogics\Enterprise.API.BusinessLogics.csproj" />
+    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Models\Enterprise.API.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.Repository\Enterprise.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

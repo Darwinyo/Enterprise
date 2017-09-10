@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
+﻿using System.Collections.Generic;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using System.Linq;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.ProductDetails
 {
-    public class ProductSpecsBusinessLogic
+    public class ProductSpecsBusinessLogic:IProductSpecsBusinessLogic
     {
-        public static List<PM.TblProductSpecs> GetAllProductSpecsByProductId(string productId, PM.ProductContext context)
+        public IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId, ITblProductSpecsRepository productSpecsRepository)
         {
             if (productId != null)
-                return PM.TblProductSpecs.GetAllProductSpecsByProductId(productId, context);
+                return productSpecsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
             return null;
         }
     }

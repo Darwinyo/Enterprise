@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using HM = Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using HB = Enterprise.API.BusinessLogics.City.CityBusinessLogic;
+using Enterprise.Services.City;
+using Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Services.City.Abstract;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.City
@@ -12,23 +13,23 @@ namespace Enterprise.API.Controllers.City
     [Route("api/[controller]")]
     public class CityController : Controller
     {
-        private readonly HM.HelperContext _context;
-        public CityController(HM.HelperContext context)
+        private readonly ICityService _cityService;
+        public CityController(ICityService cityService)
         {
-            _context = context;
+            _cityService = cityService;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<HM.TblCity> Get()
+        public IEnumerable<TblCity> Get()
         {
-            return HB.GetListOfCity(_context);
+            return _cityService.GetListOfCity();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return HB.GetCityById(id, _context);
+            return _cityService.GetCityById(id);
         }
 
         // POST api/values
@@ -47,6 +48,10 @@ namespace Enterprise.API.Controllers.City
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+        protected override void Dispose(bool disposing)
+        {
+            
         }
     }
 }

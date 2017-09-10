@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PM = Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using PB = Enterprise.API.BusinessLogics.Product.CategoryBusinessLogic;
+using Enterprise.Services.Product;
+using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Services.Product.Abstract;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Product
@@ -12,30 +13,31 @@ namespace Enterprise.API.Controllers.Product
     [Route("api/[controller]")]
     public class CategoryProductController : Controller
     {
-        private readonly PM.ProductContext _context;
-        public CategoryProductController(PM.ProductContext context)
+        private readonly ICategoryService _categoryService;
+        public CategoryProductController(ICategoryService categoryService)
         {
-            _context = context;
+            _categoryService = categoryService;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<PM.TblCategory> Get()
+        public IEnumerable<TblCategory> Get()
         {
-            return PB.GetAllTblCategory(_context);
+            return _categoryService.GetAllTblCategory();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public TblCategory Get(string id)
         {
-            return "value";
+            return _categoryService.GetTblCategoryByName(id);
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]object value)
         {
-            PB.CheckAndInsertCategory(value, _context);
+            _categoryService.CheckAndInsertCategory(value);
+            _categoryService.SaveCategory();
         }
 
         // PUT api/values/5
