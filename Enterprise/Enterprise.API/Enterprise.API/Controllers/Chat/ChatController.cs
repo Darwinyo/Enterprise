@@ -4,16 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Infrastructure;
-using ES = Enterprise.SignalR;
+using Enterprise.SignalR.Hubs;
+using Enterprise.Services.Mongo;
+using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Services.Mongo.Abstract;
+using Newtonsoft.Json.Linq;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Chat
 {
     [Route("api/[controller]")]
-    public class ChatController : ApiHubController<ES.Hubs.ChatHub>
+    public class ChatController : ApiHubController<ChatHub>
     {
-        protected ChatController(IConnectionManager connectionManager) : base(connectionManager)
+        private readonly IChatService _chatService;
+        
+        protected ChatController(IChatService chatService, IConnectionManager connectionManager) : base(connectionManager)
         {
+            _chatService = chatService;
         }
 
         // GET: api/values
@@ -25,15 +32,19 @@ namespace Enterprise.API.Controllers.Chat
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IEnumerable<TblChat> Get(string id)
         {
-            return "value";
+            return _chatService.GetChatByGroupId(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]object value)
         {
+            JObject jObject = (JObject)value;
+            string Id= jObject["groupId"].ToString();
+            _chatService.InsertChat(value);
+            Clients.Group(Id).Send(value);
         }
 
         // PUT api/values/5

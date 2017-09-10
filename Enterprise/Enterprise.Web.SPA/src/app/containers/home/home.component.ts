@@ -49,18 +49,16 @@ export class HomeComponent implements OnInit {
     this.hotProductService.GetHotProductByPeriodeId(this.periodeId).subscribe(
       (result) => this.hotProducts = result,
       (err) => console.log(err),
-      () => {
-        console.log(this.hotProducts);
-        this.hotListProductCardComponent.ConvertToProductCardModel(this.hotProducts)}
+      () =>
+        this.hotListProductCardComponent.ConvertToProductCardModel(this.hotProducts)
     )
   };
   fetchRecommendedProductByPeriode() {
     this.recommendedProductService.GetRecommendedProductByPeriodeId(this.periodeId).subscribe(
       (result) => this.recommendedProducts = result,
       (err) => console.log(err),
-      () => {
-        console.log(this.recommendedProducts);
-        this.recommendListProductCardComponent.ConvertToProductCardModel(this.recommendedProducts)}
+      () =>
+        this.recommendListProductCardComponent.ConvertToProductCardModel(this.recommendedProducts)
     )
   }
   fetchAllCategory() {
