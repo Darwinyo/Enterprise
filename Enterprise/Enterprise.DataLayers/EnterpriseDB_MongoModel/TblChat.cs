@@ -6,16 +6,16 @@ using System.Text;
 
 namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
 {
-    public partial class TblProductComments
+    public class TblChat
     {
         public ObjectId Id { get; set; }
-        [BsonElement("Product_Id")]
-        public string ProductId { get; set; }
         [BsonElement("User_Id")]
         public string UserId { get; set; }
-        [BsonElement("Comment")]
-        public string Comment { get; set; }
-        [BsonElement("Comment_Datetime")]
-        public DateTime CommentDatetime { get; set; }
+        [BsonElement("Message")]
+        public string Message { get; set; }
+        [BsonElement("Message_Datetime")]
+        public string MessageDatetime { get; set; }
+        [BsonElement("Group_Id")]
+        public string GroupId { get; set; }
     }
 }

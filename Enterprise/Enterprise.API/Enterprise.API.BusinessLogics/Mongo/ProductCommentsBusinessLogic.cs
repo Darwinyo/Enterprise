@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;

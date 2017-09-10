@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Enterprise.API.Models.Settings;
 using Enterprise.Services.Mongo.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,10 +7,10 @@ using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 namespace Enterprise.API.Controllers.Mongo
 {
     [Route("api/[controller]")]
-    public class MongoController : Controller
+    public class ProductCommentController : Controller
     {
         private readonly IProductCommentService _productCommentService;
-        public MongoController(IProductCommentService productCommentService)
+        public ProductCommentController(IProductCommentService productCommentService)
         {
             _productCommentService = productCommentService;
         }

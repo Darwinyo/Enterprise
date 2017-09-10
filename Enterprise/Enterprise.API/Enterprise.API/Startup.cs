@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Enterprise.DataLayers.EnterpriseDB_HelperModel;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.DataLayers.EnterpriseDB_UserModel;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.API.Models.Settings;
-using Enterprise.SignalR.Hubs;
 using Newtonsoft.Json.Serialization;
 using Enterprise.Repository.Abstract;
 using Enterprise.Repository.ProductRepository;
@@ -45,10 +37,10 @@ namespace Enterprise.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddMvc().
-                AddJsonOptions(options =>
-                options.SerializerSettings.ContractResolver =
-                new DefaultContractResolver());
+            services.AddMvc();
+                //AddJsonOptions(options =>
+                //options.SerializerSettings.ContractResolver =
+                //new DefaultContractResolver());
 
             services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
 
@@ -107,7 +99,7 @@ namespace Enterprise.API
         {
             app.UseSession();
             app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+            builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
             app.UseMvc();
             app.UseSignalR();
         }

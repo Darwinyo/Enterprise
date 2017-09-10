@@ -10,9 +10,9 @@ namespace Enterprise.Services.ProductDetails
     {
         private readonly ProductVariationBusinessLogic _productVariationBusinessLogic;
         private readonly ITblProductVariationsRepository _productVariationsRepository;
-        public ProductVariationService(ProductVariationBusinessLogic productVariationBusinessLogic, ITblProductVariationsRepository productVariationsRepository)
+        public ProductVariationService(ITblProductVariationsRepository productVariationsRepository)
         {
-            _productVariationBusinessLogic = productVariationBusinessLogic;
+            _productVariationBusinessLogic = new ProductVariationBusinessLogic();
             _productVariationsRepository = productVariationsRepository;
         }
         public IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId)

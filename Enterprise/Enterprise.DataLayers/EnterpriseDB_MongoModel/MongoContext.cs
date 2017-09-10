@@ -34,6 +34,14 @@ namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
             }
         }
 
+        public MongoCollection<TblChat> TblChat
+        {
+            get
+            {
+                return _database.GetCollection<TblChat>(EH.Consts.MongoCollections.Tbl_Chat);
+            }
+        }
+
         public EntityEntry Entry { get; set; }
     }
 }

@@ -31,5 +31,6 @@ namespace Enterprise.Repository.Abstract
 
     #region mongo
     public interface ITblProductCommentsRepository : IMongoEntityBaseRepository<TblProductComments> { };
+    public interface ITblChatRepository : IMongoEntityBaseRepository<TblChat> { };
     #endregion
 }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using EH = Enterprise.API.Helpers;
-using Enterprise.SignalR.Interfaces;
+using Enterprise.SignalR.Abstract;
 
 namespace Enterprise.SignalR.Hubs
 {
-    public class ChatHub:Hub<IChatHub>
+    public class ChatHub:Hub<IChatClient>
     {
         public override Task OnConnected()
         {

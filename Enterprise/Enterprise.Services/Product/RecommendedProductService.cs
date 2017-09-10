@@ -11,10 +11,10 @@ namespace Enterprise.Services.Product
         private readonly ITblProductRecommendedRepository _productRecommendedRepository;
         private readonly RecommendedProductBusinessLogic _recommendedProductBusinessLogic;
         private readonly ProductContext _context;
-        public RecommendedProductService(ITblProductRecommendedRepository productRecommendedRepository,RecommendedProductBusinessLogic recommendedProductBusinessLogic,ProductContext context)
+        public RecommendedProductService(ITblProductRecommendedRepository productRecommendedRepository,ProductContext context)
         {
             _productRecommendedRepository = productRecommendedRepository;
-            _recommendedProductBusinessLogic = recommendedProductBusinessLogic;
+            _recommendedProductBusinessLogic = new RecommendedProductBusinessLogic();
             _context = context;
         }
         public IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId)

@@ -11,9 +11,9 @@ namespace Enterprise.Services.Product
         private readonly HotProductBusinessLogic _hotProductBusinessLogic;
         private readonly ITblProductHotRepository _productHotRepository;
         private readonly ProductContext _context;
-        public HotProductService(HotProductBusinessLogic hotProductBusinessLogic,ITblProductHotRepository productHotRepository,ProductContext context)
+        public HotProductService(ITblProductHotRepository productHotRepository,ProductContext context)
         {
-            _hotProductBusinessLogic = hotProductBusinessLogic;
+            _hotProductBusinessLogic = new HotProductBusinessLogic();
             _productHotRepository = productHotRepository;
             _context = context;
         }

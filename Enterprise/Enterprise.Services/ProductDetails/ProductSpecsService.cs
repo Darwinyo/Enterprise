@@ -13,9 +13,9 @@ namespace Enterprise.Services.ProductDetails
     {
         private readonly ProductSpecsBusinessLogic _productSpecsBusinessLogic;
         private readonly ITblProductSpecsRepository _productSpecsRepository;
-        public ProductSpecsService(ProductSpecsBusinessLogic productSpecsBusinessLogic,ITblProductSpecsRepository productSpecsRepository)
+        public ProductSpecsService(ITblProductSpecsRepository productSpecsRepository)
         {
-            _productSpecsBusinessLogic = productSpecsBusinessLogic;
+            _productSpecsBusinessLogic = new ProductSpecsBusinessLogic();
             _productSpecsRepository = productSpecsRepository;
         }
         public IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId)

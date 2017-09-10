@@ -10,9 +10,9 @@ namespace Enterprise.Services.ProductDetails
     {
         private readonly ProductImageBusinessLogic _productImageBusinessLogic;
         private readonly ITblProductImageRepository _productImageRepository;
-        public ProductImageService(ProductImageBusinessLogic productImageBusinessLogic,ITblProductImageRepository productImageRepository)
+        public ProductImageService(ITblProductImageRepository productImageRepository)
         {
-            _productImageBusinessLogic = productImageBusinessLogic;
+            _productImageBusinessLogic = new ProductImageBusinessLogic();
             _productImageRepository = productImageRepository;
         }
         public IEnumerable<TblProductImage> GetProductImageListByProductId(string productId)
