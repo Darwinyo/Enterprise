@@ -25,7 +25,7 @@ Linq
 -Angular 4
 
 -State Management
---Redux(ngrx/store) (Near Future)
+Redux(ngrx/store) (Near Future)
  
 - Please Refer to each project for more Descriptions
 
