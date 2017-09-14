@@ -29,6 +29,11 @@ Redux(ngrx/store) (Near Future)
  
 - Please Refer to each project for more Descriptions
 
+Current Progress:
+<img src="/Darwinyo/Enterprise/blob/master/Enterprise/Documentation/Web/Gifs/Enterprise-20170914.gif?raw=true" alt="Enterprise-20170914.gif">
+Development Environment:
+<img src="/Darwinyo/Enterprise/blob/master/Enterprise/Documentation/Web/Gifs/Development-20170914.gif?raw=true" alt="Development-20170914.gif">
+
 
 MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
 
