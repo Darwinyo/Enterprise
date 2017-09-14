@@ -2,20 +2,21 @@
 
 These is Tech Stack that I Use To Build EnterpriseApp
 
--Database
---MSSQL
---MongoDB
---Firebase(Near Future)
+-Database:
+MSSQL
+MongoDB
+SQLite(Near Future)
+Firebase(Near Future)
 
--Caching System
---Redis
+-Caching System:
+Redis
 
--Real-Time
---SignalR(.NetCore)
+-Real-Time:
+SignalR(.NetCore)
 
--DataLayer
---Entity Framework(.NetCore)
---Linq
+-DataLayer:
+Entity Framework(.NetCore)
+Linq
 
 -API (.NetCore)
 
@@ -24,9 +25,14 @@ These is Tech Stack that I Use To Build EnterpriseApp
 -Angular 4
 
 -State Management
---Redux(ngrx/store) (Near Future)
+Redux(ngrx/store) (Near Future)
+ 
+- Please Refer to each project for more Descriptions
 
--Etc
+Current Progress:
+<img src="/Enterprise/Documentation/Web/Gifs/Enterprise-20170914.gif?raw=true" alt="Enterprise-20170914.gif">
+Development Environment:
+<img src="/Enterprise/Documentation/Web/Gifs/Development-20170914.gif?raw=true" alt="Development-20170914.gif">
 
 
 MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
