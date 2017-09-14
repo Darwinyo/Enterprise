@@ -11,14 +11,14 @@ import 'rxjs/add/operator/map';
 export class PeriodeService {
     urlPeriodeController = 'http://localhost:63853/api/periode';
     constructor(private http: Http) { }
-    CreateNewPeriode(periodeModel: PeriodeModel) {
+    createNewPeriode(periodeModel: PeriodeModel) {
         const headers: Headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post(this.urlPeriodeController, periodeModel, { headers: headers }).map(
             (result) => result.json()
         )
     };
-    GetCurrentPeriodeId(dateTime: string): Observable<string> {
+    getCurrentPeriodeId(dateTime: string): Observable<string> {
         return this.http.get(this.urlPeriodeController + '/' + dateTime).map(
             (result) => result.text()
         )

@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ProductCardModel } from './../../models/product-card/product-card.model';
+import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,46 +8,29 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent implements OnInit {
-  @Input() productCard: ProductCardModel;
+  @Input() productCard: ProductCardViewModel;
   @Input() isGrid;
-  productId: string;
-  imageUrl: string;
-  price: number;
-  ratestar: number;
-  productname: string;
-  favorites: number;
-  reviews: number;
-  stars: string[];
 
   constructor(private router: Router) {
-    this.stars = [];
+
   }
 
   ngOnInit() {
-    this.MapData(this.productCard);
-    this.InitStars(this.ratestar);
-  }
-  MapData(productCardModel: ProductCardModel) {
-    this.productId = productCardModel.productId;
-    this.ratestar = productCardModel.ratestar;
-    this.productname = productCardModel.productname;
-    this.favorites = productCardModel.favorites;
-    this.reviews = productCardModel.reviews;
-    this.price = productCardModel.price;
-    this.imageUrl = productCardModel.imageUrl;
+    this.InitStars(this.productCard.ratestar);
   }
   InitStars(rateStar) {
+    this.productCard.stars = [];
     for (let i = 1; i < 6; i++) {
       if (rateStar >= i) {
-        this.stars[i] = 'img/icons/fullstar.png';
+        this.productCard.stars[i] = 'img/icons/fullstar.png';
       } else if (rateStar > (i - 1)) {
-        this.stars[i] = 'img/icons/halfstar.png';
+        this.productCard.stars[i] = 'img/icons/halfstar.png';
       } else {
-        this.stars[i] = 'img/icons/nonestar.png';
+        this.productCard.stars[i] = 'img/icons/nonestar.png';
       }
     }
   }
   RedirectToProductDetails() {
-    this.router.navigate(['product-details', this.productId])
+    this.router.navigate(['product-details', this.productCard.productId])
   }
 }

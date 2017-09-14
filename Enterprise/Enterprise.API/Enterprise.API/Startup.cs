@@ -78,6 +78,7 @@ namespace Enterprise.API
             services.AddScoped<ITblProductRecommendedRepository, TblProductRecommendedRepository>();
             services.AddScoped<ITblProductSpecsRepository, TblProductSpecsRepository>();
             services.AddScoped<ITblProductVariationsRepository, TblProductVariationsRepository>();
+            services.AddScoped<ITblChatRepository, TblChatRepository>();
             #endregion
 
             #region services
@@ -91,6 +92,7 @@ namespace Enterprise.API
             services.AddScoped<IRecommendedProductService, RecommendedProductService>();
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<IPeriodeService, PeriodeService>();
+            services.AddScoped<IChatService, ChatService>();
             #endregion
         }
 
@@ -98,10 +100,11 @@ namespace Enterprise.API
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseSession();
+            app.UseWebSockets();
             app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
-            app.UseMvc();
+            builder.AllowAnyOrigin().AllowCredentials().AllowAnyMethod().AllowAnyHeader());
             app.UseSignalR();
+            app.UseMvc();
         }
     }
 }

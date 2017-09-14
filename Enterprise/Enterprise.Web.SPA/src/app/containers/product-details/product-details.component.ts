@@ -2,14 +2,13 @@ import { ProductSpecsService } from './../../services/product-specs/product-spec
 import { ProductInfoDescriptionComponent } from './../../components/product-info-description/product-info-description.component';
 import { ProductInfoImagesComponent } from './../../components/product-info-images/product-info-images.component';
 import { ProductImagesService } from './../../services/product-images/product-images.service';
-import { ImageModel } from './../../models/image-upload/image.model';
 import { ProductInfoDetailsComponent } from './../../components/product-info-details/product-info-details.component';
 import { VariationsService } from './../../services/variations/variations.service';
 import { CityService } from './../../services/city/city.service';
 import { ProductModel } from './../../models/product/product/product.model';
 import { ProductService } from './../../services/product/product.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ProductInfoDetailsModel } from './../../models/product-info-details/product-info-details.model';
+import { ProductInfoDetailsViewModel } from './../../viewmodels/product-info-details/product-info-details.viewmodel';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 @Component({
@@ -22,7 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   @ViewChild('productImage') productImage: ProductInfoImagesComponent;
   @ViewChild('productDescription') productDescription: ProductInfoDescriptionComponent;
   productModel: ProductModel;
-  ProductItem: ProductInfoDetailsModel;
+  ProductItem: ProductInfoDetailsViewModel;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -31,13 +30,13 @@ export class ProductDetailsComponent implements OnInit {
     private variationService: VariationsService,
     private imageService: ProductImagesService,
     private specsService: ProductSpecsService) {
-    this.ProductItem = <ProductInfoDetailsModel>{};
+    this.ProductItem = <ProductInfoDetailsViewModel>{};
     this.productModel = <ProductModel>{};
   }
 
   ngOnInit() {
     this.route.paramMap.switchMap(
-      (params: ParamMap) => this.productService.GetProductById(params.get('id')))
+      (params: ParamMap) => this.productService.getProductById(params.get('id')))
       .subscribe(
       (product: ProductModel) => {
         this.convertToProductItem(product);
@@ -49,7 +48,7 @@ export class ProductDetailsComponent implements OnInit {
   convertToProductItem(model: ProductModel) {
     const variationStrArr = [];
     let locationItem = '';
-    this.cityService.GetCityById(model.productLocation).subscribe(
+    this.cityService.getCityById(model.productLocation).subscribe(
       x => locationItem = x,
       err => console.log(err),
       () => this.ProductItem.location = locationItem);
@@ -68,7 +67,7 @@ export class ProductDetailsComponent implements OnInit {
     )
   }
   convertToImagesArray(productId: string) {
-    this.imageService.GetProductImageListByProductId(productId).subscribe(
+    this.imageService.getProductImageListByProductId(productId).subscribe(
       (result) => this.productModel.TblProductImage = result,
       (err) => console.log(err),
       () => this.productImage.populateImages(this.productModel.TblProductImage)

@@ -2,8 +2,8 @@
 using MongoDB.Driver.Builders;
 using MongoDB.Driver;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.MongoRepository;
 using Enterprise.API.BusinessLogics.Mongo.Abstract;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.Mongo
 {
@@ -14,7 +14,7 @@ namespace Enterprise.API.BusinessLogics.Mongo
         {
             _context = context;
         }
-        public IEnumerable<TblProductComments> GetAllCommentListByProductId(string productId, TblProductCommentsRepository context)
+        public IEnumerable<TblProductComments> GetAllCommentListByProductId(string productId, ITblProductCommentsRepository context)
         {
             IMongoQuery mongoQuery = Query<TblProductComments>.EQ(x => x.ProductId, productId);
             return context.FindBy(_context.TblProductComments, mongoQuery);

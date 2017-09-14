@@ -1,3 +1,6 @@
+import { ChatHub } from './signalr/chathub/chat.hub';
+import { ChatService } from './services/chat/chat.service';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -67,6 +70,7 @@ import { ProductSpecsService } from './services/product-specs/product-specs.serv
     ProductInfoDescriptionComponent,
     ProductEditorComponent,
     PeriodeEditorComponent,
+    ChatComponent,
 
     ErrorNotFoundComponent
   ],
@@ -85,7 +89,9 @@ import { ProductSpecsService } from './services/product-specs/product-specs.serv
     RecommendedProductService,
     VariationsService,
     ProductImagesService,
-    ProductSpecsService
+    ProductSpecsService,
+    ChatService,
+    ChatHub,
   ],
   bootstrap: [AppComponent]
 })

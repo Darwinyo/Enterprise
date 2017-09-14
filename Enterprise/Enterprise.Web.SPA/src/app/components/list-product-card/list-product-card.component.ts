@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { ProductModel } from './../../models/product/product/product.model';
-import { ProductCardModel } from './../../models/product-card/product-card.model';
+import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
 import { Component, OnInit, Input } from '@angular/core';
 
 const pageLength = 1200;
@@ -13,7 +13,7 @@ const itemLength = 200;
 
 export class ListProductCardComponent implements OnInit {
 
-  products: ProductCardModel[];
+  products: ProductCardViewModel[];
   marginleft: number;
   constructor() {
     this.products = [];
@@ -28,7 +28,7 @@ export class ListProductCardComponent implements OnInit {
         item.productName = item.productName.substring(0, 18) + '...'
       }
       this.products.push(
-        <ProductCardModel>{
+        <ProductCardViewModel>{
           productId: item.productId,
           productname: item.productName,
           price: item.productPrice,

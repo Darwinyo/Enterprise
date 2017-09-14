@@ -2,18 +2,18 @@
 using System;
 using System.Collections.Generic;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.MongoRepository;
 using Enterprise.API.BusinessLogics.Mongo;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
+using Enterprise.Repository.Abstract;
 
 namespace Enterprise.Services.Mongo
 {
     public class ChatService : IChatService
     {
-        private readonly TblChatRepository _chatRepository;
+        private readonly ITblChatRepository _chatRepository;
         private readonly ChatBusinessLogic _chatBusinessLogic;
-        public ChatService(TblChatRepository chatRepository, IOptions<MongoDBSettings> options)
+        public ChatService(ITblChatRepository chatRepository, IOptions<MongoDBSettings> options)
         {
             _chatBusinessLogic = new ChatBusinessLogic(new MongoContext(options));
             _chatRepository = chatRepository;

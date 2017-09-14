@@ -25,7 +25,7 @@ export class PeriodeEditorComponent implements OnInit {
       periodeEndDate: <Date>form.value['periodeEndDate'],
       periodeStartDate: <Date>form.value['periodeStartDate']
     }
-    this.periodeService.CreateNewPeriode(this.periodeModel).subscribe(
+    this.periodeService.createNewPeriode(this.periodeModel).subscribe(
       (result) => console.log(result),
       (err) => console.log(err),
       () => console.log('Periode Created')

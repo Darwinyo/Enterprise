@@ -13,7 +13,10 @@
     <chat></chat>
     <right-sidebar></right-sidebar>
 </div> -->
-<div class="gray-bg">
-    
-    <router-outlet></router-outlet>
+<div id="wrapper">
+    <div class="gray-bg">
+        
+        <router-outlet></router-outlet>
+    </div>
+    <app-chat #chat (sendEvent)="send($event)"></app-chat>
 </div>

@@ -2,17 +2,17 @@
   <div class="product-header-holder">
     <div class="product-header-holder-style">
       <div class="product-details-header">
-        {{productTitle}}
+        {{productInfoDetailViewModel.productTitle}}
       </div>
       <div class="product-details-price">
-        $ {{productPrice}}
+        $ {{productInfoDetailViewModel.productPrice}}
       </div>
       <div class="product-details-rating">
-        <span *ngFor="let star of stars" class="starspan">
+        <span *ngFor="let star of productInfoDetailViewModel.stars" class="starspan">
                      <img [attr.src]="star" width="15" height="15"/>
                 </span>
-        <span class="rate-span">{{ratestar}} of 5 stars</span>
-        <span class="reviews-span">({{reviews}} Reviews)</span>
+        <span class="rate-span">{{productInfoDetailViewModel.ratestar}} of 5 stars</span>
+        <span class="reviews-span">({{productInfoDetailViewModel.reviews}} Reviews)</span>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
     Product Location:
     <div class="product-details-selectable-location">
       <span>
-          {{location}}
+          {{productInfoDetailViewModel.location}}
       </span>
     </div>
     </span>
@@ -34,18 +34,18 @@
       <div class="product-details-selectable" (click)="deliverClick()">
         <div class="product-details-selectable-header">
           <span>
-              {{deliver}}
-              <img [src]="dropped? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
+              {{productInfoDetailViewModel.deliver}}
+              <img [src]="productInfoDetailViewModel.dropped? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
           </span>
         </div>
-        <div class="dropdown-delivery" *ngIf="deliveryDropped">
+        <div class="dropdown-delivery" *ngIf="productInfoDetailViewModel.deliveryDropped">
           <div class="searchbar">
             <input class="searchbar-txtbox" type="textbox" placeholder="Search"/>
           </div>
           <div class="searchitems">
             <ul class="searchitems-ul">
-              <li class="searchitem-li" *ngFor="let item of locations">
-                {{item}}
+              <li class="searchitem-li" *ngFor="let item of productInfoDetailViewModel.locations">
+                {{productInfoDetailViewModel.item}}
               </li>
             </ul>
           </div>
@@ -58,18 +58,18 @@
       <div class="product-details-selectable" (click)="deliverPriceClick()">
         <div class="product-details-selectable-header">
           <span>
-            {{deliverPrice}}
-            <img [src]="droppedDeliveryPrice? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
+            {{productInfoDetailViewModel.deliverPrice}}
+            <img [src]="productInfoDetailViewModel.droppedDeliveryPrice? 'img/icons/arrow_up.png':'img/icons/arrow_down.png'" width="15" height="15"/>
           </span>
         </div>
-        <div class="dropdown-delivery" *ngIf="deliveryPriceDropped">
+        <div class="dropdown-delivery" *ngIf="productInfoDetailViewModel.deliveryPriceDropped">
             <div class="searchbar">
               <input class="searchbar-txtbox" type="textbox" placeholder="Search"/>
             </div>
             <div class="searchitems">
               <ul class="searchitems-ul">
-                <li class="searchitem-li" *ngFor="let item of deliveryOptions">
-                  {{item}}
+                <li class="searchitem-li" *ngFor="let item of productInfoDetailViewModel.deliveryOptions">
+                  {{productInfoDetailViewModel.item}}
                 </li>
               </ul>
             </div>
@@ -83,7 +83,7 @@
         Variation:
       </div>
       <div class="variation-body">
-        <div class="variation-item" *ngFor="let variation of variations">
+        <div class="variation-item" *ngFor="let variation of productInfoDetailViewModel.variations">
           {{variation}}
         </div>
       </div>
@@ -94,10 +94,10 @@
         <div class="quantity-body">
           <div class="quantity-stepper">
             <button class="stepper-btn">+</button>
-            <input type="text" class="quantity-stepper-txtbox" value="{{quantity}}" />
+            <input type="text" class="quantity-stepper-txtbox" value="{{productInfoDetailViewModel.quantity}}" />
             <button class="stepper-btn">-</button>
           </div>
-          <div class="stockdiv">{{stock}} Stock</div>
+          <div class="stockdiv">{{productInfoDetailViewModel.stock}} Stock</div>
         </div>
       </div>
     </div>

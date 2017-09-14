@@ -9,6 +9,7 @@ using Enterprise.Services.Mongo;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.Services.Mongo.Abstract;
 using Newtonsoft.Json.Linq;
+using Enterprise.API.Models.Hubs;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Chat
@@ -18,7 +19,7 @@ namespace Enterprise.API.Controllers.Chat
     {
         private readonly IChatService _chatService;
         
-        protected ChatController(IChatService chatService, IConnectionManager connectionManager) : base(connectionManager)
+        public ChatController(IChatService chatService, IConnectionManager connectionManager) : base(connectionManager)
         {
             _chatService = chatService;
         }
@@ -41,10 +42,17 @@ namespace Enterprise.API.Controllers.Chat
         [HttpPost]
         public void Post([FromBody]object value)
         {
-            JObject jObject = (JObject)value;
-            string Id= jObject["groupId"].ToString();
+            
             _chatService.InsertChat(value);
-            Clients.Group(Id).Send(value);
+            JObject jObject = (JObject)value;
+            ChatModel chatModel = new ChatModel
+            {
+                groupId = jObject["groupId"].ToString(),
+                userId = jObject["userId"].ToString(),
+                message = jObject["message"].ToString(),
+                messageDatetime = (DateTime)jObject["messageDatetime"],
+            };
+            Clients.All.Send(chatModel);
         }
 
         // PUT api/values/5

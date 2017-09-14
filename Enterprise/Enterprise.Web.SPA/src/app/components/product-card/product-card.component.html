@@ -5,24 +5,24 @@
         <div class="product-imitation">
           <div class="product-image-container">
 
-            <img class="product-image" [src]="imageUrl">
+            <img class="product-image" [src]="productCard.imageUrl">
           </div>
         </div>
         <div class="product-desc">
-          <a href="#" class="product-name">{{productname}}</a>
+          <a href="#" class="product-name">{{productCard.productname}}</a>
           <div>
-            <h3 class="PriceFont"><b>${{price}}</b></h3>
+            <h3 class="PriceFont"><b>${{productCard.price}}</b></h3>
           </div>
           <div class="small m-t-xs row">
             <div class="col-md-5">
               <span>
               <img src="img/icons/favorite.png" width="15" height="15"/>
-          </span> {{favorites}}
+          </span> {{productCard.favorites}}
             </div>
             <div class="col-md-7 starcell">
-              <span *ngFor="let star of stars" class="starspan">
+              <span *ngFor="let star of productCard.stars" class="starspan">
               <img [attr.src]="star" width="15" height="15"/>
-            </span>({{reviews}})
+            </span>({{productCard.reviews}})
             </div>
           </div>
         </div>

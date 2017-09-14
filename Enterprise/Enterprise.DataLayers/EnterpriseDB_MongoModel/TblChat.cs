@@ -14,7 +14,7 @@ namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
         [BsonElement("Message")]
         public string Message { get; set; }
         [BsonElement("Message_Datetime")]
-        public string MessageDatetime { get; set; }
+        public DateTime MessageDatetime { get; set; }
         [BsonElement("Group_Id")]
         public string GroupId { get; set; }
     }

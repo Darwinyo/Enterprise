@@ -1,4 +1,4 @@
-export interface ProductCardModel {
+export interface ProductCardViewModel {
     productId: string;
     imageUrl: string;
     ratestar: number;
@@ -6,4 +6,5 @@ export interface ProductCardModel {
     favorites: number;
     reviews: number;
     price: number;
+    stars: string[];
 }

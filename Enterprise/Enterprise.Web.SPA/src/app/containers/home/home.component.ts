@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   fetchCurrentPeriode() {
     const date = new Date();
     const dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    this.periodeService.GetCurrentPeriodeId(dateStr).subscribe(
+    this.periodeService.getCurrentPeriodeId(dateStr).subscribe(
       (result) => this.periodeId = result,
       (err) => console.log(err),
       () => {
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     )
   };
   fetchHotProductByPeriode() {
-    this.hotProductService.GetHotProductByPeriodeId(this.periodeId).subscribe(
+    this.hotProductService.getHotProductByPeriodeId(this.periodeId).subscribe(
       (result) => this.hotProducts = result,
       (err) => console.log(err),
       () =>
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     )
   };
   fetchRecommendedProductByPeriode() {
-    this.recommendedProductService.GetRecommendedProductByPeriodeId(this.periodeId).subscribe(
+    this.recommendedProductService.getRecommendedProductByPeriodeId(this.periodeId).subscribe(
       (result) => this.recommendedProducts = result,
       (err) => console.log(err),
       () =>
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
     )
   }
   fetchAllCategory() {
-    this.categoryService.GetAllCategories().subscribe(
+    this.categoryService.getAllCategories().subscribe(
       (result) => this.categories = result,
       (err) => console.log(err),
       () => console.log('CategoryLoaded')

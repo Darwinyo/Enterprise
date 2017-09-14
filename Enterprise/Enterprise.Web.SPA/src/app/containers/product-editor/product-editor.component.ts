@@ -4,7 +4,7 @@ import { ProductVariationModel } from './../../models/product/product-variations
 import { ProductSpecsModel } from './../../models/product/product-specs/product-specs.model';
 import { CityService } from './../../services/city/city.service';
 import { CityModel } from './../../models/city/city.model';
-import { ImageModel } from './../../models/image-upload/image.model';
+import { ProductImageModel } from './../../models/product/product-image/product-image.model';
 import { ProductService } from './../../services/product/product.service';
 import { ProductModel } from './../../models/product/product/product.model';
 import { Component, OnInit } from '@angular/core';
@@ -25,7 +25,7 @@ export class ProductEditorComponent implements OnInit {
   inputelement: HTMLInputElement;
   locations: CityModel[];
   productlocation: string;
-  imagemodelarray: ImageModel[];
+  imagemodelarray: ProductImageModel[];
   categories: ProductCategoryModel[];
   category: string[];
   dimension: string;
@@ -54,14 +54,14 @@ export class ProductEditorComponent implements OnInit {
     this.fetchAllCategory();
   }
   fetchAllCity() {
-    this.cityService.GetListOfCity().subscribe(
+    this.cityService.getListOfCity().subscribe(
       (result) => this.locations = result,
       (err) => console.log(err),
       () => console.log('CityLoaded')
     );
   }
   fetchAllCategory() {
-    this.categoryService.GetAllCategories().subscribe(
+    this.categoryService.getAllCategories().subscribe(
       (result) => this.categories = result,
       (err) => console.log(err),
       () => console.log('CategoryLoaded')
@@ -76,7 +76,7 @@ export class ProductEditorComponent implements OnInit {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.imagemodelarray.push(<ImageModel>{
+        this.imagemodelarray.push(<ProductImageModel>{
           productImageUrl: reader.result,
           productImageName: file.name,
           productImageSize: file.size
@@ -136,6 +136,6 @@ export class ProductEditorComponent implements OnInit {
       TblProductVariations: this.convertStringToVariationArray(form.value['variations'])
     }
     console.log(this.productModel);
-    this.productService.CreateProduct(this.productModel).subscribe();
+    this.productService.createProduct(this.productModel).subscribe();
   }
 }

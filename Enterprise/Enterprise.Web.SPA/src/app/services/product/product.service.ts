@@ -1,5 +1,4 @@
 import { ProductModel } from './../../models/product/product/product.model';
-import { ImageModel } from './../../models/image-upload/image.model';
 
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
@@ -13,16 +12,16 @@ import 'rxjs/add/operator/map';
 export class ProductService {
     urlProductController = 'http://localhost:63853/api/product';
     constructor(private http: Http) { }
-    CreateProduct(product: ProductModel) {
+    createProduct(product: ProductModel) {
         const headers: Headers = new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post(this.urlProductController, product, { headers: headers });
     }
-    GetAllProduct(): Observable<ProductModel[]> {
+    getAllProduct(): Observable<ProductModel[]> {
         const headers: Headers = new Headers();
         return this.http.get(this.urlProductController).map(result => result.json());
     }
-    GetProductById(productId: string) {
+    getProductById(productId: string) {
         return this.http.get(this.urlProductController + '/' + productId).map(
             (result) => result.json()
         )

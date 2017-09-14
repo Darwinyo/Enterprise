@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 export class ProductImagesService {
     urlProductImageController = 'http://localhost:63853/api/productimages';
     constructor(private http: Http) { }
-    GetProductImageListByProductId(productId: string): Observable<ProductImageModel[]> {
+    getProductImageListByProductId(productId: string): Observable<ProductImageModel[]> {
         return this.http.get(this.urlProductImageController + '/' + productId).map(
             result => result.json()
         )

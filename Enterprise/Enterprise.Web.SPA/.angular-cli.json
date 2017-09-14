@@ -25,25 +25,20 @@
         "font-awesome/css/font-awesome.css",
         "css/plugins/ionRangeSlider/ion.rangeSlider.css",
         "css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css",
-        "css/plugins/summernote/summernote.css",
-        "css/plugins/summernote/summernote-bs3.css",
-        "css/plugins/dropzone/basic.css",
-        "css/plugins/dropzone/dropzone.css",
-        "css/plugins/select2/select2.min.css",
         "css/animate.css",
         "css/style.css"
       ],
       "scripts": [
         "js/jquery-2.1.1.js",
+        "js/jquery.signalR.min.js",
+        "js/signalR.js",
+        "js/hubs/chat.hub.js",
         "js/bootstrap.min.js",
-        "js/inspinia.js",
+        "js/plugins/slimscroll/jquery.slimscroll.min.js",
         "js/plugins/pace/pace.min.js",
-        "js/plugins/metisMenu/jquery.metisMenu.js",
         "js/plugins/jquery-ui/jquery-ui.min.js",
         "js/plugins/ionRangeSlider/ion.rangeSlider.min.js",
-        "js/plugins/summernote/summernote.min.js",
-        "js/plugins/dropzone/dropzone.js",
-        "js/plugins/select2/select2.full.min.js"
+        "js/inspinia.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

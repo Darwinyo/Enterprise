@@ -1,0 +1,40 @@
+<div class="small-chat-box fadeInRight animated">
+
+  <div class="heading" draggable="true">
+    <small class="chat-date pull-right">
+                    02.19.2015
+    </small> Small chat
+  </div>
+
+  <div class="content">
+
+    <div [class]="chat.userId===userId?left:right" *ngFor="let chat of chatModel">
+      <div class="author-name">
+        {{chat.userId}}
+        <small class="chat-date">
+            {{chat.messageDatetime}}
+        </small>
+      </div>
+      <div class="chat-message" [class.active]="chat.userId===userId">
+        {{chat.message}}
+      </div>
+
+    </div>
+
+  </div>
+  <form class="form-chat" (ngSubmit)="send(chatForm)" #chatForm="ngForm">
+    <div class="input-group input-group-sm">
+      <input type="text" class="form-control" [(ngModel)]="chatItem" name="message">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Send</button> 
+      </span>
+    </div>
+  </form>
+</div>
+<div id="small-chat">
+  <span class="badge badge-warning pull-right">5</span>
+  <a class="open-small-chat">
+    <i class="fa fa-comments">
+    </i>
+  </a>
+</div>

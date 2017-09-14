@@ -1,4 +1,4 @@
-import { ProductCardModel } from './../../models/product-card/product-card.model';
+import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid-product.component.css']
 })
 export class GridProductComponent implements OnInit {
-  products: ProductCardModel[];
+  products: ProductCardViewModel[];
   constructor() {
     this.products = [];
   }
@@ -17,7 +17,7 @@ export class GridProductComponent implements OnInit {
   }
   fetchProducts() {
     for (let i = 0; i < 50; i++) {
-      this.products.push(<ProductCardModel>{
+      this.products.push(<ProductCardViewModel>{
         productname: 'Product ' + i,
         price: Math.round(Math.random() * 100),
         favorites: Math.ceil(Math.random() * 100),

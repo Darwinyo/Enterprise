@@ -5,8 +5,8 @@ using Enterprise.Repository.Abstract;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using System.Linq;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace Enterprise.API.BusinessLogics.Mongo
 {
@@ -25,7 +25,7 @@ namespace Enterprise.API.BusinessLogics.Mongo
             {
                 GroupId = jObject["groupId"].ToString(),
                 Message = jObject["message"].ToString(),
-                MessageDatetime = jObject["messageDatetime"].ToString(),
+                MessageDatetime = DateTime.Parse(jObject["messageDatetime"].ToString()),
                 UserId = jObject["userId"].ToString()
             };
             return tblChat;

@@ -1,43 +1,83 @@
+import { ChatComponent } from './components/chat/chat.component';
+import { ChatModel } from './models/chat/chat.model';
+import { ChatService } from './services/chat/chat.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { SignalRConnectionStatus } from './signalr/chathub/abstract/chat.signalr';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  IsDashboardv3 = false;
-  IsDashboardv1 = false;
-  constructor(private router: Router) {
+  @ViewChild('chat') chat: ChatComponent;
+  chatModel: ChatModel[];
+  userId: string;
+  groupId: string;
+  chatItem: ChatModel;
+  connectionId: string;
+  error: any;
+  constructor(private router: Router, private chatService: ChatService) {
   }
   ngOnInit(): void {
-    this.router.events
-      .filter((event) => event instanceof NavigationEnd)
-      .subscribe(
-      (event) => {
-        this.SetDashboard3Class(event['url'])
+    this.userId = prompt('Input UserId Please', 'User');
+    this.groupId = 'TestGroup';
+    this.chatService.initSignalRConnection().subscribe(
+      null,
+      error => console.log('Error on init: ' + error)
+    )
+    this.listenToConnection();
+    this.listenToConnectionState();
+    this.chatService.addChat.subscribe(
+      message => {
+        console.log('received..');
+        console.log(message);
+        this.chatModel.push(message)
       }
-      )
+    )
   }
-
-  SetDashboard3Class(event: string) {
-    switch (event) {
-      case '/dashboard/dashboardv1':
-        console.log(event);
-        this.IsDashboardv3 = false;
-        this.IsDashboardv1 = true;
-        break;
-      case '/dashboard/dashboardv3':
-        console.log(event);
-        this.IsDashboardv1 = false;
-        this.IsDashboardv3 = true;
-        console.log(this.IsDashboardv3);
-        break;
-      default:
-        this.IsDashboardv3 = false;
-        this.IsDashboardv1 = false;
-        break;
+  fetchChats(groupId: string) {
+    this.chatService.getChatHistoryByGroupId(groupId).subscribe(
+      (result) => this.chatModel = result,
+      (err) => console.log(err),
+      () => this.chat.populateChats(this.chatModel)
+    )
+  }
+  listenToConnection() {
+    this.chatService.setConnectionId.subscribe(
+      id => {
+        console.log(id);
+        this.connectionId = id;
+      }
+    )
+  }
+  listenToConnectionState() {
+    this.chatService.connectionState.subscribe(
+      connectionState => {
+        if (connectionState === SignalRConnectionStatus.Connected) {
+          console.log('Connected');
+          this.fetchChats(this.groupId);
+        } else {
+          console.log(connectionState.toString());
+        }
+      },
+      error => {
+        this.error = error;
+        console.log(error);
+      }
+    )
+  }
+  send(event) {
+    this.chatItem = <ChatModel>{
+      userId: this.userId,
+      groupId: this.groupId,
+      message: event,
+      messageDatetime: new Date()
     }
+    this.chatService.postChat(this.chatItem).subscribe(
+      x => console.log('Posted'),
+      (err)=>console.log(),
+      ()=>console.log('Post Complete')
+    )
   }
 }

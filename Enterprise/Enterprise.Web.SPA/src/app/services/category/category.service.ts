@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 export class CategoryService {
     urlCategoryController = 'http://localhost:63853/api/categoryproduct';
     constructor(private http: Http) { }
-    GetAllCategories(): Observable<ProductCategoryModel[]> {
+    getAllCategories(): Observable<ProductCategoryModel[]> {
         return this.http.get(this.urlCategoryController).map(
             (result) => result.json()
         );
