@@ -1,3 +1,6 @@
+import { RegistrationComponent } from './components/registration/registration.component';
+import { CartComponent } from './components/cart/cart.component';
+import { LoginComponent } from './components/login/login.component';
 import { ChatHub } from './signalr/chathub/chat.hub';
 import { ChatService } from './services/chat/chat.service';
 import { ChatComponent } from './components/chat/chat.component';
@@ -71,7 +74,9 @@ import { ProductSpecsService } from './services/product-specs/product-specs.serv
     ProductEditorComponent,
     PeriodeEditorComponent,
     ChatComponent,
-
+    LoginComponent,
+    CartComponent,
+    RegistrationComponent,
     ErrorNotFoundComponent
   ],
   imports: [

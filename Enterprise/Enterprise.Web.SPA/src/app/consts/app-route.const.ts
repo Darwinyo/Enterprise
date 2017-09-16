@@ -1,3 +1,4 @@
+import { RegistrationComponent } from './../components/registration/registration.component';
 import { PeriodeEditorComponent } from './../containers/periode-editor/periode-editor.component';
 import { ProductEditorComponent } from './../containers/product-editor/product-editor.component';
 import { ProductDetailsComponent } from './../containers/product-details/product-details.component';
@@ -22,6 +23,7 @@ export const appRoutes: Routes = [
     { path: 'product-details/:id', component: ProductDetailsComponent, pathMatch: 'full' },
     { path: 'product-editor', component: ProductEditorComponent, pathMatch: 'full' },
     { path: 'periode-editor', component: PeriodeEditorComponent, pathMatch: 'full' },
+    { path: 'register', component: RegistrationComponent, pathMatch: 'full' },
     // { path: 'dashboard', loadChildren: '../modules/dashboard/dashboard.module#DashboardModule'},
     // { path: 'layouts', component: LayoutsComponent },
     // { path: 'graph-flot', component: GraphFlotComponent },

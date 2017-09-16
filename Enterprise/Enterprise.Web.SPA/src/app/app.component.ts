@@ -7,7 +7,7 @@ import { SignalRConnectionStatus } from './signalr/chathub/abstract/chat.signalr
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   @ViewChild('chat') chat: ChatComponent;

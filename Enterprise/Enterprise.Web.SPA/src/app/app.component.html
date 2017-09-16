@@ -15,7 +15,7 @@
 </div> -->
 <div id="wrapper">
     <div class="gray-bg">
-        
+        <app-navbar></app-navbar>
         <router-outlet></router-outlet>
     </div>
     <app-chat #chat (sendEvent)="send($event)"></app-chat>
