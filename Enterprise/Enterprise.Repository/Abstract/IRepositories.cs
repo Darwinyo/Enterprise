@@ -4,6 +4,7 @@ using System.Text;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.DataLayers.EnterpriseDB_HelperModel;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.DataLayers.EnterpriseDB_UserModel;
 
 namespace Enterprise.Repository.Abstract
 {
@@ -19,6 +20,10 @@ namespace Enterprise.Repository.Abstract
     public interface ITblProductRecommendedRepository : IEntityBaseRepository<TblProductRecommended> { };
     public interface ITblProductSpecsRepository : IEntityBaseRepository<TblProductSpecs> { };
     public interface ITblProductVariationsRepository : IEntityBaseRepository<TblProductVariations> { };
+    #endregion
+
+    #region user
+    public interface ITblUserLoginRepository : IEntityBaseRepository<TblUserLogin> { };
     #endregion
 
     #region helper

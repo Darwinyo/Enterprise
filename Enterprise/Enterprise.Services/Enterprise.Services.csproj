@@ -1,13 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.API\Enterprise.API.BusinessLogics\Enterprise.API.BusinessLogics.csproj" />
+    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
     <ProjectReference Include="..\Enterprise.API\Enterprise.API.Models\Enterprise.API.Models.csproj" />
     <ProjectReference Include="..\Enterprise.Repository\Enterprise.Repository.csproj" />
+    <ProjectReference Include="..\Enterprise.Workflows.Invoker\Enterprise.Workflows.Invoker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,184 @@
+﻿<WorkflowService mc:Ignorable="sads sap sap2010" p1:TextExpression.Namespaces="{x:Reference __ReferenceID1}" p1:TextExpression.References="{x:Reference __ReferenceID2}" ConfigurationName="UserRegistrationService" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowService_1" Name="UserRegistrationService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:ewwu="clr-namespace:Enterprise.WCF.Workflows.UserRegistrationServiceContract;assembly=Enterprise.WCF.Workflows"
+ xmlns:ewwua="clr-namespace:Enterprise.WCF.Workflows.UserRegistrationServiceContract.Activities;assembly=Enterprise.WCF.Workflows"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Sequential Service" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <p1:TextExpression.Namespaces>
+      <sco:Collection x:TypeArguments="x:String" x:Name="__ReferenceID1">
+        <x:String>System</x:String>
+        <x:String>System.Collections.Generic</x:String>
+        <x:String>System.Data</x:String>
+        <x:String>System.Linq</x:String>
+        <x:String>System.Text</x:String>
+        <x:String>Enterprise.WCF.Workflows.UserRegistrationServiceContract</x:String>
+      </sco:Collection>
+    </p1:TextExpression.Namespaces>
+    <p1:TextExpression.References>
+      <sco:Collection x:TypeArguments="p1:AssemblyReference" x:Name="__ReferenceID2">
+        <p1:AssemblyReference>Microsoft.CSharp</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.DynamicData</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Drawing</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.ApplicationServices</p1:AssemblyReference>
+        <p1:AssemblyReference>System</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Core</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Runtime.Serialization</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Channels</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xaml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml.Linq</p1:AssemblyReference>
+        <p1:AssemblyReference>mscorlib</p1:AssemblyReference>
+        <p1:AssemblyReference>Enterprise.WCF.Workflows</p1:AssemblyReference>
+      </sco:Collection>
+    </p1:TextExpression.References>
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="handle" />
+      <p1:Variable x:TypeArguments="x:Object" Name="userLoginData" />
+      <p1:Variable x:TypeArguments="ewwu:TblUserLogin" Name="userLoginModel" />
+      <p1:Variable x:TypeArguments="x:Boolean" Name="result" />
+      <p1:Variable x:TypeArguments="s:String[]" Name="lstSameRecord" />
+      <p1:Variable x:TypeArguments="x:Object" Name="userLoginRepository" />
+    </p1:Sequence.Variables>
+    <Receive x:Name="__ReferenceID0" CanCreateInstance="True" DisplayName="ReceiveUserLoginToStartRegistration" sap2010:WorkflowViewState.IdRef="Receive_1" OperationName="StartRegistration" ServiceContractName="p:IService">
+      <Receive.CorrelationInitializers>
+        <RequestReplyCorrelationInitializer>
+          <RequestReplyCorrelationInitializer.CorrelationHandle>
+            <p1:InArgument x:TypeArguments="CorrelationHandle">
+              <mca:CSharpValue x:TypeArguments="CorrelationHandle">handle</mca:CSharpValue>
+            </p1:InArgument>
+          </RequestReplyCorrelationInitializer.CorrelationHandle>
+        </RequestReplyCorrelationInitializer>
+      </Receive.CorrelationInitializers>
+      <ReceiveParametersContent>
+        <p1:OutArgument x:TypeArguments="x:Object" x:Key="userLoginObj">
+          <mca:CSharpReference x:TypeArguments="x:Object">userLoginData</mca:CSharpReference>
+        </p1:OutArgument>
+        <p1:OutArgument x:TypeArguments="x:Object" x:Key="userLoginRepository">
+          <mca:CSharpReference x:TypeArguments="x:Object">userLoginRepository</mca:CSharpReference>
+        </p1:OutArgument>
+      </ReceiveParametersContent>
+    </Receive>
+    <ewwua:CreateUserLogin sap2010:WorkflowViewState.IdRef="CreateUserLogin_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <ewwua:CreateUserLogin.CreateUserLoginResult>
+        <p1:OutArgument x:TypeArguments="ewwu:TblUserLogin">
+          <mca:CSharpReference x:TypeArguments="ewwu:TblUserLogin">userLoginModel</mca:CSharpReference>
+        </p1:OutArgument>
+      </ewwua:CreateUserLogin.CreateUserLoginResult>
+      <ewwua:CreateUserLogin.userLoginRepository>
+        <p1:InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">userLoginRepository</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:CreateUserLogin.userLoginRepository>
+      <ewwua:CreateUserLogin.value>
+        <p1:InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">userLoginData</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:CreateUserLogin.value>
+    </ewwua:CreateUserLogin>
+    <ewwua:GetSameRecord sap2010:WorkflowViewState.IdRef="GetSameRecord_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <ewwua:GetSameRecord.GetSameRecordResult>
+        <p1:OutArgument x:TypeArguments="s:String[]">
+          <mca:CSharpReference x:TypeArguments="s:String[]">lstSameRecord</mca:CSharpReference>
+        </p1:OutArgument>
+      </ewwua:GetSameRecord.GetSameRecordResult>
+      <ewwua:GetSameRecord.userLogin>
+        <p1:InArgument x:TypeArguments="ewwu:TblUserLogin">
+          <mca:CSharpValue x:TypeArguments="ewwu:TblUserLogin">userLoginModel</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:GetSameRecord.userLogin>
+      <ewwua:GetSameRecord.userLoginRepository>
+        <p1:InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">userLoginRepository</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:GetSameRecord.userLoginRepository>
+    </ewwua:GetSameRecord>
+    <ewwua:IsUserLoginExists sap2010:WorkflowViewState.IdRef="IsUserLoginExists_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <ewwua:IsUserLoginExists.IsUserLoginExistsResult>
+        <p1:OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">result</mca:CSharpReference>
+        </p1:OutArgument>
+      </ewwua:IsUserLoginExists.IsUserLoginExistsResult>
+      <ewwua:IsUserLoginExists.sameRecord>
+        <p1:InArgument x:TypeArguments="s:String[]">
+          <mca:CSharpValue x:TypeArguments="s:String[]">lstSameRecord</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:IsUserLoginExists.sameRecord>
+      <ewwua:IsUserLoginExists.userLoginRepository>
+        <p1:InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">userLoginRepository</mca:CSharpValue>
+        </p1:InArgument>
+      </ewwua:IsUserLoginExists.userLoginRepository>
+    </ewwua:IsUserLoginExists>
+    <p1:If sap2010:WorkflowViewState.IdRef="If_1">
+      <p1:If.Condition>
+        <p1:InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">result</mca:CSharpValue>
+        </p1:InArgument>
+      </p1:If.Condition>
+      <p1:If.Else>
+        <ewwua:RegisterUser sap2010:WorkflowViewState.IdRef="RegisterUser_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+          <ewwua:RegisterUser.userLogin>
+            <p1:InArgument x:TypeArguments="ewwu:TblUserLogin">
+              <mca:CSharpValue x:TypeArguments="ewwu:TblUserLogin">userLoginModel</mca:CSharpValue>
+            </p1:InArgument>
+          </ewwua:RegisterUser.userLogin>
+          <ewwua:RegisterUser.userLoginRepository>
+            <p1:InArgument x:TypeArguments="x:Object">
+              <mca:CSharpValue x:TypeArguments="x:Object">userLoginRepository</mca:CSharpValue>
+            </p1:InArgument>
+          </ewwua:RegisterUser.userLoginRepository>
+        </ewwua:RegisterUser>
+      </p1:If.Else>
+    </p1:If>
+    <SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendResponse" sap2010:WorkflowViewState.IdRef="SendReply_1">
+      <SendParametersContent>
+        <p1:InArgument x:TypeArguments="x:Boolean" x:Key="result">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">result</mca:CSharpValue>
+        </p1:InArgument>
+        <p1:InArgument x:TypeArguments="s:String[]" x:Key="lstSameRecord">
+          <mca:CSharpValue x:TypeArguments="s:String[]">lstSameRecord</mca:CSharpValue>
+        </p1:InArgument>
+      </SendParametersContent>
+    </SendReply>
+    <sads:DebugSymbol.Symbol>d1hEOlxQcm9qZWN0c1xFbnRlcnByaXNlXEVudGVycHJpc2VcRW50ZXJwcmlzZS5XQ0YuV29ya2Zsb3dzXFVzZXJSZWdpc3RyYXRpb25TZXJ2aWNlLnhhbWx4GRMDpAERAQE+BVAPAXhRBWEdAWJiBXIbAUxzBYMBHwE2hAEFmAENAR+ZAQWiAREBAk0LTWQChwFDD0NcAoABSgtKXgF5XgteVgFxWQtZXAFqVAtUaAFjZQtlYAFbbwtvXAFUagtqYAFNewt7WAFFgAELgAFcAT52C3ZYATeHAQuHAVABIIsBCZYBHgEnnAELnAFQAQqfAQufAVgBA5MBD5MBYAEvjgEPjgFkASg=</sads:DebugSymbol.Symbol>
+  </p1:Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="464,86" />
+      <sap2010:ViewStateData Id="CreateUserLogin_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="GetSameRecord_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="IsUserLoginExists_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="RegisterUser_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,210" />
+      <sap2010:ViewStateData Id="SendReply_1" sap:VirtualizedContainerService.HintSize="464,86" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,772">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="516,842" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</WorkflowService>

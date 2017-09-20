@@ -22,6 +22,12 @@ using Enterprise.Services.Periode.Abstract;
 using Enterprise.Services.Periode;
 using Enterprise.Services.ProductDetails.Abstract;
 using Enterprise.Services.ProductDetails;
+using Enterprise.DataLayers.EnterpriseDB_TransactionModel;
+using Enterprise.Services.User.Abstract;
+using Enterprise.Services.User;
+using Enterprise.Repository.UserRepository;
+using Enterprise.Workflows.Invoker.User;
+using Enterprise.Workflows.Invoker.User.Abstraction;
 
 namespace Enterprise.API
 {
@@ -38,9 +44,9 @@ namespace Enterprise.API
         {
             services.AddCors();
             services.AddMvc();
-                //AddJsonOptions(options =>
-                //options.SerializerSettings.ContractResolver =
-                //new DefaultContractResolver());
+            //AddJsonOptions(options =>
+            //options.SerializerSettings.ContractResolver =
+            //new DefaultContractResolver());
 
             services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
 
@@ -57,6 +63,8 @@ namespace Enterprise.API
             services.AddDbContext<ProductContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_Product")));
 
             services.AddDbContext<UserContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_User")));
+
+            services.AddDbContext<TransactionContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_Transaction")));
 
             services.AddDbContext<HelperContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EnterpriseDB_Helper")));
 
@@ -79,6 +87,7 @@ namespace Enterprise.API
             services.AddScoped<ITblProductSpecsRepository, TblProductSpecsRepository>();
             services.AddScoped<ITblProductVariationsRepository, TblProductVariationsRepository>();
             services.AddScoped<ITblChatRepository, TblChatRepository>();
+            services.AddScoped<ITblUserLoginRepository, TblUserLoginRepository>();
             #endregion
 
             #region services
@@ -93,6 +102,11 @@ namespace Enterprise.API
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<IPeriodeService, PeriodeService>();
             services.AddScoped<IChatService, ChatService>();
+            services.AddScoped<IUserService, UserService>();
+            #endregion
+
+            #region invoker
+            services.AddScoped<IUserWorkflowInvoker, UserWorkflowInvoker>();
             #endregion
         }
 

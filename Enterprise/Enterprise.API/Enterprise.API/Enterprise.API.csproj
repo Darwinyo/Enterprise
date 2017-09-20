@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Connected Services\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -45,7 +46,12 @@
     <ProjectReference Include="..\..\Enterprise.Repository\Enterprise.Repository.csproj" />
     <ProjectReference Include="..\..\Enterprise.Services\Enterprise.Services.csproj" />
     <ProjectReference Include="..\..\Enterprise.SignalR\Enterprise.SignalR.csproj" />
+    <ProjectReference Include="..\..\Enterprise.Workflows.Invoker\Enterprise.Workflows.Invoker.csproj" />
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
