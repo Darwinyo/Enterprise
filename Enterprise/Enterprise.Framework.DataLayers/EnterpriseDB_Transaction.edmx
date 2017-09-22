@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EnterpriseDB_TransactionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Balance">
+          <Key>
+            <PropertyRef Name="Balance_Id" />
+          </Key>
+          <Property Name="User_Details_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Balance_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="Currency" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Transaction">
+          <Key>
+            <PropertyRef Name="Product_Transaction_Id" />
+          </Key>
+          <Property Name="Product_Transaction_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Amount" Type="int" Nullable="false" />
+          <Property Name="Transaction_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Transaction">
+          <Key>
+            <PropertyRef Name="Transaction_Id" />
+          </Key>
+          <Property Name="Transaction_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="User_Details_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Type_Transaction" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Transaction_Method" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Transaction_Amount" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="Transaction_Currency" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Transaction_Date" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Balance_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Transaction_Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Product_Transaction_Tbl_Transaction">
+          <End Role="Tbl_Transaction" Type="Self.Tbl_Transaction" Multiplicity="1" />
+          <End Role="Tbl_Product_Transaction" Type="Self.Tbl_Product_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Transaction">
+              <PropertyRef Name="Transaction_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Transaction">
+              <PropertyRef Name="Transaction_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Transaction_Tbl_Balance">
+          <End Role="Tbl_Balance" Type="Self.Tbl_Balance" Multiplicity="1" />
+          <End Role="Tbl_Transaction" Type="Self.Tbl_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Balance">
+              <PropertyRef Name="Balance_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Transaction">
+              <PropertyRef Name="Balance_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EnterpriseDB_TransactionModelStoreContainer">
+          <EntitySet Name="Tbl_Balance" EntityType="Self.Tbl_Balance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Transaction" EntityType="Self.Tbl_Product_Transaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Transaction" EntityType="Self.Tbl_Transaction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Product_Transaction_Tbl_Transaction" Association="Self.FK_Tbl_Product_Transaction_Tbl_Transaction">
+            <End Role="Tbl_Transaction" EntitySet="Tbl_Transaction" />
+            <End Role="Tbl_Product_Transaction" EntitySet="Tbl_Product_Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Transaction_Tbl_Balance" Association="Self.FK_Tbl_Transaction_Tbl_Balance">
+            <End Role="Tbl_Balance" EntitySet="Tbl_Balance" />
+            <End Role="Tbl_Transaction" EntitySet="Tbl_Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnterpriseDB_TransactionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Balance">
+          <Key>
+            <PropertyRef Name="Balance_Id" />
+          </Key>
+          <Property Name="User_Details_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Balance_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Transaction" Relationship="Self.FK_Tbl_Transaction_Tbl_Balance" FromRole="Tbl_Balance" ToRole="Tbl_Transaction" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Transaction">
+          <Key>
+            <PropertyRef Name="Product_Transaction_Id" />
+          </Key>
+          <Property Name="Product_Transaction_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Amount" Type="Int32" Nullable="false" />
+          <Property Name="Transaction_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Transaction" Relationship="Self.FK_Tbl_Product_Transaction_Tbl_Transaction" FromRole="Tbl_Product_Transaction" ToRole="Tbl_Transaction" />
+        </EntityType>
+        <EntityType Name="Tbl_Transaction">
+          <Key>
+            <PropertyRef Name="Transaction_Id" />
+          </Key>
+          <Property Name="Transaction_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Details_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type_Transaction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Transaction_Method" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Transaction_Amount" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="Transaction_Currency" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Transaction_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Balance_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Transaction_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Balance" Relationship="Self.FK_Tbl_Transaction_Tbl_Balance" FromRole="Tbl_Transaction" ToRole="Tbl_Balance" />
+          <NavigationProperty Name="Tbl_Product_Transaction" Relationship="Self.FK_Tbl_Product_Transaction_Tbl_Transaction" FromRole="Tbl_Transaction" ToRole="Tbl_Product_Transaction" />
+        </EntityType>
+        <Association Name="FK_Tbl_Transaction_Tbl_Balance">
+          <End Role="Tbl_Balance" Type="Self.Tbl_Balance" Multiplicity="1" />
+          <End Role="Tbl_Transaction" Type="Self.Tbl_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Balance">
+              <PropertyRef Name="Balance_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Transaction">
+              <PropertyRef Name="Balance_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Transaction_Tbl_Transaction">
+          <End Role="Tbl_Transaction" Type="Self.Tbl_Transaction" Multiplicity="1" />
+          <End Role="Tbl_Product_Transaction" Type="Self.Tbl_Product_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Transaction">
+              <PropertyRef Name="Transaction_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Transaction">
+              <PropertyRef Name="Transaction_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TransactionContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Balance" EntityType="Self.Tbl_Balance" />
+          <EntitySet Name="Tbl_Product_Transaction" EntityType="Self.Tbl_Product_Transaction" />
+          <EntitySet Name="Tbl_Transaction" EntityType="Self.Tbl_Transaction" />
+          <AssociationSet Name="FK_Tbl_Transaction_Tbl_Balance" Association="Self.FK_Tbl_Transaction_Tbl_Balance">
+            <End Role="Tbl_Balance" EntitySet="Tbl_Balance" />
+            <End Role="Tbl_Transaction" EntitySet="Tbl_Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Transaction_Tbl_Transaction" Association="Self.FK_Tbl_Product_Transaction_Tbl_Transaction">
+            <End Role="Tbl_Transaction" EntitySet="Tbl_Transaction" />
+            <End Role="Tbl_Product_Transaction" EntitySet="Tbl_Product_Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnterpriseDB_TransactionModelStoreContainer" CdmEntityContainer="TransactionContext">
+          <EntitySetMapping Name="Tbl_Balance">
+            <EntityTypeMapping TypeName="EnterpriseDB_TransactionModel.Tbl_Balance">
+              <MappingFragment StoreEntitySet="Tbl_Balance">
+                <ScalarProperty Name="User_Details_Id" ColumnName="User_Details_Id" />
+                <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Transaction">
+            <EntityTypeMapping TypeName="EnterpriseDB_TransactionModel.Tbl_Product_Transaction">
+              <MappingFragment StoreEntitySet="Tbl_Product_Transaction">
+                <ScalarProperty Name="Product_Transaction_Id" ColumnName="Product_Transaction_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Product_Amount" ColumnName="Product_Amount" />
+                <ScalarProperty Name="Transaction_Id" ColumnName="Transaction_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Transaction">
+            <EntityTypeMapping TypeName="EnterpriseDB_TransactionModel.Tbl_Transaction">
+              <MappingFragment StoreEntitySet="Tbl_Transaction">
+                <ScalarProperty Name="Transaction_Id" ColumnName="Transaction_Id" />
+                <ScalarProperty Name="User_Details_Id" ColumnName="User_Details_Id" />
+                <ScalarProperty Name="Type_Transaction" ColumnName="Type_Transaction" />
+                <ScalarProperty Name="Transaction_Method" ColumnName="Transaction_Method" />
+                <ScalarProperty Name="Transaction_Amount" ColumnName="Transaction_Amount" />
+                <ScalarProperty Name="Transaction_Currency" ColumnName="Transaction_Currency" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+                <ScalarProperty Name="Balance_Id" ColumnName="Balance_Id" />
+                <ScalarProperty Name="Transaction_Status" ColumnName="Transaction_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

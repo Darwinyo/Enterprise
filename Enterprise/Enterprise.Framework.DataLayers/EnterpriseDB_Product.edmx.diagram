@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="74704753f7f84715a5215c4d9ea3df5e" Name="Diagram1">
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Category" Width="1.5" PointX="3.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Category" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Hot" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Image" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Recommended" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Specs" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EnterpriseDB_ProductModel.Tbl_Product_Variations" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Category_Tbl_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Category_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Hot_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Image_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Recommended_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Specs_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="EnterpriseDB_ProductModel.FK_Tbl_Product_Variations_Tbl_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

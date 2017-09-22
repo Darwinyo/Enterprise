@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  enterprise.api:
-    image: enterprise.api
-    build:
-      context: ./Enterprise.API
-      dockerfile: Dockerfile

@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
-    <ProjectReference Include="..\Enterprise.API\Enterprise.API.Models\Enterprise.API.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
+    <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
   </ItemGroup>
 
 </Project>

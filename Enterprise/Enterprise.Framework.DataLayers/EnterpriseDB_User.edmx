@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EnterpriseDB_UserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Pick_Up_Location">
+          <Key>
+            <PropertyRef Name="Pick_Up_Location_Id" />
+          </Key>
+          <Property Name="Pick_Up_Location_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Pick_Up_Location_1" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Pick_Up_Location_2" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Pick_Up_Location_3" Type="varchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Profile_Image">
+          <Key>
+            <PropertyRef Name="Profile_Image_Id" />
+          </Key>
+          <Property Name="Profile_Image_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Profile_Image_Url" Type="varchar(max)" Nullable="false" />
+          <Property Name="Profile_Image_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Profile_Image_Size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Card">
+          <Key>
+            <PropertyRef Name="User_Card_Id" />
+          </Key>
+          <Property Name="User_Card_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Card_Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Card_Provider" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Card_Number" Type="int" Nullable="false" />
+          <Property Name="Card_Owner" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="User_Details_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Details">
+          <Key>
+            <PropertyRef Name="User_Details_Id" />
+          </Key>
+          <Property Name="User_Details_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="First_Name" Type="varchar" MaxLength="200" />
+          <Property Name="Middle_Name" Type="varchar" MaxLength="200" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="200" />
+          <Property Name="Email_Main" Type="varchar" MaxLength="200" />
+          <Property Name="Email_Secondary" Type="varchar" MaxLength="200" />
+          <Property Name="Phone_Main" Type="int" />
+          <Property Name="Phone_Secondary" Type="int" />
+          <Property Name="Address_Main" Type="varchar" MaxLength="200" />
+          <Property Name="Address_Secondary" Type="varchar" MaxLength="200" />
+          <Property Name="Address_Third" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Login">
+          <Key>
+            <PropertyRef Name="User_Login_Id" />
+          </Key>
+          <Property Name="User_Login_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="User_Login" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone_Number" Type="int" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_Pick_Up_Location" Type="Self.Tbl_Pick_Up_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Pick_Up_Location">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Profile_Image_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_Profile_Image" Type="Self.Tbl_Profile_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Profile_Image">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_User_Card_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_User_Card" Type="Self.Tbl_User_Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_User_Card">
+              <PropertyRef Name="User_Details_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_User_Login_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_User_Login" Type="Self.Tbl_User_Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_User_Login">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EnterpriseDB_UserModelStoreContainer">
+          <EntitySet Name="Tbl_Pick_Up_Location" EntityType="Self.Tbl_Pick_Up_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Profile_Image" EntityType="Self.Tbl_Profile_Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_User_Card" EntityType="Self.Tbl_User_Card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_User_Details" EntityType="Self.Tbl_User_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_User_Login" EntityType="Self.Tbl_User_Login" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details" Association="Self.FK_Tbl_Pick_Up_Location_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_Pick_Up_Location" EntitySet="Tbl_Pick_Up_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Profile_Image_Tbl_User_Details" Association="Self.FK_Tbl_Profile_Image_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_Profile_Image" EntitySet="Tbl_Profile_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_User_Card_Tbl_User_Details" Association="Self.FK_Tbl_User_Card_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_User_Card" EntitySet="Tbl_User_Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_User_Login_Tbl_User_Details" Association="Self.FK_Tbl_User_Login_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_User_Login" EntitySet="Tbl_User_Login" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnterpriseDB_UserModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Pick_Up_Location">
+          <Key>
+            <PropertyRef Name="Pick_Up_Location_Id" />
+          </Key>
+          <Property Name="Pick_Up_Location_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pick_Up_Location_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pick_Up_Location_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pick_Up_Location_3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_User_Details" Relationship="Self.FK_Tbl_Pick_Up_Location_Tbl_User_Details" FromRole="Tbl_Pick_Up_Location" ToRole="Tbl_User_Details" />
+        </EntityType>
+        <EntityType Name="Tbl_Profile_Image">
+          <Key>
+            <PropertyRef Name="Profile_Image_Id" />
+          </Key>
+          <Property Name="Profile_Image_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Profile_Image_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Profile_Image_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Profile_Image_Size" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tbl_User_Details" Relationship="Self.FK_Tbl_Profile_Image_Tbl_User_Details" FromRole="Tbl_Profile_Image" ToRole="Tbl_User_Details" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Card">
+          <Key>
+            <PropertyRef Name="User_Card_Id" />
+          </Key>
+          <Property Name="User_Card_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Card_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Card_Provider" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Card_Number" Type="Int32" Nullable="false" />
+          <Property Name="Card_Owner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Details_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_User_Details" Relationship="Self.FK_Tbl_User_Card_Tbl_User_Details" FromRole="Tbl_User_Card" ToRole="Tbl_User_Details" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Details">
+          <Key>
+            <PropertyRef Name="User_Details_Id" />
+          </Key>
+          <Property Name="User_Details_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Middle_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email_Main" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email_Secondary" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_Main" Type="Int32" />
+          <Property Name="Phone_Secondary" Type="Int32" />
+          <Property Name="Address_Main" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Secondary" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address_Third" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Pick_Up_Location" Relationship="Self.FK_Tbl_Pick_Up_Location_Tbl_User_Details" FromRole="Tbl_User_Details" ToRole="Tbl_Pick_Up_Location" />
+          <NavigationProperty Name="Tbl_Profile_Image" Relationship="Self.FK_Tbl_Profile_Image_Tbl_User_Details" FromRole="Tbl_User_Details" ToRole="Tbl_Profile_Image" />
+          <NavigationProperty Name="Tbl_User_Card" Relationship="Self.FK_Tbl_User_Card_Tbl_User_Details" FromRole="Tbl_User_Details" ToRole="Tbl_User_Card" />
+          <NavigationProperty Name="Tbl_User_Login" Relationship="Self.FK_Tbl_User_Login_Tbl_User_Details" FromRole="Tbl_User_Details" ToRole="Tbl_User_Login" />
+        </EntityType>
+        <EntityType Name="Tbl_User_Login">
+          <Key>
+            <PropertyRef Name="User_Login_Id" />
+          </Key>
+          <Property Name="User_Login_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Login" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_Number" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Detail_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_User_Details" Relationship="Self.FK_Tbl_User_Login_Tbl_User_Details" FromRole="Tbl_User_Login" ToRole="Tbl_User_Details" />
+        </EntityType>
+        <Association Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_Pick_Up_Location" Type="Self.Tbl_Pick_Up_Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Pick_Up_Location">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Profile_Image_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_Profile_Image" Type="Self.Tbl_Profile_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Profile_Image">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_User_Card_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_User_Card" Type="Self.Tbl_User_Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_User_Card">
+              <PropertyRef Name="User_Details_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_User_Login_Tbl_User_Details">
+          <End Role="Tbl_User_Details" Type="Self.Tbl_User_Details" Multiplicity="1" />
+          <End Role="Tbl_User_Login" Type="Self.Tbl_User_Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User_Details">
+              <PropertyRef Name="User_Details_Id" />
+            </Principal>
+            <Dependent Role="Tbl_User_Login">
+              <PropertyRef Name="User_Detail_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UserContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Pick_Up_Location" EntityType="Self.Tbl_Pick_Up_Location" />
+          <EntitySet Name="Tbl_Profile_Image" EntityType="Self.Tbl_Profile_Image" />
+          <EntitySet Name="Tbl_User_Card" EntityType="Self.Tbl_User_Card" />
+          <EntitySet Name="Tbl_User_Details" EntityType="Self.Tbl_User_Details" />
+          <EntitySet Name="Tbl_User_Login" EntityType="Self.Tbl_User_Login" />
+          <AssociationSet Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details" Association="Self.FK_Tbl_Pick_Up_Location_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_Pick_Up_Location" EntitySet="Tbl_Pick_Up_Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Profile_Image_Tbl_User_Details" Association="Self.FK_Tbl_Profile_Image_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_Profile_Image" EntitySet="Tbl_Profile_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_User_Card_Tbl_User_Details" Association="Self.FK_Tbl_User_Card_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_User_Card" EntitySet="Tbl_User_Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_User_Login_Tbl_User_Details" Association="Self.FK_Tbl_User_Login_Tbl_User_Details">
+            <End Role="Tbl_User_Details" EntitySet="Tbl_User_Details" />
+            <End Role="Tbl_User_Login" EntitySet="Tbl_User_Login" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnterpriseDB_UserModelStoreContainer" CdmEntityContainer="UserContext">
+          <EntitySetMapping Name="Tbl_Pick_Up_Location">
+            <EntityTypeMapping TypeName="EnterpriseDB_UserModel.Tbl_Pick_Up_Location">
+              <MappingFragment StoreEntitySet="Tbl_Pick_Up_Location">
+                <ScalarProperty Name="Pick_Up_Location_Id" ColumnName="Pick_Up_Location_Id" />
+                <ScalarProperty Name="User_Detail_Id" ColumnName="User_Detail_Id" />
+                <ScalarProperty Name="Pick_Up_Location_1" ColumnName="Pick_Up_Location_1" />
+                <ScalarProperty Name="Pick_Up_Location_2" ColumnName="Pick_Up_Location_2" />
+                <ScalarProperty Name="Pick_Up_Location_3" ColumnName="Pick_Up_Location_3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Profile_Image">
+            <EntityTypeMapping TypeName="EnterpriseDB_UserModel.Tbl_Profile_Image">
+              <MappingFragment StoreEntitySet="Tbl_Profile_Image">
+                <ScalarProperty Name="Profile_Image_Id" ColumnName="Profile_Image_Id" />
+                <ScalarProperty Name="User_Detail_Id" ColumnName="User_Detail_Id" />
+                <ScalarProperty Name="Profile_Image_Url" ColumnName="Profile_Image_Url" />
+                <ScalarProperty Name="Profile_Image_Name" ColumnName="Profile_Image_Name" />
+                <ScalarProperty Name="Profile_Image_Size" ColumnName="Profile_Image_Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_User_Card">
+            <EntityTypeMapping TypeName="EnterpriseDB_UserModel.Tbl_User_Card">
+              <MappingFragment StoreEntitySet="Tbl_User_Card">
+                <ScalarProperty Name="User_Card_Id" ColumnName="User_Card_Id" />
+                <ScalarProperty Name="Card_Type" ColumnName="Card_Type" />
+                <ScalarProperty Name="Card_Provider" ColumnName="Card_Provider" />
+                <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+                <ScalarProperty Name="Card_Owner" ColumnName="Card_Owner" />
+                <ScalarProperty Name="User_Details_Id" ColumnName="User_Details_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_User_Details">
+            <EntityTypeMapping TypeName="EnterpriseDB_UserModel.Tbl_User_Details">
+              <MappingFragment StoreEntitySet="Tbl_User_Details">
+                <ScalarProperty Name="User_Details_Id" ColumnName="User_Details_Id" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Email_Main" ColumnName="Email_Main" />
+                <ScalarProperty Name="Email_Secondary" ColumnName="Email_Secondary" />
+                <ScalarProperty Name="Phone_Main" ColumnName="Phone_Main" />
+                <ScalarProperty Name="Phone_Secondary" ColumnName="Phone_Secondary" />
+                <ScalarProperty Name="Address_Main" ColumnName="Address_Main" />
+                <ScalarProperty Name="Address_Secondary" ColumnName="Address_Secondary" />
+                <ScalarProperty Name="Address_Third" ColumnName="Address_Third" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_User_Login">
+            <EntityTypeMapping TypeName="EnterpriseDB_UserModel.Tbl_User_Login">
+              <MappingFragment StoreEntitySet="Tbl_User_Login">
+                <ScalarProperty Name="User_Login_Id" ColumnName="User_Login_Id" />
+                <ScalarProperty Name="User_Login" ColumnName="User_Login" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User_Detail_Id" ColumnName="User_Detail_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

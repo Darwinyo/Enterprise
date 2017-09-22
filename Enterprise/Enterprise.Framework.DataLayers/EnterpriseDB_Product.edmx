@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EnterpriseDB_ProductModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Category_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Category_Image_Url" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Favorite" Type="int" Nullable="false" />
+          <Property Name="Product_Location" Type="int" Nullable="false" />
+          <Property Name="Product_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Product_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Product_Rating" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="Product_Review" Type="int" Nullable="false" />
+          <Property Name="Product_Stock" Type="int" Nullable="false" />
+          <Property Name="Product_Description" Type="varchar(max)" />
+          <Property Name="Product_Front_Image" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Category">
+          <Key>
+            <PropertyRef Name="P_Category_Id" />
+          </Key>
+          <Property Name="P_Category_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Category_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Hot">
+          <Key>
+            <PropertyRef Name="P_Hot_Id" />
+          </Key>
+          <Property Name="P_Hot_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Periode_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Image">
+          <Key>
+            <PropertyRef Name="P_Image_Id" />
+          </Key>
+          <Property Name="P_Image_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Image_Url" Type="varchar(max)" Nullable="false" />
+          <Property Name="Product_Image_Name" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Product_Image_Size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Recommended">
+          <Key>
+            <PropertyRef Name="P_Recommend_Id" />
+          </Key>
+          <Property Name="P_Recommend_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Periode_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Specs">
+          <Key>
+            <PropertyRef Name="P_Spec_Id" />
+          </Key>
+          <Property Name="P_Spec_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Spec_Title" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Product_Spec_Value" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Variations">
+          <Key>
+            <PropertyRef Name="P_Variation_Id" />
+          </Key>
+          <Property Name="P_Variation_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="Product_Variation" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Product_Category_Tbl_Category">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="1" />
+          <End Role="Tbl_Product_Category" Type="Self.Tbl_Product_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Category">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Category_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Category" Type="Self.Tbl_Product_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Category">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Hot_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Hot" Type="Self.Tbl_Product_Hot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Hot">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Image_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Image" Type="Self.Tbl_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Image">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Recommended_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Recommended" Type="Self.Tbl_Product_Recommended" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Recommended">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Specs_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Specs" Type="Self.Tbl_Product_Specs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Specs">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Variations_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Variations" Type="Self.Tbl_Product_Variations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Variations">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_AddReview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productId" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Generate_HotProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodeId" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Generate_ProductRecommend" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodeId" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="EnterpriseDB_ProductModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Category" EntityType="Self.Tbl_Product_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Hot" EntityType="Self.Tbl_Product_Hot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Image" EntityType="Self.Tbl_Product_Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Recommended" EntityType="Self.Tbl_Product_Recommended" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Specs" EntityType="Self.Tbl_Product_Specs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product_Variations" EntityType="Self.Tbl_Product_Variations" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Product_Category_Tbl_Category" Association="Self.FK_Tbl_Product_Category_Tbl_Category">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Category_Tbl_Product" Association="Self.FK_Tbl_Product_Category_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Hot_Tbl_Product" Association="Self.FK_Tbl_Product_Hot_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Hot" EntitySet="Tbl_Product_Hot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Image_Tbl_Product" Association="Self.FK_Tbl_Product_Image_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Image" EntitySet="Tbl_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Recommended_Tbl_Product" Association="Self.FK_Tbl_Product_Recommended_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Recommended" EntitySet="Tbl_Product_Recommended" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Specs_Tbl_Product" Association="Self.FK_Tbl_Product_Specs_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Specs" EntitySet="Tbl_Product_Specs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Variations_Tbl_Product" Association="Self.FK_Tbl_Product_Variations_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Variations" EntitySet="Tbl_Product_Variations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnterpriseDB_ProductModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Category_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Image_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product_Category" Relationship="Self.FK_Tbl_Product_Category_Tbl_Category" FromRole="Tbl_Category" ToRole="Tbl_Product_Category" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Favorite" Type="Int32" Nullable="false" />
+          <Property Name="Product_Location" Type="Int32" Nullable="false" />
+          <Property Name="Product_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Product_Rating" Type="Decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="Product_Review" Type="Int32" Nullable="false" />
+          <Property Name="Product_Stock" Type="Int32" Nullable="false" />
+          <Property Name="Product_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Product_Front_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Product_Category" Relationship="Self.FK_Tbl_Product_Category_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Category" />
+          <NavigationProperty Name="Tbl_Product_Hot" Relationship="Self.FK_Tbl_Product_Hot_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Hot" />
+          <NavigationProperty Name="Tbl_Product_Image" Relationship="Self.FK_Tbl_Product_Image_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Image" />
+          <NavigationProperty Name="Tbl_Product_Recommended" Relationship="Self.FK_Tbl_Product_Recommended_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Recommended" />
+          <NavigationProperty Name="Tbl_Product_Specs" Relationship="Self.FK_Tbl_Product_Specs_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Specs" />
+          <NavigationProperty Name="Tbl_Product_Variations" Relationship="Self.FK_Tbl_Product_Variations_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_Product_Variations" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Category">
+          <Key>
+            <PropertyRef Name="P_Category_Id" />
+          </Key>
+          <Property Name="P_Category_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Category" Relationship="Self.FK_Tbl_Product_Category_Tbl_Category" FromRole="Tbl_Product_Category" ToRole="Tbl_Category" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Category_Tbl_Product" FromRole="Tbl_Product_Category" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Hot">
+          <Key>
+            <PropertyRef Name="P_Hot_Id" />
+          </Key>
+          <Property Name="P_Hot_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Periode_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Hot_Tbl_Product" FromRole="Tbl_Product_Hot" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Image">
+          <Key>
+            <PropertyRef Name="P_Image_Id" />
+          </Key>
+          <Property Name="P_Image_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Image_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Image_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Image_Size" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Image_Tbl_Product" FromRole="Tbl_Product_Image" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Recommended">
+          <Key>
+            <PropertyRef Name="P_Recommend_Id" />
+          </Key>
+          <Property Name="P_Recommend_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Periode_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Recommended_Tbl_Product" FromRole="Tbl_Product_Recommended" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Specs">
+          <Key>
+            <PropertyRef Name="P_Spec_Id" />
+          </Key>
+          <Property Name="P_Spec_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Spec_Title" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Spec_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Specs_Tbl_Product" FromRole="Tbl_Product_Specs" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Product_Variations">
+          <Key>
+            <PropertyRef Name="P_Variation_Id" />
+          </Key>
+          <Property Name="P_Variation_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_Variation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Variations_Tbl_Product" FromRole="Tbl_Product_Variations" ToRole="Tbl_Product" />
+        </EntityType>
+        <Association Name="FK_Tbl_Product_Category_Tbl_Category">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="1" />
+          <End Role="Tbl_Product_Category" Type="Self.Tbl_Product_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="Category_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Category">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Category_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Category" Type="Self.Tbl_Product_Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Category">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Hot_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Hot" Type="Self.Tbl_Product_Hot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Hot">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Image_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Image" Type="Self.Tbl_Product_Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Image">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Recommended_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Recommended" Type="Self.Tbl_Product_Recommended" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Recommended">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Specs_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Specs" Type="Self.Tbl_Product_Specs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Specs">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Variations_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_Product_Variations" Type="Self.Tbl_Product_Variations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="Product_Id" />
+            </Principal>
+            <Dependent Role="Tbl_Product_Variations">
+              <PropertyRef Name="Product_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProductContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" />
+          <EntitySet Name="Tbl_Product_Category" EntityType="Self.Tbl_Product_Category" />
+          <EntitySet Name="Tbl_Product_Hot" EntityType="Self.Tbl_Product_Hot" />
+          <EntitySet Name="Tbl_Product_Image" EntityType="Self.Tbl_Product_Image" />
+          <EntitySet Name="Tbl_Product_Recommended" EntityType="Self.Tbl_Product_Recommended" />
+          <EntitySet Name="Tbl_Product_Specs" EntityType="Self.Tbl_Product_Specs" />
+          <EntitySet Name="Tbl_Product_Variations" EntityType="Self.Tbl_Product_Variations" />
+          <AssociationSet Name="FK_Tbl_Product_Category_Tbl_Category" Association="Self.FK_Tbl_Product_Category_Tbl_Category">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Category_Tbl_Product" Association="Self.FK_Tbl_Product_Category_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Category" EntitySet="Tbl_Product_Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Hot_Tbl_Product" Association="Self.FK_Tbl_Product_Hot_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Hot" EntitySet="Tbl_Product_Hot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Image_Tbl_Product" Association="Self.FK_Tbl_Product_Image_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Image" EntitySet="Tbl_Product_Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Recommended_Tbl_Product" Association="Self.FK_Tbl_Product_Recommended_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Recommended" EntitySet="Tbl_Product_Recommended" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Specs_Tbl_Product" Association="Self.FK_Tbl_Product_Specs_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Specs" EntitySet="Tbl_Product_Specs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Variations_Tbl_Product" Association="Self.FK_Tbl_Product_Variations_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_Product_Variations" EntitySet="Tbl_Product_Variations" />
+          </AssociationSet>
+          <FunctionImport Name="sp_AddReview">
+            <Parameter Name="productId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Generate_HotProduct">
+            <Parameter Name="periodeId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Generate_ProductRecommend">
+            <Parameter Name="periodeId" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnterpriseDB_ProductModelStoreContainer" CdmEntityContainer="ProductContext">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Category">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Category">
+              <MappingFragment StoreEntitySet="Tbl_Category">
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Category_Image_Url" ColumnName="Category_Image_Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product">
+              <MappingFragment StoreEntitySet="Tbl_Product">
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Product_Favorite" ColumnName="Product_Favorite" />
+                <ScalarProperty Name="Product_Location" ColumnName="Product_Location" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+                <ScalarProperty Name="Product_Rating" ColumnName="Product_Rating" />
+                <ScalarProperty Name="Product_Review" ColumnName="Product_Review" />
+                <ScalarProperty Name="Product_Stock" ColumnName="Product_Stock" />
+                <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+                <ScalarProperty Name="Product_Front_Image" ColumnName="Product_Front_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Category">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Category">
+              <MappingFragment StoreEntitySet="Tbl_Product_Category">
+                <ScalarProperty Name="P_Category_Id" ColumnName="P_Category_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Hot">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Hot">
+              <MappingFragment StoreEntitySet="Tbl_Product_Hot">
+                <ScalarProperty Name="P_Hot_Id" ColumnName="P_Hot_Id" />
+                <ScalarProperty Name="Periode_Id" ColumnName="Periode_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Image">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Image">
+              <MappingFragment StoreEntitySet="Tbl_Product_Image">
+                <ScalarProperty Name="P_Image_Id" ColumnName="P_Image_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Product_Image_Url" ColumnName="Product_Image_Url" />
+                <ScalarProperty Name="Product_Image_Name" ColumnName="Product_Image_Name" />
+                <ScalarProperty Name="Product_Image_Size" ColumnName="Product_Image_Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Recommended">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Recommended">
+              <MappingFragment StoreEntitySet="Tbl_Product_Recommended">
+                <ScalarProperty Name="P_Recommend_Id" ColumnName="P_Recommend_Id" />
+                <ScalarProperty Name="Periode_Id" ColumnName="Periode_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Specs">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Specs">
+              <MappingFragment StoreEntitySet="Tbl_Product_Specs">
+                <ScalarProperty Name="P_Spec_Id" ColumnName="P_Spec_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Product_Spec_Title" ColumnName="Product_Spec_Title" />
+                <ScalarProperty Name="Product_Spec_Value" ColumnName="Product_Spec_Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product_Variations">
+            <EntityTypeMapping TypeName="EnterpriseDB_ProductModel.Tbl_Product_Variations">
+              <MappingFragment StoreEntitySet="Tbl_Product_Variations">
+                <ScalarProperty Name="P_Variation_Id" ColumnName="P_Variation_Id" />
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Product_Variation" ColumnName="Product_Variation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_AddReview" FunctionName="EnterpriseDB_ProductModel.Store.sp_AddReview" />
+          <FunctionImportMapping FunctionImportName="sp_Generate_HotProduct" FunctionName="EnterpriseDB_ProductModel.Store.sp_Generate_HotProduct" />
+          <FunctionImportMapping FunctionImportName="sp_Generate_ProductRecommend" FunctionName="EnterpriseDB_ProductModel.Store.sp_Generate_ProductRecommend" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

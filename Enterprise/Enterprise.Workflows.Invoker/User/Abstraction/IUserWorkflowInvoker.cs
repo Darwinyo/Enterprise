@@ -1,4 +1,5 @@
-﻿using Enterprise.Workflows.Invoker.UserRegistrationWorkflowService;
+﻿
+using Enterprise.Framework.DataLayers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Enterprise.Workflows.Invoker.User.Abstraction
 {
     public interface IUserWorkflowInvoker
     {
-        Task<StartRegistrationResponse> UserLoginRegistration(object userLogin);
+        void UserLoginRegistration(Tbl_User_Login userLogin);
     }
 }
