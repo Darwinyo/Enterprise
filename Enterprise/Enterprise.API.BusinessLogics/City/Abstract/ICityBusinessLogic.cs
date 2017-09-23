@@ -4,9 +4,9 @@ using Enterprise.Repository.Abstract;
 
 namespace Enterprise.API.BusinessLogics.City.Abstract
 {
-    interface ICityBusinessLogic
+    public interface ICityBusinessLogic
     {
-        IEnumerable<TblCity> GetListOfCity(ITblCityRepository cityRepository);
-        string GetCityById(int cityId, ITblCityRepository cityRepository);
+        IEnumerable<TblCity> GetListOfCity();
+        string GetCityById(int cityId);
     }
 }

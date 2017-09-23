@@ -11,14 +11,10 @@ namespace Enterprise.API.BusinessLogics.Product
 {
     public class CategoryBusinessLogic : ICategoryBusinessLogic
     {
-        public void CheckAndInsertCategory(object categoryObj, ITblCategoryRepository context)
+        private readonly ITblCategoryRepository _categoryRepository;
+        public CategoryBusinessLogic(ITblCategoryRepository categoryRepository)
         {
-            if (categoryObj != null)
-            {
-                TblCategory category = CreateCategory(categoryObj);
-                if (!IsCategoryExists(category.CategoryName, context))
-                    InsertCategory(category, context);
-            }
+            _categoryRepository = categoryRepository;
         }
         public TblCategory CreateCategory(object categoryObj)
         {
@@ -31,32 +27,30 @@ namespace Enterprise.API.BusinessLogics.Product
             };
             return tblCategory;
         }
-        public TblCategory GetTblCategoryByName(string categoryName, ITblCategoryRepository context)
+        public TblCategory GetTblCategoryByName(string categoryName)
         {
-            if (IsCategoryExists(categoryName,context))
-                return context.GetSingle(x=>x.CategoryName==categoryName);
-            return null;
+            return _categoryRepository.GetSingle(x => x.CategoryName == categoryName);
         }
-        public IEnumerable<TblCategory> GetAllTblCategory(ITblCategoryRepository context)
+        public IEnumerable<TblCategory> GetAllTblCategory()
         {
-            return context.GetAll();
+            return _categoryRepository.GetAll();
         }
 
-        public void InsertCategory(TblCategory entity, ITblCategoryRepository context)
+        public void InsertCategory(TblCategory entity)
         {
-            context.Add(entity);
+            _categoryRepository.Add(entity);
         }
 
-        public bool IsCategoryExists(string categoryName, ITblCategoryRepository context)
+        public bool IsCategoryExists(string categoryName)
         {
-            if (context.FindBy(x => x.CategoryName == categoryName).Count() > 0)
+            if (_categoryRepository.FindBy(x => x.CategoryName == categoryName).Count() > 0)
                 return true;
             return false;
         }
 
-        public int SaveCategory(ITblCategoryRepository context)
+        public int SaveCategory()
         {
-            return context.Commit();
+            return _categoryRepository.Commit();
         }
     }
 }

@@ -6,6 +6,6 @@ namespace Enterprise.API.BusinessLogics.ProductDetails.Abstract
 {
     public interface IProductImageBusinessLogic
     {
-        IEnumerable<TblProductImage> GetProductImageListByProductId(string productId, ITblProductImageRepository productImageRepository);
+        IEnumerable<TblProductImage> GetProductImageListByProductId(string productId);
     }
 }

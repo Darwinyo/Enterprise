@@ -1,23 +1,20 @@
 ﻿using System.Collections.Generic;
-using Enterprise.API.BusinessLogics.ProductDetails;
 using Enterprise.Services.ProductDetails.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
 
 namespace Enterprise.Services.ProductDetails
 {
     public class ProductImageService : IProductImageService
     {
-        private readonly ProductImageBusinessLogic _productImageBusinessLogic;
-        private readonly ITblProductImageRepository _productImageRepository;
-        public ProductImageService(ITblProductImageRepository productImageRepository)
+        private readonly IProductImageBusinessLogic _productImageBusinessLogic;
+        public ProductImageService(IProductImageBusinessLogic productImageBusinessLogic)
         {
-            _productImageBusinessLogic = new ProductImageBusinessLogic();
-            _productImageRepository = productImageRepository;
+            _productImageBusinessLogic = productImageBusinessLogic;
         }
         public IEnumerable<TblProductImage> GetProductImageListByProductId(string productId)
         {
-            return _productImageBusinessLogic.GetProductImageListByProductId(productId, _productImageRepository);
+            return _productImageBusinessLogic.GetProductImageListByProductId(productId);
         }
     }
 }

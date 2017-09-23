@@ -1,4 +1,5 @@
-﻿using Enterprise.Framework.DataLayers;
+﻿using Enterprise.API.Models.Responses;
+using Enterprise.Framework.DataLayers;
 using Enterprise.Workflows.Invoker.User.Abstraction;
 using System;
 using System.Collections.Generic;
@@ -29,13 +30,9 @@ namespace Enterprise.Workflows.Client.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public UserRegistrationWorkflowResponse Post([FromBody]object value)
         {
-            Tbl_User_Login login = new Tbl_User_Login()
-            {
-                User_Login = "Darwin"
-            };
-            _userWorkflowInvoker.UserLoginRegistration(login);
+            return _userWorkflowInvoker.UserLoginRegistration(value);
         }
 
         // PUT api/<controller>/5

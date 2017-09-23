@@ -1,28 +1,25 @@
 ﻿using System.Collections.Generic;
 using Enterprise.Services.City.Abstract;
-using Enterprise.API.BusinessLogics.City;
 using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.City.Abstract;
 
 namespace Enterprise.Services.City
 {
     public class CityService : ICityService
     {
-        private readonly CityBusinessLogic _cityBusinessLogic;
-        private readonly ITblCityRepository _cityRepository;
-        public CityService(ITblCityRepository cityRepository)
+        private readonly ICityBusinessLogic _cityBusinessLogic;
+        public CityService(ICityBusinessLogic cityBusinessLogic)
         {
-            _cityBusinessLogic = new CityBusinessLogic();
-            _cityRepository = cityRepository;
+            _cityBusinessLogic = cityBusinessLogic;
         }
         public string GetCityById(int cityId)
         {
-            return _cityBusinessLogic.GetCityById(cityId, _cityRepository);
+            return _cityBusinessLogic.GetCityById(cityId);
         }
 
         public IEnumerable<TblCity> GetListOfCity()
         {
-            return _cityBusinessLogic.GetListOfCity(_cityRepository);
+            return _cityBusinessLogic.GetListOfCity();
         }
     }
 }

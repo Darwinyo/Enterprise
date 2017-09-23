@@ -13,7 +13,7 @@ namespace Enterprise.Workflows.Activities.User
     public sealed class GetSameRecordActivity : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<UserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
+        public InArgument<IUserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
         public InArgument<Tbl_User_Login> UserLogin { get; set; }
         public OutArgument<string[]> ListSameRecord { get; set; }
 
@@ -22,7 +22,7 @@ namespace Enterprise.Workflows.Activities.User
         protected override void Execute(CodeActivityContext context)
         {
             // Obtain the runtime value of the Text input argument
-            UserLoginBusinessLogic userLoginBusinessLogic = UserLoginBusinessLogic.Get(context);
+            IUserLoginBusinessLogic userLoginBusinessLogic = UserLoginBusinessLogic.Get(context);
             ListSameRecord.Set(context, userLoginBusinessLogic.GetSameRecord(UserLogin.Get(context)));
         }
     }

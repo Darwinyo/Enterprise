@@ -6,8 +6,8 @@ namespace Enterprise.API.BusinessLogics.ProductDetails.Abstract
 {
     public interface IProductVariationBusinessLogic
     {
-        void InsertNewVariations(IEnumerable<TblProductVariations> listVariation, ITblProductVariationsRepository productVariationsRepository);
-        IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId, ITblProductVariationsRepository productVariationsRepository);
-        int SaveVariation(ITblProductVariationsRepository productVariationsRepository);
+        void InsertNewVariations(IEnumerable<TblProductVariations> listVariation);
+        IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId);
+        int SaveVariation();
     }
 }

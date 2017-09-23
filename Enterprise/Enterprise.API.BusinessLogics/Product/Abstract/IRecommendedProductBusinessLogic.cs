@@ -6,6 +6,6 @@ namespace Enterprise.API.BusinessLogics.Product.Abstract
 {
     public interface IRecommendedProductBusinessLogic
     {
-        IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId, ITblProductRecommendedRepository productRecommendedRepository, ProductContext context);
+        IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId);
     }
 }

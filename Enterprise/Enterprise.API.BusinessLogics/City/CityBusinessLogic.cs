@@ -8,14 +8,19 @@ namespace Enterprise.API.BusinessLogics.City
 {
     public class CityBusinessLogic : ICityBusinessLogic
     {
-        public string GetCityById(int cityId, ITblCityRepository cityRepository)
+        private readonly ITblCityRepository _cityRepository;
+        public CityBusinessLogic(ITblCityRepository cityRepository)
         {
-            return cityRepository.FindBy(x => x.CityId == cityId).FirstOrDefault().CityName;
+            _cityRepository = cityRepository;
+        }
+        public string GetCityById(int cityId)
+        {
+            return _cityRepository.FindBy(x => x.CityId == cityId).FirstOrDefault().CityName;
         }
 
-        public IEnumerable<TblCity> GetListOfCity(ITblCityRepository cityRepository)
+        public IEnumerable<TblCity> GetListOfCity()
         {
-            return cityRepository.GetAll();
+            return _cityRepository.GetAll();
         }
     }
 }

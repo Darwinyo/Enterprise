@@ -6,6 +6,6 @@ namespace Enterprise.API.BusinessLogics.Product.Abstract
 {
     public interface IHotProductBusinessLogic
     {
-        IEnumerable<TblProduct> GetHotProductsByPeriodeId(string PeriodeId, ITblProductHotRepository hotRepository, ProductContext context);
+        IEnumerable<TblProduct> GetHotProductsByPeriodeId(string PeriodeId);
     }
 }

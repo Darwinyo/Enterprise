@@ -6,6 +6,7 @@ namespace Enterprise.API.Models.Responses
 {
     public class UserRegistrationWorkflowResponse
     {
-
+        public bool Result { get; set; }
+        public string[] ListSameRecord { get; set; }
     }
 }

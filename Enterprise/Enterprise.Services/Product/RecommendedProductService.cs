@@ -3,23 +3,20 @@ using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.Product.Abstract;
 using Enterprise.API.BusinessLogics.Product;
 using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.Product.Abstract;
 
 namespace Enterprise.Services.Product
 {
     public class RecommendedProductService : IRecommendedProductService
     {
-        private readonly ITblProductRecommendedRepository _productRecommendedRepository;
-        private readonly RecommendedProductBusinessLogic _recommendedProductBusinessLogic;
-        private readonly ProductContext _context;
-        public RecommendedProductService(ITblProductRecommendedRepository productRecommendedRepository,ProductContext context)
+        private readonly IRecommendedProductBusinessLogic _recommendedProductBusinessLogic;
+        public RecommendedProductService(IRecommendedProductBusinessLogic recommendedProductBusinessLogic)
         {
-            _productRecommendedRepository = productRecommendedRepository;
-            _recommendedProductBusinessLogic = new RecommendedProductBusinessLogic();
-            _context = context;
+            _recommendedProductBusinessLogic = recommendedProductBusinessLogic;
         }
         public IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId)
         {
-            return _recommendedProductBusinessLogic.GetRecommendedProductsByPeriodeId(PeriodeId, _productRecommendedRepository, _context);
+            return _recommendedProductBusinessLogic.GetRecommendedProductsByPeriodeId(PeriodeId);
         }
     }
 }

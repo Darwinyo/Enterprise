@@ -7,17 +7,20 @@ using MongoDB.Driver.Builders;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System;
+using Microsoft.Extensions.Options;
+using Enterprise.API.Models.Settings;
 
 namespace Enterprise.API.BusinessLogics.Mongo
 {
     public class ChatBusinessLogic : IChatBusinessLogic
     {
         private readonly MongoContext _context;
-        public ChatBusinessLogic(MongoContext context)
+        private readonly ITblChatRepository _chatRepository;
+        public ChatBusinessLogic(ITblChatRepository chatRepository, IOptions<MongoDBSettings> options)
         {
-            _context = context;
+            _chatRepository = chatRepository;
+            _context = new MongoContext(options);
         }
-
         public TblChat CreateChatObject(object obj)
         {
             JObject jObject = (JObject)obj;
@@ -31,16 +34,16 @@ namespace Enterprise.API.BusinessLogics.Mongo
             return tblChat;
         }
 
-        public IEnumerable<TblChat> GetChatByGroupId(string groupId, ITblChatRepository chatRepository)
+        public IEnumerable<TblChat> GetChatByGroupId(string groupId)
         {
             IMongoQuery mongoQuery = Query<TblChat>.EQ(x => x.GroupId, groupId);
-            return chatRepository.FindBy(_context.TblChat, mongoQuery).AsEnumerable();
+            return _chatRepository.FindBy(_context.TblChat, mongoQuery).AsEnumerable();
         }
 
-        public void InsertChat(object obj, ITblChatRepository chatRepository)
+        public void InsertChat(object obj)
         {
             TblChat tblChat = CreateChatObject(obj);
-            chatRepository.Add(_context.TblChat, tblChat);
+            _chatRepository.Add(_context.TblChat, tblChat);
         }
     }
 }

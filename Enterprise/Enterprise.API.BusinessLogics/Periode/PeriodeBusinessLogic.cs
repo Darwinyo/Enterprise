@@ -8,7 +8,12 @@ namespace Enterprise.API.BusinessLogics.Periode
 {
     public class PeriodeBusinessLogic:IPeriodeBusinessLogic
     {
-        public TblPeriode CreatePeriode(object obj, ITblPeriodeRepository periodeRepository)
+        private readonly ITblPeriodeRepository _periodeRepository;
+        public PeriodeBusinessLogic(ITblPeriodeRepository periodeRepository)
+        {
+            _periodeRepository = periodeRepository;
+        }
+        public TblPeriode CreatePeriode(object obj)
         {
             if (obj != null)
             {
@@ -24,23 +29,23 @@ namespace Enterprise.API.BusinessLogics.Periode
             }
             return null;
         }
-        public void InsertPeriode(object obj, ITblPeriodeRepository periodeRepository)
+        public void InsertPeriode(object obj)
         {
-            TblPeriode periode = CreatePeriode(obj,periodeRepository);
+            TblPeriode periode = CreatePeriode(obj);
             if (periode != null)
             {
-                periodeRepository.Add(periode);
+                _periodeRepository.Add(periode);
             }
         }
-        public int SavePeriode(ITblPeriodeRepository periodeRepository)
+        public int SavePeriode()
         {
-            return periodeRepository.Commit();
+            return _periodeRepository.Commit();
         }
-        public string GetPeriodeId(string dateTime, ITblPeriodeRepository periodeRepository)
+        public string GetPeriodeId(string dateTime)
         {
             DateTime date;
             if (DateTime.TryParse(dateTime, out date))
-                return periodeRepository.GetSingle(x => x.PeriodeStartDate < date && x.PeriodeEndDate > date).PeriodeId;
+                return _periodeRepository.GetSingle(x => x.PeriodeStartDate < date && x.PeriodeEndDate > date).PeriodeId;
             return null;
         }
     }

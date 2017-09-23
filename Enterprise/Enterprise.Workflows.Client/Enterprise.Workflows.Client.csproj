@@ -66,7 +66,9 @@
     <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,9 +90,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -128,6 +127,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj">
+      <Project>{0ACEFE87-6427-4928-91ED-E6EBC80E2504}</Project>
+      <Name>Enterprise.API.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Enterprise.Framework.BusinessLogics\Enterprise.Framework.BusinessLogics.csproj">
       <Project>{EC85BA2B-3F1B-40DE-AF38-40200414B8B1}</Project>
       <Name>Enterprise.Framework.BusinessLogics</Name>
@@ -139,6 +142,10 @@
     <ProjectReference Include="..\Enterprise.Framework.Repository\Enterprise.Framework.Repository.csproj">
       <Project>{7CB43174-7B93-4BD3-8AC6-C04E3F4780AD}</Project>
       <Name>Enterprise.Framework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Workflow.Helpers\Enterprise.Workflows.Helpers.csproj">
+      <Project>{245E5947-CC5B-4F91-81E0-63450C60FAA9}</Project>
+      <Name>Enterprise.Workflows.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Enterprise.Workflows.Invoker\Enterprise.Workflows.Invoker.csproj">
       <Project>{B7B99E23-A813-4ED0-B9CA-C7206D64099F}</Project>

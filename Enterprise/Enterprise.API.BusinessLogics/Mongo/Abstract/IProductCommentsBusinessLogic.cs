@@ -6,6 +6,6 @@ namespace Enterprise.API.BusinessLogics.Mongo.Abstract
 {
     public interface IProductCommentsBusinessLogic
     {
-        IEnumerable<TblProductComments> GetAllCommentListByProductId(string productId, ITblProductCommentsRepository context);
+        IEnumerable<TblProductComments> GetAllCommentListByProductId(string productId);
     }
 }

@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Workflows.Invoke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Workflows.Client", "Enterprise.Workflows.Client\Enterprise.Workflows.Client.csproj", "{EE0A3BD5-A5C9-48C9-9C69-7747184616DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Workflow.Helpers", "Enterprise.Workflow.Helpers\Enterprise.Workflow.Helpers.csproj", "{245E5947-CC5B-4F91-81E0-63450C60FAA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Workflows.Helpers", "Enterprise.Workflow.Helpers\Enterprise.Workflows.Helpers.csproj", "{245E5947-CC5B-4F91-81E0-63450C60FAA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

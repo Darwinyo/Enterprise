@@ -25,10 +25,18 @@ using Enterprise.DataLayers.EnterpriseDB_TransactionModel;
 using Enterprise.Services.User.Abstract;
 using Enterprise.Services.User;
 using Enterprise.Repository.UserRepository;
-using Enterprise.Workflows.Invoker.User.Abstraction;
-using Enterprise.Workflows.Invoker.User;
 using Enterprise.API.BusinessLogics.User.Abstract;
 using Enterprise.API.BusinessLogics.User;
+using Enterprise.API.BusinessLogics.City.Abstract;
+using Enterprise.API.BusinessLogics.City;
+using Enterprise.API.BusinessLogics.Mongo.Abstract;
+using Enterprise.API.BusinessLogics.Mongo;
+using Enterprise.API.BusinessLogics.Periode.Abstract;
+using Enterprise.API.BusinessLogics.Periode;
+using Enterprise.API.BusinessLogics.Product.Abstract;
+using Enterprise.API.BusinessLogics.Product;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.API.BusinessLogics.ProductDetails;
 
 namespace Enterprise.API
 {
@@ -51,7 +59,7 @@ namespace Enterprise.API
 
             services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
 
-            #region session&caching
+            #region session & caching
             services.AddDistributedRedisCache(option =>
             {
                 option.Configuration = "localhost";
@@ -105,9 +113,21 @@ namespace Enterprise.API
             services.AddScoped<IChatService, ChatService>();
             services.AddScoped<IUserService, UserService>();
             #endregion
-            services.AddScoped<IUserWorkflowInvoker, UserWorkflowInvoker>();
 
+            #region business logic
+            services.AddScoped<ICityBusinessLogic, CityBusinessLogic>();
+            services.AddScoped<IChatBusinessLogic, ChatBusinessLogic>();
+            services.AddScoped<IProductCommentsBusinessLogic, ProductCommentsBusinessLogic>();
+            services.AddScoped<IPeriodeBusinessLogic, PeriodeBusinessLogic>();
+            services.AddScoped<ICategoryBusinessLogic, CategoryBusinessLogic>();
+            services.AddScoped<IHotProductBusinessLogic, HotProductBusinessLogic>();
+            services.AddScoped<IProductBusinessLogic, ProductBusinessLogic>();
+            services.AddScoped<IRecommendedProductBusinessLogic, RecommendedProductBusinessLogic>();
+            services.AddScoped<IProductImageBusinessLogic, ProductImageBusinessLogic>();
+            services.AddScoped<IProductSpecsBusinessLogic, ProductSpecsBusinessLogic>();
+            services.AddScoped<IProductVariationBusinessLogic, ProductVariationBusinessLogic>();
             services.AddScoped<IUserLoginBusinessLogic, UserLoginBusinessLogic>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

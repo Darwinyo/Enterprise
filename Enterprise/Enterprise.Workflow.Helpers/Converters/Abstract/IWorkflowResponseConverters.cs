@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enterprise.Workflow.Helpers.Converters.Abstract
+namespace Enterprise.Workflows.Helpers.Converters.Abstract
 {
-    public interface IWorkflowResponseConverters<T,TDictionary> where TDictionary:IDictionary<string,object>
+    public interface IWorkflowResponseConverters<T,TDictionary>
     {
         T ConvertToResponse(TDictionary dictionary);
     }

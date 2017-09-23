@@ -1,6 +1,8 @@
 ﻿using Enterprise.Framework.BusinessLogics.User.Abstract;
 using Enterprise.Framework.DataLayers;
 using Enterprise.Framework.Repository.Abstract;
+using Enterprise.API.Helpers.Encryption;
+using Enterprise.API.Helpers.Consts;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +22,13 @@ namespace Enterprise.Framework.BusinessLogics.User
             return new Tbl_User_Login
             {
                 Email = jObject["email"].ToString(),
-                Password = jObject["password"].ToString(),
+                Password = EncryptDecrypt.Encrypt(jObject["password"].ToString(),Keys.PassPhase),
                 Phone_Number = (int)jObject["phoneNumber"],
                 User_Login = jObject["userLogin"].ToString()
             };
         }
 
-        public string[] GetSameRecord(Tbl_User_Login userLogin)
+        public IEnumerable<string> GetSameRecord(Tbl_User_Login userLogin)
         {
             List<string> lstError = new List<string>();
             if (_userLoginRepository.FindBy(x => x.Email == userLogin.Email).Count() > 0)
@@ -35,7 +37,7 @@ namespace Enterprise.Framework.BusinessLogics.User
                 lstError.Add("PhoneNumber");
             if (_userLoginRepository.FindBy(x => x.User_Login == userLogin.User_Login).Count() > 0)
                 lstError.Add("UserLogin");
-            return lstError.ToArray();
+            return lstError.AsEnumerable();
         }
 
         public bool IsUserLoginExists(IEnumerable<string> sameRecord)

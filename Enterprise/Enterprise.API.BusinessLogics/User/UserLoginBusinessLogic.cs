@@ -10,6 +10,11 @@ namespace Enterprise.API.BusinessLogics.User
 {
     public class UserLoginBusinessLogic : IUserLoginBusinessLogic
     {
+        private readonly ITblUserLoginRepository _userLoginRepository;
+        public UserLoginBusinessLogic(ITblUserLoginRepository userLoginRepository)
+        {
+            _userLoginRepository = userLoginRepository;
+        }
         public TblUserLogin CreateUserLogin(object value)
         {
             JObject jObject = (JObject)value;
@@ -22,14 +27,14 @@ namespace Enterprise.API.BusinessLogics.User
             };
         }
 
-        public IEnumerable<string> GetSameRecord(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository)
+        public IEnumerable<string> GetSameRecord(TblUserLogin userLogin)
         {
             List<string> lstError = new List<string>();
-            if (userLoginRepository.FindBy(x => x.Email == userLogin.Email).Count() > 0)
+            if (_userLoginRepository.FindBy(x => x.Email == userLogin.Email).Count() > 0)
                 lstError.Add("Email");
-            if (userLoginRepository.FindBy(x => x.PhoneNumber == userLogin.PhoneNumber).Count() > 0)
+            if (_userLoginRepository.FindBy(x => x.PhoneNumber == userLogin.PhoneNumber).Count() > 0)
                 lstError.Add("PhoneNumber");
-            if (userLoginRepository.FindBy(x => x.UserLogin == userLogin.UserLogin).Count() > 0)
+            if (_userLoginRepository.FindBy(x => x.UserLogin == userLogin.UserLogin).Count() > 0)
                 lstError.Add("UserLogin");
             return lstError.AsEnumerable();
         }
@@ -39,19 +44,19 @@ namespace Enterprise.API.BusinessLogics.User
             return sameRecord.Count() > 0 ? true : false;
         }
 
-        public bool Login(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository)
+        public bool Login(TblUserLogin userLogin)
         {
-            return userLoginRepository.FindBy(x => x.Equals(userLogin)).Count() > 0 ? true : false;
+            return _userLoginRepository.FindBy(x => x.Equals(userLogin)).Count() > 0 ? true : false;
         }
 
-        public void RegisterUser(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository)
+        public void RegisterUser(TblUserLogin userLogin)
         {
-            userLoginRepository.Add(userLogin);
+            _userLoginRepository.Add(userLogin);
         }
 
-        public void SaveUser(ITblUserLoginRepository userLoginRepository)
+        public void SaveUser()
         {
-            userLoginRepository.Commit();
+            _userLoginRepository.Commit();
         }
     }
 }

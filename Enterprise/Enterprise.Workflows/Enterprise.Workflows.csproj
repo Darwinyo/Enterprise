@@ -33,9 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
@@ -48,21 +45,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Category\CreateCategoryActivity.cs" />
+    <Compile Include="Activities\Category\InsertCategoryActivity.cs" />
+    <Compile Include="Activities\Category\IsCategoryExistsActivity.cs" />
+    <Compile Include="Activities\HotProduct\GetHotProductByPeriodeIdActivity.cs" />
+    <Compile Include="Activities\Periode\GetPeriodeIdActivity.cs" />
+    <Compile Include="Activities\Periode\InsertPeriodeActivity.cs" />
+    <Compile Include="Activities\Product\AddNewProductActivity.cs" />
+    <Compile Include="Activities\Product\CreateProductItemActivity.cs" />
+    <Compile Include="Activities\RecommendedProduct\GetRecommendedProductByPeriodeIdActivity.cs" />
+    <Compile Include="Activities\User\CreateUserLoginActivity.cs" />
     <Compile Include="Activities\User\GetSameRecordActivity.cs" />
     <Compile Include="Activities\User\IsUserLoginExistsActivity.cs" />
     <Compile Include="Activities\User\RegisterUserActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <XamlAppDef Include="User\UserRegistrationWorkflow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </XamlAppDef>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.Framework.BusinessLogics\Enterprise.Framework.BusinessLogics.csproj">
@@ -76,6 +75,43 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <XamlAppDef Include="Periode\PeriodeWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="User\UserRegistrationWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Category\CategoryWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\RecommendedProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\InsertProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\HotProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

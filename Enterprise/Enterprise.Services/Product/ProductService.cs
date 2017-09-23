@@ -3,43 +3,40 @@ using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.Product.Abstract;
 using Enterprise.API.BusinessLogics.Product;
 using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.Product.Abstract;
 
 namespace Enterprise.Services.Product
 {
     public class ProductService : IProductService
     {
-        private readonly ProductBusinessLogic _productBusinessLogic;
-        private readonly ITblProductRepository _tblProductRepository;
-        private readonly ITblCategoryRepository _tblCategoryRepository;
-        public ProductService(ITblProductRepository tblProductRepository,ITblCategoryRepository tblCategoryRepository)
+        private readonly IProductBusinessLogic _productBusinessLogic;
+        public ProductService(IProductBusinessLogic productBusinessLogic)
         {
-            _tblProductRepository = tblProductRepository;
-            _tblCategoryRepository = tblCategoryRepository;
-            _productBusinessLogic = new ProductBusinessLogic();
+            _productBusinessLogic = productBusinessLogic;
         }
-        public void AddNewProduct(object obj)
+        public void AddNewProduct(TblProduct product)
         {
-            _productBusinessLogic.AddNewProduct(obj, _tblProductRepository, _tblCategoryRepository);
+            _productBusinessLogic.AddNewProduct(product);
         }
 
         public void AddReview(string productId)
         {
-            _productBusinessLogic.AddReview(productId, _tblProductRepository);
+            _productBusinessLogic.AddReview(productId);
         }
 
         public IEnumerable<TblProduct> GetAllListProduct()
         {
-            return _productBusinessLogic.GetAllListProduct(_tblProductRepository);
+            return _productBusinessLogic.GetAllListProduct();
         }
 
         public TblProduct GetProductById(string ProductId)
         {
-            return _productBusinessLogic.GetProductById(ProductId, _tblProductRepository);
+            return _productBusinessLogic.GetProductById(ProductId);
         }
 
         public int SaveProduct()
         {
-            return _productBusinessLogic.SaveProduct(_tblProductRepository);
+            return _productBusinessLogic.SaveProduct();
         }
     }
 }

@@ -6,8 +6,8 @@ namespace Enterprise.API.BusinessLogics.Mongo.Abstract
 {
     public interface IChatBusinessLogic
     {
-        IEnumerable<TblChat> GetChatByGroupId(string groupId, ITblChatRepository chatRepository);
-        void InsertChat(object obj, ITblChatRepository chatRepository);
+        IEnumerable<TblChat> GetChatByGroupId(string groupId);
+        void InsertChat(object obj);
         TblChat CreateChatObject(object obj);
     }
 }

@@ -9,15 +9,16 @@ namespace Enterprise.API.BusinessLogics.Product
 {
     public class ProductBusinessLogic : IProductBusinessLogic
     {
-        public void AddNewProduct(object obj, ITblProductRepository context,ITblCategoryRepository categoryRepository)
+        private readonly ITblProductRepository _productRepository;
+        private readonly ICategoryBusinessLogic _categoryBusinessLogic;
+        public ProductBusinessLogic(ITblProductRepository productRepository, ICategoryBusinessLogic categoryBusinessLogic)
         {
-            JObject jObject = (JObject)obj;
-            CategoryBusinessLogic categoryBusinessLogic = new CategoryBusinessLogic();
-            TblProduct product = CreateProductItem(jObject,categoryRepository,categoryBusinessLogic);
-            context.Add(product);
+            _productRepository = productRepository;
+            _categoryBusinessLogic = categoryBusinessLogic;
         }
-        public TblProduct CreateProductItem(JObject jObject, ITblCategoryRepository categoryRepository,CategoryBusinessLogic categoryBusinessLogic)
+        public TblProduct CreateProductItem(object productObject)
         {
+            JObject jObject = (JObject)productObject;
             TblProduct product = new TblProduct
             {
                 ProductId = Guid.NewGuid().ToString(),
@@ -57,7 +58,7 @@ namespace Enterprise.API.BusinessLogics.Product
                     {
                         Product = product,
                         PCategoryId = Guid.NewGuid().ToString(),
-                        Category = categoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString(), categoryRepository)
+                        Category = _categoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString())
                     });
                 }
                 product.TblProductCategory = list;
@@ -95,22 +96,17 @@ namespace Enterprise.API.BusinessLogics.Product
             }
             return product;
         }
-        public IEnumerable<TblProduct> GetAllListProduct(ITblProductRepository context)
+        public IEnumerable<TblProduct> GetAllListProduct()
         {
-            return context.GetAll();
+            return _productRepository.GetAll();
         }
-        public TblProduct GetProductById(string ProductId, ITblProductRepository context)
+        public TblProduct GetProductById(string ProductId)
         {
-            return context.GetSingle(x => x.ProductId == ProductId);
+            return _productRepository.GetSingle(x => x.ProductId == ProductId);
         }
-        public void AddReview(string productId, ITblProductRepository context)
+        public void AddReview(string productId)
         {
-            context.AddReview(productId);
-        }
-
-        public int SaveProduct(ITblProductRepository context)
-        {
-            return context.Commit();
+            _productRepository.AddReview(productId);
         }
     }
 }

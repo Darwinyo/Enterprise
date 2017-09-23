@@ -9,21 +9,26 @@ namespace Enterprise.API.BusinessLogics.ProductDetails
 {
     public class ProductVariationBusinessLogic:IProductVariationBusinessLogic
     {
-        public void InsertNewVariations(IEnumerable<TblProductVariations> listVariation, ITblProductVariationsRepository productVariationsRepository)
+        private readonly ITblProductVariationsRepository _productVariationsRepository;
+        public ProductVariationBusinessLogic(ITblProductVariationsRepository productVariationsRepository)
+        {
+            _productVariationsRepository = productVariationsRepository;
+        }
+        public void InsertNewVariations(IEnumerable<TblProductVariations> listVariation)
         {
             if (listVariation != null)
                 foreach (var variation in listVariation)
                 {
-                    productVariationsRepository.Add(variation);
+                    _productVariationsRepository.Add(variation);
                 }
         }
-        public IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId, ITblProductVariationsRepository productVariationsRepository)
+        public IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId)
         {
-            return productVariationsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
+            return _productVariationsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
         }
-        public int SaveVariation(ITblProductVariationsRepository productVariationsRepository)
+        public int SaveVariation()
         {
-            return productVariationsRepository.Commit();
+            return _productVariationsRepository.Commit();
         }
     }
 }

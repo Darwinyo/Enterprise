@@ -3,31 +3,30 @@ using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.ProductDetails.Abstract;
 using Enterprise.API.BusinessLogics.ProductDetails;
 using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
 
 namespace Enterprise.Services.ProductDetails
 {
     public class ProductVariationService : IProductVariationService
     {
-        private readonly ProductVariationBusinessLogic _productVariationBusinessLogic;
-        private readonly ITblProductVariationsRepository _productVariationsRepository;
-        public ProductVariationService(ITblProductVariationsRepository productVariationsRepository)
+        private readonly IProductVariationBusinessLogic _productVariationBusinessLogic;
+        public ProductVariationService(IProductVariationBusinessLogic productVariationBusinessLogic)
         {
-            _productVariationBusinessLogic = new ProductVariationBusinessLogic();
-            _productVariationsRepository = productVariationsRepository;
+            _productVariationBusinessLogic = productVariationBusinessLogic;
         }
         public IEnumerable<TblProductVariations> GetProductVariationByProductId(string productId)
         {
-            return _productVariationBusinessLogic.GetProductVariationByProductId(productId, _productVariationsRepository);
+            return _productVariationBusinessLogic.GetProductVariationByProductId(productId);
         }
 
         public void InsertNewVariations(IEnumerable<TblProductVariations> listVariation)
         {
-            _productVariationBusinessLogic.InsertNewVariations(listVariation, _productVariationsRepository);
+            _productVariationBusinessLogic.InsertNewVariations(listVariation);
         }
 
         public int SaveVariation()
         {
-            return _productVariationBusinessLogic.SaveVariation(_productVariationsRepository);
+            return _productVariationBusinessLogic.SaveVariation();
         }
     }
 }

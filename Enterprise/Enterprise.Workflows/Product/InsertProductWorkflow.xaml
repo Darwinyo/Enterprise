@@ -1,0 +1,99 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Enterprise.Workflows.Product.InsertProductWorkflow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:efbpa="clr-namespace:Enterprise.Framework.BusinessLogics.Product.Abstract;assembly=Enterprise.Framework.BusinessLogics"
+ xmlns:efd="clr-namespace:Enterprise.Framework.DataLayers;assembly=Enterprise.Framework.DataLayers"
+ xmlns:local="clr-namespace:Enterprise.Workflows.Activities.Product"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ProductObject" Type="InArgument(x:Object)" />
+    <x:Property Name="ProductBusinessLogic" Type="InArgument(efbpa:IProductBusinessLogic)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>Enterprise.Workflows.Product.InsertProductBusinessLogic_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Enterprise.Framework.BusinessLogics.Product.Abstract</x:String>
+      <x:String>Enterprise.Framework.DataLayers</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.BusinessLogics</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.DataLayers</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Enterprise.Workflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="efd:Tbl_Product" Name="ProductModel" />
+    </Sequence.Variables>
+    <local:CreateProductItemActivity sap2010:WorkflowViewState.IdRef="CreateProductItemActivity_1">
+      <local:CreateProductItemActivity.Product>
+        <OutArgument x:TypeArguments="efd:Tbl_Product">
+          <mca:CSharpReference x:TypeArguments="efd:Tbl_Product">ProductModel</mca:CSharpReference>
+        </OutArgument>
+      </local:CreateProductItemActivity.Product>
+      <local:CreateProductItemActivity.ProductBusinessLogic>
+        <InArgument x:TypeArguments="efbpa:IProductBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbpa:IProductBusinessLogic">ProductBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local:CreateProductItemActivity.ProductBusinessLogic>
+      <local:CreateProductItemActivity.ProductObject>
+        <InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">ProductObject</mca:CSharpValue>
+        </InArgument>
+      </local:CreateProductItemActivity.ProductObject>
+    </local:CreateProductItemActivity>
+    <local:AddNewProductActivity sap2010:WorkflowViewState.IdRef="AddNewProductActivity_1">
+      <local:AddNewProductActivity.Product>
+        <InArgument x:TypeArguments="efd:Tbl_Product">
+          <mca:CSharpValue x:TypeArguments="efd:Tbl_Product">ProductModel</mca:CSharpValue>
+        </InArgument>
+      </local:AddNewProductActivity.Product>
+      <local:AddNewProductActivity.ProductBusinessLogic>
+        <InArgument x:TypeArguments="efbpa:IProductBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbpa:IProductBusinessLogic">ProductBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local:AddNewProductActivity.ProductBusinessLogic>
+    </local:AddNewProductActivity>
+    <sads:DebugSymbol.Symbol>d1lEOlxQcm9qZWN0c1xFbnRlcnByaXNlXEVudGVycHJpc2VcRW50ZXJwcmlzZS5Xb3JrZmxvd3NcUHJvZHVjdFxJbnNlcnRQcm9kdWN0V29ya2Zsb3cueGFtbAgyA1QOAgEBNgVGJwIBC0cFUiMCAQI+Cz5wAgEUOQs5ZAIBEEMLQ1YCAQxPC09wAgEHSgtKXAIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="CreateProductItemActivity_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="AddNewProductActivity_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Enterprise.Workflows.Product.InsertProductBusinessLogic_1" sap:VirtualizedContainerService.HintSize="262,288" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

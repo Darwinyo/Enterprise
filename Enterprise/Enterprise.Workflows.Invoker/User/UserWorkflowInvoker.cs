@@ -1,33 +1,36 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Activities;
-using Enterprise.Workflows.User;
 using System.Collections.Generic;
-using Enterprise.Workflows.Invoker.User.Abstraction;
 using Enterprise.Framework.BusinessLogics.User;
-using Enterprise.Framework.Repository.Abstract;
+using Enterprise.API.Models.Responses;
 using Enterprise.Framework.BusinessLogics.User.Abstract;
-using Enterprise.Framework.DataLayers;
+using Enterprise.Workflows.User;
+using Enterprise.Workflows.Helpers.Converters.Abstract;
+using Enterprise.Workflows.Invoker.Abstract;
+using System;
 
 namespace Enterprise.Workflows.Invoker.User
 {
-    public class UserWorkflowInvoker : IUserWorkflowInvoker
+    public class UserRegistrationWorkflowInvoker : IUserRegistrationWorkflowInvoker
     {
-        private readonly UserLoginBusinessLogic _userLoginBusinessLogic;
-        public UserWorkflowInvoker(UserLoginBusinessLogic userLoginBusinessLogic)
+        private readonly IUserLoginBusinessLogic _userLoginBusinessLogic;
+        private readonly IUserRegistrationConverter _userRegistrationConverter;
+        public UserRegistrationWorkflowInvoker(UserLoginBusinessLogic userLoginBusinessLogic,IUserRegistrationConverter userRegistrationConverter)
         {
             _userLoginBusinessLogic = userLoginBusinessLogic;
+            _userRegistrationConverter = userRegistrationConverter;
         }
-        public void UserLoginRegistration(Tbl_User_Login userLogin)
+        
+        public UserRegistrationWorkflowResponse InvokeWorkflow(object userLogin)
         {
             Activity activity = new UserRegistrationWorkflow()
             {
-                BusinessLogic = new InArgument<UserLoginBusinessLogic>((x) => _userLoginBusinessLogic),
-                UserLoginModel = new InArgument<Tbl_User_Login>((x) => userLogin)
+                UserLoginBusinessLogic = new InArgument<IUserLoginBusinessLogic>((x) => _userLoginBusinessLogic),
+                UserLoginObject = new InArgument<object>((x) => userLogin)
             };
             WorkflowInvoker workflowInvoker = new WorkflowInvoker(activity);
             IDictionary<string, object> result = workflowInvoker.Invoke();
-            
+            return _userRegistrationConverter.ConvertToResponse(result);
         }
     }
 }

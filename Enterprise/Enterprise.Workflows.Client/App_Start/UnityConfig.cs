@@ -4,8 +4,10 @@ using Enterprise.Framework.DataLayers;
 using Enterprise.Framework.DataLayers.Extend.Abstract;
 using Enterprise.Framework.Repository.Abstract;
 using Enterprise.Framework.Repository.UserRepository;
+using Enterprise.Workflows.Helpers.Converters;
+using Enterprise.Workflows.Helpers.Converters.Abstract;
 using Enterprise.Workflows.Invoker.User;
-using Enterprise.Workflows.Invoker.User.Abstraction;
+using Enterprise.Workflows.Invoker.User.Abstract;
 using Microsoft.Practices.Unity;
 using System.Configuration;
 using System.Web.Http;
@@ -17,7 +19,7 @@ namespace Enterprise.Workflows.Client
     {
         public static void RegisterComponents()
         {
-			var container = new UnityContainer();
+            var container = new UnityContainer();
 
             // register all your components with the container here
             // it is NOT necessary to register your controllers
@@ -35,13 +37,20 @@ namespace Enterprise.Workflows.Client
             #endregion
 
             #region invoker
-            container.RegisterType<IUserWorkflowInvoker, UserWorkflowInvoker>();
+            container.RegisterType<IUserWorkflowInvoker, UserRegistrationWorkflowInvoker>();
             #endregion
 
             #region repository
             container.RegisterType<ITblUserLoginRepository, TblUserLoginRepository>();
             #endregion
 
+            #region converter
+            container.RegisterType<ICategoryConverter, CategoryConverter>();
+            container.RegisterType<IHotProductConverter, HotProductConverter>();
+            container.RegisterType<IInsertProductConverter, InsertProductConverter>();
+            container.RegisterType<IRecommendedProductConverter, RecommendedProductConverter>();
+            container.RegisterType<IUserRegistrationConverter, UserRegistrationConverter>();
+            #endregion
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

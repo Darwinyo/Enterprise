@@ -7,6 +7,6 @@ namespace Enterprise.API.BusinessLogics.ProductDetails.Abstract
 {
     public interface IProductSpecsBusinessLogic
     {
-        IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId, ITblProductSpecsRepository productSpecsRepository);
+        IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId);
     }
 }

@@ -67,6 +67,17 @@
     <Compile Include="Abstract\IEntityBaseRepository.cs" />
     <Compile Include="Abstract\IMongoEntityBaseRepository.cs" />
     <Compile Include="Abstract\IRepositories.cs" />
+    <Compile Include="HelperRepository\HelperBaseRepository.cs" />
+    <Compile Include="HelperRepository\TblCityRepository.cs" />
+    <Compile Include="HelperRepository\TblPeriodeRepository.cs" />
+    <Compile Include="ProductRepository\ProductBaseRepository.cs" />
+    <Compile Include="ProductRepository\TblCategoryRepository.cs" />
+    <Compile Include="ProductRepository\TblProductHotRepository.cs" />
+    <Compile Include="ProductRepository\TblProductImageRepository.cs" />
+    <Compile Include="ProductRepository\TblProductRecommendedRepository.cs" />
+    <Compile Include="ProductRepository\TblProductRepository.cs" />
+    <Compile Include="ProductRepository\TblProductSpecsRepository.cs" />
+    <Compile Include="ProductRepository\TblProductVariationsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserRepository\TblUserLoginRepository.cs" />
     <Compile Include="UserRepository\UserBaseRepository.cs" />

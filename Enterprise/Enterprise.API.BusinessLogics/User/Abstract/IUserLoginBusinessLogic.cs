@@ -7,10 +7,10 @@ namespace Enterprise.API.BusinessLogics.User.Abstract
     public interface IUserLoginBusinessLogic
     {
         bool IsUserLoginExists(IEnumerable<string> sameRecord);
-        IEnumerable<string> GetSameRecord(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository);
-        void RegisterUser(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository);
-        bool Login(TblUserLogin userLogin, ITblUserLoginRepository userLoginRepository);
+        IEnumerable<string> GetSameRecord(TblUserLogin userLogin);
+        void RegisterUser(TblUserLogin userLogin);
+        bool Login(TblUserLogin userLogin);
         TblUserLogin CreateUserLogin(object value);
-        void SaveUser(ITblUserLoginRepository userLoginRepository);
+        void SaveUser();
     }
 }

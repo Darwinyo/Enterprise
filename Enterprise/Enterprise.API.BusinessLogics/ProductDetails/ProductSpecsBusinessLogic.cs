@@ -8,10 +8,15 @@ namespace Enterprise.API.BusinessLogics.ProductDetails
 {
     public class ProductSpecsBusinessLogic:IProductSpecsBusinessLogic
     {
-        public IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId, ITblProductSpecsRepository productSpecsRepository)
+        private readonly ITblProductSpecsRepository _productSpecsRepository;
+        public ProductSpecsBusinessLogic(ITblProductSpecsRepository productSpecsRepository)
+        {
+            _productSpecsRepository = productSpecsRepository;
+        }
+        public IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId)
         {
             if (productId != null)
-                return productSpecsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
+                return _productSpecsRepository.FindBy(x => x.ProductId == productId).AsEnumerable();
             return null;
         }
     }

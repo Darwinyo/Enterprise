@@ -6,21 +6,20 @@ using Enterprise.Services.ProductDetails.Abstract;
 using Enterprise.Repository.ProductRepository;
 using Enterprise.API.BusinessLogics.ProductDetails;
 using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
 
 namespace Enterprise.Services.ProductDetails
 {
     public class ProductSpecsService : IProductSpecsService
     {
-        private readonly ProductSpecsBusinessLogic _productSpecsBusinessLogic;
-        private readonly ITblProductSpecsRepository _productSpecsRepository;
-        public ProductSpecsService(ITblProductSpecsRepository productSpecsRepository)
+        private readonly IProductSpecsBusinessLogic _productSpecsBusinessLogic;
+        public ProductSpecsService(IProductSpecsBusinessLogic productSpecsBusinessLogic)
         {
-            _productSpecsBusinessLogic = new ProductSpecsBusinessLogic();
-            _productSpecsRepository = productSpecsRepository;
+            _productSpecsBusinessLogic = productSpecsBusinessLogic;
         }
         public IEnumerable<TblProductSpecs> GetAllProductSpecsByProductId(string productId)
         {
-            return _productSpecsBusinessLogic.GetAllProductSpecsByProductId(productId, _productSpecsRepository);
+            return _productSpecsBusinessLogic.GetAllProductSpecsByProductId(productId);
         }
     }
 }

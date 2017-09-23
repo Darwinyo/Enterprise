@@ -9,15 +9,21 @@ namespace Enterprise.API.BusinessLogics.Product
 {
     public class RecommendedProductBusinessLogic:IRecommendedProductBusinessLogic
     {
-        public IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId, ITblProductRecommendedRepository productRecommendedRepository, ProductContext context)
+        private readonly ITblProductRecommendedRepository _productRecommendedRepository;
+        private readonly ITblProductRepository _productRepository;
+        public RecommendedProductBusinessLogic(ITblProductRecommendedRepository productRecommendedRepository, ITblProductRepository productRepository)
         {
-            List<TblProductRecommended> listRaw = productRecommendedRepository.FindBy(x => x.PeriodeId == PeriodeId).ToList();
+            _productRecommendedRepository = productRecommendedRepository;
+            _productRepository = productRepository;
+        }
+        public IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId)
+        {
+            List<TblProductRecommended> listRaw = _productRecommendedRepository.FindBy(x => x.PeriodeId == PeriodeId).ToList();
             if (listRaw.Count() > 0)
             {
                 List<string> list = new List<string>();
                 listRaw.ForEach(x => list.Add(x.ProductId));
-                TblProductRepository productRepository = new TblProductRepository(context);
-                return productRepository.GetListProductByListString(list);
+                return _productRepository.GetListProductByListString(list);
             }
             return null;
         }

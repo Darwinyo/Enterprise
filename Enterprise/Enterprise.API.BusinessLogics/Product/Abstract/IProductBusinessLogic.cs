@@ -7,11 +7,9 @@ namespace Enterprise.API.BusinessLogics.Product.Abstract
 {
     public interface IProductBusinessLogic
     {
-        void AddNewProduct(object obj, ITblProductRepository context, ITblCategoryRepository categoryRepository);
-        TblProduct CreateProductItem(JObject jObject, ITblCategoryRepository categoryRepository, CategoryBusinessLogic categoryBusinessLogic);
-        IEnumerable<TblProduct> GetAllListProduct(ITblProductRepository context);
-        TblProduct GetProductById(string ProductId, ITblProductRepository context);
-        void AddReview(string productId, ITblProductRepository context);
-        int SaveProduct(ITblProductRepository context);
+        TblProduct CreateProductItem(object productObject);
+        IEnumerable<TblProduct> GetAllListProduct();
+        TblProduct GetProductById(string ProductId);
+        void AddReview(string productId);
     }
 }

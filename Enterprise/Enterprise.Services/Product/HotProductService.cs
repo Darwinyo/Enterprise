@@ -1,25 +1,20 @@
 ﻿using System.Collections.Generic;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.Product.Abstract;
-using Enterprise.API.BusinessLogics.Product;
-using Enterprise.Repository.Abstract;
+using Enterprise.API.BusinessLogics.Product.Abstract;
 
 namespace Enterprise.Services.Product
 {
     public class HotProductService : IHotProductService
     {
-        private readonly HotProductBusinessLogic _hotProductBusinessLogic;
-        private readonly ITblProductHotRepository _productHotRepository;
-        private readonly ProductContext _context;
-        public HotProductService(ITblProductHotRepository productHotRepository,ProductContext context)
+        private readonly IHotProductBusinessLogic _hotProductBusinessLogic;
+        public HotProductService(IHotProductBusinessLogic hotProductBusinessLogic)
         {
-            _hotProductBusinessLogic = new HotProductBusinessLogic();
-            _productHotRepository = productHotRepository;
-            _context = context;
+            _hotProductBusinessLogic = hotProductBusinessLogic;
         }
         public IEnumerable<TblProduct> GetHotProductsByPeriodeId(string PeriodeId)
         {
-            return _hotProductBusinessLogic.GetHotProductsByPeriodeId(PeriodeId, _productHotRepository, _context);
+            return _hotProductBusinessLogic.GetHotProductsByPeriodeId(PeriodeId);
         }
     }
 }

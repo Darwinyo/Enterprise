@@ -6,7 +6,7 @@ namespace Enterprise.API.Helpers.Consts
 {
     public class WorkflowServiceClient
     {
-        public const string BaseUrl = "http://localhost:58756";
+        public const string BaseUrl = "http://localhost:8888";
         public const string UserRegistration = "/api/userregistration";
     }
 }

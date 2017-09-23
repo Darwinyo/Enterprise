@@ -8,7 +8,6 @@ namespace Enterprise.Services.Product.Abstract
 {
     public interface ICategoryService
     {
-        void CheckAndInsertCategory(object categoryObj);
         TblCategory GetTblCategoryByName(string categoryName);
         IEnumerable<TblCategory> GetAllTblCategory();
         int SaveCategory();
