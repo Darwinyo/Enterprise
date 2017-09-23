@@ -12,7 +12,7 @@ namespace Enterprise.Workflows.Helpers.Converters
     {
         public InsertProductWorkflowResponse ConvertToResponse(IDictionary<string, object> dictionary)
         {
-            throw new NotImplementedException();
+            return new InsertProductWorkflowResponse();
         }
     }
 }

@@ -6,5 +6,6 @@ namespace Enterprise.API.Models.Responses
 {
     public class CategoryWorkflowResponse
     {
+        public bool IsExists { get; set; }
     }
 }

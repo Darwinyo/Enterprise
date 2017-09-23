@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Enterprise.API.Models.Responses;
+using Enterprise.Framework.DataLayers;
 
 namespace Enterprise.Workflows.Helpers.Converters
 {
@@ -12,7 +13,10 @@ namespace Enterprise.Workflows.Helpers.Converters
     {
         public HotProductWorkflowResponse ConvertToResponse(IDictionary<string, object> dictionary)
         {
-            throw new NotImplementedException();
+            return new HotProductWorkflowResponse
+            {
+                HotProducts = (IEnumerable<Tbl_Product>)dictionary["HotProducts"]
+            };
         }
     }
 }

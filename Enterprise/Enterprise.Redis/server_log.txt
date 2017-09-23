@@ -45,3 +45,7 @@
 [7924] 22 Sep 13:02:10.108 # Server started, Redis version 3.2.100
 [7924] 22 Sep 13:02:10.127 * DB loaded from disk: 0.019 seconds
 [7924] 22 Sep 13:02:10.137 * The server is now ready to accept connections on port 1000
+[5948] 22 Sep 20:59:55.809 * Redis 3.2.100 (00000000/0) 64 bit, standalone mode, port 1000, pid 5948 ready to start.
+[5948] 22 Sep 20:59:55.820 # Server started, Redis version 3.2.100
+[5948] 22 Sep 20:59:55.822 * DB loaded from disk: 0.002 seconds
+[5948] 22 Sep 20:59:55.851 * The server is now ready to accept connections on port 1000
