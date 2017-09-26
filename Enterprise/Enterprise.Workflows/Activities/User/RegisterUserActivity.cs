@@ -13,7 +13,7 @@ namespace Enterprise.Workflows.Activities.User
     public sealed class RegisterUserActivity : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<Tbl_User_Login> UserLogin { get; set; }
+        public InArgument<TblUserLogin> UserLogin { get; set; }
         public InArgument<IUserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
@@ -22,7 +22,9 @@ namespace Enterprise.Workflows.Activities.User
         {
             // Obtain the runtime value of the Text input argument
             IUserLoginBusinessLogic userLoginBusinessLogic = UserLoginBusinessLogic.Get(context);
-            userLoginBusinessLogic.RegisterUser(UserLogin.Get(context));
+            TblUserLogin userLogin = UserLogin.Get(context);
+            userLogin.UserLoginId = Guid.NewGuid().ToString();
+            userLoginBusinessLogic.RegisterUser(userLogin);
             userLoginBusinessLogic.SaveUser();
         }
     }

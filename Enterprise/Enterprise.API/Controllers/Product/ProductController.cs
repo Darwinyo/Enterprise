@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Enterprise.Services.Product.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.API.Models.Responses;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Product
@@ -34,10 +35,9 @@ namespace Enterprise.API.Controllers.Product
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]object value)
+        public async Task<InsertProductWorkflowResponse> Post([FromBody]object value)
         {
-            _productService.AddNewProduct(value);
-            _productService.SaveProduct();
+            return await _productService.AddNewProduct(value);
         }
 
         // PUT api/values/5

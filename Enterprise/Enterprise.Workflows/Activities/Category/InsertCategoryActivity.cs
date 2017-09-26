@@ -12,7 +12,7 @@ namespace Enterprise.Workflows.Activities.Category
     public sealed class InsertCategoryActivity : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<Tbl_Category> Category { get; set; }
+        public InArgument<TblCategory> Category { get; set; }
         public InArgument<ICategoryBusinessLogic> CategoryBusinessLogic { get; set; }
         
         // If your activity returns a value, derive from CodeActivity<TResult>

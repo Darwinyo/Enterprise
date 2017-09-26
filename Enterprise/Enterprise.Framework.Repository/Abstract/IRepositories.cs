@@ -2,32 +2,33 @@
 using System.Collections.Generic;
 using System.Text;
 using Enterprise.Framework.DataLayers;
+using Enterprise.Framework.DataLayers.DTOs.Product;
 
 namespace Enterprise.Framework.Repository.Abstract
 {
     #region product
-    public interface ITblProductRepository : IEntityBaseRepository<Tbl_Product>
+    public interface ITblProductRepository : IEntityBaseRepository<TblProduct>
     {
-        IEnumerable<Tbl_Product> GetListProductByListString(List<string> listProductId);
+        IEnumerable<ProductCardDTO> GetListProductCardByListString(List<string> listProductId);
         void AddReview(string productId);
     };
-    public interface ITblProductHotRepository : IEntityBaseRepository<Tbl_Product_Hot> { };
-    public interface ITblCategoryRepository : IEntityBaseRepository<Tbl_Category> { };
-    public interface ITblProductImageRepository : IEntityBaseRepository<Tbl_Product_Image> { };
-    public interface ITblProductRecommendedRepository : IEntityBaseRepository<Tbl_Product_Recommended> { };
-    public interface ITblProductSpecsRepository : IEntityBaseRepository<Tbl_Product_Specs> { };
-    public interface ITblProductVariationsRepository : IEntityBaseRepository<Tbl_Product_Variations> { };
+    public interface ITblProductHotRepository : IEntityBaseRepository<TblProductHot> { };
+    public interface ITblCategoryRepository : IEntityBaseRepository<TblCategory> { };
+    public interface ITblProductImageRepository : IEntityBaseRepository<TblProductImage> { };
+    public interface ITblProductRecommendedRepository : IEntityBaseRepository<TblProductRecommended> { };
+    public interface ITblProductSpecsRepository : IEntityBaseRepository<TblProductSpecs> { };
+    public interface ITblProductVariationsRepository : IEntityBaseRepository<TblProductVariations> { };
     #endregion
 
     #region user
-    public interface ITblUserLoginRepository : IEntityBaseRepository<Tbl_User_Login> { };
+    public interface ITblUserLoginRepository : IEntityBaseRepository<TblUserLogin> { };
     #endregion
 
     #region helper
-    public interface ITblCityRepository : IEntityBaseRepository<Tbl_City> { };
-    public interface ITblPeriodeRepository : IEntityBaseRepository<Tbl_Periode>
+    public interface ITblCityRepository : IEntityBaseRepository<TblCity> { };
+    public interface ITblPeriodeRepository : IEntityBaseRepository<TblPeriode>
     {
-        int CreatePeriode(Tbl_Periode tblPeriode, HelperContext context);
+        int CreatePeriode(TblPeriode tblPeriode, HelperContext context);
     };
     #endregion
 

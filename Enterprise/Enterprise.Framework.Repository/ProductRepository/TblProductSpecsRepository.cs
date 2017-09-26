@@ -8,7 +8,7 @@ using Enterprise.Framework.Repository.ProductRepository;
 
 namespace Enterprise.Framework.Repository.ProductRepository
 {
-    public class TblProductSpecsRepository : ProductBaseRepository<Tbl_Product_Specs>, ITblProductSpecsRepository
+    public class TblProductSpecsRepository : ProductBaseRepository<TblProductSpecs>, ITblProductSpecsRepository
     {
         public TblProductSpecsRepository(ProductContext context) : base(context)
         {

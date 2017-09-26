@@ -5,8 +5,8 @@ namespace Enterprise.Framework.BusinessLogics.Periode.Abstract
 {
     public interface IPeriodeBusinessLogic
     {
-        Tbl_Periode CreatePeriode(object obj);
-        void InsertPeriode(Tbl_Periode periode);
+        TblPeriode CreatePeriode(object obj);
+        void InsertPeriode(TblPeriode periode);
         int SavePeriode();
         string GetPeriodeId(string dateTime);
     }

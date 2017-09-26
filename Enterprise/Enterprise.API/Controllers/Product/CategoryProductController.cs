@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Enterprise.Services.Product;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.Product.Abstract;
+using Enterprise.API.Models.Responses;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Product
@@ -34,10 +35,9 @@ namespace Enterprise.API.Controllers.Product
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]object value)
+        public async Task<CategoryWorkflowResponse> Post([FromBody]object value)
         {
-            _categoryService.CheckAndInsertCategory(value);
-            _categoryService.SaveCategory();
+            return await _categoryService.AddCategory(value);
         }
 
         // PUT api/values/5

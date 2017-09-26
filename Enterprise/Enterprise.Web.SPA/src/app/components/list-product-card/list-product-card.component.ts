@@ -22,22 +22,12 @@ export class ListProductCardComponent implements OnInit {
 
   ngOnInit() {
   }
-  ConvertToProductCardModel(products: ProductModel[]) {
+  InitProductCardModel(products: ProductCardViewModel[]) {
     products.forEach(item => {
       if (item.productName.length > 18) {
         item.productName = item.productName.substring(0, 18) + '...'
       }
-      this.products.push(
-        <ProductCardViewModel>{
-          productId: item.productId,
-          productname: item.productName,
-          price: item.productPrice,
-          imageUrl: item.productFrontImage,
-          ratestar: item.productRating,
-          favorites: item.productFavorite,
-          reviews: item.productReview
-        }
-      )
+      this.products = products;
     });
   }
   prevbtnclicked() {

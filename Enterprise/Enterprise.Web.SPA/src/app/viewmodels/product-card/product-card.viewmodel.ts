@@ -1,10 +1,10 @@
 export interface ProductCardViewModel {
     productId: string;
-    imageUrl: string;
-    ratestar: number;
-    productname: string;
-    favorites: number;
-    reviews: number;
-    price: number;
+    productFrontImage: string;
+    productRating: number;
+    productName: string;
+    productFavorite: number;
+    productReview: number;
+    productPrice: number;
     stars: string[];
 }

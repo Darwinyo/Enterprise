@@ -25,8 +25,8 @@ namespace Enterprise.Framework.DataLayers
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Tbl_Balance> Tbl_Balance { get; set; }
-        public virtual DbSet<Tbl_Product_Transaction> Tbl_Product_Transaction { get; set; }
-        public virtual DbSet<Tbl_Transaction> Tbl_Transaction { get; set; }
+        public virtual DbSet<TblBalance> TblBalance { get; set; }
+        public virtual DbSet<TblProductTransaction> TblProductTransaction { get; set; }
+        public virtual DbSet<TblTransaction> TblTransaction { get; set; }
     }
 }

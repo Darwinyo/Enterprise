@@ -42,6 +42,7 @@
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>Enterprise.Framework.BusinessLogics</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.DataLayers.DTOs</AssemblyReference>
       <AssemblyReference>Enterprise.Framework.DataLayers</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>Enterprise.Workflows</AssemblyReference>
@@ -49,12 +50,12 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="efd:Tbl_Product" Name="ProductModel" />
+      <Variable x:TypeArguments="efd:TblProduct" Name="ProductModel" />
     </Sequence.Variables>
-    <local:CreateProductItemActivity sap2010:WorkflowViewState.IdRef="CreateProductItemActivity_1">
+    <local:CreateProductItemActivity>
       <local:CreateProductItemActivity.Product>
-        <OutArgument x:TypeArguments="efd:Tbl_Product">
-          <mca:CSharpReference x:TypeArguments="efd:Tbl_Product">ProductModel</mca:CSharpReference>
+        <OutArgument x:TypeArguments="efd:TblProduct">
+          <mca:CSharpReference x:TypeArguments="efd:TblProduct">ProductModel</mca:CSharpReference>
         </OutArgument>
       </local:CreateProductItemActivity.Product>
       <local:CreateProductItemActivity.ProductBusinessLogic>
@@ -67,11 +68,12 @@
           <mca:CSharpValue x:TypeArguments="x:Object">ProductObject</mca:CSharpValue>
         </InArgument>
       </local:CreateProductItemActivity.ProductObject>
+      <sap2010:WorkflowViewState.IdRef>CreateProductItemActivity_1</sap2010:WorkflowViewState.IdRef>
     </local:CreateProductItemActivity>
-    <local:AddNewProductActivity sap2010:WorkflowViewState.IdRef="AddNewProductActivity_1">
+    <local:AddNewProductActivity>
       <local:AddNewProductActivity.Product>
-        <InArgument x:TypeArguments="efd:Tbl_Product">
-          <mca:CSharpValue x:TypeArguments="efd:Tbl_Product">ProductModel</mca:CSharpValue>
+        <InArgument x:TypeArguments="efd:TblProduct">
+          <mca:CSharpValue x:TypeArguments="efd:TblProduct">ProductModel</mca:CSharpValue>
         </InArgument>
       </local:AddNewProductActivity.Product>
       <local:AddNewProductActivity.ProductBusinessLogic>
@@ -79,8 +81,9 @@
           <mca:CSharpValue x:TypeArguments="efbpa:IProductBusinessLogic">ProductBusinessLogic</mca:CSharpValue>
         </InArgument>
       </local:AddNewProductActivity.ProductBusinessLogic>
+      <sap2010:WorkflowViewState.IdRef>AddNewProductActivity_1</sap2010:WorkflowViewState.IdRef>
     </local:AddNewProductActivity>
-    <sads:DebugSymbol.Symbol>d1lEOlxQcm9qZWN0c1xFbnRlcnByaXNlXEVudGVycHJpc2VcRW50ZXJwcmlzZS5Xb3JrZmxvd3NcUHJvZHVjdFxJbnNlcnRQcm9kdWN0V29ya2Zsb3cueGFtbAgyA1QOAgEBNgVGJwIBC0cFUiMCAQI+Cz5wAgEUOQs5ZAIBEEMLQ1YCAQxPC09wAgEHSgtKXAIBAw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1lEOlxQcm9qZWN0c1xFbnRlcnByaXNlXEVudGVycHJpc2VcRW50ZXJwcmlzZS5Xb3JrZmxvd3NcUHJvZHVjdFxJbnNlcnRQcm9kdWN0V29ya2Zsb3cueGFtbAgzA1cOAgEBNwVIJwIBC0kFVSMCAQI/Cz9wAgEUOgs6YwIBEEQLRFYCAQxRC1FwAgEHTAtMWwIBAw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

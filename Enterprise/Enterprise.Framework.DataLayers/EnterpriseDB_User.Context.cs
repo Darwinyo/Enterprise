@@ -25,10 +25,10 @@ namespace Enterprise.Framework.DataLayers
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Tbl_Pick_Up_Location> Tbl_Pick_Up_Location { get; set; }
-        public virtual DbSet<Tbl_Profile_Image> Tbl_Profile_Image { get; set; }
-        public virtual DbSet<Tbl_User_Card> Tbl_User_Card { get; set; }
-        public virtual DbSet<Tbl_User_Details> Tbl_User_Details { get; set; }
-        public virtual DbSet<Tbl_User_Login> Tbl_User_Login { get; set; }
+        public virtual DbSet<TblPickUpLocation> TblPickUpLocation { get; set; }
+        public virtual DbSet<TblProfileImage> TblProfileImage { get; set; }
+        public virtual DbSet<TblUserCard> TblUserCard { get; set; }
+        public virtual DbSet<TblUserDetails> TblUserDetails { get; set; }
+        public virtual DbSet<TblUserLogin> TblUserLogin { get; set; }
     }
 }

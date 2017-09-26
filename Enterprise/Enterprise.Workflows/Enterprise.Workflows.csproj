@@ -11,8 +11,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enterprise.Workflows</RootNamespace>
     <AssemblyName>Enterprise.Workflows</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\Enterprise.Framework.BusinessLogics\Enterprise.Framework.BusinessLogics.csproj">
       <Project>{ec85ba2b-3f1b-40de-af38-40200414b8b1}</Project>
       <Name>Enterprise.Framework.BusinessLogics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers.DTOs\Enterprise.Framework.DataLayers.DTOs.csproj">
+      <Project>{04f33fa1-680b-41ac-9f3b-40c37ba48cee}</Project>
+      <Name>Enterprise.Framework.DataLayers.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj">
       <Project>{5327644b-3051-465c-8f03-be1773c52689}</Project>

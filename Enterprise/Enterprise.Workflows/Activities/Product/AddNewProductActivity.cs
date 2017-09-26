@@ -12,7 +12,7 @@ namespace Enterprise.Workflows.Activities.Product
     public sealed class AddNewProductActivity : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<Tbl_Product> Product { get; set; }
+        public InArgument<TblProduct> Product { get; set; }
         public InArgument<IProductBusinessLogic> ProductBusinessLogic { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>

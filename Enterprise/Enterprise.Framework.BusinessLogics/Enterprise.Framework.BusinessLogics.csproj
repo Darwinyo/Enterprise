@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enterprise.Framework.BusinessLogics</RootNamespace>
     <AssemblyName>Enterprise.Framework.BusinessLogics</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,9 +58,9 @@
     <Compile Include="User\UserLoginBusinessLogic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj">
-      <Project>{82bd9406-452d-4ade-9236-1838e747a8dc}</Project>
-      <Name>Enterprise.API.Helpers</Name>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers.DTOs\Enterprise.Framework.DataLayers.DTOs.csproj">
+      <Project>{04f33fa1-680b-41ac-9f3b-40c37ba48cee}</Project>
+      <Name>Enterprise.Framework.DataLayers.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj">
       <Project>{5327644B-3051-465C-8F03-BE1773C52689}</Project>
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\Enterprise.Framework.Repository\Enterprise.Framework.Repository.csproj">
       <Project>{7CB43174-7B93-4BD3-8AC6-C04E3F4780AD}</Project>
       <Name>Enterprise.Framework.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Workflow.Helpers\Enterprise.Workflows.Helpers.csproj">
+      <Project>{245e5947-cc5b-4f91-81e0-63450c60faa9}</Project>
+      <Name>Enterprise.Workflows.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

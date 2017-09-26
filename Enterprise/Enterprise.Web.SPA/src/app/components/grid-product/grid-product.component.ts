@@ -18,11 +18,11 @@ export class GridProductComponent implements OnInit {
   fetchProducts() {
     for (let i = 0; i < 50; i++) {
       this.products.push(<ProductCardViewModel>{
-        productname: 'Product ' + i,
-        price: Math.round(Math.random() * 100),
-        favorites: Math.ceil(Math.random() * 100),
-        ratestar: (Math.random() * 5) + 1,
-        reviews: Math.ceil(Math.random()) * 120
+        productName: 'Product ' + i,
+        productPrice: Math.round(Math.random() * 100),
+        productFavorite: Math.ceil(Math.random() * 100),
+        productRating: (Math.random() * 5) + 1,
+        productReview: Math.ceil(Math.random()) * 120
       });
     }
   }

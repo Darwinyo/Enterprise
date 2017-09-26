@@ -1,3 +1,5 @@
+import { serverUrl } from './../../consts/server-url.const';
+import { ChatControllerUrl } from './../../consts/api-url.const';
 import { ChatHub } from './../../signalr/chathub/chat.hub';
 import { ChatModel } from './../../models/chat/chat.model';
 // Angular Dependencies
@@ -10,7 +12,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ChatService extends ChatHub {
-    urlChatController = 'http://localhost:63853/api/chat';
+    urlChatController = serverUrl + ChatControllerUrl;
     constructor(private http: Http) {
         super();
     }

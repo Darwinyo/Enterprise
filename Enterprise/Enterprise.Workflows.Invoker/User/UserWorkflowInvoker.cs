@@ -2,7 +2,7 @@
 using System.Activities;
 using System.Collections.Generic;
 using Enterprise.Framework.BusinessLogics.User;
-using Enterprise.API.Models.Responses;
+using Enterprise.Workflows.Models.Responses;
 using Enterprise.Framework.BusinessLogics.User.Abstract;
 using Enterprise.Workflows.User;
 using Enterprise.Workflows.Helpers.Converters.Abstract;

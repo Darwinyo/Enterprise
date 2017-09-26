@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enterprise.Workflows.Helpers</RootNamespace>
     <AssemblyName>Enterprise.Workflows.Helpers</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consts\Keys.cs" />
     <Compile Include="Converters\Abstract\IConverters.cs" />
     <Compile Include="Converters\Abstract\IWorkflowResponseConverters.cs" />
     <Compile Include="Converters\CategoryConverter.cs" />
@@ -46,13 +48,25 @@
     <Compile Include="Converters\InsertProductConverter.cs" />
     <Compile Include="Converters\RecommendedProductConverter.cs" />
     <Compile Include="Converters\UserRegistrationConverter.cs" />
+    <Compile Include="Encryption\EncryptDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj">
-      <Project>{0acefe87-6427-4928-91ed-e6ebc80e2504}</Project>
-      <Name>Enterprise.API.Models</Name>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers.DTOs\Enterprise.Framework.DataLayers.DTOs.csproj">
+      <Project>{04f33fa1-680b-41ac-9f3b-40c37ba48cee}</Project>
+      <Name>Enterprise.Framework.DataLayers.DTOs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj">
+      <Project>{5327644B-3051-465C-8F03-BE1773C52689}</Project>
+      <Name>Enterprise.Framework.DataLayers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Workflows.Models\Enterprise.Workflows.Models.csproj">
+      <Project>{CBF8EE15-2068-4869-A96F-879B0686EB2E}</Project>
+      <Name>Enterprise.Workflows.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

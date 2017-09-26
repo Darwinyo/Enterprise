@@ -14,8 +14,8 @@ namespace Enterprise.Workflows.Activities.User
     {
         // Define an activity input argument of type string
         public InArgument<IUserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
-        public InArgument<Tbl_User_Login> UserLogin { get; set; }
-        public OutArgument<string[]> ListSameRecord { get; set; }
+        public InArgument<TblUserLogin> UserLogin { get; set; }
+        public OutArgument<IEnumerable<string>> ListSameRecord { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.

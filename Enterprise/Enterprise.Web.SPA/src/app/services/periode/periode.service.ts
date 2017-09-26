@@ -1,3 +1,5 @@
+import { serverUrl } from './../../consts/server-url.const';
+import { PeriodeControllerUrl } from './../../consts/api-url.const';
 import { PeriodeModel } from './../../models/periode/periode.model';
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
@@ -9,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PeriodeService {
-    urlPeriodeController = 'http://localhost:63853/api/periode';
+    urlPeriodeController = serverUrl + PeriodeControllerUrl;
     constructor(private http: Http) { }
     createNewPeriode(periodeModel: PeriodeModel) {
         const headers: Headers = new Headers();

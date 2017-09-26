@@ -13,23 +13,23 @@ namespace Enterprise.Framework.BusinessLogics.Periode
         {
             _periodeRepository = periodeRepository;
         }
-        public Tbl_Periode CreatePeriode(object obj)
+        public TblPeriode CreatePeriode(object obj)
         {
             if (obj != null)
             {
                 JObject jObject = (JObject)obj;
-                Tbl_Periode tblPeriode = new Tbl_Periode
+                TblPeriode tblPeriode = new TblPeriode
                 {
-                    Periode_Id=Guid.NewGuid().ToString(),
-                    Periode_Description = jObject["periodeDescription"].ToString(),
-                    Periode_EndDate = jObject["periodeEndDate"].ToObject<DateTime>(),
-                    Periode_StartDate = jObject["periodeStartDate"].ToObject<DateTime>()
+                    PeriodeId=Guid.NewGuid().ToString(),
+                    PeriodeDescription = jObject["periodeDescription"].ToString(),
+                    PeriodeEndDate = jObject["periodeEndDate"].ToObject<DateTime>(),
+                    PeriodeStartDate = jObject["periodeStartDate"].ToObject<DateTime>()
                 };
                 return tblPeriode;
             }
             return null;
         }
-        public void InsertPeriode(Tbl_Periode periode)
+        public void InsertPeriode(TblPeriode periode)
         {
             if (periode != null)
             {
@@ -44,7 +44,7 @@ namespace Enterprise.Framework.BusinessLogics.Periode
         {
             DateTime date;
             if (DateTime.TryParse(dateTime, out date))
-                return _periodeRepository.GetSingle(x => x.Periode_StartDate < date && x.Periode_EndDate > date).Periode_Id;
+                return _periodeRepository.GetSingle(x => x.PeriodeStartDate < date && x.PeriodeEndDate > date).PeriodeId;
             return null;
         }
     }

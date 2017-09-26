@@ -1,5 +1,7 @@
+import { RecommendedProductCardsViewModel } from './../../viewmodels/recommended-product/recommended-product-cards.viewmodel';
+
+import { HotProductCardsViewModel } from './../../viewmodels/hot-product/hot-product-cards.viewmodel';
 import { ListProductCardComponent } from './../../components/list-product-card/list-product-card.component';
-import { ProductModel } from './../../models/product/product/product.model';
 import { RecommendedProductService } from './../../services/recommended-product/recommended-product.service';
 import { HotProductService } from './../../services/hot-product/hot-product.service';
 import { PeriodeService } from './../../services/periode/periode.service';
@@ -17,11 +19,10 @@ export class HomeComponent implements OnInit {
   @ViewChild('categoryList') recommendListProductCardComponent: ListProductCardComponent;
   categories: ProductCategoryModel[];
   periodeId: string;
-  hotProducts: ProductModel[];
-  recommendedProducts: ProductModel[];
+  hotProducts: HotProductCardsViewModel;
+  recommendedProducts: RecommendedProductCardsViewModel;
   constructor(
     private categoryService: CategoryService,
-    private periodeService: PeriodeService,
     private hotProductService: HotProductService,
     private recommendedProductService: RecommendedProductService) {
     this.categories = [];
@@ -35,22 +36,16 @@ export class HomeComponent implements OnInit {
   fetchCurrentPeriode() {
     const date = new Date();
     const dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    this.periodeService.getCurrentPeriodeId(dateStr).subscribe(
-      (result) => this.periodeId = result,
-      (err) => console.log(err),
-      () => {
-        this.fetchHotProductByPeriode();
-        this.fetchRecommendedProductByPeriode();
-        console.log('called');
-      }
-    )
+    this.periodeId = dateStr;
+    this.fetchHotProductByPeriode();
+    this.fetchRecommendedProductByPeriode();
   };
   fetchHotProductByPeriode() {
     this.hotProductService.getHotProductByPeriodeId(this.periodeId).subscribe(
       (result) => this.hotProducts = result,
       (err) => console.log(err),
       () =>
-        this.hotListProductCardComponent.ConvertToProductCardModel(this.hotProducts)
+        this.hotListProductCardComponent.InitProductCardModel(this.hotProducts.hotProductCards)
     )
   };
   fetchRecommendedProductByPeriode() {
@@ -58,7 +53,7 @@ export class HomeComponent implements OnInit {
       (result) => this.recommendedProducts = result,
       (err) => console.log(err),
       () =>
-        this.recommendListProductCardComponent.ConvertToProductCardModel(this.recommendedProducts)
+        this.recommendListProductCardComponent.InitProductCardModel(this.recommendedProducts.recommendedProductCards)
     )
   }
   fetchAllCategory() {

@@ -21,18 +21,11 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
             {
                 entity.HasKey(e => e.CityId);
 
-                entity.ToTable("Tbl_City");
-
-                entity.Property(e => e.CityId)
-                    .HasColumnName("City_Id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.CityId).ValueGeneratedNever();
 
                 entity.Property(e => e.CityName)
                     .IsRequired()
-                    .HasColumnName("City_Name")
                     .IsUnicode(false);
-
-                entity.Property(e => e.CountryId).HasColumnName("Country_Id");
 
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.TblCity)
@@ -45,15 +38,10 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
             {
                 entity.HasKey(e => e.CountryId);
 
-                entity.ToTable("Tbl_Country");
-
-                entity.Property(e => e.CountryId)
-                    .HasColumnName("Country_Id")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.CountryId).ValueGeneratedNever();
 
                 entity.Property(e => e.CountryName)
                     .IsRequired()
-                    .HasColumnName("Country_Name")
                     .IsUnicode(false);
             });
 
@@ -61,27 +49,19 @@ namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
             {
                 entity.HasKey(e => e.PeriodeId);
 
-                entity.ToTable("Tbl_Periode");
-
                 entity.Property(e => e.PeriodeId)
-                    .HasColumnName("Periode_Id")
                     .HasMaxLength(36)
                     .IsUnicode(false)
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.PeriodeDescription)
                     .IsRequired()
-                    .HasColumnName("Periode_Description")
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PeriodeEndDate)
-                    .HasColumnName("Periode_EndDate")
-                    .HasColumnType("date");
+                entity.Property(e => e.PeriodeEndDate).HasColumnType("date");
 
-                entity.Property(e => e.PeriodeStartDate)
-                    .HasColumnName("Periode_StartDate")
-                    .HasColumnType("date");
+                entity.Property(e => e.PeriodeStartDate).HasColumnType("date");
             });
         }
     }

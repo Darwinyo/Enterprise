@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Enterprise.Services.User.Abstract;
+using Enterprise.API.Models.Responses;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,9 +35,9 @@ namespace Enterprise.API.Controllers.User
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]object value)
+        public async Task<UserRegistrationWorkflowResponse> Post([FromBody]object value)
         {
-            _userService.Registration(value);
+            return await _userService.Registration(value);
         }
 
         // PUT api/values/5

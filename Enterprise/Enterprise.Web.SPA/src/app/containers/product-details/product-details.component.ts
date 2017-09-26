@@ -68,17 +68,17 @@ export class ProductDetailsComponent implements OnInit {
   }
   convertToImagesArray(productId: string) {
     this.imageService.getProductImageListByProductId(productId).subscribe(
-      (result) => this.productModel.TblProductImage = result,
+      (result) => this.productModel.tblProductImage = result,
       (err) => console.log(err),
-      () => this.productImage.populateImages(this.productModel.TblProductImage)
+      () => this.productImage.populateImages(this.productModel.tblProductImage)
     )
   }
   convertToProductDescription(model: ProductModel) {
     this.specsService.getAllProductSpecsByProductId(model.productId).subscribe(
-      (result) => this.productModel.TblProductSpecs = result,
+      (result) => this.productModel.tblProductSpecs = result,
       (err) => console.log(err),
       () => {
-        this.productDescription.detailsProduct = this.productModel.TblProductSpecs;
+        this.productDescription.detailsProduct = this.productModel.tblProductSpecs;
         this.productDescription.descriptions = model.productDescription;
       }
     )

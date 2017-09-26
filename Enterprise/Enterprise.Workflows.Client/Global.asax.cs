@@ -13,6 +13,11 @@ namespace Enterprise.Workflows.Client
         {
             UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            HttpConfiguration config = GlobalConfiguration.Configuration;
+
+            config.Formatters.JsonFormatter
+                        .SerializerSettings
+                        .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

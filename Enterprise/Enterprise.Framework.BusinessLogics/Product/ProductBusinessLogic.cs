@@ -17,97 +17,97 @@ namespace Enterprise.Framework.BusinessLogics.Product
             _productRepository = productRepository;
             _categoryBusinessLogic = categoryBusinessLogic;
         }
-        public void AddNewProduct(Tbl_Product product)
+        public void AddNewProduct(TblProduct product)
         {
             _productRepository.Add(product);
         }
-        public Tbl_Product CreateProductItem(object productObject)
+        public TblProduct CreateProductItem(object productObject)
         {
             JObject jObject = (JObject)productObject;
-            Tbl_Product product = new Tbl_Product
+            TblProduct product = new TblProduct
             {
-                Product_Id = Guid.NewGuid().ToString(),
-                Product_Name = jObject["productName"].ToString(),
-                Product_Favorite = 0,
-                Product_Location = (int)jObject["productLocation"],
-                Product_Price = (decimal)jObject["productPrice"],
-                Product_Rating = 0,
-                Product_Review = 0,
-                Product_Stock = (int)jObject["productStock"],
-                Product_Description = (string)jObject["productDescription"]
+                ProductId = Guid.NewGuid().ToString(),
+                ProductName = jObject["productName"].ToString(),
+                ProductFavorite = 0,
+                ProductLocation = (int)jObject["productLocation"],
+                ProductPrice = (decimal)jObject["productPrice"],
+                ProductRating = 0,
+                ProductReview = 0,
+                ProductStock = (int)jObject["productStock"],
+                ProductDescription = (string)jObject["productDescription"]
             };
             if (jObject["TblProductImage"] != null)
             {
                 JObject[] productImage = (JObject[])jObject["TblProductImage"].ToObject(typeof(JObject[]));
-                List<Tbl_Product_Image> list = new List<Tbl_Product_Image>();
+                List<TblProductImage> list = new List<TblProductImage>();
                 foreach (var item in productImage)
                 {
-                    list.Add(new Tbl_Product_Image
+                    list.Add(new TblProductImage
                     {
-                        P_Image_Id = Guid.NewGuid().ToString(),
-                        Tbl_Product = product,
-                        Product_Image_Name = item["productImageName"].ToString(),
-                        Product_Image_Url = item["productImageUrl"].ToString(),
-                        Product_Image_Size = (int)item["productImageSize"]
+                        PImageId = Guid.NewGuid().ToString(),
+                        TblProduct = product,
+                        ProductImageName = item["productImageName"].ToString(),
+                        ProductImageUrl = item["productImageUrl"].ToString(),
+                        ProductImageSize = (int)item["productImageSize"]
                     });
                 }
-                product.Tbl_Product_Image = list;
+                product.TblProductImage = list;
             }
             if (jObject["TblProductCategory"] != null)
             {
                 JObject[] categories = (JObject[])jObject["TblProductCategory"].ToObject(typeof(JObject[]));
-                List<Tbl_Product_Category> list = new List<Tbl_Product_Category>();
+                List<TblProductCategory> list = new List<TblProductCategory>();
                 foreach (var item in categories)
                 {
-                    list.Add(new Tbl_Product_Category
+                    list.Add(new TblProductCategory
                     {
-                        Tbl_Product = product,
-                        P_Category_Id = Guid.NewGuid().ToString(),
-                        Tbl_Category= _categoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString())
+                        TblProduct = product,
+                        PCategoryId = Guid.NewGuid().ToString(),
+                        TblCategory= _categoryBusinessLogic.GetTblCategoryByName(item["categoryName"].ToString())
                     });
                 }
-                product.Tbl_Product_Category = list;
+                product.TblProductCategory = list;
             }
             if (jObject["TblProductSpecs"] != null)
             {
                 JObject[] specs = (JObject[])jObject["TblProductSpecs"].ToObject(typeof(JObject[]));
-                List<Tbl_Product_Specs> list = new List<Tbl_Product_Specs>();
+                List<TblProductSpecs> list = new List<TblProductSpecs>();
                 foreach (var item in specs)
                 {
-                    list.Add(new Tbl_Product_Specs
+                    list.Add(new TblProductSpecs
                     {
-                        Tbl_Product= product,
-                        P_Spec_Id = Guid.NewGuid().ToString(),
-                        Product_Spec_Title = item["productSpecTitle"].ToString(),
-                        Product_Spec_Value = item["productSpecValue"].ToString()
+                        TblProduct= product,
+                        PSpecId = Guid.NewGuid().ToString(),
+                        ProductSpecTitle = item["productSpecTitle"].ToString(),
+                        ProductSpecValue = item["productSpecValue"].ToString()
                     });
                 }
-                product.Tbl_Product_Specs = list;
+                product.TblProductSpecs = list;
             }
             if (jObject["TblProductVariations"] != null)
             {
                 JObject[] variations = (JObject[])jObject["TblProductVariations"].ToObject(typeof(JObject[]));
-                List<Tbl_Product_Variations> list = new List<Tbl_Product_Variations>();
+                List<TblProductVariations> list = new List<TblProductVariations>();
                 foreach (var item in variations)
                 {
-                    list.Add(new Tbl_Product_Variations
+                    list.Add(new TblProductVariations
                     {
-                        Tbl_Product= product,
-                        Product_Variation = item["productVariation"].ToString(),
-                        P_Variation_Id = Guid.NewGuid().ToString()
+                        TblProduct= product,
+                        ProductVariation = item["productVariation"].ToString(),
+                        PVariationId = Guid.NewGuid().ToString()
                     });
                 }
-                product.Tbl_Product_Variations = list;
+                product.TblProductVariations = list;
             }
             return product;
         }
-        public IEnumerable<Tbl_Product> GetAllListProduct()
+        public IEnumerable<TblProduct> GetAllListProduct()
         {
             return _productRepository.GetAll();
         }
-        public Tbl_Product GetProductById(string ProductId)
+        public TblProduct GetProductById(string ProductId)
         {
-            return _productRepository.GetSingle(x => x.Product_Id == ProductId);
+            return _productRepository.GetSingle(x => x.ProductId == ProductId);
         }
         public void AddReview(string productId)
         {

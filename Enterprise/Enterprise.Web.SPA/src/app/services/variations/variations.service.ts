@@ -1,3 +1,5 @@
+import { serverUrl } from './../../consts/server-url.const';
+import { ProductVariationControllerUrl } from './../../consts/api-url.const';
 import { ProductVariationModel } from './../../models/product/product-variations/product-variation.model';
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
@@ -9,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class VariationsService {
-    urlVariationController = 'http://localhost:63853/api/productvariation';
+    urlVariationController = serverUrl + ProductVariationControllerUrl;
     constructor(private http: Http) { }
     getProductVariationByProductId(productId: string): Observable<ProductVariationModel[]> {
         return this.http.get(this.urlVariationController + '/' + productId).map(

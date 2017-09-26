@@ -4,19 +4,24 @@ using Enterprise.Services.Product.Abstract;
 using Enterprise.API.BusinessLogics.Product;
 using Enterprise.Repository.Abstract;
 using Enterprise.API.BusinessLogics.Product.Abstract;
+using System.Net.Http;
+using Enterprise.API.Helpers.ProxyAPI;
+using Enterprise.API.Models.Responses;
+using System.Threading.Tasks;
+using Enterprise.API.Helpers.Consts;
 
 namespace Enterprise.Services.Product
 {
-    public class ProductService : IProductService
+    public class ProductService : Bypasser<InsertProductWorkflowResponse, object>, IProductService
     {
         private readonly IProductBusinessLogic _productBusinessLogic;
         public ProductService(IProductBusinessLogic productBusinessLogic)
         {
             _productBusinessLogic = productBusinessLogic;
         }
-        public void AddNewProduct(TblProduct product)
+        public async Task<InsertProductWorkflowResponse> AddNewProduct(object productObject)
         {
-            _productBusinessLogic.AddNewProduct(product);
+            return await PostAction(WorkflowServiceClient.InsertProduct, productObject);
         }
 
         public void AddReview(string productId)
@@ -32,11 +37,6 @@ namespace Enterprise.Services.Product
         public TblProduct GetProductById(string ProductId)
         {
             return _productBusinessLogic.GetProductById(ProductId);
-        }
-
-        public int SaveProduct()
-        {
-            return _productBusinessLogic.SaveProduct();
         }
     }
 }

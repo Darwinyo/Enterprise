@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Enterprise.API.Models.Responses;
 using Enterprise.Framework.DataLayers;
+using Enterprise.Workflows.Models.Responses;
+using Enterprise.Framework.DataLayers.DTOs.Product;
 
 namespace Enterprise.Workflows.Helpers.Converters
 {
@@ -15,7 +16,7 @@ namespace Enterprise.Workflows.Helpers.Converters
         {
             return new RecommendedProductWorkflowResponse
             {
-                RecommendedProducts = (IEnumerable<Tbl_Product>)dictionary["RecommendedProducts"]
+                RecommendedProductCards = (IEnumerable<ProductCardDTO>)dictionary["RecommendedProductCards"]
             };
         }
     }

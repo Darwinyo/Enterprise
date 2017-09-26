@@ -1,4 +1,5 @@
 ﻿
+using Enterprise.API.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +10,6 @@ namespace Enterprise.Services.User.Abstract
     public interface IUserService
     {
         //Task<StartRegistrationResponse> Registration(object userLoginObj);
-        void Registration(object userLoginObj);
+        Task<UserRegistrationWorkflowResponse> Registration(object userLoginObj);
     }
 }

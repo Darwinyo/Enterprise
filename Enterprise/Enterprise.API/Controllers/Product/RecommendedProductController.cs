@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Enterprise.Services.Product;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Services.Product.Abstract;
+using Enterprise.API.Models.Responses;
+using System.Net.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,7 +30,7 @@ namespace Enterprise.API.Controllers.Product
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IEnumerable<TblProduct> Get(string id)
+        public RecommendedProductWorkflowResponse Get(string id)
         {
             return _recommendedProductService.GetRecommendedProductsByPeriodeId(id);
         }

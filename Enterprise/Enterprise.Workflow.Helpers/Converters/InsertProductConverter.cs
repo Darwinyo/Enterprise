@@ -1,10 +1,10 @@
 ﻿using Enterprise.Workflows.Helpers.Converters.Abstract;
+using Enterprise.Workflows.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Enterprise.API.Models.Responses;
 
 namespace Enterprise.Workflows.Helpers.Converters
 {

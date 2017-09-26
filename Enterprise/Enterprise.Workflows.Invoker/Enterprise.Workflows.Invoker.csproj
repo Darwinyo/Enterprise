@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enterprise.Workflows.Invoker</RootNamespace>
     <AssemblyName>Enterprise.Workflows.Invoker</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,10 +59,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj">
-      <Project>{0acefe87-6427-4928-91ed-e6ebc80e2504}</Project>
-      <Name>Enterprise.API.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Enterprise.Framework.BusinessLogics\Enterprise.Framework.BusinessLogics.csproj">
       <Project>{ec85ba2b-3f1b-40de-af38-40200414b8b1}</Project>
       <Name>Enterprise.Framework.BusinessLogics</Name>
@@ -78,8 +75,12 @@
       <Project>{245e5947-cc5b-4f91-81e0-63450c60faa9}</Project>
       <Name>Enterprise.Workflows.Helpers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Workflows.Models\Enterprise.Workflows.Models.csproj">
+      <Project>{CBF8EE15-2068-4869-A96F-879B0686EB2E}</Project>
+      <Name>Enterprise.Workflows.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Enterprise.Workflows\Enterprise.Workflows.csproj">
-      <Project>{89332B31-3888-4670-AA70-DBC38F1AB496}</Project>
+      <Project>{89332b31-3888-4670-aa70-dbc38f1ab496}</Project>
       <Name>Enterprise.Workflows</Name>
     </ProjectReference>
   </ItemGroup>

@@ -13,8 +13,8 @@ export interface ProductModel {
     productDescription: string;
     productLocation: number;
     productFrontImage: string;
-    TblProductCategory: ProductCategoryModel[];
-    TblProductSpecs: ProductSpecsModel[];
-    TblProductVariations: ProductVariationModel[];
-    TblProductImage: ProductImageModel[];
+    tblProductCategory: ProductCategoryModel[];
+    tblProductSpecs: ProductSpecsModel[];
+    tblProductVariations: ProductVariationModel[];
+    tblProductImage: ProductImageModel[];
 }

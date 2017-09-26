@@ -27,9 +27,9 @@ namespace Enterprise.Framework.DataLayers
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Tbl_City> Tbl_City { get; set; }
-        public virtual DbSet<Tbl_Country> Tbl_Country { get; set; }
-        public virtual DbSet<Tbl_Periode> Tbl_Periode { get; set; }
+        public virtual DbSet<TblCity> TblCity { get; set; }
+        public virtual DbSet<TblCountry> TblCountry { get; set; }
+        public virtual DbSet<TblPeriode> TblPeriode { get; set; }
     
         public virtual int sp_Generate_Periode(string periodeId, string periodeDescription, Nullable<System.DateTime> periodeStartDate, Nullable<System.DateTime> periodeEndDate)
         {

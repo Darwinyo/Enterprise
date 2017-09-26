@@ -1,4 +1,7 @@
-import { ProductModel } from './../../models/product/product/product.model';
+import { RecommendedProductCardsViewModel } from './../../viewmodels/recommended-product/recommended-product-cards.viewmodel';
+
+import { serverUrl } from './../../consts/server-url.const';
+import { RecommendedProductControllerUrl } from './../../consts/api-url.const';
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
 import { Injectable, Inject } from '@angular/core';
@@ -9,10 +12,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class RecommendedProductService {
-    urlRecommendedProductController = 'http://localhost:63853/api/recommendedproduct';
+    urlRecommendedProductController = serverUrl + RecommendedProductControllerUrl;
     constructor(private http: Http) { }
 
-    getRecommendedProductByPeriodeId(periodeId: string): Observable<ProductModel[]> {
+    getRecommendedProductByPeriodeId(periodeId: string): Observable<RecommendedProductCardsViewModel> {
         return this.http.get(this.urlRecommendedProductController + '/' + periodeId).map(
             (result) => result.json()
         )

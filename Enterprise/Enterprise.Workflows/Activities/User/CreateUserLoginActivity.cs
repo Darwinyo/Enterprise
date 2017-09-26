@@ -16,7 +16,7 @@ namespace Enterprise.Workflows.Activities.User
         public InArgument<object> UserLoginObject { get; set; }
         public InArgument<IUserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
 
-        public OutArgument<Tbl_User_Login> UserLoginModel { get; set; }
+        public OutArgument<TblUserLogin> UserLoginModel { get; set; }
 
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.

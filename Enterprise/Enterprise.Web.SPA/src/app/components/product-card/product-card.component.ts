@@ -16,7 +16,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.InitStars(this.productCard.ratestar);
+    this.InitStars(this.productCard.productRating);
   }
   InitStars(rateStar) {
     this.productCard.stars = [];

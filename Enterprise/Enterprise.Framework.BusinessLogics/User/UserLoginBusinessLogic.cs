@@ -1,11 +1,12 @@
 ﻿using Enterprise.Framework.BusinessLogics.User.Abstract;
 using Enterprise.Framework.DataLayers;
 using Enterprise.Framework.Repository.Abstract;
-using Enterprise.API.Helpers.Encryption;
-using Enterprise.API.Helpers.Consts;
+using Enterprise.Workflows.Helpers.Encryption;
+using Enterprise.Workflows.Helpers.Consts;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Enterprise.Framework.BusinessLogics.User
 {
@@ -16,26 +17,26 @@ namespace Enterprise.Framework.BusinessLogics.User
         {
             _userLoginRepository = userLoginRepository;
         }
-        public Tbl_User_Login CreateUserLogin(object value)
+        public TblUserLogin CreateUserLogin(object value)
         {
             JObject jObject = (JObject)value;
-            return new Tbl_User_Login
+            return new TblUserLogin
             {
                 Email = jObject["email"].ToString(),
-                Password = EncryptDecrypt.Encrypt(jObject["password"].ToString(),Keys.PassPhase),
-                Phone_Number = (int)jObject["phoneNumber"],
-                User_Login = jObject["userLogin"].ToString()
+                Password = EncryptDecrypt.Encrypt(jObject["password"].ToString(), Keys.PassPhase),
+                PhoneNumber = (int)jObject["phoneNumber"],
+                UserLogin = jObject["userLogin"].ToString()
             };
         }
 
-        public IEnumerable<string> GetSameRecord(Tbl_User_Login userLogin)
+        public IEnumerable<string> GetSameRecord(TblUserLogin userLogin)
         {
             List<string> lstError = new List<string>();
             if (_userLoginRepository.FindBy(x => x.Email == userLogin.Email).Count() > 0)
                 lstError.Add("Email");
-            if (_userLoginRepository.FindBy(x => x.Phone_Number == userLogin.Phone_Number).Count() > 0)
+            if (_userLoginRepository.FindBy(x => x.PhoneNumber == userLogin.PhoneNumber).Count() > 0)
                 lstError.Add("PhoneNumber");
-            if (_userLoginRepository.FindBy(x => x.User_Login == userLogin.User_Login).Count() > 0)
+            if (_userLoginRepository.FindBy(x => x.UserLogin == userLogin.UserLogin).Count() > 0)
                 lstError.Add("UserLogin");
             return lstError.AsEnumerable();
         }
@@ -45,12 +46,12 @@ namespace Enterprise.Framework.BusinessLogics.User
             return sameRecord.Count() > 0 ? true : false;
         }
 
-        public bool Login(Tbl_User_Login userLogin)
+        public bool Login(TblUserLogin userLogin)
         {
             return _userLoginRepository.FindBy(x => x.Equals(userLogin)).Count() > 0 ? true : false;
         }
 
-        public void RegisterUser(Tbl_User_Login userLogin)
+        public void RegisterUser(TblUserLogin userLogin)
         {
             _userLoginRepository.Add(userLogin);
         }

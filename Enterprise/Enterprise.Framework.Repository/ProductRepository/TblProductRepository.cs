@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using System.Text;
 using Enterprise.Framework.Repository.Abstract;
 using Enterprise.Framework.DataLayers;
+using Enterprise.Framework.DataLayers.DTOs.Product;
 
 namespace Enterprise.Framework.Repository.ProductRepository
 {
-    public class TblProductRepository:ProductBaseRepository<Tbl_Product>,ITblProductRepository
+    public class TblProductRepository : ProductBaseRepository<TblProduct>, ITblProductRepository
     {
         public TblProductRepository(ProductContext context) : base(context)
         {
         }
-        
-        public IEnumerable<Tbl_Product> GetListProductByListString(List<string> listProductId)
+        public IEnumerable<ProductCardDTO> GetListProductCardByListString(List<string> listProductId)
         {
-            var x= base._context.Tbl_Product.Where(z => listProductId.Contains(z.Product_Id)).ToList();
-            x.ForEach(z =>
+            var x = base._context.TblProduct.Select(y => new ProductCardDTO
             {
-                z.Tbl_Product_Hot = null;
-                z.Tbl_Product_Recommended = null;
-            });
+                ProductId = y.ProductId,
+                ProductFavorite = y.ProductFavorite,
+                ProductFrontImage = y.ProductFrontImage,
+                ProductName = y.ProductName,
+                ProductPrice = y.ProductPrice,
+                ProductRating = y.ProductRating,
+                ProductReview = y.ProductReview
+            }).Where(z => listProductId.Contains(z.ProductId)).ToList();
             return x.AsEnumerable();
         }
         public void AddReview(string productId)

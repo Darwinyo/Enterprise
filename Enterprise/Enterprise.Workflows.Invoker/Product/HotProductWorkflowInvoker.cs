@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Enterprise.Workflows.Invoker.Product.Abstract;
-using Enterprise.API.Models.Responses;
 using Enterprise.Workflows.Product;
 using System.Activities;
 using Enterprise.Framework.BusinessLogics.Product.Abstract;
 using Enterprise.Framework.BusinessLogics.Periode.Abstract;
 using Enterprise.Workflows.Helpers.Converters.Abstract;
+using Enterprise.Workflows.Invoker.Abstract;
+using Enterprise.Workflows.Models.Responses;
 
 namespace Enterprise.Workflows.Invoker.Product
 {
@@ -24,7 +21,7 @@ namespace Enterprise.Workflows.Invoker.Product
             _periodeBusinessLogic = periodeBusinessLogic;
             _hotProductConverter = hotProductConverter;
         }
-        public HotProductWorkflowResponse GetHotProducts(string dateString)
+        public HotProductWorkflowResponse InvokeWorkflow(string dateString)
         {
             Activity activity = new HotProductWorkflow()
             {

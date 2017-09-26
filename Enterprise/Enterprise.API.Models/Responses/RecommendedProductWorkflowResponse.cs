@@ -1,4 +1,4 @@
-﻿using Enterprise.Framework.DataLayers;
+﻿using Enterprise.DataLayers.DTOs.Product;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +7,6 @@ namespace Enterprise.API.Models.Responses
 {
     public class RecommendedProductWorkflowResponse
     {
-        public IEnumerable<Tbl_Product> RecommendedProducts { get; set; }
+        public IEnumerable<ProductCardDTO> RecommendedProductCards { get; set; }
     }
 }

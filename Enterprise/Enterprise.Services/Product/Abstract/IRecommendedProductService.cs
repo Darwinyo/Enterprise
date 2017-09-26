@@ -1,10 +1,11 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using System.Collections.Generic;
+﻿using Enterprise.API.Models.Responses;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Enterprise.Services.Product.Abstract
 {
     public interface IRecommendedProductService
     {
-        IEnumerable<TblProduct> GetRecommendedProductsByPeriodeId(string PeriodeId);
+        RecommendedProductWorkflowResponse GetRecommendedProductsByPeriodeId(string PeriodeId);
     }
 }

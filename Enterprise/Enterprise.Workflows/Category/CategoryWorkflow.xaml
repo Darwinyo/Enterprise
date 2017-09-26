@@ -50,12 +50,12 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence>
     <Sequence.Variables>
-      <Variable x:TypeArguments="efd:Tbl_Category" Name="CategoryModel" />
+      <Variable x:TypeArguments="efd:TblCategory" Name="CategoryModel" />
     </Sequence.Variables>
     <local:CreateCategoryActivity>
       <local:CreateCategoryActivity.Category>
-        <OutArgument x:TypeArguments="efd:Tbl_Category">
-          <mca:CSharpReference x:TypeArguments="efd:Tbl_Category">CategoryModel</mca:CSharpReference>
+        <OutArgument x:TypeArguments="efd:TblCategory">
+          <mca:CSharpReference x:TypeArguments="efd:TblCategory">CategoryModel</mca:CSharpReference>
         </OutArgument>
       </local:CreateCategoryActivity.Category>
       <local:CreateCategoryActivity.CategoryBusinessLogic>
@@ -78,7 +78,7 @@
       </local:IsCategoryExistsActivity.CategoryBusinessLogic>
       <local:IsCategoryExistsActivity.CategoryName>
         <InArgument x:TypeArguments="x:String">
-          <mca:CSharpValue x:TypeArguments="x:String">CategoryModel.Category_Name</mca:CSharpValue>
+          <mca:CSharpValue x:TypeArguments="x:String">CategoryModel.CategoryName</mca:CSharpValue>
         </InArgument>
       </local:IsCategoryExistsActivity.CategoryName>
       <local:IsCategoryExistsActivity.IsExists>

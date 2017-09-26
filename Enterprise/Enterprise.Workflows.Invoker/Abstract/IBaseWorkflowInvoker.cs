@@ -12,7 +12,7 @@ namespace Enterprise.Workflows.Invoker.Abstract
     }
     public interface IBaseWorkflowInvoker<TResult, T1> where TResult : class
     {
-        TResult InvokeWorkflow(T1);
+        TResult InvokeWorkflow(T1 t1);
     }
     public interface IBaseWorkflowInvoker<TResult, T1, T2> where TResult : class
     {

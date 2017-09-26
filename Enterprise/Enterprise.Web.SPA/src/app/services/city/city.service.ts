@@ -1,3 +1,5 @@
+import { serverUrl } from './../../consts/server-url.const';
+import { CityControllerUrl } from './../../consts/api-url.const';
 import { CityModel } from './../../models/city/city.model';
 // Angular Dependencies
 import { Http, Headers } from '@angular/http';
@@ -9,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CityService {
-    urlCityController = 'http://localhost:63853/api/city';
+    urlCityController = serverUrl + CityControllerUrl;
     constructor(private http: Http) { }
     getListOfCity(): Observable<CityModel[]> {
         return this.http.get(this.urlCityController).map(result => result.json());

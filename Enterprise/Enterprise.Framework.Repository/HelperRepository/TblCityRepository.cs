@@ -7,7 +7,7 @@ using Enterprise.Framework.Repository.Abstract;
 
 namespace Enterprise.Framework.Repository.HelperRepository
 {
-    public class TblCityRepository : HelperBaseRepository<Tbl_City>, ITblCityRepository
+    public class TblCityRepository : HelperBaseRepository<TblCity>, ITblCityRepository
     {
         public TblCityRepository(HelperContext context) : base(context)
         {

@@ -16,34 +16,34 @@ namespace Enterprise.Framework.BusinessLogics.Product
         {
             _categoryRepository = categoryRepository;
         }
-        public Tbl_Category CreateCategory(object categoryObj)
+        public TblCategory CreateCategory(object categoryObj)
         {
             JObject jObject = (JObject)categoryObj;
-            Tbl_Category tblCategory = new Tbl_Category
+            TblCategory tblCategory = new TblCategory
             {
-                Category_Id = Guid.NewGuid().ToString(),
-                Category_Image_Url = jObject["categoryImageUrl"].ToString(),
-                Category_Name = jObject["categoryName"].ToString()
+                CategoryId = Guid.NewGuid().ToString(),
+                CategoryImageUrl = jObject["categoryImageUrl"].ToString(),
+                CategoryName = jObject["categoryName"].ToString()
             };
             return tblCategory;
         }
-        public Tbl_Category GetTblCategoryByName(string categoryName)
+        public TblCategory GetTblCategoryByName(string categoryName)
         {
-            return _categoryRepository.GetSingle(x => x.Category_Name == categoryName);
+            return _categoryRepository.GetSingle(x => x.CategoryName == categoryName);
         }
-        public IEnumerable<Tbl_Category> GetAllTblCategory()
+        public IEnumerable<TblCategory> GetAllTblCategory()
         {
             return _categoryRepository.GetAll();
         }
 
-        public void InsertCategory(Tbl_Category entity)
+        public void InsertCategory(TblCategory entity)
         {
             _categoryRepository.Add(entity);
         }
 
         public bool IsCategoryExists(string categoryName)
         {
-            if (_categoryRepository.FindBy(x => x.Category_Name == categoryName).Count() > 0)
+            if (_categoryRepository.FindBy(x => x.CategoryName == categoryName).Count() > 0)
                 return true;
             return false;
         }

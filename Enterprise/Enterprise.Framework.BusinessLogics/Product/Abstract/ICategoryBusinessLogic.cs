@@ -6,11 +6,11 @@ namespace Enterprise.Framework.BusinessLogics.Product.Abstract
 {
     public interface ICategoryBusinessLogic
     {
-        void InsertCategory(Tbl_Category entity);
+        void InsertCategory(TblCategory entity);
         bool IsCategoryExists(string categoryName);
-        Tbl_Category CreateCategory(object categoryObj);
-        Tbl_Category GetTblCategoryByName(string categoryName);
-        IEnumerable<Tbl_Category> GetAllTblCategory();
+        TblCategory CreateCategory(object categoryObj);
+        TblCategory GetTblCategoryByName(string categoryName);
+        IEnumerable<TblCategory> GetAllTblCategory();
         int SaveCategory();
     }
 }

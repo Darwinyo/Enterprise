@@ -4,6 +4,7 @@ using Enterprise.Framework.DataLayers;
 using Enterprise.Framework.Repository.Abstract;
 using Enterprise.Framework.BusinessLogics.Product.Abstract;
 using Enterprise.Framework.Repository.ProductRepository;
+using Enterprise.Framework.DataLayers.DTOs.Product;
 
 namespace Enterprise.Framework.BusinessLogics.Product
 {
@@ -16,14 +17,14 @@ namespace Enterprise.Framework.BusinessLogics.Product
             _productHotRepository = productHotRepository;
             _productRepository = productRepository;
         }
-        public IEnumerable<Tbl_Product> GetHotProductsByPeriodeId(string PeriodeId)
+        public IEnumerable<ProductCardDTO> GetHotProductsByPeriodeId(string PeriodeId)
         {
-            List<Tbl_Product_Hot> listRaw= _productHotRepository.FindBy(x => x.Periode_Id == PeriodeId).ToList();
+            List<TblProductHot> listRaw= _productHotRepository.FindBy(x => x.PeriodeId == PeriodeId).ToList();
             if (listRaw.Count() > 0)
             {
                 List<string> list = new List<string>();
-                listRaw.ForEach(x => list.Add(x.Product_Id));
-                return _productRepository.GetListProductByListString(list);
+                listRaw.ForEach(x => list.Add(x.ProductId));
+                return _productRepository.GetListProductCardByListString(list);
             }
             return null;
         }

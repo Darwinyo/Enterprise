@@ -1,2 +1,10 @@
-export class ApiUrlConst {
-}
+export const CategoryControllerUrl = '/api/categoryproduct';
+export const ChatControllerUrl = '/api/chat';
+export const CityControllerUrl = '/api/city';
+export const HotProductControllerUrl = '/api/hotproduct';
+export const PeriodeControllerUrl = '/api/periode';
+export const ProductControllerUrl = '/api/product';
+export const ProductImagesControllerUrl = '/api/productimages';
+export const ProductSpecsControllerUrl = '/api/productspecs';
+export const RecommendedProductControllerUrl = '/api/recommendedproduct';
+export const ProductVariationControllerUrl = '/api/productvariation';

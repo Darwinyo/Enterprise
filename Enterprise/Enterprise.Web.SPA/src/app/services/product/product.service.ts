@@ -1,3 +1,5 @@
+import { serverUrl } from './../../consts/server-url.const';
+import { ProductControllerUrl } from './../../consts/api-url.const';
 import { ProductModel } from './../../models/product/product/product.model';
 
 // Angular Dependencies
@@ -10,7 +12,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProductService {
-    urlProductController = 'http://localhost:63853/api/product';
+    urlProductController = serverUrl + ProductControllerUrl;
     constructor(private http: Http) { }
     createProduct(product: ProductModel) {
         const headers: Headers = new Headers();

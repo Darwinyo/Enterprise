@@ -116,9 +116,9 @@ export class ProductEditorComponent implements OnInit {
       productStock: form.value['productStock'],
       productDescription: form.value['productDescription'],
       productLocation: this.getCityId(form.value['location']),
-      TblProductCategory: this.convertArrayToCategoryArray(form.value['category']),
-      TblProductImage: this.imagemodelarray,
-      TblProductSpecs: [
+      tblProductCategory: this.convertArrayToCategoryArray(form.value['category']),
+      tblProductImage: this.imagemodelarray,
+      tblProductSpecs: [
         <ProductSpecsModel>{
           productSpecTitle: 'Dimension',
           productSpecValue: this.dimension
@@ -133,7 +133,7 @@ export class ProductEditorComponent implements OnInit {
           productSpecValue: this.condition
         }
       ],
-      TblProductVariations: this.convertStringToVariationArray(form.value['variations'])
+      tblProductVariations: this.convertStringToVariationArray(form.value['variations'])
     }
     console.log(this.productModel);
     this.productService.createProduct(this.productModel).subscribe();

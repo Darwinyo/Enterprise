@@ -8,7 +8,7 @@ using Enterprise.Framework.DataLayers;
 
 namespace Enterprise.Framework.Repository.ProductRepository
 {
-    public class TblProductImageRepository : ProductBaseRepository<Tbl_Product_Image>, ITblProductImageRepository
+    public class TblProductImageRepository : ProductBaseRepository<TblProductImage>, ITblProductImageRepository
     {
         public TblProductImageRepository(ProductContext context) : base(context)
         {

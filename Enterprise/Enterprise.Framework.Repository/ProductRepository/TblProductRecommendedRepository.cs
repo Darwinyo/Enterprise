@@ -7,7 +7,7 @@ using Enterprise.Framework.DataLayers;
 
 namespace Enterprise.Framework.Repository.ProductRepository
 {
-    public class TblProductRecommendedRepository : ProductBaseRepository<Tbl_Product_Recommended>, ITblProductRecommendedRepository
+    public class TblProductRecommendedRepository : ProductBaseRepository<TblProductRecommended>, ITblProductRecommendedRepository
     {
         public TblProductRecommendedRepository(ProductContext context) : base(context)
         {

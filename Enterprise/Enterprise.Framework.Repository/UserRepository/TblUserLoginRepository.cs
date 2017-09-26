@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Enterprise.Framework.Repository.UserRepository
 {
-    public class TblUserLoginRepository : UserBaseRepository<Tbl_User_Login>, ITblUserLoginRepository
+    public class TblUserLoginRepository : UserBaseRepository<TblUserLogin>, ITblUserLoginRepository
     {
         public TblUserLoginRepository(UserContext context) : base(context)
         {

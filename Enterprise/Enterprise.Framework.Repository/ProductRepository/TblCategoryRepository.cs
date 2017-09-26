@@ -8,7 +8,7 @@ using Enterprise.Framework.DataLayers;
 
 namespace Enterprise.Framework.Repository.ProductRepository
 {
-    public class TblCategoryRepository:ProductBaseRepository<Tbl_Category>,ITblCategoryRepository
+    public class TblCategoryRepository:ProductBaseRepository<TblCategory>,ITblCategoryRepository
     {
         public TblCategoryRepository(ProductContext context) : base(context)
         {

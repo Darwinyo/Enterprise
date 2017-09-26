@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Enterprise.Framework.DataLayers;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.API.Models.Responses
 {
     public class HotProductWorkflowResponse
     {
-        public IEnumerable<Tbl_Product> HotProducts { get; set; }
+        public IEnumerable<ProductCardDTO> HotProductCards { get; set; }
     }
 }

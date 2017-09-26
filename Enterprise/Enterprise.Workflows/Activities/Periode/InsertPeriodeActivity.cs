@@ -12,7 +12,7 @@ namespace Enterprise.Workflows.Activities.Periode
     public sealed class InsertPeriodeActivity : CodeActivity
     {
         // Define an activity input argument of type string
-        public InArgument<Tbl_Periode> Periode { get; set; }
+        public InArgument<TblPeriode> Periode { get; set; }
         public InArgument<IPeriodeBusinessLogic> PeriodeBusinessLogic { get; set; }
         // If your activity returns a value, derive from CodeActivity<TResult>
         // and return the value from the Execute method.
