@@ -8,6 +8,7 @@ using Enterprise.API.Helpers.Consts;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.Services.Product
 {

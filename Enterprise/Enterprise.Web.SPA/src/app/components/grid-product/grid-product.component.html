@@ -1,5 +1,5 @@
 <div class="row grid-holder">
   <div *ngFor="let item of products">
-    <app-product-card [productCard]="item" [isGrid]="true"></app-product-card>
+    <app-product-card [productCard]="item" [isGrid]="true" (reviewEvent)="EmitReviewEvent($event)"></app-product-card>
   </div>
 </div>

@@ -1,0 +1,108 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-header-full clearfix">
+      <div class="overlay"></div>
+      <div class="topbar-logo-wrapper">
+        <a routerLink="/home">
+            Enterprise
+            <span class="site-logo">
+                <img class="site-logo-img" src="img/icons/enterprise.png" width= "145px" height="31px">
+            </span>
+        </a>
+      </div>
+      <div class="pull-right">
+        <ul id="b-nav" class="topbar-nav" *ngIf="logged">
+          <li id="notification" class="dropdown-hover dropdown-right">
+            <a (click)="toggleDropNotif()" class="dropdown-hover-toggle">
+              <div class="relative">
+                <i class="sprite-header sprite-header-notif mt-20">
+                    <img class="notification-icon" src="img/icons/notification.png">
+                </i>
+                <span class="text-price notification-counter old-counter" style="display: inline;">3</span>
+                <span class="pl-5 topbar-nav__text">Notifikasi</span>
+              </div>
+            </a>
+            <ul *ngIf="toggleNotif" class="dropdown-menu dropdown-basic dropdown-notif" id="notification-ul" role="menu" aria-labelledby="dropdownMenu">
+              <li><a href="/inbox-message.pl">Pesan</a></li>
+              <li><a href="/inbox-talk.pl">Diskusi Produk</a></li>
+              <li>
+                <a href="/inbox-reputation.pl">Ulasan&nbsp;
+                    <strong>
+                        <span class="count-unread-reputation">
+                            <span class="count-unread-reputation-value cv">3</span>
+                        </span>
+                    </strong>
+                </a>
+              </li>
+              <li><a href="/inbox-ticket.pl">Layanan Pengguna</a></li>
+              <li id="before-sales"><a href="/resolution-center.pl">Pusat Resolusi</a></li>
+            </ul>
+          </li>
+          <li id="cart-review" class="dropdown-hover dropdown-right dropdown-last">
+            <a (click)="toggleDropCart()" class="dropdown-hover-toggle">
+                <i class="sprite-header sprite-header-cart mt-20">
+                    <img class="cart-image" src="img/icons/cart.png" style="width: 20px;">
+                </i>
+                &nbsp;
+                <span id="total-item-cart">0</span>
+            </a>
+            <app-cart (reviewEvent)="addReview($event)" *ngIf="toggleCart"></app-cart>
+          </li>
+          <li id="user-tab" class="dropdown-hover dropdown-right">
+            <a (click)="toggleDropUser()" class="dropdown-hover-toggle">
+                <img class="imgprofile img-27" src="img/icons/user.png" alt="Darwin Yo" width="27">
+            </a>
+            <ul *ngIf="toggleUser" class="dropdown-menu dropdown-basic dropdown-user" role="menu" aria-labelledby="dropdownMenu">
+              <li>
+                <a id="user-profile" href="">
+                    <span class="text-black-38 fs-11">Profil Saya</span>
+                    <div class="dropdown-twoline">
+                        <span class="fw-600">Darwin Yo</span>
+                        <div class="mb-5 italic fs-11 text-black-54 profile-completion__verified-sign">
+                            Verified Account 
+                                <img src="" class="profile-completion__image-verified">
+                        </div>
+                    </div>
+                </a>
+              </li>
+              <li class="header-deposit-container">
+                <a href="" class="hide deposit-link" style="display: block;" toggle="1">
+                    <span class="text-black-38 fs-11">Saldo</span>
+                    <span class="hide white deposit-notif"></span>
+                    <div class="dropdown-twoline">
+                        <span class="fw-600" id="header-deposit-amount">Rp 0</span>
+                    </div>
+                </a>
+              </li>
+              <li>
+                <a href="">Pembelian
+                    <span class="fw-600 purchase-total-value"></span>
+                </a>
+              </li>
+              <li><a href="">Wishlist</a></li>
+              <li><a href="">Toko Favorit</a></li>
+              <li><a href="">Pengaturan</a></li>
+              <li class="holder-elements holder-elements-basic">
+                <a href="">Keluar</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="b-nav" class="topbar-nav" *ngIf="!logged">
+          <li class="dropdown-single"><a routerLink="/register">Daftar</a></li>
+          <li class="dropdown-hover dropdown-right ml-15 mr-15" id="iframe-login">
+            <button class="btn-login dropdown-hover-toggle" id="login-ddl-link" (click)="toggleDropLogin()">Masuk</button>
+            <ul *ngIf="toggleLogin" class="dropdown-menu dropdown-login" role="menu" aria-labelledby="dropdownMenu" id="accounts-menu">
+              <li>
+                <div id="div-accounts">
+                  <app-login></app-login>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <app-nav-searchbar></app-nav-searchbar>
+    </div>
+  </div>
+</header>

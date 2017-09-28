@@ -1,11 +1,14 @@
 <form target="_top" id="header-frm-login" class="form-login p-30 box-white" method="post">
   <div class="row-fluid control-group mt-10">
-    <input type="hidden" name="theme" value="iframe">
     <input type="text" id="inputEmail" name="email" placeholder="Email" value="" class=" input-login w-100p mb-5">
   </div>
   <div class="row-fluid control-group relative">
     <input type="password" id="inputPassword" name="password" placeholder="Kata Sandi" class="input-login w-100p mb-0" autocomplete="off">
-    <a class="trigger-show-password"><i class="pass-icon-eye pass-icon-eye-open"></i></a>
+    <a class="trigger-show-password">
+      <i class="pass-icon-eye pass-icon-eye-open">
+        <img [src]="hiddenpass ? 'img/icons/hidden.png' : 'img/icons/unhidden.png'"/>
+      </i>
+    </a>
   </div>
   <div class="row-fluid control-group">
     <div class="span7">
@@ -13,7 +16,7 @@
         <label class="span12">
           <div class="icheckbox_square-green checked">
               <input class="icheck" type="checkbox" name="remember_me" checked="checked" style="position: absolute; opacity: 0;">
-              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+              <img [src]="checked ? 'img/icons/checked.png' : 'img/icons/unchecked.png'" width="20px"/>
           </div>
           <small class="small-gray">&nbsp;&nbsp;&nbsp;Ingat saya</small>
         </label>

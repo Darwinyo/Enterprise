@@ -76,8 +76,8 @@ export class AppComponent implements OnInit {
     }
     this.chatService.postChat(this.chatItem).subscribe(
       x => console.log('Posted'),
-      (err)=>console.log(),
-      ()=>console.log('Post Complete')
+      (err) => console.log(),
+      () => console.log('Post Complete')
     )
   }
 }

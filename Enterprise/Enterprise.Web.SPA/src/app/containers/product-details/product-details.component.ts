@@ -21,7 +21,8 @@ export class ProductDetailsComponent implements OnInit {
   @ViewChild('productImage') productImage: ProductInfoImagesComponent;
   @ViewChild('productDescription') productDescription: ProductInfoDescriptionComponent;
   productModel: ProductModel;
-  ProductItem: ProductInfoDetailsViewModel;
+  productItem: ProductInfoDetailsViewModel;
+  productLocation: string;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -30,7 +31,6 @@ export class ProductDetailsComponent implements OnInit {
     private variationService: VariationsService,
     private imageService: ProductImagesService,
     private specsService: ProductSpecsService) {
-    this.ProductItem = <ProductInfoDetailsViewModel>{};
     this.productModel = <ProductModel>{};
   }
 
@@ -38,49 +38,21 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap.switchMap(
       (params: ParamMap) => this.productService.getProductById(params.get('id')))
       .subscribe(
-      (product: ProductModel) => {
-        this.convertToProductItem(product);
-        this.convertToImagesArray(product.productId);
-        this.convertToProductDescription(product);
-      }
+      (product: ProductInfoDetailsViewModel) => this.InitData(product)
       )
   }
-  convertToProductItem(model: ProductModel) {
-    const variationStrArr = [];
+  InitData(model: ProductInfoDetailsViewModel) {
     let locationItem = '';
     this.cityService.getCityById(model.productLocation).subscribe(
       x => locationItem = x,
       err => console.log(err),
-      () => this.ProductItem.location = locationItem);
-    this.ProductItem.productPrice = model.productPrice;
-    this.ProductItem.productTitle = model.productName;
-    this.ProductItem.ratestar = model.productRating;
-    this.ProductItem.reviews = model.productReview;
-    this.ProductItem.stock = model.productStock;
-    this.variationService.getProductVariationByProductId(model.productId).subscribe(
-      x => x.forEach(y => variationStrArr.push(y.productVariation)),
-      (err) => console.log(err),
-      () => {
-        this.ProductItem.variations = variationStrArr;
-        this.productDetails.InitData(this.ProductItem);
-      }
-    )
-  }
-  convertToImagesArray(productId: string) {
-    this.imageService.getProductImageListByProductId(productId).subscribe(
-      (result) => this.productModel.tblProductImage = result,
-      (err) => console.log(err),
-      () => this.productImage.populateImages(this.productModel.tblProductImage)
-    )
-  }
-  convertToProductDescription(model: ProductModel) {
-    this.specsService.getAllProductSpecsByProductId(model.productId).subscribe(
-      (result) => this.productModel.tblProductSpecs = result,
-      (err) => console.log(err),
-      () => {
-        this.productDescription.detailsProduct = this.productModel.tblProductSpecs;
-        this.productDescription.descriptions = model.productDescription;
-      }
-    )
+      () => this.productLocation = locationItem);
+    this.productItem = model;
+    this.productItem.stars = [];
+    console.log(this.productItem);
+    this.productDetails.InitData(this.productItem);
+    this.productImage.populateImages(this.productItem.productImages);
+    this.productDescription.detailsProduct = this.productItem.productSpecs;
+    this.productDescription.descriptions = model.productDescription;
   }
 }

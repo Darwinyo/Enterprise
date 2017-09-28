@@ -1,3 +1,5 @@
+import { ProductReviewService } from './../../services/product-review/product-review.service';
+import { Router } from '@angular/router';
 import { RecommendedProductCardsViewModel } from './../../viewmodels/recommended-product/recommended-product-cards.viewmodel';
 
 import { HotProductCardsViewModel } from './../../viewmodels/hot-product/hot-product-cards.viewmodel';
@@ -22,6 +24,8 @@ export class HomeComponent implements OnInit {
   hotProducts: HotProductCardsViewModel;
   recommendedProducts: RecommendedProductCardsViewModel;
   constructor(
+    private router: Router,
+    private productReviewService: ProductReviewService,
     private categoryService: CategoryService,
     private hotProductService: HotProductService,
     private recommendedProductService: RecommendedProductService) {
@@ -62,5 +66,12 @@ export class HomeComponent implements OnInit {
       (err) => console.log(err),
       () => console.log('CategoryLoaded')
     );
+  }
+  addReview(productId: string) {
+    this.productReviewService.addReview(productId).subscribe(
+      () => console.log('call addReview'),
+      (err) => console.log(err),
+      () => this.router.navigate(['product-details', productId])
+    )
   }
 }

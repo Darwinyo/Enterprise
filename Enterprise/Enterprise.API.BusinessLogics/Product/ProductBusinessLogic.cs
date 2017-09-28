@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using Enterprise.API.BusinessLogics.Product.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Repository.Abstract;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.API.BusinessLogics.Product
 {
@@ -100,9 +101,9 @@ namespace Enterprise.API.BusinessLogics.Product
         {
             return _productRepository.GetAll();
         }
-        public TblProduct GetProductById(string ProductId)
+        public ProductDetailsDTO GetProductDetails(string productId)
         {
-            return _productRepository.GetSingle(x => x.ProductId == ProductId);
+            return _productRepository.GetProductDetails(productId);
         }
         public void AddReview(string productId)
         {

@@ -1,5 +1,5 @@
 import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grid-product',
@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grid-product.component.css']
 })
 export class GridProductComponent implements OnInit {
+  @Output() reviewEvent: EventEmitter<string>;
   products: ProductCardViewModel[];
   constructor() {
+    this.reviewEvent = new EventEmitter();
     this.products = [];
   }
 
@@ -25,5 +27,8 @@ export class GridProductComponent implements OnInit {
         productReview: Math.ceil(Math.random()) * 120
       });
     }
+  }
+  EmitReviewEvent(productId: string) {
+    this.reviewEvent.emit(productId)
   }
 }

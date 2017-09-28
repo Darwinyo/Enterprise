@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Enterprise.Services.Product.Abstract;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.API.Models.Responses;
+using Enterprise.DataLayers.DTOs.Product;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Product
@@ -28,9 +29,9 @@ namespace Enterprise.API.Controllers.Product
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public TblProduct Get(string id)
+        public ProductDetailsDTO Get(string id)
         {
-            return _productService.GetProductById(id);
+            return _productService.GetProductDetails(id);
         }
 
         // POST api/values

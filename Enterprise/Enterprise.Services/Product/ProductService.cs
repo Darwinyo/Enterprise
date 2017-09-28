@@ -9,6 +9,7 @@ using Enterprise.API.Helpers.ProxyAPI;
 using Enterprise.API.Models.Responses;
 using System.Threading.Tasks;
 using Enterprise.API.Helpers.Consts;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.Services.Product
 {
@@ -34,9 +35,9 @@ namespace Enterprise.Services.Product
             return _productBusinessLogic.GetAllListProduct();
         }
 
-        public TblProduct GetProductById(string ProductId)
+        public ProductDetailsDTO GetProductDetails(string productId)
         {
-            return _productBusinessLogic.GetProductById(ProductId);
+            return _productBusinessLogic.GetProductDetails(productId);
         }
     }
 }

@@ -1,7 +1,7 @@
 import { element } from 'protractor';
 import { ProductModel } from './../../models/product/product/product.model';
 import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 const pageLength = 1200;
 const itemLength = 200;
@@ -12,10 +12,11 @@ const itemLength = 200;
 })
 
 export class ListProductCardComponent implements OnInit {
-
+  @Output() reviewEvent: EventEmitter<string>;
   products: ProductCardViewModel[];
   marginleft: number;
   constructor() {
+    this.reviewEvent = new EventEmitter();
     this.products = [];
     this.marginleft = 0;
   }
@@ -44,5 +45,7 @@ export class ListProductCardComponent implements OnInit {
       this.marginleft -= pageLength;
     }
   }
-
+  EmitReviewEvent(productId: string) {
+    this.reviewEvent.emit(productId)
+  }
 }

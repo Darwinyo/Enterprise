@@ -4,6 +4,7 @@ export const CityControllerUrl = '/api/city';
 export const HotProductControllerUrl = '/api/hotproduct';
 export const PeriodeControllerUrl = '/api/periode';
 export const ProductControllerUrl = '/api/product';
+export const ProductReviewControllerUrl = '/api/productreview';
 export const ProductImagesControllerUrl = '/api/productimages';
 export const ProductSpecsControllerUrl = '/api/productspecs';
 export const RecommendedProductControllerUrl = '/api/recommendedproduct';

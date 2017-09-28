@@ -1,23 +1,23 @@
-<!-- <div class="dropdown-menu dropdown-cart-empty ">
+<div *ngIf="cartList.length==0" class="dropdown-menu dropdown-cart-empty ">
   <a href="">
-    <p><span class="fw-600">Keranjang belanja Anda kosong.</span></p>
-    <p class="last text-black-38">Silakan pilih produk yang Anda inginkan lalu tekan tombol "Beli".</p>
+    <p><span class="fw-600">Empty Cart</span></p>
+    <p class="last text-black-38">Please Add Item To Cart.</p>
   </a>
-</div> -->
-<ul class="dropdown-menu dropdown-basic dropdown-cart word-break" role="menu" aria-labelledby="dropdownMenu" style="display: block;">
-  <li>
-    <a tabindex="-1" href="">
+</div>
+<ul *ngIf="cartList.length>0" class="dropdown-menu dropdown-basic dropdown-cart word-break" role="menu" aria-labelledby="dropdownMenu">
+  <li *ngFor="let item of cartList">
+    <a tabindex="-1" (click)="goToProductDetail(item.productId)">
       <div class="row-fluid">
-        <div class="span2"><img src=""
-            alt="Xiaomi Mi Max 2 Gold RAM 4/128 GB - Garansi 1 Tahun" class="img-40"></div>
-        <div class="span6">Xiaomi Mi Max 2 Gold RAM 4/128 GB - Garansi 1 Tahun</div>
+        <div class="span2">
+          <img [src]="item.productFrontImage" alt="item.productName" class="img-40"></div>
+        <div class="span6">item.productName</div>
         <div class="span4 text-right">
-          <div class="text-price">Rp 3.525.000</div>
-          <div><small class="muted">1 Buah</small></div>
+          <div class="text-price">$ +item.productPrice</div>
+          <div><small class="muted">item.productQuantity pcs</small></div>
         </div>
       </div>
     </a>
   </li>
   <li class="divider"></li>
-  <li class="holder-elements holder-elements-basic"><a tabindex="-1" href="" class="text-right">Lihat Semua &nbsp;<i class="icon-caret-right"></i></a></li>
+  <li class="holder-elements holder-elements-basic"><a tabindex="-1" href="" class="text-right">View All Cart &nbsp;<i class="icon-caret-right"></i></a></li>
 </ul>

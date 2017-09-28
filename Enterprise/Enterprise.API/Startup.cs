@@ -52,7 +52,11 @@ namespace Enterprise.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(
+                option => 
+                option.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             //AddJsonOptions(options =>
             //options.SerializerSettings.ContractResolver =
             //new DefaultContractResolver());

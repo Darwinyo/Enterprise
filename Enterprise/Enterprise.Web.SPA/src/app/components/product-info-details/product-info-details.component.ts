@@ -8,28 +8,26 @@ import { ProductInfoDetailsViewModel } from './../../viewmodels/product-info-det
 })
 export class ProductInfoDetailsComponent implements OnInit {
   productInfoDetailViewModel: ProductInfoDetailsViewModel;
+  deliverPrice: number;
+  deliveryDropped: boolean;
+  deliveryPriceDropped: boolean;
+  deliver: string;
+  quantity: number;
+  locations: string[];
+  deliveryOptions: string[];
   constructor() {
-    this.productInfoDetailViewModel = <ProductInfoDetailsViewModel>{
-      productTitle: '',
-      productPrice: 0,
-      stars: [],
-      ratestar: 0,
-      reviews: 0,
-      location: '',
-      deliver: 'Beijing',
-      deliveryDropped: false,
-      deliverPrice: 0,
-      deliveryPriceDropped: false,
-      variations: [],
-      quantity: 1,
-      stock: 0,
-      locations: [],
-      deliveryOptions: [],
-    }
+    this.productInfoDetailViewModel = <ProductInfoDetailsViewModel>{};
+    this.deliver = 'Beijing';
+    this.deliveryDropped = false;
+    this.deliverPrice = 0;
+    this.deliveryPriceDropped = false;
+    this.quantity = 1;
+    this.locations = [];
+    this.deliveryOptions = [];
   }
 
   ngOnInit() {
-    this.productInfoDetailViewModel.locations = [
+    this.locations = [
       'Beijing',
       'Shanghai',
       'Xiamen',
@@ -40,7 +38,7 @@ export class ProductInfoDetailsComponent implements OnInit {
       'HeiLongJiang',
       'GuangZhou'
     ];
-    this.productInfoDetailViewModel.deliveryOptions = ['JNE', 'Cargo', 'Airplane'];
+    this.deliveryOptions = ['JNE', 'Cargo', 'Airplane'];
   }
   InitStars(rateStar) {
     for (let i = 1; i < 6; i++) {
@@ -54,20 +52,14 @@ export class ProductInfoDetailsComponent implements OnInit {
     }
   }
   InitData(productInfoDetailModel: ProductInfoDetailsViewModel) {
-    this.productInfoDetailViewModel.location = productInfoDetailModel.location;
-    this.productInfoDetailViewModel.productPrice = productInfoDetailModel.productPrice;
-    this.productInfoDetailViewModel.productTitle = productInfoDetailModel.productTitle;
-    this.productInfoDetailViewModel.ratestar = productInfoDetailModel.ratestar;
-    this.productInfoDetailViewModel.reviews = productInfoDetailModel.reviews;
-    this.productInfoDetailViewModel.stock = productInfoDetailModel.stock;
-    this.productInfoDetailViewModel.variations = productInfoDetailModel.variations;
-    this.InitStars(this.productInfoDetailViewModel.ratestar);
+    this.productInfoDetailViewModel = productInfoDetailModel;
+    this.InitStars(this.productInfoDetailViewModel.productRating);
   }
   deliverClick() {
-    this.productInfoDetailViewModel.deliveryDropped = !this.productInfoDetailViewModel.deliveryDropped;
+    this.deliveryDropped = !this.deliveryDropped;
   }
   deliverPriceClick() {
-    this.productInfoDetailViewModel.deliveryPriceDropped = !this.productInfoDetailViewModel.deliveryPriceDropped;
+    this.deliveryPriceDropped = !this.deliveryPriceDropped;
 
   }
 }

@@ -1,4 +1,4 @@
-import { RegistrationComponent } from './../components/registration/registration.component';
+import { RegistrationComponent } from './../containers/registration/registration.component';
 import { PeriodeEditorComponent } from './../containers/periode-editor/periode-editor.component';
 import { ProductEditorComponent } from './../containers/product-editor/product-editor.component';
 import { ProductDetailsComponent } from './../containers/product-details/product-details.component';

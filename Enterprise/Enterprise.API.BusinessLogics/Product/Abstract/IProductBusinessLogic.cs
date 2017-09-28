@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.Repository.Abstract;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.API.BusinessLogics.Product.Abstract
 {
@@ -9,7 +10,7 @@ namespace Enterprise.API.BusinessLogics.Product.Abstract
     {
         TblProduct CreateProductItem(object productObject);
         IEnumerable<TblProduct> GetAllListProduct();
-        TblProduct GetProductById(string ProductId);
+        ProductDetailsDTO GetProductDetails(string productId);
         void AddReview(string productId);
     }
 }

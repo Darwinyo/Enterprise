@@ -43,6 +43,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
     <ProjectReference Include="..\Enterprise.Repository\Enterprise.Repository.csproj" />
     <ProjectReference Include="..\Enterprise.Services\Enterprise.Services.csproj" />
     <ProjectReference Include="..\Enterprise.SignalR\Enterprise.SignalR.csproj" />

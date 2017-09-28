@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
-    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
   </ItemGroup>
 
   <ItemGroup>

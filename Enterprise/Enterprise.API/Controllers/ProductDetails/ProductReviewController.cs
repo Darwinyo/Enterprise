@@ -27,16 +27,15 @@ namespace Enterprise.API.Controllers.ProductDetails
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public void Get(string id)
         {
-            return "value";
+            _productService.AddReview(id);
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
         {
-            _productService.AddReview(value);
         }
 
         // PUT api/values/5

@@ -37,7 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Workflows.Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.Framework.DataLayers.DTOs", "Enterprise.Framework.DataLayers.DTOs\Enterprise.Framework.DataLayers.DTOs.csproj", "{04F33FA1-680B-41AC-9F3B-40C37BA48CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.DataLayers.DTOs", "Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj", "{A200B210-D0CA-41CD-9120-04D2411D8A5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enterprise.DataLayers.DTOs", "Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj", "{A200B210-D0CA-41CD-9120-04D2411D8A5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enterprise.DataLayers.DTOs.Models", "Enterprise.DataLayers.DTOs.Models\Enterprise.DataLayers.DTOs.Models.csproj", "{4082C857-DE5F-4845-A093-890743263D33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{A200B210-D0CA-41CD-9120-04D2411D8A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A200B210-D0CA-41CD-9120-04D2411D8A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A200B210-D0CA-41CD-9120-04D2411D8A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4082C857-DE5F-4845-A093-890743263D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4082C857-DE5F-4845-A093-890743263D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4082C857-DE5F-4845-A093-890743263D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4082C857-DE5F-4845-A093-890743263D33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

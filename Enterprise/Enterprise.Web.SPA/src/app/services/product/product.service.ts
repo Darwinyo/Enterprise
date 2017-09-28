@@ -1,3 +1,4 @@
+import { ProductInfoDetailsViewModel } from './../../viewmodels/product-info-details/product-info-details.viewmodel';
 import { serverUrl } from './../../consts/server-url.const';
 import { ProductControllerUrl } from './../../consts/api-url.const';
 import { ProductModel } from './../../models/product/product/product.model';
@@ -23,7 +24,7 @@ export class ProductService {
         const headers: Headers = new Headers();
         return this.http.get(this.urlProductController).map(result => result.json());
     }
-    getProductById(productId: string) {
+    getProductById(productId: string): Observable<ProductInfoDetailsViewModel> {
         return this.http.get(this.urlProductController + '/' + productId).map(
             (result) => result.json()
         )

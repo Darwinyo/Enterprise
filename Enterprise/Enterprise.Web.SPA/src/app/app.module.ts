@@ -1,4 +1,7 @@
-import { RegistrationComponent } from './components/registration/registration.component';
+import { NavSearchbarComponent } from './components/nav-searchbar/nav-searchbar.component';
+import { NavbarComponent } from './containers/navbar/navbar.component';
+import { ProductReviewService } from './services/product-review/product-review.service';
+import { RegistrationComponent } from './containers/registration/registration.component';
 import { CartComponent } from './components/cart/cart.component';
 import { LoginComponent } from './components/login/login.component';
 import { ChatHub } from './signalr/chathub/chat.hub';
@@ -17,7 +20,6 @@ import { FormsModule } from '@angular/forms';
 // Components
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductCategoryCardComponent } from './components/product-category-card/product-category-card.component';
 import { ListProductCategoryComponent } from './components/list-product-category/list-product-category.component';
@@ -77,7 +79,8 @@ import { ProductSpecsService } from './services/product-specs/product-specs.serv
     LoginComponent,
     CartComponent,
     RegistrationComponent,
-    ErrorNotFoundComponent
+    ErrorNotFoundComponent,
+    NavSearchbarComponent
   ],
   imports: [
     HttpModule,
@@ -97,6 +100,7 @@ import { ProductSpecsService } from './services/product-specs/product-specs.serv
     ProductSpecsService,
     ChatService,
     ChatHub,
+    ProductReviewService
   ],
   bootstrap: [AppComponent]
 })

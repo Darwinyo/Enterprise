@@ -1,7 +1,7 @@
 <div id="product-card-carousel">
   <div [style.marginLeft.px]="marginleft">
     <div *ngFor="let item of products">
-      <app-product-card [productCard]="item" [isGrid]="false"></app-product-card>
+      <app-product-card [productCard]="item" [isGrid]="false" (reviewEvent)="EmitReviewEvent($event)"></app-product-card>
     </div>
   </div>
   <span id="prev-btn" class="btn-carousel" (click)="prevbtnclicked()"></span>

@@ -115,9 +115,16 @@
                         
                     }
                     .dropdown-right{
+                        .dropdown-login{
+                            margin: 2px 0 0 -320px !important;
+                        }
+                        .dropdown-login::after{
+                            left: 345px !important;
+                        }
                         .dropdown-right > .dropdown-menu.dropdown-user {
                             right: -60px;
                             left: auto;
+                            display: block;
                         }
                         .dropdown-menu::after{
                             position: absolute;
@@ -278,7 +285,7 @@
                             top: 60px;
                             position: absolute;
                             z-index: 1000;
-                            display: none;
+                            display: block;
                             float: left;
                             margin: 2px 0 0;
                             list-style: none;
@@ -290,7 +297,7 @@
                                     overflow: hidden;
                                     border: 0;
                                     width: 386px;
-                                    height: 423px!important;
+                                    height: 250px !important;
                                 }
                                 a{
                                     text-align: left;
@@ -303,219 +310,6 @@
                     }
                     .ml-15 {
                         margin-left: 15px!important;
-                    }
-                }
-            }
-            .navbar-search {
-                padding: 12px 15px;
-                margin-bottom: 0;
-                z-index: 1;
-                width: auto;
-                .search-parent-older {
-                    display: inline;
-                    .searchform {
-                        -webkit-box-sizing: border-box;
-                        .ui-helper-hidden-accessible {
-                            border: 0;
-                            clip: rect(0 0 0 0);
-                            height: 1px;
-                            margin: -1px;
-                            overflow: hidden;
-                            padding: 0;
-                            position: absolute;
-                            width: 1px;
-                        }
-                        .icon-search-gray, i.icon-search-gray {
-                            background-size: 88px 36px;
-                            background-position: -7px -8px;
-                            width: 20px;
-                            height: 20px;
-                            display: inline-block;
-                            position: absolute;
-                            top: 8px;
-                            left: 15px;
-                            z-index: 3;
-                            .icon-search-img{
-                                height: 20px;
-                            }
-                        }
-                        [class^=icon-], [class*=" icon-"] {
-                            font-family: tokopedia;
-                            font-weight: 400;
-                            font-style: normal;
-                            text-decoration: inherit;
-                            -webkit-font-smoothing: antialiased;
-                            display: inline;
-                            line-height: normal;
-                            vertical-align: baseline;
-                            background-image: none;
-                            background-position: 0 0;
-                            background-repeat: repeat;
-                        }
-                        #search-keyword {
-                            position: relative;
-                            z-index: 2;
-                            width: 101%!important;
-                            border-radius: 3px 0 0 3px;
-                            color: #606060;
-                            border-right: 0;
-                            width: 101%;
-                            box-sizing: border-box;
-                            -webkit-box-sizing: border-box;
-                            -moz-box-sizing: border-box;
-                        }
-                        .input-wrapper {
-                            width: 100%;
-                            padding: 7px 12px 7px 33px;
-                            margin-bottom: 0;
-                            display: table-cell;
-                            background-color: #fff;
-                            border: 1px solid #ccc;
-                        }
-                        #div_autocomplete{
-                            .ui-widget-content {
-                                border: 1px solid #aaa;
-                                background: #fff 50% 50% repeat-x;
-                                color: #222;
-                            }
-                            .ui-widget {
-                                font-size: 1.1em;
-                            }
-                            .ui-menu {
-                                list-style: none;
-                                padding: 0;
-                                margin: 0;
-                                outline: 0;
-                            }
-                            .ui-autocomplete {
-                                position: absolute;
-                                cursor: default;
-                            }
-                        }
-                        .cat-wrapper.permanent-active {
-                            color: #e55b36;
-                        }
-                        .cat-wrapper {
-                            position: absolute;
-                            width: auto;
-                            right: 84px;
-                            z-index: 999;
-                            top: 0;
-                            text-align: right;
-                            overflow: hidden;
-                            display: table-cell;
-                            white-space: nowrap;
-                            vertical-align: middle;
-                            .cat-result-wrapper {
-                                font-size: 11px;
-                                background: #fff;
-                                height: 31px;
-                                text-align: right;
-                                white-space: nowrap;
-                                .cat-result {
-                                    height: 32px;
-                                    border: 0;
-                                    line-height: 32px;
-                                    margin-top: 2px;
-                                    color: #777;
-                                    font-size: 11px;
-                                    white-space: nowrap;
-                                    text-indent: 1px;
-                                    padding: 0 23px 0 10px;
-                                    text-overflow: ellipsis;
-                                    display: block;
-                                }
-                                ul.inline, ol.inline {
-                                    margin-left: 0;
-                                    list-style: none;
-                                    li{
-                                        display: inline-block;
-                                        i {
-                                            position: absolute;
-                                            top: 11px;
-                                            right: 8px;
-                                            z-index: 9;
-                                        }
-                                    }
-                                }
-                                .cat-select {
-                                    opacity: 0;
-                                    top: 0;
-                                    height: 36px;
-                                    cursor: pointer;
-                                    visibility: visible;
-                                    width: 120px;
-                                    z-index: 10;
-                                    margin: 0;
-                                    padding: 7px 8px;
-                                    border: 1px solid #ddd;
-                                    color: #000;
-                                    background: #fff;
-                                    outline: 0;
-                                    right: 0;
-                                }
-                            }
-                        }
-                        .absolute {
-                            position: absolute;
-                        }
-                        select, input[type=file] {
-                            min-height: 30px;
-                            line-height: 30px;
-                        }
-                        .cat-select {
-                            opacity: 0;
-                            top: 0;
-                            height: 36px;
-                            cursor: pointer;
-                            visibility: visible;
-                            width: 120px;
-                            z-index: 10;
-                            margin: 0;
-                            padding: 7px 8px;
-                            border: 1px solid #ddd;
-                            color: #000;
-                            background: #fff;
-                            outline: 0;
-                            right: 0;
-                            option {
-                                font-weight: normal;
-                                display: block;
-                                white-space: pre;
-                                min-height: 1.2em;
-                                padding: 0px 2px 1px;
-                            }
-                            .ml-10 {
-                                margin-left: 10px;
-                            }
-                        }
-                    }
-                    .search-parent {
-                        position: relative;
-                        display: table;
-                        border-collapse: separate;
-                        padding: 0 10px;
-                        .btn-search-wrapper {
-                            display: table-cell;
-                            width: 1%;
-                            white-space: nowrap;
-                            vertical-align: middle;
-                            position: relative;
-                            z-index: 20;
-                            .new-btn-search {
-                                height: 36px!important;
-                                z-index: 2!important;
-                                padding: 0 15px!important;
-                                border-width: 1px!important;
-                                border-style: solid!important;
-                                border-color: #18a689!important;
-                                border-image: initial!important;
-                                border-radius: 0 3px 3px 0!important;
-                                background-color: #18a689!important;
-                                color: #fff!important;
-                                width: 74px;
-                            }
-                        }
                     }
                 }
             }

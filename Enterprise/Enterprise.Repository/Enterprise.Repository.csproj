@@ -27,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs.Models\Enterprise.DataLayers.DTOs.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
     <ProjectReference Include="..\Enterprise.DataLayers\Enterprise.DataLayers.csproj" />
   </ItemGroup>
 

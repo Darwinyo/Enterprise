@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ProductCardViewModel } from './../../viewmodels/product-card/product-card.viewmodel';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
@@ -10,9 +10,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent implements OnInit {
   @Input() productCard: ProductCardViewModel;
   @Input() isGrid;
+  @Output() reviewEvent: EventEmitter<string>;
 
-  constructor(private router: Router) {
-
+  constructor() {
+    this.reviewEvent = new EventEmitter();
   }
 
   ngOnInit() {
@@ -31,6 +32,6 @@ export class ProductCardComponent implements OnInit {
     }
   }
   RedirectToProductDetails() {
-    this.router.navigate(['product-details', this.productCard.productId])
+    this.reviewEvent.emit(this.productCard.productId);
   }
 }

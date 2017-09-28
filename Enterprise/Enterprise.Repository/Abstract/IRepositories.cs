@@ -5,12 +5,14 @@ using Enterprise.DataLayers.EnterpriseDB_ProductModel;
 using Enterprise.DataLayers.EnterpriseDB_HelperModel;
 using Enterprise.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.DataLayers.EnterpriseDB_UserModel;
+using Enterprise.DataLayers.DTOs.Product;
 
 namespace Enterprise.Repository.Abstract
 {
     #region product
     public interface ITblProductRepository : IEntityBaseRepository<TblProduct>
     {
+        ProductDetailsDTO GetProductDetails(string productId);
         IEnumerable<TblProduct> GetListProductByListString(List<string> listProductId);
         void AddReview(string productId);
     };

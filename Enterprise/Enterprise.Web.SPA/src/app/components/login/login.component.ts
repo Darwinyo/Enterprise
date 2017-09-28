@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  checked: boolean;
+  hiddenpass: boolean;
+  constructor() {
+    this.checked = false;
+    this.hiddenpass = false;
+  }
 
   ngOnInit() {
   }

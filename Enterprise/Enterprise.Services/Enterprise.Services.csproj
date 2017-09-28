@@ -8,6 +8,7 @@
     <ProjectReference Include="..\Enterprise.API.BusinessLogics\Enterprise.API.BusinessLogics.csproj" />
     <ProjectReference Include="..\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
     <ProjectReference Include="..\Enterprise.Repository\Enterprise.Repository.csproj" />
     <ProjectReference Include="..\Enterprise.Workflows.Invoker\Enterprise.Workflows.Invoker.csproj" />
   </ItemGroup>
