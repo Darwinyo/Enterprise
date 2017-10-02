@@ -37,6 +37,8 @@ using Enterprise.API.BusinessLogics.Product.Abstract;
 using Enterprise.API.BusinessLogics.Product;
 using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
 using Enterprise.API.BusinessLogics.ProductDetails;
+using Enterprise.Services.Encryption;
+using Enterprise.Services.Decryption.Abstract;
 
 namespace Enterprise.API
 {
@@ -116,6 +118,7 @@ namespace Enterprise.API
             services.AddScoped<IPeriodeService, PeriodeService>();
             services.AddScoped<IChatService, ChatService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IDecryptionService, DecryptionService>();
             #endregion
 
             #region business logic

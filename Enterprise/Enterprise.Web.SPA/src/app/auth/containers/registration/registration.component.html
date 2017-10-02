@@ -1,0 +1,118 @@
+<div class="span5">
+  <div class="register-form__border">
+    <p class="fw-semibold ta-center register-form__title">Registration</p>
+    <form #registrationForm="ngForm" (ngSubmit)="registerUser(registrationForm)">
+      <fieldset id="register">
+        <ul>
+          <label for="userlogin" class="fs-12 lh-16 unf-black-secondary">User Login</label>
+          <li>
+            <i>
+              <img src="img/icons/icon-name.png" class="image-icon">
+            </i>
+            <input id="userlogin" [class.error-border]="userlogin.invalid && (userlogin.dirty||userlogin.touched)" [class.green-border]="userlogin.valid"
+              [(ngModel)]="userLoginModel.userLogin" name="userlogin" maxlength="20" minlength="6" pattern="^[a-zA-Z0-9]*$"
+              #userlogin="ngModel" #userloginTxtBox required autofocus="" class="mb-15 input-box" type="text">
+            <div *ngIf="userlogin.invalid && (userlogin.dirty||userlogin.touched)">
+              <span *ngIf="userlogin.errors.required" id="error-full-name" class="animate-error animate-error-full-name xsmall-red error-msg">
+                  User Login is required
+              </span>
+              <span *ngIf="userlogin.errors.minlength" id="error-full-name" class="animate-error animate-error-full-name xsmall-red error-msg">
+                  User Login length should be more than 6 characters
+              </span>
+              <span *ngIf="userlogin.errors.pattern" id="error-full-name" class="animate-error animate-error-full-name xsmall-red error-msg">
+                  User Login must contain at least 1 number, 1 character. No Special Characters Allowed.
+              </span>
+              <span *ngIf="isUserLoginServerError" id="error-full-name" class="animate-error animate-error-full-name xsmall-red error-msg">
+                {{messageUserLoginError}}
+            </span>
+            </div>
+            <img [class.hidden]='userlogin.invalid' src="img/icons/check.png" class="input-check input-check-full-name">
+          </li>
+          <label for="phone" class="fs-12 lh-16 unf-black-secondary">Phone Number</label>
+          <li class="">
+            <i>
+              <img src="img/icons/icon-phone.png" class="image-icon">
+            </i>
+            <input id="phone" [class.error-border]="phone.invalid && (phone.dirty||phone.touched)" [class.green-border]="phone.valid"
+              [(ngModel)]="userLoginModel.phoneNumber" name="phone" maxlength="15" minlength="8" pattern="^[0-9]*$" #phone="ngModel"
+              #phoneTxtBox required class="input-box" type="tel">
+            <label class="fs-12 lh-18 unf-black-disabled guide__message">Make Sure Your Phone Number Available</label>
+            <div *ngIf="phone.invalid && (phone.dirty||phone.touched)">
+              <span *ngIf="phone.errors.required" id="error-phone" class="animate-error animate-error-phone xsmall-red error-msg">
+                  Phone is required
+              </span>
+              <span *ngIf="phone.errors.minlength || phone.errors.maxlength" id="error-phone" class="animate-error animate-error-phone xsmall-red error-msg">
+                  Invalid Phone length
+              </span>
+              <span *ngIf="phone.errors.pattern" id="error-phone" class="animate-error animate-error-phone xsmall-red error-msg">
+                  Only Numbers Allowed
+              </span>
+              <span *ngIf="isPhoneServerError" id="error-phone" class="animate-error animate-error-phone xsmall-red error-msg">
+                {{messagePhoneError}}
+            </span>
+            </div>
+            <img [class.hidden]='phone.invalid' src="img/icons/check.png" class="input-check input-check-phone">
+          </li>
+          <label class="fs-12 lh-16 unf-black-secondary">Email</label>
+          <li>
+            <i>
+              <img src="img/icons/icon-email.png" class="image-icon">
+            </i>
+            <input id="email" [class.error-border]="email.invalid && (email.dirty||email.touched)" [class.green-border]="email.valid"
+              [(ngModel)]="userLoginModel.email" name="email" #email="ngModel" maxlength="30" minlength="10" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              #emailTxtBox required class="input-box" type="email">
+            <div *ngIf="email.invalid && (email.dirty||email.touched)">
+              <span *ngIf="email.errors.required" id="error-email" class="animate-error animate-error-email xsmall-red error-msg">
+                  Email is required
+              </span>
+              <span *ngIf="email.errors.pattern" id="error-email" class="animate-error animate-error-email xsmall-red error-msg">
+                  Email is not valid
+              </span>
+              <span *ngIf="isEmailServerError" id="error-email" class="animate-error animate-error-email xsmall-red error-msg">
+                {{messageEmailError}}
+            </span>
+            </div>
+            <img [class.hidden]='email.invalid' src="img/icons/check.png" class="input-check input-check-email">
+          </li>
+          <label class="fs-12 lh-16 unf-black-secondary">Password</label>
+          <li>
+            <i>
+              <img src="img/icons/icon-password.png" class="image-icon">
+            </i>
+            <input id="password" [class.error-border]="password.invalid && (password.dirty||password.touched)" [class.green-border]="password.valid"
+              [(ngModel)]="userLoginModel.password" name="password" #password="ngModel" maxlength="15" minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              required class="input-pwd input-box" type="password">
+            <div class="fs-12 lh-18 unf-black-disabled guide__message">Minimum 8 Characters</div>
+            <a class="trigger-show-pwd-desktop">
+                <i class="pass-icon-eye iconregister-eye-closed"></i>
+            </a>
+            <div *ngIf="password.invalid && (password.dirty||password.touched)">
+              <span *ngIf="password.errors.required" id="error-password" class="animate-error animate-error-password xsmall-red error-msg">
+                    Password is required
+                </span>
+              <span *ngIf="password.errors.minlength" id="error-password" class="animate-error animate-error-password xsmall-red error-msg">
+                    Password minimum 8 characters
+                </span>
+              <span *ngIf="password.errors.pattern" id="error-password" class="animate-error animate-error-password xsmall-red error-msg">
+                    Password must contains at least 1 number and 1 character
+                </span>
+            </div>
+            <img [class.hidden]='password.invalid' src="img/icons/check.png" class="input-check input-check-password">
+          </li>
+          <button id="register-button" [disabled]="formValidator()" [class.btn-gray]="registrationForm.invalid" [class.btn-green]="registrationForm.valid"
+            type="submit" class="btn-type-1 mt-10 regis_btn  g-recaptcha">
+            Create Account
+          </button>
+          <p class="fs-11 lh-18 mt-10 unf-black-disabled ta-center">
+            Click Create Account button, we assume you agree with <br> <a class="green underline" href="https://www.tokopedia.com/terms.pl"
+              target="_blank">Terms and Conditions</a>, with <a class="green underline" href="https://www.tokopedia.com/privacy.pl"
+              target="_blank">Privacy Policy</a> Enterprise.
+          </p>
+          <p class="text-center unf-black2-text fs-15">
+            Already have Account? Login <a routerLink="/login" class="green underline">Here</a>
+          </p>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -10,7 +10,7 @@ namespace Enterprise.Framework.BusinessLogics.User.Abstract
         IEnumerable<string> GetSameRecord(TblUserLogin userLogin);
         void RegisterUser(TblUserLogin userLogin);
         bool Login(TblUserLogin userLogin);
-        TblUserLogin CreateUserLogin(object value);
+        TblUserLogin CreateUserLogin(object value, string userDetailsId);
         void SaveUser();
     }
 }

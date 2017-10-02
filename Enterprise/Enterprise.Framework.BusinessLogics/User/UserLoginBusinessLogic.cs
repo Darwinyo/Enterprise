@@ -17,14 +17,16 @@ namespace Enterprise.Framework.BusinessLogics.User
         {
             _userLoginRepository = userLoginRepository;
         }
-        public TblUserLogin CreateUserLogin(object value)
+        public TblUserLogin CreateUserLogin(object value,string userDetailsId)
         {
             JObject jObject = (JObject)value;
             return new TblUserLogin
             {
+                UserDetailId=userDetailsId,
+                UserLoginId=Guid.NewGuid().ToString(),
                 Email = jObject["email"].ToString(),
                 Password = EncryptDecrypt.Encrypt(jObject["password"].ToString(), Keys.PassPhase),
-                PhoneNumber = (int)jObject["phoneNumber"],
+                PhoneNumber = jObject["phoneNumber"].ToString(),
                 UserLogin = jObject["userLogin"].ToString()
             };
         }

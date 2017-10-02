@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Decryption\DecryptionController.cs" />
     <Compile Include="Controllers\Product\CategoryController.cs" />
     <Compile Include="Controllers\Product\HotProductController.cs" />
     <Compile Include="Controllers\Product\InsertProductController.cs" />

@@ -1,0 +1,274 @@
+  .span5 {
+    width: 100%;
+    padding: 40px 430px 40px;
+    .error-border {
+      border: 1px solid #d13127!important;
+    }
+    .green-border {
+      border: 1px solid #42b549!important;
+    }
+    .login-form__border {
+      border: 1px solid #e0e0e0;
+      padding: 25px 42px 12px;
+      border-radius: 3px;
+      box-shadow: 1px 2px 0 rgba(0, 0, 0, .1);
+      width: 100%;
+      .fw-semibold {
+        font-weight: 600;
+      }
+      .ta-center {
+        text-align: center;
+      }
+      .login-form__title {
+        font-size: 18px;
+        color: rgba(0, 0, 0, .7);
+        margin-bottom: 24px;
+      }
+      form {
+        margin: 0;
+        fieldset {
+          padding: 0;
+          margin: 0;
+          border: 0;
+          ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+              position: relative;
+              clear: both;
+              margin-top: 5px;
+              .span6 {
+                float: left;
+                min-height: 30px;
+                width: 67%;
+                .icheckbox_square-green.checked {
+                  background-position: -124px -181px;
+                }
+                .icheckbox_square-green,
+                .iradio_square-green,
+                .icheckbox_gray {
+                  display: inline-block;
+                  position: relative;
+                  vertical-align: middle;
+                  margin: -4px 0 0;
+                  padding: 0;
+                  width: 18px;
+                  height: 18px; // background: url(../../img/newtkpd/dv3-sprite.png) no-repeat;
+                  border: 0;
+                  cursor: pointer;
+                  .check-box-login {
+                    position: absolute;
+                    opacity: 0;
+                    margin: 5px 0 0 3px;
+                    cursor: pointer;
+                  }
+                }
+              }
+              .span4 {
+                float: left;
+                min-height: 30px;
+                width: 31.914893617021%;
+                .green {
+                  color: green !important;
+                }
+                .underline {
+                  text-decoration: underline;
+                  border: 0;
+                  border-bottom: 1px solid #eee;
+                  padding-bottom: 10px;
+                  margin-bottom: 10px;
+                }
+                .fs-12 {
+                  font-size: 12px !important;
+                }
+                .pr-10 {
+                  padding-right: 10px !important;
+                }
+              }
+              label {
+                display: inline;
+              }
+              .input-box {
+                padding-top: 9px;
+                padding-bottom: 9px;
+                padding-left: 40px;
+                border: 1px solid #e0e0e0;
+                border-radius: 3px;
+                margin-bottom: 15px;
+              }
+              input {
+                width: 100%;
+                box-shadow: none;
+              }
+              i {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: #c4c4c4;
+                .image-icon {
+                  padding-bottom: 5px;
+                  padding-left: 5px;
+                }
+              }
+              .guide__message {
+                margin-top: -10px;
+                margin-bottom: 10px;
+              }
+              .unf-black-disabled {
+                color: rgba(0, 0, 0, .38);
+              }
+              .lh-18 {
+                line-height: 18px;
+              }
+              .fs-12 {
+                font-size: 12px !important;
+              }
+              .green-border {
+                border: 1px solid #42b549 !important;
+              }
+              .icheckbox_square-green.checked {
+                background-position: -124px -181px;
+              }
+              .icheckbox_square-green,
+              .iradio_square-green,
+              .icheckbox_gray {
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                margin: -4px 0 0;
+                padding: 0;
+                width: 18px;
+                height: 18px; // background: url(../../img/newtkpd/dv3-sprite.png) no-repeat;
+                border: 0;
+                cursor: pointer;
+                .check-box-login {
+                  position: absolute;
+                  opacity: 0;
+                  margin: 5px 0 0 3px;
+                  cursor: pointer;
+                }
+              }
+              select,
+              textarea,
+              input[type="text"],
+              input[type="password"],
+              input[type="email"],
+              input[type="tel"] {
+                display: inline-block;
+                min-height: 20px;
+                font-size: 13px;
+                line-height: 20px;
+                color: #555;
+                vertical-align: middle;
+                background-color: #fff;
+                transition: border linear .2s, box-shadow linear .2s;
+              }
+              .fade-out {
+                visibility: hidden;
+                animation-duration: 1.2s;
+                animation-name: shrinking;
+                opacity: 0;
+              }
+              .input-check {
+                transition: all .5s ease-in-out;
+                position: absolute;
+                top: 13px;
+                right: -20px;
+              }
+              img {
+                height: auto;
+                max-width: 100%;
+                vertical-align: middle;
+                border: none;
+              }
+              .animate-error {
+                transition: all .4s ease;
+                opacity: 1;
+              }
+              .error-msg {
+                font-size: 12px;
+              }
+              .xsmall-red {
+                color: #d13127;
+                position: relative;
+                top: -10px;
+              }
+            }
+            .unf-black-secondary {
+              color: rgba(0, 0, 0, .54);
+            }
+            .lh-16 {
+              line-height: 16px;
+            }
+            .fs-12 {
+              font-size: 12px !important;
+            }
+            label,
+            input,
+            button,
+            select,
+            textarea {
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 20px;
+            }
+            label {
+              display: inline-block;
+            }
+            button {
+              width: 99.25%;
+              height: 52px;
+              border-radius: 3px;
+              border: 0;
+              font-size: 16px;
+              line-height: 22px;
+            }
+            .mt-10 {
+              margin-top: 10px !important;
+            }
+            .unf-black-disabled {
+              color: rgba(0, 0, 0, .38);
+            }
+            .lh-18 {
+              line-height: 18px;
+            }
+            .ta-center {
+              text-align: center;
+            }
+            .fs-11 {
+              font-size: 11px !important;
+            }
+            p {
+              margin: 0 0 10px;
+            }
+            .btn-type-1 {
+              display: block;
+              margin-bottom: 0;
+              text-transform: capitalize;
+              cursor: pointer;
+              padding: 7px 17px;
+              line-height: 20px;
+              font-size: 13px;
+              font-weight: 600;
+              text-align: center;
+              white-space: nowrap;
+              border-radius: 2px;
+              width: 100%;
+            }
+            .btn-gray {
+              color: rgba(0, 0, 0, .26);
+              background-color: rgba(0, 0, 0, .12);
+              background-image: none;
+              border: 1px solid rgba(0, 0, 0, .12);
+              outline: 0;
+            }
+            .btn-green {
+              background-color: #18a689;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }

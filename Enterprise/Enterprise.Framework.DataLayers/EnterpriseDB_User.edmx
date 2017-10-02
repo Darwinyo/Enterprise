@@ -59,7 +59,7 @@
           <Property Name="UserLoginId" Type="varchar" MaxLength="36" Nullable="false" />
           <Property Name="UserLogin" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="PhoneNumber" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="UserDetailId" Type="varchar" MaxLength="36" Nullable="false" />
         </EntityType>
@@ -143,7 +143,6 @@
           <EntitySet Name="TblProfileImage" EntityType="EnterpriseDB_UserModel.TblProfileImage" />
           <EntitySet Name="TblUserCard" EntityType="EnterpriseDB_UserModel.TblUserCard" />
           <EntitySet Name="TblUserDetails" EntityType="EnterpriseDB_UserModel.TblUserDetails" />
-          <EntitySet Name="TblUserLogin" EntityType="EnterpriseDB_UserModel.TblUserLogin" />
           <AssociationSet Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details" Association="EnterpriseDB_UserModel.FK_Tbl_Pick_Up_Location_Tbl_User_Details">
             <End Role="TblUserDetails" EntitySet="TblUserDetails" />
             <End Role="TblPickUpLocation" EntitySet="TblPickUpLocation" />
@@ -156,6 +155,7 @@
             <End Role="TblUserDetails" EntitySet="TblUserDetails" />
             <End Role="TblUserCard" EntitySet="TblUserCard" />
           </AssociationSet>
+          <EntitySet Name="TblUserLogin" EntityType="EnterpriseDB_UserModel.TblUserLogin" />
           <AssociationSet Name="FK_Tbl_User_Login_Tbl_User_Details" Association="EnterpriseDB_UserModel.FK_Tbl_User_Login_Tbl_User_Details">
             <End Role="TblUserDetails" EntitySet="TblUserDetails" />
             <End Role="TblUserLogin" EntitySet="TblUserLogin" />
@@ -215,18 +215,6 @@
           <NavigationProperty Name="TblUserCard" Relationship="EnterpriseDB_UserModel.FK_Tbl_User_Card_Tbl_User_Details" FromRole="TblUserDetails" ToRole="TblUserCard" />
           <NavigationProperty Name="TblUserLogin" Relationship="EnterpriseDB_UserModel.FK_Tbl_User_Login_Tbl_User_Details" FromRole="TblUserDetails" ToRole="TblUserLogin" />
         </EntityType>
-        <EntityType Name="TblUserLogin">
-          <Key>
-            <PropertyRef Name="UserLoginId" />
-          </Key>
-          <Property Name="UserLoginId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
-          <Property Name="UserLogin" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="UserDetailId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TblUserDetails" Relationship="EnterpriseDB_UserModel.FK_Tbl_User_Login_Tbl_User_Details" FromRole="TblUserLogin" ToRole="TblUserDetails" />
-        </EntityType>
         <Association Name="FK_Tbl_Pick_Up_Location_Tbl_User_Details">
           <End Type="EnterpriseDB_UserModel.TblUserDetails" Role="TblUserDetails" Multiplicity="1" />
           <End Type="EnterpriseDB_UserModel.TblPickUpLocation" Role="TblPickUpLocation" Multiplicity="*" />
@@ -263,6 +251,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TblUserLogin">
+          <Key>
+            <PropertyRef Name="UserLoginId" />
+          </Key>
+          <Property Name="UserLoginId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="UserLogin" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UserDetailId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblUserDetails" Relationship="EnterpriseDB_UserModel.FK_Tbl_User_Login_Tbl_User_Details" FromRole="TblUserLogin" ToRole="TblUserDetails" />
+        </EntityType>
         <Association Name="FK_Tbl_User_Login_Tbl_User_Details">
           <End Type="EnterpriseDB_UserModel.TblUserDetails" Role="TblUserDetails" Multiplicity="1" />
           <End Type="EnterpriseDB_UserModel.TblUserLogin" Role="TblUserLogin" Multiplicity="*" />

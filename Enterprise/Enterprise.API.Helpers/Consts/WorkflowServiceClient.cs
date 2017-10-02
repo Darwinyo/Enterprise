@@ -11,6 +11,7 @@ namespace Enterprise.API.Helpers.Consts
         public const string RecommendedProduct = "/api/recommendedproduct";
         public const string HotProduct = "/api/hotproduct";
         public const string Category = "/api/category";
+        public const string Decryption = "/api/decryption";
         public const string InsertProduct = "/api/insertproduct";
     }
 }

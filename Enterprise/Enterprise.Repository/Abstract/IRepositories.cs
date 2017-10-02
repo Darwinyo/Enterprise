@@ -32,7 +32,7 @@ namespace Enterprise.Repository.Abstract
     public interface ITblCityRepository : IEntityBaseRepository<TblCity> { };
     public interface ITblPeriodeRepository : IEntityBaseRepository<TblPeriode>
     {
-        int CreatePeriode(TblPeriode tblPeriode, HelperContext context);
+        int CreatePeriode(TblPeriode tblPeriode);
     };
     #endregion
 

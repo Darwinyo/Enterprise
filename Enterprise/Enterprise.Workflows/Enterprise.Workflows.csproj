@@ -55,6 +55,7 @@
     <Compile Include="Activities\Product\AddNewProductActivity.cs" />
     <Compile Include="Activities\Product\CreateProductItemActivity.cs" />
     <Compile Include="Activities\RecommendedProduct\GetRecommendedProductByPeriodeIdActivity.cs" />
+    <Compile Include="Activities\UserDetails\InitInsertUserDetailActivity.cs" />
     <Compile Include="Activities\User\CreateUserLoginActivity.cs" />
     <Compile Include="Activities\User\GetSameRecordActivity.cs" />
     <Compile Include="Activities\User\IsUserLoginExistsActivity.cs" />

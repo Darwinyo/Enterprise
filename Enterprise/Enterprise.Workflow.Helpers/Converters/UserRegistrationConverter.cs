@@ -15,7 +15,7 @@ namespace Enterprise.Workflows.Helpers.Converters
             return new UserRegistrationWorkflowResponse()
             {
                 Result = Convert.ToBoolean(dictionary["Result"]),
-                ListSameRecord = (string[])dictionary["ListSameRecord"]
+                ListSameRecord = (IEnumerable<string>) dictionary["ListSameRecord"]
             };
         }
     }

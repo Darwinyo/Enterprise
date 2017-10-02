@@ -14,6 +14,7 @@ namespace Enterprise.Workflows.Activities.User
     {
         // Define an activity input argument of type string
         public InArgument<object> UserLoginObject { get; set; }
+        public InArgument<string> UserDetailsId { get; set; }
         public InArgument<IUserLoginBusinessLogic> UserLoginBusinessLogic { get; set; }
 
         public OutArgument<TblUserLogin> UserLoginModel { get; set; }
@@ -24,7 +25,7 @@ namespace Enterprise.Workflows.Activities.User
         {
             // Obtain the runtime value of the Text input argument
             IUserLoginBusinessLogic userLoginBusinessLogic = UserLoginBusinessLogic.Get(context);
-            UserLoginModel.Set(context, userLoginBusinessLogic.CreateUserLogin(UserLoginObject.Get(context)));
+            UserLoginModel.Set(context, userLoginBusinessLogic.CreateUserLogin(UserLoginObject.Get(context),UserDetailsId.Get(context)));
         }
     }
 }

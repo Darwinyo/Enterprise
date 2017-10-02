@@ -1,106 +1,54 @@
-import { NavSearchbarComponent } from './components/nav-searchbar/nav-searchbar.component';
-import { NavbarComponent } from './containers/navbar/navbar.component';
-import { ProductReviewService } from './services/product-review/product-review.service';
-import { RegistrationComponent } from './containers/registration/registration.component';
-import { CartComponent } from './components/cart/cart.component';
-import { LoginComponent } from './components/login/login.component';
-import { ChatHub } from './signalr/chathub/chat.hub';
-import { ChatService } from './services/chat/chat.service';
-import { ChatComponent } from './components/chat/chat.component';
-
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CustomRouterStateSerializer } from './shared/utils';
+import { environment } from './../environments/environment.prod';
+import { reducers, metaReducers } from './reducers/app-state.reducer';
+import { RouterModule } from '@angular/router';
+import { EffectsModule } from '@ngrx/effects';
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+
+// 3rd Party
+import { StoreModule } from '@ngrx/store';
 
 // Modules
-
+import { CoreModule } from './core/core.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductCategoryCardComponent } from './components/product-category-card/product-category-card.component';
-import { ListProductCategoryComponent } from './components/list-product-category/list-product-category.component';
-import { ListProductCardComponent } from './components/list-product-card/list-product-card.component';
-import { FilterCategoryComponent } from './components/filter-category/filter-category.component';
-import { FilterProductComponent } from './components/filter-product/filter-product.component';
-import { HomeComponent } from './containers/home/home.component';
-import { GridProductComponent } from './components/grid-product/grid-product.component';
-import { SortProductComponent } from './components/sort-product/sort-product.component';
-import { FilterProductTailComponent } from './components/filter-product-tail/filter-product-tail.component';
-import { ProductInfoDescriptionComponent } from './components/product-info-description/product-info-description.component';
-import { ProductInfoImagesComponent } from './components/product-info-images/product-info-images.component';
-import { ProductInfoDetailsComponent } from './components/product-info-details/product-info-details.component';
-import { ProductDetailsComponent } from './containers/product-details/product-details.component';
-import { PeriodeEditorComponent } from './containers/periode-editor/periode-editor.component';
-import { ProductEditorComponent } from './containers/product-editor/product-editor.component';
 
 // Containers
-import { ErrorNotFoundComponent } from './containers/error-not-found/error-not-found.component';
+
+// Signal R
 
 // Routes
-import { AppRouteModule } from './routes/app-route/app-route.module';
 
 // Services
-import { ProductImagesService } from './services/product-images/product-images.service';
-import { VariationsService } from './services/variations/variations.service';
-import { RecommendedProductService } from './services/recommended-product/recommended-product.service';
-import { HotProductService } from './services/hot-product/hot-product.service';
-import { PeriodeService } from './services/periode/periode.service';
-import { CategoryService } from './services/category/category.service';
-import { CityService } from './services/city/city.service';
-import { ProductService } from './services/product/product.service';
-import { ProductSpecsService } from './services/product-specs/product-specs.service';
+
+// Helpers
+import { PostApiHelper } from './shared/helpers/post-api.helper';
+import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    ProductCardComponent,
-    ProductCategoryCardComponent,
-    ListProductCategoryComponent,
-    ListProductCardComponent,
-    FilterCategoryComponent,
-    FilterProductComponent,
-    FilterProductTailComponent,
-    SortProductComponent,
-    GridProductComponent,
-    HomeComponent,
-    ProductDetailsComponent,
-    ProductInfoDetailsComponent,
-    ProductInfoImagesComponent,
-    ProductInfoDescriptionComponent,
-    ProductEditorComponent,
-    PeriodeEditorComponent,
-    ChatComponent,
-    LoginComponent,
-    CartComponent,
-    RegistrationComponent,
-    ErrorNotFoundComponent,
-    NavSearchbarComponent
+    AppComponent
   ],
   imports: [
+    RouterModule,
     HttpModule,
     BrowserModule,
-    FormsModule,
-    AppRouteModule
+
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule,
+    environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([]),
+    CoreModule,
   ],
   providers: [
-    ProductService,
-    CityService,
-    CategoryService,
-    PeriodeService,
-    HotProductService,
-    RecommendedProductService,
-    VariationsService,
-    ProductImagesService,
-    ProductSpecsService,
-    ChatService,
-    ChatHub,
-    ProductReviewService
+    PostApiHelper,
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
   ],
   bootstrap: [AppComponent]
 })

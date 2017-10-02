@@ -33,7 +33,7 @@ namespace Enterprise.Framework.BusinessLogics.Periode
         {
             if (periode != null)
             {
-                _periodeRepository.Add(periode);
+                _periodeRepository.CreatePeriode(periode);
             }
         }
         public int SavePeriode()
@@ -44,7 +44,7 @@ namespace Enterprise.Framework.BusinessLogics.Periode
         {
             DateTime date;
             if (DateTime.TryParse(dateTime, out date))
-                return _periodeRepository.GetSingle(x => x.PeriodeStartDate < date && x.PeriodeEndDate > date).PeriodeId;
+                return _periodeRepository.GetSingle(x => x.PeriodeStartDate <= date && x.PeriodeEndDate >= date).PeriodeId;
             return null;
         }
     }

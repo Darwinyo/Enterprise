@@ -1,0 +1,45 @@
+<div class="span5">
+  <div class="login-form__border">
+    <p class="fw-semibold ta-center login-form__title">Login</p>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+      <fieldset id="login">
+        <ul>
+          <label for="userlogin" class="fs-12 lh-16 unf-black-secondary">User Login</label>
+          <li>
+            <i>
+              <img src="img/icons/icon-name.png" class="image-icon">
+            </i>
+            <input id="userlogin" [(ngModel)]="userLoginViewModel.userLogin" name="userlogin" #userlogin="ngModel" required autofocus=""
+              class="mb-15 input-box" type="text">
+          </li>
+          <label class="fs-12 lh-16 unf-black-secondary">Password</label>
+          <li>
+            <i>
+              <img src="img/icons/icon-password.png" class="image-icon">
+            </i>
+            <input id="password" [(ngModel)]="userLoginViewModel.password" name="password" #password="ngModel" required class="input-pwd input-box"
+              type="password">
+          </li>
+          <li>
+            <label class="span6">
+              <div class="icheckbox_square-green checked">
+                <input (click)="toogleRememberMe()" [(ngModel)]="userLoginViewModel.rememberme" #remembercheckbox class="icheck check-box-login" type="checkbox" name="rememberme" checked="checked">
+                <img [src]="checkedUrl()" width="20px"/>
+              </div>
+              <label>&nbsp;Remember Me</label>
+            </label>
+            <div class="span4 pr-10">
+              <a href="/reset" class="green underline fs-12 pull-right mr-10">Forget Password</a>
+            </div>
+          </li>
+          <button id="login-button" type="submit" class="btn-type-1 mt-10 regis_btn btn-green g-recaptcha">
+            Login
+          </button>
+          <p class="text-center unf-black2-text fs-15 p-r" style="margin: 10px 0 10px;">
+            Dont have Account? Register <a routerLink="/register" class="green underline">Here</a>
+          </p>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
+</div>

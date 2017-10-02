@@ -1,9 +1,9 @@
-import { ChatComponent } from './components/chat/chat.component';
-import { ChatModel } from './models/chat/chat.model';
-import { ChatService } from './services/chat/chat.service';
+import { ChatComponent } from './core/components/chat/chat.component';
+import { ChatModel } from './core/models/chat/chat.model';
+import { ChatService } from './core/services/chat/chat.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SignalRConnectionStatus } from './signalr/chathub/abstract/chat.signalr';
+import { SignalRConnectionStatus } from './core/signalr/chathub/abstract/chat.signalr';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

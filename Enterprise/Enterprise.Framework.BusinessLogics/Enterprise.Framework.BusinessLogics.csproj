@@ -54,7 +54,9 @@
     <Compile Include="Product\ProductBusinessLogic.cs" />
     <Compile Include="Product\RecommendedProductBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Abstract\IUserDetailsBusinessLogic.cs" />
     <Compile Include="User\Abstract\IUserLoginBusinessLogic.cs" />
+    <Compile Include="User\UserDetailsBusinessLogic.cs" />
     <Compile Include="User\UserLoginBusinessLogic.cs" />
   </ItemGroup>
   <ItemGroup>

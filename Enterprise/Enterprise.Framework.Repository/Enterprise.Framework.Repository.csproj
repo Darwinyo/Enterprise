@@ -80,6 +80,7 @@
     <Compile Include="ProductRepository\TblProductSpecsRepository.cs" />
     <Compile Include="ProductRepository\TblProductVariationsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRepository\TblUserDetailsRepository.cs" />
     <Compile Include="UserRepository\TblUserLoginRepository.cs" />
     <Compile Include="UserRepository\UserBaseRepository.cs" />
   </ItemGroup>

@@ -9,10 +9,10 @@
         <EntityTypeShape EntityType="EnterpriseDB_UserModel.TblProfileImage" Width="1.5" PointX="3" PointY="10.5" />
         <EntityTypeShape EntityType="EnterpriseDB_UserModel.TblUserCard" Width="1.5" PointX="3" PointY="4.375" />
         <EntityTypeShape EntityType="EnterpriseDB_UserModel.TblUserDetails" Width="1.5" PointX="0.75" PointY="5.125" />
-        <EntityTypeShape EntityType="EnterpriseDB_UserModel.TblUserLogin" Width="1.5" PointX="3" PointY="7.375" />
         <AssociationConnector Association="EnterpriseDB_UserModel.FK_Tbl_Pick_Up_Location_Tbl_User_Details" />
         <AssociationConnector Association="EnterpriseDB_UserModel.FK_Tbl_Profile_Image_Tbl_User_Details" />
         <AssociationConnector Association="EnterpriseDB_UserModel.FK_Tbl_User_Card_Tbl_User_Details" />
+        <EntityTypeShape EntityType="EnterpriseDB_UserModel.TblUserLogin" Width="1.5" PointX="3" PointY="13.875" />
         <AssociationConnector Association="EnterpriseDB_UserModel.FK_Tbl_User_Login_Tbl_User_Details" />
       </Diagram>
     </edmx:Diagrams>

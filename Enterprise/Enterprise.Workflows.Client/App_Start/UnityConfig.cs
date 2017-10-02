@@ -42,6 +42,7 @@ namespace Enterprise.Workflows.Client
 
             #region business logic
             container.RegisterType<IUserLoginBusinessLogic, UserLoginBusinessLogic>();
+            container.RegisterType<IUserDetailsBusinessLogic, UserDetailsBusinessLogic>();
             container.RegisterType<IPeriodeBusinessLogic, PeriodeBusinessLogic>();
             container.RegisterType<ICategoryBusinessLogic, CategoryBusinessLogic>();
             container.RegisterType<IHotProductBusinessLogic, HotProductBusinessLogic>();
@@ -59,6 +60,7 @@ namespace Enterprise.Workflows.Client
 
             #region repository
             container.RegisterType<ITblUserLoginRepository, TblUserLoginRepository>();
+            container.RegisterType<ITblUserDetailsRepository, TblUserDetailsRepository>();
             container.RegisterType<ITblProductRepository, TblProductRepository>();
             container.RegisterType<ITblCategoryRepository, TblCategoryRepository>();
             container.RegisterType<ITblCityRepository, TblCityRepository>();

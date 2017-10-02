@@ -34,7 +34,7 @@ namespace Enterprise.API.BusinessLogics.Periode
             TblPeriode periode = CreatePeriode(obj);
             if (periode != null)
             {
-                _periodeRepository.Add(periode);
+                _periodeRepository.CreatePeriode(periode);
             }
         }
         public int SavePeriode()

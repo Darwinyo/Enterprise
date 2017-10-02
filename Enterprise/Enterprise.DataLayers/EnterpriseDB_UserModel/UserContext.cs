@@ -184,6 +184,11 @@ namespace Enterprise.DataLayers.EnterpriseDB_UserModel
                     .IsUnicode(false)
                     .ValueGeneratedNever();
 
+                entity.Property(e=>e.PhoneNumber)
+                    .IsRequired()
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(200)

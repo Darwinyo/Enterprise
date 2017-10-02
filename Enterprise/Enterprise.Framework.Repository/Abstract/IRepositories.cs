@@ -22,13 +22,14 @@ namespace Enterprise.Framework.Repository.Abstract
 
     #region user
     public interface ITblUserLoginRepository : IEntityBaseRepository<TblUserLogin> { };
+    public interface ITblUserDetailsRepository : IEntityBaseRepository<TblUserDetails> { };
     #endregion
 
     #region helper
     public interface ITblCityRepository : IEntityBaseRepository<TblCity> { };
     public interface ITblPeriodeRepository : IEntityBaseRepository<TblPeriode>
     {
-        int CreatePeriode(TblPeriode tblPeriode, HelperContext context);
+        int CreatePeriode(TblPeriode tblPeriode);
     };
     #endregion
 
