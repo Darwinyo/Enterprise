@@ -1,3 +1,4 @@
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { UserService } from './../services/user/user.service';
 import { Injectable } from '@angular/core';
@@ -9,6 +10,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/map';
+import * as fromCore from './../../core/reducers/core-state.reducer';
 @Injectable()
 export class LoginEffects {
 
@@ -35,8 +37,8 @@ export class LoginEffects {
         .ofType(AuthActions.LOG_IN_SUCCESS)
         .do(() => {
             alert('youre logged in');
-            return new NavbarActions.NavLogged();
-            // this.router.navigate(['/home']);
+            this.navStore.dispatch(new NavbarActions.NavLogged());
+            this.router.navigate(['/home']);
         });
     @Effect({ dispatch: false })
     loginFailure$ = this.actions$
@@ -49,6 +51,7 @@ export class LoginEffects {
     constructor(
         private actions$: Actions,
         private userService: UserService,
-        private router: Router
+        private router: Router,
+        private navStore: Store<fromCore.State>
     ) { }
 }
