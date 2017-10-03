@@ -47,12 +47,22 @@ Since E-Commerce itself can be really Complex (use variaties tech stack), i thin
 We can separate into 5 big modules
 
 * Backend 
-  * Enterprise.API 
-  * Enterprise.Framework  
-  * Enterprise.Workflows 
-  * Enterprise.SignalR 
+  * Enterprise.Core (DataAccess (EF Core)) => .NET Standard 2.0 Libraries
+  * Enterprise.Framework  (Data Access (EF Framework)) => .NET Framework 4.5 Libraries
+  * Enterprise.API => .NET Core 2.0
+  * Enterprise.Workflows => .NET Framework 4.5 Libraries
+  * Enterprise.SignalR => .NET Core 2.0
   
-* SPA : Enterprise.Web.SPA (Angular4)
-* MPA : Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
-* DB : Enterprise.Database, Enterprise.Redis, Enterprise.MongoDB
-* Mobile : Enterprise.Mobile (Xamarin.Forms)
+* SPA
+  * Enterprise.Web.SPA (Angular4)
+  
+* MPA
+  * Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
+  
+* DB
+  * Enterprise.MSSQL
+  * Enterprise.Redis
+  * Enterprise.MongoDB
+  
+* Mobile
+  * Enterprise.Mobile (Xamarin.Forms)
