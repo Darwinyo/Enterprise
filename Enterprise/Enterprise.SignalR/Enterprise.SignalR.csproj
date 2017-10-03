@@ -16,7 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.API.Helpers\Enterprise.API.Helpers.csproj" />
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
-    <ProjectReference Include="..\Enterprise.DataLayers\Enterprise.Core.DataLayers.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.DataLayers\Enterprise.Core.DataLayers.csproj" />
   </ItemGroup>
 
 </Project>

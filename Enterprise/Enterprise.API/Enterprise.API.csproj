@@ -43,9 +43,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Enterprise.API.Models\Enterprise.API.Models.csproj" />
-    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
-    <ProjectReference Include="..\Enterprise.Repository\Enterprise.Core.Repository.csproj" />
-    <ProjectReference Include="..\Enterprise.Services\Enterprise.Core.Services.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.Repository\Enterprise.Core.Repository.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.Services\Enterprise.Core.Services.csproj" />
     <ProjectReference Include="..\Enterprise.SignalR\Enterprise.SignalR.csproj" />
   </ItemGroup>
 
