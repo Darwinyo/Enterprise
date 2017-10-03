@@ -1,4 +1,0 @@
-﻿CREATE PARTITION SCHEME [MSAppServerPS_ASStagingTable]
-    AS PARTITION [MSAppServerPF_ASStagingTable]
-    TO ([PRIMARY], [PRIMARY], [PRIMARY], [PRIMARY], [PRIMARY], [PRIMARY]);
-

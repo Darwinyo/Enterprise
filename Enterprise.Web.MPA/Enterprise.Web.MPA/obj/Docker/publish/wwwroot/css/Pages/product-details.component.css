@@ -1,0 +1,22 @@
+.product-detail-img-container{
+    margin-right: 1rem;
+    flex-basis: 28%;
+    max-width: 28%;
+}
+.product-detail-container{
+    flex-basis: 72%;
+    max-width: 72%;
+    display: flex;
+    flex-direction: column;
+}
+.product-detail-upper-page{
+    margin-top: 2rem;
+    display: flex;
+}
+.product-detail-description-container{
+    background-color: #fff;
+    margin-top: 1rem;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: 2px;
+    overflow: visible;
+}

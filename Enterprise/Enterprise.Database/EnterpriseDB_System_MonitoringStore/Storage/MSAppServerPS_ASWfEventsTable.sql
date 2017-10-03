@@ -1,4 +1,0 @@
-﻿CREATE PARTITION SCHEME [MSAppServerPS_ASWfEventsTable]
-    AS PARTITION [MSAppServerPF_ASWfEventsTable]
-    TO ([PRIMARY], [PRIMARY], [PRIMARY]);
-
