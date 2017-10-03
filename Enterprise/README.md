@@ -1,17 +1,18 @@
 # Multi Platform Apps
  
-##What is this app?
+## What is this app?
+
 This App is E-Commerce App
  
-##Why E-Commerce?
+## Why E-Commerce?
 Well, I want to give all my best into 1 Solution,
 Since E-Commerce itself can be really Complex (use variaties tech stack), i think this would fit for my playground.
  
-##(Currently) What tech stack required to build this app? 
-###Database 
-*MSSQL
-*MongoDB
-*Redis
+## (Currently) What tech stack required to build this app? 
+### Database 
+* MSSQL
+* MongoDB
+* Redis
 
 Back-End : C#, .NET Core 2.0,.NET Framework 4.6,.NET Standard 2.0, API(Both Frameworks), LINQ, SignalR(Core), Workflow Foundation (.Net Framework), Razor Page
 EntityFramework(Both Frameworks)
