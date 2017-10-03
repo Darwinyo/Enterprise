@@ -1,47 +1,47 @@
 # Multi Platform Apps
-
-These is Tech Stack that I Use To Build EnterpriseApp
-
--Database:
-MSSQL
-MongoDB
-SQLite(Near Future)
-Firebase(Near Future)
-
--Caching System:
-Redis
-
--Real-Time:
-SignalR(.NetCore)
-
--DataLayer:
-Entity Framework(.NetCore)
-Linq
-
--API (.NetCore)
-
--MVC (.NetCore)
-
--Angular 4
-
--State Management
-Redux(ngrx/store) (Near Future)
  
-- Please Refer to each project for more Descriptions
+##What is this app?
+This App is E-Commerce App
+ 
+##Why E-Commerce?
+Well, I want to give all my best into 1 Solution,
+Since E-Commerce itself can be really Complex (use variaties tech stack), i think this would fit for my playground.
+ 
+##(Currently) What tech stack required to build this app? 
+###Database 
+*MSSQL
+*MongoDB
+*Redis
 
-Current Progress:
-<img src="/Enterprise/Documentation/Web/Gifs/Enterprise-20170914.gif?raw=true" alt="Enterprise-20170914.gif">
-Development Environment:
-<img src="/Enterprise/Documentation/Web/Gifs/Development-20170914.gif?raw=true" alt="Development-20170914.gif">
+Back-End : C#, .NET Core 2.0,.NET Framework 4.6,.NET Standard 2.0, API(Both Frameworks), LINQ, SignalR(Core), Workflow Foundation (.Net Framework), Razor Page
+EntityFramework(Both Frameworks)
 
+Front-End: TypeScript, Angular4, Webpack, @ngrx/Store(Inspired by Redux), @ngrx/Router-store, @ngrx/Effects, ReactiveX(RxJs)
 
-MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
+Mobile : Xamarin.Forms
 
+The structure of projects:
+we can separate into 4 big modules:
+- Backend : all projects in https://github.com/Darwinyo/Enterprise/tree/master/Enterprise
+(except SPA, MPA, Mobile)
+- SPA : Enterprise.Web.SPA (Angular4)
+- MPA : Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
+- DB : Enterprise.Database, Enterprise.Redis, Enterprise.MongoDB
+- Mobile : Enterprise.Mobile (Xamarin.Forms)
+Currently the projects structure in big mess. i'll fix it near future.
 
-SPA project written using Angular4
+Projects Roles:
 
-<img src="/Enterprise/Documentation/Web/Images/Homepage-Carousels v.0.5.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-Category-Carousels v.0.5.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-Filters.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-ProductGrid.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Product-Detail.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Product-Detail-Description.png" Width=1000/>
+-DB : This Kinds of Project (as mentions above) only for dump data / sync with current db schema.
 
-Mobile project written using Xamarin.Forms, .NET Standard 1.0
-
-<img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-22-711_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-36-163_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-44-609_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-36-296_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-55-00-933_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-45-919_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-51-806_Enterprise.Mobile.Android.png" Width="210"/>
+-SPA : /GOTO THIS DOC/
+-MPA : /GOTO THIS DOC/
+-Mobile : /GOTO THIS DOC/
+- Backend : We can separate again this project into 6 pieces
+-- API Core : this API is responsible for every transaction(expose to outer world), also has responsible for bypassing some request (that can't be done with .Net Core) to API Framework
+-- API Framework : This API is only responsible for Invoking Workflow. and fill some feature gaps (that can't be done with .Net Core) /GOTO THIS DOC/
+-- SignalR : this project has its own world, this project only responsible for SignalR related stuffs /GOTO THIS DOC/
+-- .Net Core DataAccess : these projects using .Net Standard 2.0 , also implements Unit of works Patterns, Repositories Patterns.
+/GOTO THIS DOC/
+-- Workflows: Workflows Project has all things about WF, such as Activities Codes, Workflows designs./GOTO THIS DOC/
+-- .Net Framework DataAccess : Since workflow can generate errors for adding .net standard reference. so this project is only intended for workflow data access. /GOTO THIS DOC/
