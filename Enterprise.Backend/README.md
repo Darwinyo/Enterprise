@@ -209,8 +209,8 @@ this project is the boiler plate for select, insert, delete, update data in Data
 // IEntityBaseRepository.cs 
 namespace Enterprise.Core.Repository.Abstract
 {
-	// This Interface Will be Inherited for every Repository Entity Class
-	// This Interface Provide Contract That Every Repository Entity Class need to define
+// This Interface Will be Inherited for every Repository Entity Class
+// This Interface Provide Contract That Every Repository Entity Class need to define
     public interface IEntityBaseRepository<T> where T : class, new()
     {
         IEnumerable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);
@@ -230,7 +230,7 @@ namespace Enterprise.Core.Repository.Abstract
 // IMongoEntityBaseRepository.cs
 namespace Enterprise.Core.Repository.Abstract
 {
-	// This is BaseRepository Abstraction for MongoDB
+// This is BaseRepository Abstraction for MongoDB
     public interface IMongoEntityBaseRepository<T> where T : class, new()
     {
         IEnumerable<T> GetAll(MongoCollection<T> col);
@@ -246,7 +246,7 @@ namespace Enterprise.Core.Repository.Abstract
 // IRepositories.cs
 namespace Enterprise.Core.Repository.Abstract
 {
-	// Inherits from IEntityBaseRepository
+// Inherits from IEntityBaseRepository
     #region product
     public interface ITblProductRepository : IEntityBaseRepository<TblProduct>
     {
@@ -258,7 +258,7 @@ namespace Enterprise.Core.Repository.Abstract
     public interface ITblCategoryRepository : IEntityBaseRepository<TblCategory> { };
     #endregion
 	
-	// MongoDB Repository
+// MongoDB Repository
     #region mongo
     public interface ITblProductCommentsRepository : IMongoEntityBaseRepository<TblProductComments> { };
     public interface ITblChatRepository : IMongoEntityBaseRepository<TblChat> { };
@@ -267,9 +267,9 @@ namespace Enterprise.Core.Repository.Abstract
 // MongoBaseRepository.cs
 namespace Enterprise.Core.Repository.MongoRepository
 {
-	// Implementation Of Contract MongoDB.
-	// Benefits is we only need to defines this common operations Once.
-	// Of course we can Override these Method If We Want...
+// Implementation Of Contract MongoDB.
+// Benefits is we only need to defines this common operations Once.
+// Of course we can Override these Method If We Want...
     public class MongoBaseRepository<T> : IMongoEntityBaseRepository<T> where T : class, new()
     {
         protected readonly MongoContext _context;
@@ -318,9 +318,9 @@ namespace Enterprise.Core.Repository.MongoRepository
 // ProductBaseRepository.cs
 namespace Enterprise.Core.Repository.ProductRepository
 {
-	// Implementation Contracts MSSQL (EF Core)
-	// Benefits is we only need to defines this common operations Once.
-	// Of course we can Override these Method If We Want...
+// Implementation Contracts MSSQL (EF Core)
+// Benefits is we only need to defines this common operations Once.
+// Of course we can Override these Method If We Want...
     public class ProductBaseRepository<T> : BaseDispose,IEntityBaseRepository<T> where T : class, new()
     {
         protected readonly ProductContext _context;
@@ -418,8 +418,8 @@ namespace Enterprise.Core.Repository.ProductRepository
         }
         public ProductDetailsDTO GetProductDetails(string productId)
         {
-			// Select Specifics Data By Using Data Transfer Object
-			// I'm Using DTO because its strong typings... of course we can do with anonymous Object => new {}
+		// Select Specifics Data By Using Data Transfer Object
+		// I'm Using DTO because its strong typings... of course we can do with anonymous Object => new {}
             return _context.TblProduct.Where(x => x.ProductId == productId).Select(x => new ProductDetailsDTO
             {
                 ProductFavorite = x.ProductFavorite,
@@ -500,7 +500,7 @@ namespace Enterprise.Core.Services.Product.Abstract
 // ProductService.cs
 namespace Enterprise.Core.Services.Product
 {
-	// This Services Implement Abstract Class (Bypasser) that add Functionality for Bypass Request API
+// This Services Implement Abstract Class (Bypasser) that add Functionality for Bypass Request API
     public class ProductService : Bypasser<InsertProductWorkflowResponse, object>, IProductService
     {
         private readonly IProductBusinessLogic _productBusinessLogic;
@@ -510,7 +510,7 @@ namespace Enterprise.Core.Services.Product
         }
         public async Task<InsertProductWorkflowResponse> AddNewProduct(object productObject)
         {
-			// this PostAction Calls Workflow Client to Invoke Workflow
+		// this PostAction Calls Workflow Client to Invoke Workflow
             return await PostAction(WorkflowServiceClient.InsertProduct, productObject);
         }
 
