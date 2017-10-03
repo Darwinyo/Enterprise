@@ -1,53 +1,12 @@
-# Multi Platform Apps
- 
-## What is this app?
+# Enterprise.Backend
 
-This App is E-Commerce App
- 
-## Why E-Commerce?
-
-Well, I want to give all my best into 1 Solution,
-Since E-Commerce itself can be really Complex (use variaties tech stack), i think this would fit for my playground.
- 
-## (Currently) What tech stack required to build this app? 
-
-### Database
-
-- MSSQL
-- MongoDB
-- Redis
- 
-### Back-End
-
-- C#
-- .NET Core 2.0
-- .NET Framework 4.6
-- .NET Standard 2.0
-- API(Both Frameworks)
-- LINQ, SignalR(Core)
-- Workflow Foundation (.Net Framework)
-- Razor Page
-- EntityFramework(Both Frameworks)
- 
-### Front-End
-
-- TypeScript
-- Angular4
-- Webpack
-- @ngrx/Store(Inspired by Redux)
-- @ngrx/Router-store
-- @ngrx/Effects
-- ReactiveX(RxJs)
- 
-### Mobile
-- Xamarin.Forms
- 
 ## The structure of projects
 
 We can separate into 5 big modules
 
 - Backend 
-  - Enterprise.API 
+  - Enterprise.API
+    - Enterprise.API
   - Enterprise.Framework  
   - Enterprise.Workflows 
   - Enterprise.SignalR 
@@ -56,10 +15,8 @@ We can separate into 5 big modules
 - MPA : Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
 - DB : Enterprise.Database, Enterprise.Redis, Enterprise.MongoDB
 - Mobile : Enterprise.Mobile (Xamarin.Forms)
-
-Currently the projects structure in big mess. i'll fix it near future.
-
-Projects Roles:
+ 
+## Projects Roles
 
 -DB : This Kinds of Project (as mentions above) only for dump data / sync with current db schema.
 
