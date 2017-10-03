@@ -5,16 +5,20 @@
 This App is E-Commerce App
  
 ## Why E-Commerce?
+
 Well, I want to give all my best into 1 Solution,
 Since E-Commerce itself can be really Complex (use variaties tech stack), i think this would fit for my playground.
  
 ## (Currently) What tech stack required to build this app? 
+
 ### Database
+
 - MSSQL
 - MongoDB
 - Redis
  
 ### Back-End
+
 - C#
 - .NET Core 2.0
 - .NET Framework 4.6
@@ -26,6 +30,7 @@ Since E-Commerce itself can be really Complex (use variaties tech stack), i thin
 - EntityFramework(Both Frameworks)
  
 ### Front-End
+
 - TypeScript
 - Angular4
 - Webpack
@@ -38,12 +43,14 @@ Since E-Commerce itself can be really Complex (use variaties tech stack), i thin
 - Xamarin.Forms
  
 ## The structure of projects
-We can separate into 5 big modules:
-- Backend
-  1. Enterprise.API
-  2. Enterprise.Framework  
-  3. Enterprise.Workflows   
-  4. Enterprise.SignalR
+
+We can separate into 5 big modules
+
+- Backend 
+  - Enterprise.API 
+  - Enterprise.Framework  
+  - Enterprise.Workflows 
+  - Enterprise.SignalR 
   
 - SPA : Enterprise.Web.SPA (Angular4)
 - MPA : Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
