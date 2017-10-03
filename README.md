@@ -66,3 +66,12 @@ We can separate into 5 big modules
   
 * Mobile
   * Enterprise.Mobile (Xamarin.Forms)
+
+### Projects Roles
+
+* DB : /GOTO THIS DOC/
+* SPA : /GOTO THIS DOC/
+* MPA : /GOTO THIS DOC/
+* Mobile : /GOTO THIS DOC/
+* Backend : /GOTO THIS DOC/
+
