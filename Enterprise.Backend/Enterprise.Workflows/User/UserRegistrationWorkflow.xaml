@@ -1,0 +1,184 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Enterprise.Workflows.User.UserRegistrationWorkflow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:efbua="clr-namespace:Enterprise.Framework.BusinessLogics.User.Abstract;assembly=Enterprise.Framework.BusinessLogics"
+ xmlns:efd="clr-namespace:Enterprise.Framework.DataLayers;assembly=Enterprise.Framework.DataLayers"
+ xmlns:local="clr-namespace:Enterprise.Workflows.Activities.UserDetails"
+ xmlns:local1="clr-namespace:Enterprise.Workflows.Activities.User"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UserLoginBusinessLogic" Type="InArgument(efbua:IUserLoginBusinessLogic)" />
+    <x:Property Name="UserLoginObject" Type="InArgument(x:Object)" />
+    <x:Property Name="ListSameRecord" Type="OutArgument(scg:IEnumerable(x:String))" />
+    <x:Property Name="Result" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="UserDetailsBusinessLogic" Type="InArgument(efbua:IUserDetailsBusinessLogic)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>Enterprise.Workflows.User.UserRegistrationWorkflow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Enterprise.Framework.BusinessLogics.User.Abstract</x:String>
+      <x:String>Enterprise.Framework.DataLayers</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.BusinessLogics</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.DataLayers.DTOs</AssemblyReference>
+      <AssemblyReference>Enterprise.Framework.DataLayers</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Enterprise.Workflows</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="efd:TblUserLogin" Name="UserLoginModel" />
+      <Variable x:TypeArguments="x:String" Name="UserDetailsId" />
+    </Sequence.Variables>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <mca:CSharpReference x:TypeArguments="x:String">UserDetailsId</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">Guid.NewGuid().ToString()</mca:CSharpValue>
+        </InArgument>
+      </Assign.Value>
+      <sap2010:WorkflowViewState.IdRef>Assign_1</sap2010:WorkflowViewState.IdRef>
+    </Assign>
+    <local:InitInsertUserDetailActivity>
+      <local:InitInsertUserDetailActivity.GuidString>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">UserDetailsId</mca:CSharpValue>
+        </InArgument>
+      </local:InitInsertUserDetailActivity.GuidString>
+      <local:InitInsertUserDetailActivity.UserDetailsBusinessLogic>
+        <InArgument x:TypeArguments="efbua:IUserDetailsBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbua:IUserDetailsBusinessLogic">UserDetailsBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local:InitInsertUserDetailActivity.UserDetailsBusinessLogic>
+      <sap2010:WorkflowViewState.IdRef>InitInsertUserDetailActivity_1</sap2010:WorkflowViewState.IdRef>
+    </local:InitInsertUserDetailActivity>
+    <local1:CreateUserLoginActivity sap2010:WorkflowViewState.IdRef="CreateUserLoginActivity_1">
+      <local1:CreateUserLoginActivity.UserDetailsId>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">UserDetailsId</mca:CSharpValue>
+        </InArgument>
+      </local1:CreateUserLoginActivity.UserDetailsId>
+      <local1:CreateUserLoginActivity.UserLoginBusinessLogic>
+        <InArgument x:TypeArguments="efbua:IUserLoginBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbua:IUserLoginBusinessLogic">UserLoginBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local1:CreateUserLoginActivity.UserLoginBusinessLogic>
+      <local1:CreateUserLoginActivity.UserLoginModel>
+        <OutArgument x:TypeArguments="efd:TblUserLogin">
+          <mca:CSharpReference x:TypeArguments="efd:TblUserLogin">UserLoginModel</mca:CSharpReference>
+        </OutArgument>
+      </local1:CreateUserLoginActivity.UserLoginModel>
+      <local1:CreateUserLoginActivity.UserLoginObject>
+        <InArgument x:TypeArguments="x:Object">
+          <mca:CSharpValue x:TypeArguments="x:Object">UserLoginObject</mca:CSharpValue>
+        </InArgument>
+      </local1:CreateUserLoginActivity.UserLoginObject>
+    </local1:CreateUserLoginActivity>
+    <local1:GetSameRecordActivity sap2010:WorkflowViewState.IdRef="GetSameRecordActivity_2">
+      <local1:GetSameRecordActivity.ListSameRecord>
+        <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">
+          <mca:CSharpReference x:TypeArguments="scg:IEnumerable(x:String)">ListSameRecord</mca:CSharpReference>
+        </OutArgument>
+      </local1:GetSameRecordActivity.ListSameRecord>
+      <local1:GetSameRecordActivity.UserLogin>
+        <InArgument x:TypeArguments="efd:TblUserLogin">
+          <mca:CSharpValue x:TypeArguments="efd:TblUserLogin">UserLoginModel</mca:CSharpValue>
+        </InArgument>
+      </local1:GetSameRecordActivity.UserLogin>
+      <local1:GetSameRecordActivity.UserLoginBusinessLogic>
+        <InArgument x:TypeArguments="efbua:IUserLoginBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbua:IUserLoginBusinessLogic">UserLoginBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local1:GetSameRecordActivity.UserLoginBusinessLogic>
+    </local1:GetSameRecordActivity>
+    <local1:IsUserLoginExistsActivity sap2010:WorkflowViewState.IdRef="IsUserLoginExistsActivity_1">
+      <local1:IsUserLoginExistsActivity.ListSameRecord>
+        <InArgument x:TypeArguments="scg:IEnumerable(x:String)">
+          <mca:CSharpValue x:TypeArguments="scg:IEnumerable(x:String)">ListSameRecord</mca:CSharpValue>
+        </InArgument>
+      </local1:IsUserLoginExistsActivity.ListSameRecord>
+      <local1:IsUserLoginExistsActivity.Result>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpReference x:TypeArguments="x:Boolean">Result</mca:CSharpReference>
+        </OutArgument>
+      </local1:IsUserLoginExistsActivity.Result>
+      <local1:IsUserLoginExistsActivity.UserLoginBusinessLogic>
+        <InArgument x:TypeArguments="efbua:IUserLoginBusinessLogic">
+          <mca:CSharpValue x:TypeArguments="efbua:IUserLoginBusinessLogic">UserLoginBusinessLogic</mca:CSharpValue>
+        </InArgument>
+      </local1:IsUserLoginExistsActivity.UserLoginBusinessLogic>
+    </local1:IsUserLoginExistsActivity>
+    <If sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">!Result</mca:CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <local1:RegisterUserActivity sap2010:WorkflowViewState.IdRef="RegisterUserActivity_1">
+          <local1:RegisterUserActivity.UserLogin>
+            <InArgument x:TypeArguments="efd:TblUserLogin">
+              <mca:CSharpValue x:TypeArguments="efd:TblUserLogin">UserLoginModel</mca:CSharpValue>
+            </InArgument>
+          </local1:RegisterUserActivity.UserLogin>
+          <local1:RegisterUserActivity.UserLoginBusinessLogic>
+            <InArgument x:TypeArguments="efbua:IUserLoginBusinessLogic">
+              <mca:CSharpValue x:TypeArguments="efbua:IUserLoginBusinessLogic">UserLoginBusinessLogic</mca:CSharpValue>
+            </InArgument>
+          </local1:RegisterUserActivity.UserLoginBusinessLogic>
+        </local1:RegisterUserActivity>
+      </If.Then>
+    </If>
+    <sads:DebugSymbol.Symbol>d1lEOlxQcm9qZWN0c1xFbnRlcnByaXNlXEVudGVycHJpc2VcRW50ZXJwcmlzZS5Xb3JrZmxvd3NcVXNlclxVc2VyUmVnaXN0cmF0aW9uV29ya2Zsb3cueGFtbBk3A6QBDgIBATwFSA4DAYABSQVVKgIBb1YFayYCAU5sBXwkAgE1fQWNASgCARyOAQWiAQoCAQJEC0RiAwGJAT8LP14DAYEBUQtReAIBeEwLTFYCAXBeC150AgFnWQtZVgIBX2gLaFgCAVdjC2NnAgFPeQt5dAIBRm8Lb3ACAT50C3RfAgE2igELigF0AgEtgAELgAFoAgElhQELhQFYAgEdkQELkQFRAgEDlQEJoAEnAgELnQEPnQF4AgEUmAEPmAFjAgEM</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,62" />
+      <sap2010:ViewStateData Id="InitInsertUserDetailActivity_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="CreateUserLoginActivity_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="GetSameRecordActivity_2" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="IsUserLoginExistsActivity_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="RegisterUserActivity_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,210" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,684">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Enterprise.Workflows.User.UserRegistrationWorkflow_1" sap:VirtualizedContainerService.HintSize="526,764" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

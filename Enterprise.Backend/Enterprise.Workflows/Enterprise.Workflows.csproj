@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89332B31-3888-4670-AA70-DBC38F1AB496}</ProjectGuid>
+    <ProjectTypeGuids>{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Enterprise.Workflows</RootNamespace>
+    <AssemblyName>Enterprise.Workflows</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Category\CreateCategoryActivity.cs" />
+    <Compile Include="Activities\Category\InsertCategoryActivity.cs" />
+    <Compile Include="Activities\Category\IsCategoryExistsActivity.cs" />
+    <Compile Include="Activities\HotProduct\GetHotProductByPeriodeIdActivity.cs" />
+    <Compile Include="Activities\Periode\GetPeriodeIdActivity.cs" />
+    <Compile Include="Activities\Periode\InsertPeriodeActivity.cs" />
+    <Compile Include="Activities\Product\AddNewProductActivity.cs" />
+    <Compile Include="Activities\Product\CreateProductItemActivity.cs" />
+    <Compile Include="Activities\RecommendedProduct\GetRecommendedProductByPeriodeIdActivity.cs" />
+    <Compile Include="Activities\UserDetails\InitInsertUserDetailActivity.cs" />
+    <Compile Include="Activities\User\CreateUserLoginActivity.cs" />
+    <Compile Include="Activities\User\GetSameRecordActivity.cs" />
+    <Compile Include="Activities\User\IsUserLoginExistsActivity.cs" />
+    <Compile Include="Activities\User\RegisterUserActivity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enterprise.Framework.BusinessLogics\Enterprise.Framework.BusinessLogics.csproj">
+      <Project>{ec85ba2b-3f1b-40de-af38-40200414b8b1}</Project>
+      <Name>Enterprise.Framework.BusinessLogics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers.DTOs\Enterprise.Framework.DataLayers.DTOs.csproj">
+      <Project>{04f33fa1-680b-41ac-9f3b-40c37ba48cee}</Project>
+      <Name>Enterprise.Framework.DataLayers.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj">
+      <Project>{5327644b-3051-465c-8f03-be1773c52689}</Project>
+      <Name>Enterprise.Framework.DataLayers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <XamlAppDef Include="Periode\PeriodeWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="User\UserRegistrationWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Category\CategoryWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\RecommendedProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\InsertProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="Product\HotProductWorkflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

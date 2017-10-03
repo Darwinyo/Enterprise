@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a8c5376458f2496bb8f4e09fd912bb2b" Name="Diagram1">
+        <EntityTypeShape EntityType="EnterpriseDB_TransactionModel.TblBalance" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="EnterpriseDB_TransactionModel.TblProductTransaction" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="EnterpriseDB_TransactionModel.TblTransaction" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="EnterpriseDB_TransactionModel.FK_Tbl_Transaction_Tbl_Balance" />
+        <AssociationConnector Association="EnterpriseDB_TransactionModel.FK_Tbl_Product_Transaction_Tbl_Transaction" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

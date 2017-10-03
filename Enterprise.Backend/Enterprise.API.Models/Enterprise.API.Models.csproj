@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enterprise.Core.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
+    <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj" />
+  </ItemGroup>
+
+</Project>

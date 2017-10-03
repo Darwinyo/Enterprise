@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ProductRepository\**" />
+    <EmbeddedResource Remove="ProductRepository\**" />
+    <None Remove="ProductRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ProductRepository\ProductBaseRepository.cs" />
+    <Compile Include="ProductRepository\TblCategoryRepository.cs" />
+    <Compile Include="ProductRepository\TblProductHotRepository.cs" />
+    <Compile Include="ProductRepository\TblProductImageRepository.cs" />
+    <Compile Include="ProductRepository\TblProductRecommendedRepository.cs" />
+    <Compile Include="ProductRepository\TblProductRepository.cs" />
+    <Compile Include="ProductRepository\TblProductSpecsRepository.cs" />
+    <Compile Include="ProductRepository\TblProductVariationsRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enterprise.Core.DataLayers.DTOs.Models\Enterprise.Core.DataLayers.DTOs.Models.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
+    <ProjectReference Include="..\Enterprise.Core.DataLayers\Enterprise.Core.DataLayers.csproj" />
+  </ItemGroup>
+
+</Project>

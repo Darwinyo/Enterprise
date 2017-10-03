@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EnterpriseDB_HelperModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="varchar(max)" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="CountryName" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblPeriode">
+          <Key>
+            <PropertyRef Name="PeriodeId" />
+          </Key>
+          <Property Name="PeriodeId" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="PeriodeDescription" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="PeriodeStartDate" Type="date" Nullable="false" />
+          <Property Name="PeriodeEndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_City_Id_Country_Id">
+          <End Role="TblCountry" Type="Self.TblCountry" Multiplicity="1" />
+          <End Role="TblCity" Type="Self.TblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountry">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="TblCity">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_Generate_Periode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="periodeId" Type="varchar" Mode="In" />
+          <Parameter Name="periodeDescription" Type="varchar" Mode="In" />
+          <Parameter Name="periodeStartDate" Type="date" Mode="In" />
+          <Parameter Name="periodeEndDate" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="EnterpriseDB_HelperModelStoreContainer">
+          <EntitySet Name="TblCity" EntityType="Self.TblCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCountry" EntityType="Self.TblCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPeriode" EntityType="Self.TblPeriode" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_City_Id_Country_Id" Association="Self.FK_City_Id_Country_Id">
+            <End Role="TblCountry" EntitySet="TblCountry" />
+            <End Role="TblCity" EntitySet="TblCity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnterpriseDB_HelperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HelperContext" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_Generate_Periode">
+            <Parameter Name="periodeId" Mode="In" Type="String" />
+            <Parameter Name="periodeDescription" Mode="In" Type="String" />
+            <Parameter Name="periodeStartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="periodeEndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="TblCity" EntityType="EnterpriseDB_HelperModel.TblCity" />
+          <EntitySet Name="TblCountry" EntityType="EnterpriseDB_HelperModel.TblCountry" />
+          <EntitySet Name="TblPeriode" EntityType="EnterpriseDB_HelperModel.TblPeriode" />
+          <AssociationSet Name="FK_City_Id_Country_Id" Association="EnterpriseDB_HelperModel.FK_City_Id_Country_Id">
+            <End Role="TblCountry" EntitySet="TblCountry" />
+            <End Role="TblCity" EntitySet="TblCity" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TblCountry" Relationship="EnterpriseDB_HelperModel.FK_City_Id_Country_Id" FromRole="TblCity" ToRole="TblCountry" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblCity" Relationship="EnterpriseDB_HelperModel.FK_City_Id_Country_Id" FromRole="TblCountry" ToRole="TblCity" />
+        </EntityType>
+        <EntityType Name="TblPeriode">
+          <Key>
+            <PropertyRef Name="PeriodeId" />
+          </Key>
+          <Property Name="PeriodeId" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodeDescription" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PeriodeStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PeriodeEndDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="FK_City_Id_Country_Id">
+          <End Type="EnterpriseDB_HelperModel.TblCountry" Role="TblCountry" Multiplicity="1" />
+          <End Type="EnterpriseDB_HelperModel.TblCity" Role="TblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountry">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="TblCity">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnterpriseDB_HelperModelStoreContainer" CdmEntityContainer="HelperContext">
+          <FunctionImportMapping FunctionImportName="sp_Generate_Periode" FunctionName="EnterpriseDB_HelperModel.Store.sp_Generate_Periode" />
+          <EntitySetMapping Name="TblCity">
+            <EntityTypeMapping TypeName="EnterpriseDB_HelperModel.TblCity">
+              <MappingFragment StoreEntitySet="TblCity">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCountry">
+            <EntityTypeMapping TypeName="EnterpriseDB_HelperModel.TblCountry">
+              <MappingFragment StoreEntitySet="TblCountry">
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPeriode">
+            <EntityTypeMapping TypeName="EnterpriseDB_HelperModel.TblPeriode">
+              <MappingFragment StoreEntitySet="TblPeriode">
+                <ScalarProperty Name="PeriodeEndDate" ColumnName="PeriodeEndDate" />
+                <ScalarProperty Name="PeriodeStartDate" ColumnName="PeriodeStartDate" />
+                <ScalarProperty Name="PeriodeDescription" ColumnName="PeriodeDescription" />
+                <ScalarProperty Name="PeriodeId" ColumnName="PeriodeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
