@@ -7,30 +7,31 @@ Enterprise.Backend
 We can separate into 5 big modules
 
 - Backend 
-  - Enterprise.API
-    - Enterprise.API
+  - Enterprise.API
+    - Enterprise.API
     - Enterprise.API.Helpers
     - Enterprise.API.Models
-  - Enterprise.Framework  
+  - Enterprise.Framework
     - Enterprise.Framework.DataLayers
     - Enterprise.Framework.DataLayers.DTOs
     - Enterprise.Framework.Repository
-    - Enterprise.Framework.BusinessLogics
-  - Enterprise.Workflows
+    - Enterprise.Framework.BusinessLogics
+  - Enterprise.Workflows
     - Enterprise.Workflows
     - Enterprise.Workflows.Clients
     - Enterprise.Workflows.Invoker
     - Enterprise.Workflows.Helpers
     - Enterprise.Workflows.Models
-  - Enterprise.SignalR 
-    - Enterprise.SignalR
-  - Enterprise.Core
-    - Enterprise.Core.BusinessLogics
+  - Enterprise.SignalR 
+    - Enterprise.SignalR
+  - Enterprise.Core
+    - Enterprise.Core.BusinessLogics
     - Enterprise.Core.DataLayers.DTOs.Models
     - Enterprise.Core.DataLayers.DTOs
     - Enterprise.Core.DataLayers
     - Enterprise.Core.Repository
-    - Enterprise.Core.Services
+    - Enterprise.Core.Services
+
 
 ## Projects Roles
 ### Enterprise.API
