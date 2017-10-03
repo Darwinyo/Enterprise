@@ -8,7 +8,7 @@ We can separate into 5 big modules
 
 - Backend
   - Enterprise.API
-    - [Enterprise.API](#enterprise.API)
+    - [Enterprise.API](#enterprise-api)
     - Enterprise.API.Helpers
     - Enterprise.API.Models
   - Enterprise.Framework
@@ -34,7 +34,7 @@ We can separate into 5 big modules
 
 
 ## Projects Roles
-### Enterprise.API
+### Enterprise API
 ### Enterprise.API.Helpers
 ### Enterprise.API.Models  
 ### Enterprise.Framework.DataLayers
