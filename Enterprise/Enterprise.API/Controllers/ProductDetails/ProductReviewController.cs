@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Enterprise.Services.Product;
-using Enterprise.Services.Product.Abstract;
+using Enterprise.Core.Services.Product;
+using Enterprise.Core.Services.Product.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Services.Product.Abstract;
-using Enterprise.API.BusinessLogics.Product;
-using Enterprise.Repository.Abstract;
-using Enterprise.API.BusinessLogics.Product.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Services.Product.Abstract;
+using Enterprise.Core.BusinessLogics.Product;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.Product.Abstract;
 using System.Net.Http;
 using Enterprise.API.Helpers.ProxyAPI;
 using Enterprise.API.Models.Responses;
 using System.Threading.Tasks;
 using Enterprise.API.Helpers.Consts;
-using Enterprise.DataLayers.DTOs.Product;
+using Enterprise.Core.DataLayers.DTOs.Product;
 
-namespace Enterprise.Services.Product
+namespace Enterprise.Core.Services.Product
 {
     public class ProductService : Bypasser<InsertProductWorkflowResponse, object>, IProductService
     {

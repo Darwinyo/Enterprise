@@ -1,10 +1,10 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.MongoRepository;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Repository.MongoRepository;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Enterprise.Services.Mongo.Abstract
+namespace Enterprise.Core.Services.Mongo.Abstract
 {
     public interface IProductCommentService
     {

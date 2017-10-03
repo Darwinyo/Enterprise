@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Enterprise.Repository.Abstract
+namespace Enterprise.Core.Repository.Abstract
 {
     public interface IEntityBaseRepository<T> where T : class, new()
     {

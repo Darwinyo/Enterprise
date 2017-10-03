@@ -22,7 +22,7 @@
                 <span class="pl-5 topbar-nav__text">Notifikasi</span>
               </div>
             </a>
-            <ul *ngIf="toggleNotif" class="dropdown-menu dropdown-basic dropdown-notif" id="notification-ul" role="menu" aria-labelledby="dropdownMenu">
+            <ul *ngIf="toggleNotif$|async" class="dropdown-menu dropdown-basic dropdown-notif" id="notification-ul" role="menu" aria-labelledby="dropdownMenu">
               <li><a href="/inbox-message.pl">Pesan</a></li>
               <li><a href="/inbox-talk.pl">Diskusi Produk</a></li>
               <li>
@@ -46,13 +46,13 @@
                 &nbsp;
                 <span id="total-item-cart">0</span>
             </a>
-            <app-cart (reviewEvent)="addReview($event)" *ngIf="toggleCart"></app-cart>
+            <app-cart (reviewEvent)="addReview($event)" *ngIf="toggleCart$|async"></app-cart>
           </li>
           <li id="user-tab" class="dropdown-hover dropdown-right">
             <a (click)="toggleDropUser()" class="dropdown-hover-toggle">
                 <img class="imgprofile img-27" src="img/icons/user.png" alt="Darwin Yo" width="27">
             </a>
-            <ul *ngIf="toggleUser" class="dropdown-menu dropdown-basic dropdown-user" role="menu" aria-labelledby="dropdownMenu">
+            <ul *ngIf="toggleUser$|async" class="dropdown-menu dropdown-basic dropdown-user" role="menu" aria-labelledby="dropdownMenu">
               <li>
                 <a id="user-profile" href="">
                     <span class="text-black-38 fs-11">Profil Saya</span>
@@ -92,7 +92,7 @@
           <li class="dropdown-single"><a routerLink="/register">Register</a></li>
           <li class="dropdown-hover dropdown-right ml-15 mr-15" id="iframe-login">
             <button class="btn-login dropdown-hover-toggle" id="login-ddl-link" (click)="toggleDropLogin()">Login</button>
-            <ul *ngIf="toggleLogin" class="dropdown-menu dropdown-login" role="menu" aria-labelledby="dropdownMenu" id="accounts-menu">
+            <ul *ngIf="toggleLogin$|async" class="dropdown-menu dropdown-login" role="menu" aria-labelledby="dropdownMenu" id="accounts-menu">
               <li>
                 <div id="div-accounts">
                   <!-- <app-login (loginEvent)="loginUser($event)"></app-login> -->

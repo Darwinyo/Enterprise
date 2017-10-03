@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Enterprise.API.BusinessLogics.Mongo.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.Mongo.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Repository.Abstract;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using System.Linq;
@@ -10,7 +10,7 @@ using System;
 using Microsoft.Extensions.Options;
 using Enterprise.API.Models.Settings;
 
-namespace Enterprise.API.BusinessLogics.Mongo
+namespace Enterprise.Core.BusinessLogics.Mongo
 {
     public class ChatBusinessLogic : IChatBusinessLogic
     {

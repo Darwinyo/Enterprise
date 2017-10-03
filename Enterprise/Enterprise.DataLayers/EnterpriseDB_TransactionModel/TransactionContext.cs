@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Enterprise.DataLayers.EnterpriseDB_TransactionModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_TransactionModel
 {
     public partial class TransactionContext : DbContext
     {

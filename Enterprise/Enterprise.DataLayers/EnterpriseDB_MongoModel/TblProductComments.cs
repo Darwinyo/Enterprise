@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_MongoModel
 {
     public partial class TblProductComments
     {

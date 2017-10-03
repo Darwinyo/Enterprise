@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
 using System.Linq;
-using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.API.BusinessLogics.ProductDetails
+namespace Enterprise.Core.BusinessLogics.ProductDetails
 {
     public class ProductVariationBusinessLogic:IProductVariationBusinessLogic
     {

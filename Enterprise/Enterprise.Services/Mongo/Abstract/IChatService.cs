@@ -1,7 +1,7 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
 using System.Collections.Generic;
 
-namespace Enterprise.Services.Mongo.Abstract
+namespace Enterprise.Core.Services.Mongo.Abstract
 {
     public interface IChatService
     {

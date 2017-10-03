@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enterprise.Services.Decryption.Abstract
+namespace Enterprise.Core.Services.Decryption.Abstract
 {
     public interface IDecryptionService
     {

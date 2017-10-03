@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
 
-namespace Enterprise.Repository.HelperRepository
+namespace Enterprise.Core.Repository.HelperRepository
 {
     public class TblCityRepository : HelperBaseRepository<TblCity>, ITblCityRepository
     {

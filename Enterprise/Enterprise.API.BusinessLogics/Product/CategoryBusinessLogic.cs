@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
 using Newtonsoft.Json.Linq;
-using Enterprise.API.BusinessLogics.Product.Abstract;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.Product.Abstract;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.API.BusinessLogics.Product
+namespace Enterprise.Core.BusinessLogics.Product
 {
     public class CategoryBusinessLogic : ICategoryBusinessLogic
     {

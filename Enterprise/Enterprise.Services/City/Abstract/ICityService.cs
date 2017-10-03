@@ -1,7 +1,7 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_HelperModel;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
 using System.Collections.Generic;
 
-namespace Enterprise.Services.City.Abstract
+namespace Enterprise.Core.Services.City.Abstract
 {
     public interface ICityService
     {

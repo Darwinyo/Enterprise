@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.Repository.ProductRepository
+namespace Enterprise.Core.Repository.ProductRepository
 {
     public class TblProductImageRepository : ProductBaseRepository<TblProductImage>, ITblProductImageRepository
     {

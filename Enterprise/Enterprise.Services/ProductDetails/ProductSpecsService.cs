@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Services.ProductDetails.Abstract;
-using Enterprise.Repository.ProductRepository;
-using Enterprise.API.BusinessLogics.ProductDetails;
-using Enterprise.Repository.Abstract;
-using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Services.ProductDetails.Abstract;
+using Enterprise.Core.Repository.ProductRepository;
+using Enterprise.Core.BusinessLogics.ProductDetails;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.ProductDetails.Abstract;
 
-namespace Enterprise.Services.ProductDetails
+namespace Enterprise.Core.Services.ProductDetails
 {
     public class ProductSpecsService : IProductSpecsService
     {

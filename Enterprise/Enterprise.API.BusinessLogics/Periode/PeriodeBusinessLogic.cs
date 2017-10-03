@@ -1,10 +1,10 @@
 ﻿using System;
 using Newtonsoft.Json.Linq;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.API.BusinessLogics.Periode.Abstract;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.BusinessLogics.Periode.Abstract;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.API.BusinessLogics.Periode
+namespace Enterprise.Core.BusinessLogics.Periode
 {
     public class PeriodeBusinessLogic:IPeriodeBusinessLogic
     {

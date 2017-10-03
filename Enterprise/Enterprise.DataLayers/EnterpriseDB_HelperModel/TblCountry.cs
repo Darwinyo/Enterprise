@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_HelperModel
 {
     public partial class TblCountry
     {

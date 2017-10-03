@@ -5,7 +5,7 @@ using System.Text;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver;
 
-namespace Enterprise.Repository.Abstract
+namespace Enterprise.Core.Repository.Abstract
 {
     public interface IMongoEntityBaseRepository<T> where T : class, new()
     {

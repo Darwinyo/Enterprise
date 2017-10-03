@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enterprise.DataLayers.DTOs.Product
+namespace Enterprise.Core.DataLayers.DTOs.Product
 {
     public class ProductCardDTO
     {

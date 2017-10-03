@@ -1,47 +1,52 @@
+import { Observable } from 'rxjs/Rx';
+import { Store } from '@ngrx/store';
 import { UserLoginResponseModel } from './../../../auth/models/responses/user-login-response/user-login-response.model';
 import { UserService } from './../../../auth/services/user/user.service';
 import { UserLoginViewModel } from './../../../auth/viewmodels/user-login/user-login.viewmodel';
 import { Router } from '@angular/router';
 import { ProductReviewService } from './../../../product/services/product-review/product-review.service';
 import { Component, OnInit } from '@angular/core';
-
+import * as fromCore from './../../reducers/core-state.reducer';
+import * as NavbarActions from './../../actions/navbar.actions';
+import * as AuthActions from './../../../auth/actions/auth.actions';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  logged: boolean;
+  logged$: Observable<boolean>;
   userLoginResponseModel: UserLoginResponseModel;
-  toggleNotif: boolean;
-  toggleCart: boolean;
-  toggleUser: boolean;
-  toggleLogin: boolean;
+  toggleNotif$: Observable<boolean>;
+  toggleCart$: Observable<boolean>;
+  toggleUser$: Observable<boolean>;
+  toggleLogin$: Observable<boolean>;
   constructor(
     private router: Router,
     private productReviewService: ProductReviewService,
-    private userService: UserService
+    private userService: UserService,
+    private coreStore: Store<fromCore.State>
   ) {
-    this.logged = false;
-    this.toggleNotif = false;
-    this.toggleCart = false;
-    this.toggleUser = false;
-    this.toggleLogin = false;
+    this.logged$ = this.coreStore.select(fromCore.getLoggedState);
+    this.toggleCart$ = this.coreStore.select(fromCore.getCartMenuState);
+    this.toggleLogin$ = this.coreStore.select(fromCore.getLoginMenuState);
+    this.toggleNotif$ = this.coreStore.select(fromCore.getNotifMenuState);
+    this.toggleUser$ = this.coreStore.select(fromCore.getUserMenuState);
   }
 
   ngOnInit() {
   }
   toggleDropNotif() {
-    this.toggleNotif = !this.toggleNotif;
+    this.coreStore.dispatch(new NavbarActions.ToggleNotif());
   }
   toggleDropCart() {
-    this.toggleCart = !this.toggleCart;
+    this.coreStore.dispatch(new NavbarActions.ToggleCart());
   }
   toggleDropUser() {
-    this.toggleUser = !this.toggleUser;
+    this.coreStore.dispatch(new NavbarActions.ToggleUser());
   }
   toggleDropLogin() {
-    this.toggleLogin = !this.toggleLogin;
+    this.coreStore.dispatch(new NavbarActions.ToggleLogin());
   }
   addReview(productId: string) {
     this.productReviewService.addReview(productId).subscribe(
@@ -51,20 +56,6 @@ export class NavbarComponent implements OnInit {
     )
   }
   loginUser(userLoginViewModel: UserLoginViewModel) {
-    this.userService.userLogin(userLoginViewModel).subscribe(
-      (res) => this.userLoginResponseModel = res,
-      (err) => alert(err),
-      () => {
-        this.logged = this.userLoginResponseModel.isLogged;
-        if (this.logged) {
-          alert('You Are Logged');
-        } else {
-          alert('Wrong Password or UserLogin');
-        }
-        if (userLoginViewModel.rememberme && this.logged) {
-          localStorage.setItem('userKey', this.userLoginResponseModel.userKey);
-        }
-      }
-    )
+    this.coreStore.dispatch(new AuthActions.Login(userLoginViewModel));
   }
 }

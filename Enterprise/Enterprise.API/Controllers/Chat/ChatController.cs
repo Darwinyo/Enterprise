@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Infrastructure;
 using Enterprise.SignalR.Hubs;
-using Enterprise.Services.Mongo;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Services.Mongo.Abstract;
+using Enterprise.Core.Services.Mongo;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Services.Mongo.Abstract;
 using Newtonsoft.Json.Linq;
 using Enterprise.API.Models.Hubs;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

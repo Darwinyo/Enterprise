@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_ProductModel
 {
     public partial class TblProductHot
     {

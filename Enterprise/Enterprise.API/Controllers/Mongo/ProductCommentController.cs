@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Enterprise.Services.Mongo.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Services.Mongo.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Enterprise.API.Controllers.Mongo

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Enterprise.DataLayers.DTOs.Models.Product
+namespace Enterprise.Core.DataLayers.DTOs.Models.Product
 {
     public class ProductVariationItem
     {

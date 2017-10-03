@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 using EH = Enterprise.API.Helpers;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Enterprise.DataLayers.EnterpriseDB_MongoModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_MongoModel
 {
     public partial class MongoContext
     {

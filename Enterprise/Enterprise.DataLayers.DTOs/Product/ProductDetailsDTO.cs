@@ -1,9 +1,9 @@
-﻿using Enterprise.DataLayers.DTOs.Models.Product;
+﻿using Enterprise.Core.DataLayers.DTOs.Models.Product;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Enterprise.DataLayers.DTOs.Product
+namespace Enterprise.Core.DataLayers.DTOs.Product
 {
     public class ProductDetailsDTO
     {

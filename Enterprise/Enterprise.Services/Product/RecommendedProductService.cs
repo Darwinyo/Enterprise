@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Services.Product.Abstract;
-using Enterprise.API.BusinessLogics.Product.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Services.Product.Abstract;
+using Enterprise.Core.BusinessLogics.Product.Abstract;
 using Enterprise.API.Models.Responses;
 using Enterprise.API.Helpers.ProxyAPI;
 using Enterprise.API.Helpers.Consts;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Enterprise.DataLayers.DTOs.Product;
+using Enterprise.Core.DataLayers.DTOs.Product;
 
-namespace Enterprise.Services.Product
+namespace Enterprise.Core.Services.Product
 {
     public class RecommendedProductService : Bypasser<RecommendedProductWorkflowResponse, string>, IRecommendedProductService
     {

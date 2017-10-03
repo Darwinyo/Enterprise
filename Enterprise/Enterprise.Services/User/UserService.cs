@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Enterprise.Services.User.Abstract;
+using Enterprise.Core.Services.User.Abstract;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Enterprise.API.Helpers.Consts;
 using Newtonsoft.Json;
 using Enterprise.API.Helpers.ProxyAPI;
 using Enterprise.API.Models.Responses;
-using Enterprise.API.BusinessLogics.User.Abstract;
-using Enterprise.Services.Decryption.Abstract;
+using Enterprise.Core.BusinessLogics.User.Abstract;
+using Enterprise.Core.Services.Decryption.Abstract;
 using Newtonsoft.Json.Linq;
 
-namespace Enterprise.Services.User
+namespace Enterprise.Core.Services.User
 {
     public class UserService : Bypasser<UserRegistrationWorkflowResponse,object>, IUserService
     {

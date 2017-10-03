@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.DataLayers.EnterpriseDB_UserModel;
-using Enterprise.DataLayers.DTOs.Product;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_UserModel;
+using Enterprise.Core.DataLayers.DTOs.Product;
 
-namespace Enterprise.Repository.Abstract
+namespace Enterprise.Core.Repository.Abstract
 {
     #region product
     public interface ITblProductRepository : IEntityBaseRepository<TblProduct>

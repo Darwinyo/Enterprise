@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.Repository.ProductRepository;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.Repository.ProductRepository;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
 
-namespace Enterprise.Repository.HelperRepository
+namespace Enterprise.Core.Repository.HelperRepository
 {
     public class TblPeriodeRepository:HelperBaseRepository<TblPeriode>,ITblPeriodeRepository
     {

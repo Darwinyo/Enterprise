@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Enterprise.Repository.ProductRepository
+namespace Enterprise.Core.Repository.ProductRepository
 {
     public class ProductBaseRepository<T> : BaseDispose,IEntityBaseRepository<T> where T : class, new()
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Enterprise.Repository.Abstract;
-using Enterprise.Repository.ProductRepository;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.Repository.ProductRepository;
 
-namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_ProductModel
 {
     public class TblProductRecommendedRepository : ProductBaseRepository<TblProductRecommended>, ITblProductRecommendedRepository
     {

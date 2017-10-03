@@ -1,8 +1,8 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Collections.Generic;
 
-namespace Enterprise.API.BusinessLogics.Mongo.Abstract
+namespace Enterprise.Core.BusinessLogics.Mongo.Abstract
 {
     public interface IChatBusinessLogic
     {

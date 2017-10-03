@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace Enterprise.Repository.HelperRepository
+namespace Enterprise.Core.Repository.HelperRepository
 {
     public class HelperBaseRepository<T> : BaseDispose, IEntityBaseRepository<T> where T : class, new()
     {

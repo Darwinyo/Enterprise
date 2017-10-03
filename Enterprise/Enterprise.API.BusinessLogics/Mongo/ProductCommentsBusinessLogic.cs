@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.API.BusinessLogics.Mongo.Abstract;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.BusinessLogics.Mongo.Abstract;
+using Enterprise.Core.Repository.Abstract;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
 
-namespace Enterprise.API.BusinessLogics.Mongo
+namespace Enterprise.Core.BusinessLogics.Mongo
 {
     public class ProductCommentsBusinessLogic:IProductCommentsBusinessLogic
     {

@@ -3,12 +3,12 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.DTOs.Product;
-using Enterprise.DataLayers.DTOs.Models.Product;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.DTOs.Product;
+using Enterprise.Core.DataLayers.DTOs.Models.Product;
 
-namespace Enterprise.Repository.ProductRepository
+namespace Enterprise.Core.Repository.ProductRepository
 {
     public class TblProductRepository : ProductBaseRepository<TblProduct>, ITblProductRepository
     {

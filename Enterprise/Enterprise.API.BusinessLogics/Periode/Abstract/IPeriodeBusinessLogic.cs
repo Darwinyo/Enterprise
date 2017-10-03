@@ -1,7 +1,7 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.API.BusinessLogics.Periode.Abstract
+namespace Enterprise.Core.BusinessLogics.Periode.Abstract
 {
     public interface IPeriodeBusinessLogic
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Enterprise.Services.City.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.API.BusinessLogics.City.Abstract;
+using Enterprise.Core.Services.City.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.BusinessLogics.City.Abstract;
 
-namespace Enterprise.Services.City
+namespace Enterprise.Core.Services.City
 {
     public class CityService : ICityService
     {

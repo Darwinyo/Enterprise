@@ -1,7 +1,7 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_ProductModel;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
 using System.Collections.Generic;
 
-namespace Enterprise.Services.ProductDetails.Abstract
+namespace Enterprise.Core.Services.ProductDetails.Abstract
 {
     public interface IProductSpecsService
     {

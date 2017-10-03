@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Enterprise.DataLayers.EnterpriseDB_UserModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_UserModel
 {
     public partial class TblUserDetails
     {

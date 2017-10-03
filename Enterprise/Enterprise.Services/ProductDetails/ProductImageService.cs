@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Enterprise.Services.ProductDetails.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.API.BusinessLogics.ProductDetails.Abstract;
+using Enterprise.Core.Services.ProductDetails.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.BusinessLogics.ProductDetails.Abstract;
 
-namespace Enterprise.Services.ProductDetails
+namespace Enterprise.Core.Services.ProductDetails
 {
     public class ProductImageService : IProductImageService
     {

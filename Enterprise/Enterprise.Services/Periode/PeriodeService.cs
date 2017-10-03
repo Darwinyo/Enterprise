@@ -1,9 +1,9 @@
-﻿using Enterprise.Services.Periode.Abstract;
-using Enterprise.API.BusinessLogics.Periode;
-using Enterprise.Repository.Abstract;
-using Enterprise.API.BusinessLogics.Periode.Abstract;
+﻿using Enterprise.Core.Services.Periode.Abstract;
+using Enterprise.Core.BusinessLogics.Periode;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.Periode.Abstract;
 
-namespace Enterprise.Services.Periode
+namespace Enterprise.Core.Services.Periode
 {
     public class PeriodeService : IPeriodeService
     {

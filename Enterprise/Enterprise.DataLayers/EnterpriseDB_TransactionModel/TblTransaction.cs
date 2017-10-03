@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Enterprise.DataLayers.EnterpriseDB_TransactionModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_TransactionModel
 {
     public partial class TblTransaction
     {

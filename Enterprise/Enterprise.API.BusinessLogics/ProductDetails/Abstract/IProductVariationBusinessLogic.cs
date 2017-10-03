@@ -1,8 +1,8 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Collections.Generic;
 
-namespace Enterprise.API.BusinessLogics.ProductDetails.Abstract
+namespace Enterprise.Core.BusinessLogics.ProductDetails.Abstract
 {
     public interface IProductVariationBusinessLogic
     {

@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
-    <ProjectReference Include="..\Enterprise.Repository\Enterprise.Repository.csproj" />
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
+    <ProjectReference Include="..\Enterprise.Repository\Enterprise.Core.Repository.csproj" />
   </ItemGroup>
 
 </Project>

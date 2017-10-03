@@ -1,10 +1,10 @@
 ﻿using Enterprise.API.Models.Responses;
-using Enterprise.DataLayers.EnterpriseDB_UserModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_UserModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Enterprise.API.BusinessLogics.User.Abstract
+namespace Enterprise.Core.BusinessLogics.User.Abstract
 {
     public interface IUserLoginBusinessLogic
     {

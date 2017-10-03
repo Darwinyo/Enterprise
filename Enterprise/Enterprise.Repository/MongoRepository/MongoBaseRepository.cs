@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
 using MongoDB.Driver.Builders;
 using MongoDB.Driver;
 using Microsoft.Extensions.Options;
@@ -11,7 +11,7 @@ using Enterprise.API.Models.Settings;
 using System.Linq;
 using MongoDB.Bson;
 
-namespace Enterprise.Repository.MongoRepository
+namespace Enterprise.Core.Repository.MongoRepository
 {
     public class MongoBaseRepository<T> : IMongoEntityBaseRepository<T> where T : class, new()
     {

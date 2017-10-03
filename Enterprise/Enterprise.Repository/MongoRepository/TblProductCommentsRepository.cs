@@ -5,12 +5,12 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver.Builders;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.Repository.MongoRepository
+namespace Enterprise.Core.Repository.MongoRepository
 {
     
     public class TblProductCommentsRepository:MongoBaseRepository<TblProductComments>,ITblProductCommentsRepository

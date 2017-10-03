@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.DataLayers.DTOs.csproj" />
+    <ProjectReference Include="..\Enterprise.DataLayers.DTOs\Enterprise.Core.DataLayers.DTOs.csproj" />
     <ProjectReference Include="..\Enterprise.Framework.DataLayers\Enterprise.Framework.DataLayers.csproj" />
   </ItemGroup>
 

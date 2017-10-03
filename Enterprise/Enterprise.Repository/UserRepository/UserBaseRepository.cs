@@ -1,14 +1,14 @@
-﻿using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.Repository.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq.Expressions;
-using Enterprise.DataLayers.EnterpriseDB_UserModel;
+using Enterprise.Core.DataLayers.EnterpriseDB_UserModel;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace Enterprise.Repository.UserRepository
+namespace Enterprise.Core.Repository.UserRepository
 {
     public class UserBaseRepository<T> : BaseDispose, IEntityBaseRepository<T> where T : class, new()
     {

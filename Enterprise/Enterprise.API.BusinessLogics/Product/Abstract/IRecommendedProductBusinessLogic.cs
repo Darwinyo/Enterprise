@@ -1,8 +1,8 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Collections.Generic;
 
-namespace Enterprise.API.BusinessLogics.Product.Abstract
+namespace Enterprise.Core.BusinessLogics.Product.Abstract
 {
     public interface IRecommendedProductBusinessLogic
     {

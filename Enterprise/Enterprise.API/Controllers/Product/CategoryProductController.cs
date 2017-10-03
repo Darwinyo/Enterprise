@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Enterprise.Services.Product;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Services.Product.Abstract;
+using Enterprise.Core.Services.Product;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Services.Product.Abstract;
 using Enterprise.API.Models.Responses;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

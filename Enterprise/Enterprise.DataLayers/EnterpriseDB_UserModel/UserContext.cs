@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Enterprise.DataLayers.EnterpriseDB_UserModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_UserModel
 {
     public partial class UserContext : DbContext
     {

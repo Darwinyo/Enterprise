@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Enterprise.DataLayers.EnterpriseDB_HelperModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_HelperModel
 {
     public partial class HelperContext : DbContext
     {

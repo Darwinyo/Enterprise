@@ -1,14 +1,14 @@
-﻿using Enterprise.Services.Mongo.Abstract;
+﻿using Enterprise.Core.Services.Mongo.Abstract;
 using System;
 using System.Collections.Generic;
-using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.API.BusinessLogics.Mongo;
+using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.BusinessLogics.Mongo;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
-using Enterprise.Repository.Abstract;
-using Enterprise.API.BusinessLogics.Mongo.Abstract;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.Mongo.Abstract;
 
-namespace Enterprise.Services.Mongo
+namespace Enterprise.Core.Services.Mongo
 {
     public class ChatService : IChatService
     {

@@ -1,4 +1,4 @@
-﻿using Enterprise.DataLayers.DTOs.Product;
+﻿using Enterprise.Core.DataLayers.DTOs.Product;
 using System;
 using System.Collections.Generic;
 

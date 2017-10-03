@@ -1,4 +1,4 @@
-﻿namespace Enterprise.Services.Periode.Abstract
+﻿namespace Enterprise.Core.Services.Periode.Abstract
 {
     public interface IPeriodeService
     {

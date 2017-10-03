@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
-using Enterprise.API.BusinessLogics.Product.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_ProductModel;
-using Enterprise.Repository.Abstract;
-using Enterprise.DataLayers.DTOs.Product;
+using Enterprise.Core.BusinessLogics.Product.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_ProductModel;
+using Enterprise.Core.Repository.Abstract;
+using Enterprise.Core.DataLayers.DTOs.Product;
 
-namespace Enterprise.API.BusinessLogics.Product
+namespace Enterprise.Core.BusinessLogics.Product
 {
     public class ProductBusinessLogic : IProductBusinessLogic
     {

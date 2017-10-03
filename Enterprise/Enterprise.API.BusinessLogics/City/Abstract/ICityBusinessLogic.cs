@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Enterprise.DataLayers.EnterpriseDB_HelperModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_HelperModel;
+using Enterprise.Core.Repository.Abstract;
 
-namespace Enterprise.API.BusinessLogics.City.Abstract
+namespace Enterprise.Core.BusinessLogics.City.Abstract
 {
     public interface ICityBusinessLogic
     {

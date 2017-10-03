@@ -1,9 +1,9 @@
-﻿using Enterprise.DataLayers.EnterpriseDB_MongoModel;
-using Enterprise.Repository.Abstract;
+﻿using Enterprise.Core.DataLayers.EnterpriseDB_MongoModel;
+using Enterprise.Core.Repository.Abstract;
 using Enterprise.API.Models.Settings;
 using Microsoft.Extensions.Options;
 
-namespace Enterprise.Repository.MongoRepository
+namespace Enterprise.Core.Repository.MongoRepository
 {
     public class TblChatRepository : MongoBaseRepository<TblChat>, ITblChatRepository
     {

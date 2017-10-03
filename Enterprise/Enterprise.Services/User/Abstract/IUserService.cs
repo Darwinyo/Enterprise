@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Enterprise.Services.User.Abstract
+namespace Enterprise.Core.Services.User.Abstract
 {
     public interface IUserService
     {

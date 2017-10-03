@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Enterprise.DataLayers.EnterpriseDB_ProductModel
+namespace Enterprise.Core.DataLayers.EnterpriseDB_ProductModel
 {
     public partial class ProductContext : DbContext
     {

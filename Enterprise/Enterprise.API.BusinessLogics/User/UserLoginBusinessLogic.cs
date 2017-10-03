@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Linq;
-using Enterprise.API.BusinessLogics.User.Abstract;
-using Enterprise.DataLayers.EnterpriseDB_UserModel;
-using Enterprise.Repository.Abstract;
+using Enterprise.Core.BusinessLogics.User.Abstract;
+using Enterprise.Core.DataLayers.EnterpriseDB_UserModel;
+using Enterprise.Core.Repository.Abstract;
 using System.Threading.Tasks;
 using Enterprise.API.Models.Responses;
 using Enterprise.API.Helpers.Consts;
 
-namespace Enterprise.API.BusinessLogics.User
+namespace Enterprise.Core.BusinessLogics.User
 {
     public class UserLoginBusinessLogic : IUserLoginBusinessLogic
     {
