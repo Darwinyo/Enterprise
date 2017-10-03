@@ -1,47 +1,58 @@
 # Multi Platform Apps
-
-These is Tech Stack that I Use To Build EnterpriseApp
-
--Database:
-MSSQL
-MongoDB
-SQLite(Near Future)
-Firebase(Near Future)
-
--Caching System:
-Redis
-
--Real-Time:
-SignalR(.NetCore)
-
--DataLayer:
-Entity Framework(.NetCore)
-Linq
-
--API (.NetCore)
-
--MVC (.NetCore)
-
--Angular 4
-
--State Management
-Redux(ngrx/store) (Near Future)
  
-- Please Refer to each project for more Descriptions
+## What is this app?
 
-Current Progress:
-<img src="/Enterprise/Documentation/Web/Gifs/Enterprise-20170914.gif?raw=true" alt="Enterprise-20170914.gif">
-Development Environment:
-<img src="/Enterprise/Documentation/Web/Gifs/Development-20170914.gif?raw=true" alt="Development-20170914.gif">
+This App is E-Commerce App
+ 
+## Why E-Commerce?
 
+Well, I want to give all my best into 1 Solution,
+Since E-Commerce itself can be really Complex (use variaties tech stack), i think this would fit for my playground.
+ 
+## (Currently) What tech stack required to build this app? 
 
-MPA project written using .NET Core 2.0 Razor Pages, .NET Standard 2.0
+### Database
 
+* MSSQL
+* MongoDB
+* Redis
+ 
+### Back-End
 
-SPA project written using Angular4
+* C#
+* .NET Core 2.0
+* .NET Framework 4.6
+* .NET Standard 2.0
+* API(Both Frameworks)
+* LINQ, SignalR(Core)
+* Workflow Foundation (.Net Framework)
+* Razor Page
+* EntityFramework(Both Frameworks)
+ 
+### Front-End
 
-<img src="/Enterprise/Documentation/Web/Images/Homepage-Carousels v.0.5.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-Category-Carousels v.0.5.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-Filters.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Homepage-ProductGrid.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Product-Detail.png" Width=1000/><img src="/Enterprise/Documentation/Web/Images/Product-Detail-Description.png" Width=1000/>
+* TypeScript
+* Angular4
+* Webpack
+* @ngrx/Store(Inspired by Redux)
+* @ngrx/Router-store
+* @ngrx/Effects
+* ReactiveX(RxJs)
+ 
+### Mobile
+* Xamarin.Forms
+ 
+## The structure of projects
 
-Mobile project written using Xamarin.Forms, .NET Standard 1.0
+We can separate into 5 big modules
 
-<img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-22-711_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-36-163_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-18-14-39-44-609_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-36-296_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-55-00-933_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-45-919_Enterprise.Mobile.Android.png" Width="210"/><img src="/Enterprise/Documentation/Mobile/Images/Screenshot_2017-08-20-17-54-51-806_Enterprise.Mobile.Android.png" Width="210"/>
+* Backend 
+  * Enterprise.API 
+  * Enterprise.Framework  
+  * Enterprise.Workflows 
+  * Enterprise.SignalR 
+  
+* SPA : Enterprise.Web.SPA (Angular4)
+* MPA : Enterprise.Web.MPA (.Net Core 2.0 Razor Pages)
+* DB : Enterprise.Database, Enterprise.Redis, Enterprise.MongoDB
+* Mobile : Enterprise.Mobile (Xamarin.Forms)
