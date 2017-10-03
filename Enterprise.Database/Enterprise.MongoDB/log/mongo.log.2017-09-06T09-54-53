@@ -1,0 +1,2 @@
+2017-09-06T16:49:04.886+0700 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2017-09-06T16:49:04.886+0700 I CONTROL  [main] Error creating service: The specified service has been marked for deletion. (1072)

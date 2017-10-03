@@ -1,0 +1,9 @@
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\bin\Debug\EnterpriseDB_Transaction.dacpac
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\bin\Debug\EnterpriseDB_Transaction.dll
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\bin\Debug\EnterpriseDB_Transaction.pdb
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\Model.xml
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\refactor.xml
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\postdeploy.sql
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\predeploy.sql
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\EnterpriseDB_Transaction.dll
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_Transaction\obj\Debug\EnterpriseDB_Transaction.pdb

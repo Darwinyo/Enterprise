@@ -1,0 +1,5 @@
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_PersistenceStore\bin\Debug\EnterpriseDB_System_PersistenceStore.dacpac
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_PersistenceStore\bin\Debug\EnterpriseDB_System_PersistenceStore.dll
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_PersistenceStore\bin\Debug\EnterpriseDB_System_PersistenceStore.pdb
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_PersistenceStore\obj\Debug\EnterpriseDB_System_PersistenceStore.dll
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_PersistenceStore\obj\Debug\EnterpriseDB_System_PersistenceStore.pdb

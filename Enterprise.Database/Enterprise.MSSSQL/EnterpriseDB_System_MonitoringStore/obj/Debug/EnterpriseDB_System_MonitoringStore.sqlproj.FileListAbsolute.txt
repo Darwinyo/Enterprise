@@ -1,0 +1,7 @@
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\bin\Debug\EnterpriseDB_System_MonitoringStore.dacpac
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\Model.xml
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\refactor.xml
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\postdeploy.sql
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\predeploy.sql
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\EnterpriseDB_System_MonitoringStore.dll
+D:\Projects\Enterprise\Enterprise.Database\Enterprise.MSSSQL\EnterpriseDB_System_MonitoringStore\obj\Debug\EnterpriseDB_System_MonitoringStore.pdb

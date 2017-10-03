@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>EnterpriseDB_System_MonitoringStore</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1b75c598-9cb9-4e9d-b48b-a007806ba792}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>EnterpriseDB_System_MonitoringStore</RootNamespace>
+    <AssemblyName>EnterpriseDB_System_MonitoringStore</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Storage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ASWfTrackingProfilesTable.sql" />
+    <Build Include="dbo\Tables\ASWfPropertyNamesTable.sql" />
+    <Build Include="dbo\Tables\ASWfInstancesTable.sql" />
+    <Build Include="dbo\Tables\ASWfEventsTable.sql" />
+    <Build Include="dbo\Tables\ASWfEventPropertiesTable.sql" />
+    <Build Include="dbo\Tables\ASWfEventAnnotationsTable.sql" />
+    <Build Include="dbo\Tables\ASWfEventAnnotationSetsTable.sql" />
+    <Build Include="dbo\Tables\ASWcfEventsTable.sql" />
+    <Build Include="dbo\Tables\ASTransferEventsTable.sql" />
+    <Build Include="dbo\Tables\ASStagingTable.sql" />
+    <Build Include="dbo\Tables\ASOperationsHistoryTable.sql" />
+    <Build Include="dbo\Tables\ASJobsTable.sql" />
+    <Build Include="dbo\Tables\ASFailedStagingTable.sql" />
+    <Build Include="dbo\Tables\ASEventSourcesTable.sql" />
+    <Build Include="dbo\Tables\ASDBVersionTable.sql" />
+    <Build Include="dbo\Tables\ASConfigurationPropertiesTable.sql" />
+    <Build Include="dbo\Views\ASWfTrackingProfiles.sql" />
+    <Build Include="dbo\Views\ASWfPropertyNames.sql" />
+    <Build Include="dbo\Views\ASWfInstances.sql" />
+    <Build Include="dbo\Views\ASWfEvents.sql" />
+    <Build Include="dbo\Views\ASWfEventProperties.sql" />
+    <Build Include="dbo\Views\ASWfEventAnnotations.sql" />
+    <Build Include="dbo\Views\ASWcfEvents.sql" />
+    <Build Include="dbo\Views\ASTransferEvents.sql" />
+    <Build Include="dbo\Views\ASOperationsHistory.sql" />
+    <Build Include="dbo\Views\ASEventSources.sql" />
+    <Build Include="dbo\Views\ASEvents.sql" />
+    <Build Include="dbo\Views\ASDBVersion.sql" />
+    <Build Include="dbo\Views\ASConfigProperties.sql" />
+    <Build Include="Security\ASMonitoringDbWriter.sql" />
+    <Build Include="Security\ASMonitoringDbReader.sql" />
+    <Build Include="Security\ASMonitoringDbAdmin.sql" />
+    <Build Include="Security\AS_MonitoringDbJobsAdmin.sql" />
+    <Build Include="dbo\Functions\ASInternal_GetEventSource.sql" />
+    <Build Include="dbo\Functions\ASInternal_GetCustomProperties.sql" />
+    <Build Include="dbo\Functions\ASInternal_GetCustomArguments.sql" />
+    <Build Include="dbo\Functions\ASInternal_GetCustomAnotations.sql" />
+    <Build Include="dbo\Functions\ASInternal_ExtractCustomPropertiesFromXml.sql" />
+    <Build Include="dbo\Functions\ASInternal_ExtractAnnotationsFromXml.sql" />
+    <Build Include="dbo\Stored Procedures\ASUpdateArchiveConfigurationProperties.sql" />
+    <Build Include="dbo\Stored Procedures\ASPurgeEventData.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_UpdatePurgeOperation.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ThrowError.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_RethrowError.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_PurgeEventData.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_MoveEventToFailedStaging.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportWfEventsRow.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportWfEventsBatch.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportWfEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportWcfEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportTransferEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ImportEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_GetWfTrackingProfileId.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_GetEventSourceId.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_GetArchiveSettings.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_GetAnnotationSetId.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_CreateMonitoringTablePartition.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_AutoPurge.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ArchivePurgeWFEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_ArchivePurgeTable.sql" />
+    <Build Include="dbo\Stored Procedures\ASInternal_AddTableToPurgeLog.sql" />
+    <Build Include="dbo\Stored Procedures\ASImportWfEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASImportWcfEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASImportTransferEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASImportEvents.sql" />
+    <Build Include="dbo\Stored Procedures\ASCreateEventTablesPartition.sql" />
+    <Build Include="dbo\Stored Procedures\ASAutoPurge.sql" />
+    <Build Include="dbo\Stored Procedures\ASAddRoleMember.sql" />
+    <Build Include="Storage\MSAppServerPF_ASWfInstancesTable.sql" />
+    <Build Include="Storage\MSAppServerPF_ASWfEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPF_ASWfEventPropertiesTable.sql" />
+    <Build Include="Storage\MSAppServerPF_ASWcfEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPF_ASTransferEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPF_ASStagingTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASWfInstancesTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASWfEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASWfEventPropertiesTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASWcfEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASTransferEventsTable.sql" />
+    <Build Include="Storage\MSAppServerPS_ASStagingTable.sql" />
+  </ItemGroup>
+</Project>
