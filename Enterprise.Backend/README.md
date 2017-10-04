@@ -1074,14 +1074,14 @@ namespace Enterprise.Core.Services.Product
 }
 ```
 ### Enterprise Framework DataLayers
-this Project Pretty Similar with .NET Standard Version. Click [Here](notes) For Details
+this Project Pretty Similar with .NET Standard Version. Click [Here](#notes) For Details
 
 ### Enterprise Framework DataLayers DTOs
-this Project Pretty Similar with .NET Standard Version. Click [Here](notes) For Details
+this Project Pretty Similar with .NET Standard Version. Click [Here](#notes) For Details
 
 ### Enterprise Framework Repository
-this Project Pretty Similar with .NET Standard Version. Click [Here](notes) For Details
+this Project Pretty Similar with .NET Standard Version. Click [Here](#notes) For Details
 
 ### Enterprise Framework BusinessLogics
-this Project Pretty Similar with .NET Standard Version. Click [Here](notes) For Details
+this Project Pretty Similar with .NET Standard Version. Click [Here](#notes) For Details
 
