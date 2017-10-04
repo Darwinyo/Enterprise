@@ -69,9 +69,9 @@ We can separate into 5 big modules
 
 ## Projects Roles
 
-* DB : [More Details](/tree/master/Enterprise.Database)
-* SPA : [More Details](/tree/master/Enterprise.SPA)
-* MPA : [More Details](/tree/master/Enterprise.MPA)
-* Mobile : [More Details](/tree/master/Enterprise.Mobile)
-* Backend : [More Details](/tree/master/Enterprise.Backend)
+* DB : [More Details](https://github.com/Darwinyo/Enterprise/tree/master/Enterprise.Database)
+* SPA : [More Details](https://github.com/Darwinyo/Enterprise/tree/master/Enterprise.SPA)
+* MPA : [More Details](https://github.com/Darwinyo/Enterprise/tree/master/Enterprise.MPA)
+* Mobile : [More Details](https://github.com/Darwinyo/Enterprise/tree/master/Enterprise.Mobile)
+* Backend : [More Details](https://github.com/Darwinyo/Enterprise/tree/master/Enterprise.Backend)
 
