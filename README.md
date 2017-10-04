@@ -4,7 +4,7 @@
 
 * [What is this app?](#what-is-this-app)
 * [Why E-Commerce?](#why-e-commerce)
-* [What tech stack required to build this app?](#what-tech-stack-required-to-build-this-app)
+* [(Currently) What tech stack required to build this app?](#currently-what-tech-stack-required-to-build-this-app)
 * [The structure of projects](#the-structure-of-projects)
 * [Projects Roles](#projects-roles)
 
