@@ -69,9 +69,9 @@ We can separate into 5 big modules
 
 ## Projects Roles
 
-* DB : /GOTO THIS DOC/
-* SPA : /GOTO THIS DOC/
-* MPA : /GOTO THIS DOC/
-* Mobile : /GOTO THIS DOC/
-* Backend : /GOTO THIS DOC/
+* DB : [More Details](Enterprise.Database)
+* SPA : [More Details](Enterprise.SPA)
+* MPA : [More Details](Enterprise.MPA)
+* Mobile : [More Details](Enterprise.Mobile)
+* Backend : [More Details](Enterprise.Backend)
 
