@@ -1,5 +1,13 @@
 # Multi Platform Apps
- 
+
+## Table of contents
+
+* [What is this app?](what-is-this-app)
+* [Why E-Commerce?](why-e-commerce)
+* [What tech stack required to build this app?](what-tech-stack-required-to-build-this-app)
+* [The structure of projects](the-structure-of-projects)
+* [Projects Roles](projects-roles)
+
 ## What is this app?
 
 This App is E-Commerce App
