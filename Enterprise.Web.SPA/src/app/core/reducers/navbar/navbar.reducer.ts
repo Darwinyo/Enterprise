@@ -54,9 +54,9 @@ export function navbarReducer(state = INITIAL_STATE, action: NavbarActions.Actio
     }
 }
 
-export const getLoginMenuState = (state: State) => state.loginMenuDropped;
-export const getUserMenuState = (state: State) => state.userMenuDropped;
-export const getNotifMenuState = (state: State) => state.notifMenuDropped;
-export const getCartMenuState = (state: State) => state.cartMenuDropped;
-export const getLoggedState = (state: State) => state.logged;
+export const getLoginMenu = (state: State) => state.loginMenuDropped;
+export const getUserMenu = (state: State) => state.userMenuDropped;
+export const getNotifMenu = (state: State) => state.notifMenuDropped;
+export const getCartMenu = (state: State) => state.cartMenuDropped;
+export const getLogged = (state: State) => state.logged;
 

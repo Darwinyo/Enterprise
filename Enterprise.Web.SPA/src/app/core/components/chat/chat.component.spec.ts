@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,9 +12,9 @@ describe('ChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChatComponent ]
+      imports: [NgForm],
+      declarations: [ChatComponent]
     })
-    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +23,7 @@ describe('ChatComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should ', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -48,8 +48,9 @@ namespace Enterprise.API.Controllers.User
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            _userService.DeleteUser(id);
         }
     }
 }

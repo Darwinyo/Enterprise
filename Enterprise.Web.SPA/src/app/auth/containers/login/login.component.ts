@@ -13,8 +13,6 @@ import * as AuthActions from './../../actions/auth.actions';
 export class LoginComponent implements OnInit, AfterViewInit {
   check: boolean;
   userLoginViewModel: UserLoginViewModel;
-  pending$: Observable<boolean>;
-  error$: Observable<string | null>;
   @ViewChild('remembercheckbox') remembercheckbox: ElementRef
   constructor(private store: Store<fromAuth.State>) {
     this.check = false;

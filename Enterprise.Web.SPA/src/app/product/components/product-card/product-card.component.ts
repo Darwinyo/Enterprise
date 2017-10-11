@@ -21,7 +21,7 @@ export class ProductCardComponent implements OnInit {
   }
   InitStars(rateStar) {
     this.productCard.stars = [];
-    for (let i = 1; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       if (rateStar >= i) {
         this.productCard.stars[i] = 'img/icons/fullstar.png';
       } else if (rateStar > (i - 1)) {

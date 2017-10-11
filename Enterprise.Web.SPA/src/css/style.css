@@ -5490,7 +5490,7 @@ body.body-small .vote-icon {
   background: #1ab394;
 }
 .small-chat-box {
-  display: none;
+  /* display: none; */
   position: fixed;
   bottom: 20px;
   right: 75px;

@@ -1,5 +1,5 @@
-import * as AuthActions from './../../actions/auth.actions';
-import { RegistrationFailure } from './../../actions/auth.actions';
+import { RegistrationFailure } from './../../actions/registration-page.actions';
+import * as RegistrationActions from './../../actions/registration-page.actions';
 
 export interface State {
     error: string | null;
@@ -11,9 +11,9 @@ export const INITIAL_STATE: State = {
     pending: false
 };
 
-export function registrationReducer(state = INITIAL_STATE, action: AuthActions.Actions): State {
+export function registrationReducer(state = INITIAL_STATE, action: RegistrationActions.Actions): State {
     switch (action.type) {
-        case AuthActions.REGISTRATION: {
+        case RegistrationActions.REGISTRATION: {
             return {
                 ...state,
                 pending: true,
@@ -21,7 +21,7 @@ export function registrationReducer(state = INITIAL_STATE, action: AuthActions.A
             }
         }
 
-        case AuthActions.REGISTRATION_FAILURE: {
+        case RegistrationActions.REGISTRATION_FAILURE: {
             return {
                 ...state,
                 pending: false,
@@ -29,7 +29,7 @@ export function registrationReducer(state = INITIAL_STATE, action: AuthActions.A
             }
         }
 
-        case AuthActions.REGISTRATION_SUCCESS: {
+        case RegistrationActions.REGISTRATION_SUCCESS: {
             return {
                 ...state,
                 pending: false,

@@ -7,19 +7,19 @@ export const TOGGLE_USER = '[NAVBAR] TOGGLE_USER';
 export const NAV_LOGGED = '[NAVBAR] NAV_LOGGED';
 
 export class ToggleLogin implements Action {
-    type: string = TOGGLE_LOGIN;
+    readonly type: string = TOGGLE_LOGIN;
 }
 export class ToggleCart implements Action {
-    type: string = TOGGLE_CART;
+    readonly type: string = TOGGLE_CART;
 }
 export class ToggleNotif implements Action {
-    type: string = TOGGLE_NOTIF;
+    readonly type: string = TOGGLE_NOTIF;
 }
 export class ToggleUser implements Action {
-    type: string = TOGGLE_USER;
+    readonly type: string = TOGGLE_USER;
 }
 export class NavLogged implements Action {
-    type: string = NAV_LOGGED;
+    readonly type: string = NAV_LOGGED;
 }
 export type Actions =
     | ToggleCart

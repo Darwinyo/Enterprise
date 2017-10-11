@@ -1,3 +1,4 @@
+
 import { RegistrationEffects } from './effects/registration.effects';
 import { LoginEffects } from './effects/login.effects';
 import { AuthGuardService } from './services/auth/auth-guard.service';
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 
 
 // Components
-import { LoginNavComponent } from './components/login/login-nav.component';
+import { LoginNavComponent } from './components/login-nav/login-nav.component';
 
 // Containers
 import { RegistrationComponent } from './containers/registration/registration.component';
@@ -27,9 +28,9 @@ import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
-    LoginNavComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    LoginNavComponent
   ],
   imports: [
     CommonModule,

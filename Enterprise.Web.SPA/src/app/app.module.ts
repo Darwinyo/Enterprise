@@ -1,7 +1,8 @@
+import { FormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CustomRouterStateSerializer } from './shared/utils';
 import { environment } from './../environments/environment.prod';
-import { reducers, metaReducers } from './reducers/app-state.reducer';
+import { metaReducers, routerReducers } from './reducers/app-state.reducer';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 // Angular
@@ -31,6 +32,7 @@ import { PostApiHelper } from './shared/helpers/post-api.helper';
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -39,8 +41,8 @@ import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router
     RouterModule,
     HttpModule,
     BrowserModule,
-
-    StoreModule.forRoot(reducers, { metaReducers }),
+    FormsModule,
+    StoreModule.forRoot(routerReducers, { metaReducers }),
     StoreRouterConnectingModule,
     environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),

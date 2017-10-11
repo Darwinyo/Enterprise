@@ -27,11 +27,11 @@ export class NavbarComponent implements OnInit {
     private userService: UserService,
     private coreStore: Store<fromCore.State>
   ) {
-    this.logged$ = this.coreStore.select(fromCore.getLoggedState);
-    this.toggleCart$ = this.coreStore.select(fromCore.getCartMenuState);
-    this.toggleLogin$ = this.coreStore.select(fromCore.getLoginMenuState);
-    this.toggleNotif$ = this.coreStore.select(fromCore.getNotifMenuState);
-    this.toggleUser$ = this.coreStore.select(fromCore.getUserMenuState);
+    this.logged$ = this.coreStore.select(fromCore.getLogged);
+    this.toggleCart$ = this.coreStore.select(fromCore.getCartMenu);
+    this.toggleLogin$ = this.coreStore.select(fromCore.getLoginMenu);
+    this.toggleNotif$ = this.coreStore.select(fromCore.getNotifMenu);
+    this.toggleUser$ = this.coreStore.select(fromCore.getUserMenu);
   }
 
   ngOnInit() {

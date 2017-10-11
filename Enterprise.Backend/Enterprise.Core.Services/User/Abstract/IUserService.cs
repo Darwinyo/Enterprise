@@ -15,5 +15,6 @@ namespace Enterprise.Core.Services.User.Abstract
         bool IsPhoneRegistered(string phone);
         bool IsUserLoginRegistered(string userLogin);
         Task<UserLoginResponse> LoginUser(string userLogin, string password);
+        void DeleteUser(string user);
     }
 }

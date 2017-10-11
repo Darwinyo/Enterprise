@@ -1,839 +1,367 @@
-2017-09-06T16:54:54.293+0700 I CONTROL  [main] Trying to install Windows service 'MongoDB'
-2017-09-06T16:54:54.294+0700 I CONTROL  [main] Error creating service: The specified service has been marked for deletion. (1072)
-2017-09-07T14:28:20.299+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-07T14:28:20.986+0700 I CONTROL  [initandlisten] MongoDB starting : pid=9212 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-07T14:28:20.986+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-07T14:28:20.986+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-07T14:28:20.987+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-07T14:28:21.319+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-07T14:28:21.319+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-07T14:28:21.319+0700 I CONTROL  [initandlisten] modules: none
-2017-09-07T14:28:21.319+0700 I CONTROL  [initandlisten] build environment:
-2017-09-07T14:28:21.319+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-07T14:28:21.320+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-07T14:28:21.320+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-07T14:28:21.320+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-07T14:28:21.328+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-07T14:28:21.329+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-07T14:28:22.436+0700 I CONTROL  [initandlisten] 
-2017-09-07T14:28:22.436+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-07T14:28:22.436+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-07T14:28:22.436+0700 I CONTROL  [initandlisten] 
-2017-09-07T14:28:22.869+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-07T14:28:22.871+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-07T14:30:00.878+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51502 #1 (1 connection now open)
-2017-09-07T14:30:00.884+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:51502 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-07T16:21:23.070+0700 I COMMAND  [conn1] command EnterpriseDB_Mongo.Tbl_Product_Comments appName: "MongoDB Shell" command: insert { insert: "Tbl_Product_Comments", documents: [ { _id: ObjectId('59b10f9221bcc519c1645375'), Product_Id: "007d9f2b-ceee-4720-9777-a46b4cb0dbe3", User_Id: "1", Comment: "Commmentss", Comment_datetime: new Date(1504776082933) } ], ordered: true } ninserted:1 keysInserted:1 numYields:0 reslen:29 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_command 127ms
-2017-09-07T16:23:36.461+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53093 #2 (2 connections now open)
-2017-09-07T16:23:36.552+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:53093 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:23:49.141+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53094 #3 (3 connections now open)
-2017-09-07T16:23:49.147+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:53094 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:24:06.022+0700 I -        [conn3] end connection 127.0.0.1:53094 (3 connections now open)
-2017-09-07T16:24:06.023+0700 I -        [conn2] end connection 127.0.0.1:53093 (2 connections now open)
-2017-09-07T16:28:14.719+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53125 #4 (2 connections now open)
-2017-09-07T16:28:14.810+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:53125 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:28:22.045+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53126 #5 (3 connections now open)
-2017-09-07T16:28:22.051+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:53126 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:28:42.867+0700 I -        [conn5] end connection 127.0.0.1:53126 (3 connections now open)
-2017-09-07T16:28:42.869+0700 I -        [conn4] end connection 127.0.0.1:53125 (2 connections now open)
-2017-09-07T16:29:14.571+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53143 #6 (2 connections now open)
-2017-09-07T16:29:14.680+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:53143 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:29:17.108+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53144 #7 (3 connections now open)
-2017-09-07T16:29:17.117+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:53144 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-07T16:29:30.521+0700 I -        [conn7] end connection 127.0.0.1:53144 (3 connections now open)
-2017-09-07T16:29:30.521+0700 I -        [conn6] end connection 127.0.0.1:53143 (3 connections now open)
-2017-09-07T16:33:04.849+0700 I CONTROL  [thread2] CTRL_CLOSE_EVENT signal
-2017-09-07T16:33:04.850+0700 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
-2017-09-07T16:33:04.850+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-07T16:33:04.850+0700 I NETWORK  [consoleTerminate] closing listening socket: 484
-2017-09-07T16:33:04.850+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-07T16:33:04.850+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-07T16:33:04.863+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-07T16:33:05.059+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-07T16:33:05.060+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-07T16:33:05.060+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-07T16:33:05.060+07002017-09-10T15:38:59.443+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-10T15:39:00.504+0700 I CONTROL  [initandlisten] MongoDB starting : pid=15316 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-10T15:39:00.504+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-10T15:39:00.504+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-10T15:39:00.504+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten] modules: none
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten] build environment:
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-10T15:39:00.505+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-10T15:39:00.511+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-10T15:39:00.512+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-10T15:39:01.716+0700 I CONTROL  [initandlisten] 
-2017-09-10T15:39:01.716+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-10T15:39:01.716+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-10T15:39:01.716+0700 I CONTROL  [initandlisten] 
-2017-09-10T15:39:01.938+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-10T15:39:01.940+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-10T15:39:59.858+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54046 #1 (1 connection now open)
-2017-09-10T15:39:59.863+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:54046 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-10T19:58:42.501+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-10T19:58:42.501+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-10T19:58:42.502+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-10T19:58:42.502+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-09-10T19:58:42.504+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-10T19:58:42.504+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-10T19:58:42.516+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-10T19:58:42.738+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-10T19:58:42.741+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-10T19:58:42.741+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-10T19:58:42.741+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-11T14:32:41.185+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-11T14:32:41.904+0700 I CONTROL  [initandlisten] MongoDB starting : pid=19232 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-11T14:32:41.905+0700 I CONTROL  [initandlisten] modules: none
-2017-09-11T14:32:41.906+0700 I CONTROL  [initandlisten] build environment:
-2017-09-11T14:32:41.906+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-11T14:32:41.906+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-11T14:32:41.906+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-11T14:32:41.906+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-11T14:32:41.912+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-11T14:32:41.913+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-11T14:32:43.177+0700 I CONTROL  [initandlisten] 
-2017-09-11T14:32:43.177+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-11T14:32:43.177+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-11T14:32:43.177+0700 I CONTROL  [initandlisten] 
-2017-09-11T14:32:43.596+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-11T14:32:43.598+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-11T14:33:27.637+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:61971 #1 (1 connection now open)
-2017-09-11T14:33:27.643+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:61971 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-11T14:36:44.080+0700 I WRITE    [conn1] remove EnterpriseDB_Mongo.Tbl_Chat appName: "MongoDB Shell" planSummary: COLLSCAN keysExamined:0 docsExamined:1 ndeleted:1 keysDeleted:1 numYields:1 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } 134ms
-2017-09-11T14:36:44.081+0700 I COMMAND  [conn1] command EnterpriseDB_Mongo.$cmd appName: "MongoDB Shell" command: delete { delete: "Tbl_Chat", deletes: [ { q: {}, limit: 0.0 } ], ordered: true } numYields:0 reslen:29 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_command 134ms
-2017-09-11T14:47:13.286+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62163 #2 (2 connections now open)
-2017-09-11T14:47:17.245+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:62163 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-11T14:47:49.663+0700 I -        [conn2] end connection 127.0.0.1:62163 (2 connections now open)
-2017-09-11T14:48:17.606+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62183 #3 (2 connections now open)
-2017-09-11T14:48:17.677+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:62183 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-11T14:48:25.664+0700 I -        [conn3] end connection 127.0.0.1:62183 (2 connections now open)
-2017-09-11T14:49:42.395+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62249 #4 (2 connections now open)
-2017-09-11T14:49:42.525+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:62249 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-11T14:49:43.117+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62252 #5 (3 connections now open)
-2017-09-11T14:49:43.123+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:62252 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-11T15:00:42.326+0700 I -        [conn5] end connection 127.0.0.1:62252 (3 connections now open)
-2017-09-11T15:21:51.893+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62415 #6 (3 connections now open)
-2017-09-11T15:21:51.897+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:62415 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-11T15:34:42.627+0700 I -        [conn6] end connection 127.0.0.1:62415 (3 connections now open)
-2017-09-11T16:53:14.285+0700 I -        [conn4] end connection 127.0.0.1:62249 (2 connections now open)
-2017-09-11T16:58:30.365+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-11T16:58:30.366+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-11T16:58:30.367+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-11T16:58:30.367+0700 I NETWORK  [consoleTerminate] closing listening socket: 544
-2017-09-11T16:58:30.368+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-11T16:58:30.368+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-11T16:58:30.400+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-11T16:58:30.750+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-11T16:58:30.754+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-11T16:58:30.754+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-13T15:49:19.236+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-13T15:49:19.980+0700 I CONTROL  [initandlisten] MongoDB starting : pid=15656 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-13T15:49:19.980+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-13T15:49:19.980+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-13T15:49:19.980+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten] modules: none
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten] build environment:
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-13T15:49:19.981+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-13T15:49:19.982+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-13T15:49:19.982+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-13T15:49:20.103+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-13T15:49:20.106+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-13T15:49:21.047+0700 I CONTROL  [initandlisten] 
-2017-09-13T15:49:21.047+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-13T15:49:21.047+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-13T15:49:21.047+0700 I CONTROL  [initandlisten] 
-2017-09-13T15:49:21.350+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-13T15:49:21.351+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-13T15:49:21.542+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51812 #1 (1 connection now open)
-2017-09-13T15:49:21.595+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:51812 conn1: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-13T15:49:41.572+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51813 #2 (2 connections now open)
-2017-09-13T15:49:41.572+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:51813 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-13T16:46:33.985+0700 I -        [conn1] end connection 127.0.0.1:51812 (2 connections now open)
-2017-09-13T16:50:32.835+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52675 #3 (2 connections now open)
-2017-09-13T16:50:33.060+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:52675 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-13T16:50:33.609+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52684 #4 (3 connections now open)
-2017-09-13T16:50:33.619+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:52684 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-13T17:01:32.625+0700 I -        [conn4] end connection 127.0.0.1:52684 (3 connections now open)
-2017-09-13T17:01:46.844+0700 I -        [conn2] end connection 127.0.0.1:51813 (2 connections now open)
-2017-09-13T17:01:49.606+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-13T17:01:49.606+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-13T17:01:49.607+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-13T17:01:49.607+0700 I NETWORK  [consoleTerminate] closing listening socket: 540
-2017-09-13T17:01:49.609+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-13T17:01:49.610+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-13T17:01:49.636+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-13T17:01:50.227+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-13T17:01:50.242+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-13T17:01:50.242+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-13T17:01:50.242+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-14T09:43:04.254+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-14T09:43:04.841+0700 I CONTROL  [initandlisten] MongoDB starting : pid=6296 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-14T09:43:04.841+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-14T09:43:04.841+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-14T09:43:04.841+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-14T09:43:04.841+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten] modules: none
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten] build environment:
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-14T09:43:04.842+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-14T09:43:04.846+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-14T09:43:04.847+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-14T09:43:05.596+0700 I CONTROL  [initandlisten] 
-2017-09-14T09:43:05.596+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-14T09:43:05.596+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-14T09:43:05.596+0700 I CONTROL  [initandlisten] 
-2017-09-14T09:43:06.164+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-14T09:43:06.168+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-14T09:43:06.572+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:59101 #1 (1 connection now open)
-2017-09-14T09:43:06.663+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:59101 conn1: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T09:43:23.249+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:59126 #2 (2 connections now open)
-2017-09-14T09:43:23.249+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:59126 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-14T09:44:23.465+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:59247 #3 (3 connections now open)
-2017-09-14T09:44:23.473+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:59247 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T09:44:23.752+0700 I COMMAND  [conn3] command EnterpriseDB_Mongo.Tbl_Chat command: insert { insert: "Tbl_Chat", ordered: true, documents: [ { _id: ObjectId('59b9ed07e124782630017fea'), User_Id: "User", Message: "Hi From User", Message_Datetime: new Date(1505331859000), Group_Id: "TestGroup" } ] } ninserted:1 keysInserted:1 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 159ms
-2017-09-14T09:56:49.311+0700 I -        [conn3] end connection 127.0.0.1:59247 (3 connections now open)
-2017-09-14T09:59:12.072+0700 I -        [conn1] end connection 127.0.0.1:59101 (2 connections now open)
-2017-09-14T10:06:37.150+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62145 #4 (2 connections now open)
-2017-09-14T10:06:37.242+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:62145 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:06:38.028+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62151 #5 (3 connections now open)
-2017-09-14T10:06:38.055+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:62151 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:19:28.630+0700 I -        [conn5] end connection 127.0.0.1:62151 (3 connections now open)
-2017-09-14T10:19:28.651+0700 I -        [conn4] end connection 127.0.0.1:62145 (2 connections now open)
-2017-09-14T10:22:40.284+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64339 #6 (2 connections now open)
-2017-09-14T10:22:40.364+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:64339 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:22:40.585+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64340 #7 (3 connections now open)
-2017-09-14T10:22:40.591+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:64340 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:31:53.836+0700 I -        [conn6] end connection 127.0.0.1:64339 (3 connections now open)
-2017-09-14T10:31:53.836+0700 I -        [conn7] end connection 127.0.0.1:64340 (3 connections now open)
-2017-09-14T10:40:50.570+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49707 #8 (2 connections now open)
-2017-09-14T10:40:50.652+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:49707 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:40:50.879+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49708 #9 (3 connections now open)
-2017-09-14T10:40:50.885+0700 I NETWORK  [conn9] received client metadata from 127.0.0.1:49708 conn9: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:42:14.988+0700 I -        [conn8] end connection 127.0.0.1:49707 (3 connections now open)
-2017-09-14T10:42:14.988+0700 I -        [conn9] end connection 127.0.0.1:49708 (3 connections now open)
-2017-09-14T10:47:04.258+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50392 #10 (2 connections now open)
-2017-09-14T10:47:04.394+0700 I NETWORK  [conn10] received client metadata from 127.0.0.1:50392 conn10: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T10:47:04.796+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50395 #11 (3 connections now open)
-2017-09-14T10:47:04.810+0700 I NETWORK  [conn11] received client metadata from 127.0.0.1:50395 conn11: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:04:04.208+0700 I -        [conn11] end connection 127.0.0.1:50395 (3 connections now open)
-2017-09-14T11:11:42.693+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53575 #12 (3 connections now open)
-2017-09-14T11:11:42.694+0700 I NETWORK  [conn12] received client metadata from 127.0.0.1:53575 conn12: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:34:34.983+0700 I -        [conn12] end connection 127.0.0.1:53575 (3 connections now open)
-2017-09-14T11:34:34.984+0700 I -        [conn10] end connection 127.0.0.1:50392 (2 connections now open)
-2017-09-14T11:35:30.779+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56104 #13 (2 connections now open)
-2017-09-14T11:35:30.840+0700 I NETWORK  [conn13] received client metadata from 127.0.0.1:56104 conn13: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:35:31.359+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56108 #14 (3 connections now open)
-2017-09-14T11:35:31.365+0700 I NETWORK  [conn14] received client metadata from 127.0.0.1:56108 conn14: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:38:33.961+0700 I -        [conn14] end connection 127.0.0.1:56108 (3 connections now open)
-2017-09-14T11:38:33.961+0700 I -        [conn13] end connection 127.0.0.1:56104 (2 connections now open)
-2017-09-14T11:40:33.151+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56677 #15 (2 connections now open)
-2017-09-14T11:40:33.229+0700 I NETWORK  [conn15] received client metadata from 127.0.0.1:56677 conn15: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:40:33.435+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56680 #16 (3 connections now open)
-2017-09-14T11:40:33.441+0700 I NETWORK  [conn16] received client metadata from 127.0.0.1:56680 conn16: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:52:39.430+0700 I -        [conn16] end connection 127.0.0.1:56680 (3 connections now open)
-2017-09-14T11:52:39.430+0700 I -        [conn15] end connection 127.0.0.1:56677 (2 connections now open)
-2017-09-14T11:53:26.759+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:58464 #17 (2 connections now open)
-2017-09-14T11:53:26.826+0700 I NETWORK  [conn17] received client metadata from 127.0.0.1:58464 conn17: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T11:53:27.053+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:58465 #18 (3 connections now open)
-2017-09-14T11:53:27.060+0700 I NETWORK  [conn18] received client metadata from 127.0.0.1:58465 conn18: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T12:08:26.806+0700 I -        [conn18] end connection 127.0.0.1:58465 (3 connections now open)
-2017-09-14T12:37:30.181+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:60065 #19 (3 connections now open)
-2017-09-14T12:37:30.182+0700 I NETWORK  [conn19] received client metadata from 127.0.0.1:60065 conn19: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-14T13:06:22.636+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-14T13:06:22.637+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-14T13:06:22.637+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-14T13:06:22.639+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-09-14T13:06:22.641+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-14T13:06:22.643+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-14T13:06:22.673+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-14T13:06:23.039+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-14T13:06:23.040+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-14T13:06:23.041+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-14T13:06:23.041+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-23T20:07:59.808+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-23T20:08:00.618+0700 I CONTROL  [initandlisten] MongoDB starting : pid=16600 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-23T20:08:00.618+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-23T20:08:00.618+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-23T20:08:00.618+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten] modules: none
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten] build environment:
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-23T20:08:00.619+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-23T20:08:00.620+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-23T20:08:00.620+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-23T20:08:00.629+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-23T20:08:00.630+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-23T20:08:01.502+0700 I CONTROL  [initandlisten] 
-2017-09-23T20:08:01.502+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-23T20:08:01.502+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-23T20:08:01.502+0700 I CONTROL  [initandlisten] 
-2017-09-23T20:08:01.875+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-23T20:08:01.876+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-23T20:08:31.453+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51483 #1 (1 connection now open)
-2017-09-23T20:08:31.455+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:51483 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-23T20:10:04.087+0700 I -        [conn1] end connection 127.0.0.1:51483 (1 connection now open)
-2017-09-23T20:10:07.779+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-23T20:10:07.779+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-23T20:10:07.780+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-23T20:10:07.780+0700 I NETWORK  [consoleTerminate] closing listening socket: 536
-2017-09-23T20:10:07.781+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-23T20:10:07.781+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-23T20:10:07.805+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-23T20:10:07.979+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-23T20:10:07.980+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-23T20:10:07.980+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-23T20:10:07.980+0700 2017-09-26T13:18:23.619+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-26T13:18:24.482+0700 I CONTROL  [initandlisten] MongoDB starting : pid=6788 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-26T13:18:24.482+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-26T13:18:24.482+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-26T13:18:24.482+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten] modules: none
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten] build environment:
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-26T13:18:24.483+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-26T13:18:24.494+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-26T13:18:24.495+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-26T13:18:25.230+0700 I CONTROL  [initandlisten] 
-2017-09-26T13:18:25.230+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-26T13:18:25.230+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-26T13:18:25.230+0700 I CONTROL  [initandlisten] 
-2017-09-26T13:18:25.847+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-26T13:18:25.848+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-26T13:18:58.843+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:58761 #1 (1 connection now open)
-2017-09-26T13:18:58.850+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:58761 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-26T15:56:55.914+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:60198 #2 (2 connections now open)
-2017-09-26T15:56:56.240+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:60198 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-26T15:56:56.676+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:60199 #3 (3 connections now open)
-2017-09-26T15:56:56.692+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:60199 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-26T16:00:03.899+0700 I COMMAND  [conn3] command EnterpriseDB_Mongo.Tbl_Chat command: insert { insert: "Tbl_Chat", ordered: true, documents: [ { _id: ObjectId('59ca1713eb075f31107f3e83'), User_Id: "User", Message: "Yo", Message_Datetime: new Date(1506391200000), Group_Id: "TestGroup" } ] } ninserted:1 keysInserted:1 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 140ms
-2017-09-26T16:10:55.752+0700 I -        [conn3] end connection 127.0.0.1:60199 (3 connections now open)
-2017-09-26T16:22:03.503+0700 I -        [conn2] end connection 127.0.0.1:60198 (2 connections now open)
-2017-09-26T16:22:17.564+0700 I -        [conn1] end connection 127.0.0.1:58761 (1 connection now open)
-2017-09-26T16:22:22.353+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-26T16:22:22.353+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-26T16:22:22.354+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-26T16:22:22.354+0700 I NETWORK  [consoleTerminate] closing listening socket: 536
-2017-09-26T16:22:22.356+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-26T16:22:22.357+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-26T16:22:22.371+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-26T16:22:22.792+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-26T16:22:22.793+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-26T16:22:22.793+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-26T16:22:22.793+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-26T16:38:10.202+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-26T16:38:10.871+0700 I CONTROL  [initandlisten] MongoDB starting : pid=4276 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-26T16:38:10.871+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-26T16:38:10.871+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-26T16:38:10.871+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten] modules: none
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten] build environment:
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-26T16:38:10.872+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-26T16:38:10.873+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-26T16:38:10.880+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-26T16:38:10.880+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-26T16:38:11.972+0700 I CONTROL  [initandlisten] 
-2017-09-26T16:38:11.972+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-26T16:38:11.972+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-26T16:38:11.972+0700 I CONTROL  [initandlisten] 
-2017-09-26T16:38:12.467+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-26T16:38:12.469+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-26T16:38:12.629+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63504 #1 (1 connection now open)
-2017-09-26T16:38:12.699+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:63504 conn1: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-26T16:38:12.899+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63505 #2 (2 connections now open)
-2017-09-26T16:38:12.905+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:63505 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-26T16:38:13.919+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63508 #3 (3 connections now open)
-2017-09-26T16:38:13.921+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:63508 conn3: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-26T16:39:32.993+0700 I -        [conn2] end connection 127.0.0.1:63505 (3 connections now open)
-2017-09-26T16:39:32.993+0700 I -        [conn1] end connection 127.0.0.1:63504 (2 connections now open)
-2017-09-27T12:57:25.365+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-27T12:57:26.205+0700 I CONTROL  [initandlisten] MongoDB starting : pid=17428 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-27T12:57:26.205+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-27T12:57:26.205+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-27T12:57:26.206+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-27T12:57:26.207+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-27T12:57:26.207+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-27T12:57:26.207+0700 I CONTROL  [initandlisten] modules: none
-2017-09-27T12:57:26.207+0700 I CONTROL  [initandlisten] build environment:
-2017-09-27T12:57:26.208+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-27T12:57:26.208+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-27T12:57:26.208+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-27T12:57:26.208+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-27T12:57:26.219+0700 W -        [initandlisten] Detected unclean shutdown - D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db\mongod.lock is not empty.
-2017-09-27T12:57:26.234+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-27T12:57:26.235+0700 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
-2017-09-27T12:57:26.236+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-27T12:57:27.447+0700 I CONTROL  [initandlisten] 
-2017-09-27T12:57:27.448+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-27T12:57:27.448+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-27T12:57:27.448+0700 I CONTROL  [initandlisten] 
-2017-09-27T12:57:28.051+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-27T12:57:28.052+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-27T12:57:29.073+0700 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
-2017-09-27T12:57:32.334+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63951 #1 (1 connection now open)
-2017-09-27T12:57:32.339+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:63951 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-27T13:04:59.312+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64411 #2 (2 connections now open)
-2017-09-27T13:04:59.401+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:64411 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T13:04:59.626+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64412 #3 (3 connections now open)
-2017-09-27T13:04:59.632+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:64412 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T13:15:59.271+0700 I -        [conn3] end connection 127.0.0.1:64412 (3 connections now open)
-2017-09-27T13:20:21.068+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64891 #4 (3 connections now open)
-2017-09-27T13:20:21.071+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:64891 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T13:33:59.373+0700 I -        [conn4] end connection 127.0.0.1:64891 (3 connections now open)
-2017-09-27T13:43:35.029+0700 I -        [conn2] end connection 127.0.0.1:64411 (2 connections now open)
-2017-09-27T14:05:18.433+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49808 #5 (2 connections now open)
-2017-09-27T14:05:18.548+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:49808 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T14:05:18.859+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49809 #6 (3 connections now open)
-2017-09-27T14:05:18.874+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:49809 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T14:28:03.074+0700 I -        [conn6] end connection 127.0.0.1:49809 (3 connections now open)
-2017-09-27T14:28:10.900+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50390 #7 (3 connections now open)
-2017-09-27T14:28:10.901+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:50390 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T14:57:45.064+0700 I -        [conn7] end connection 127.0.0.1:50390 (3 connections now open)
-2017-09-27T14:59:37.352+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51674 #8 (3 connections now open)
-2017-09-27T14:59:37.353+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:51674 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T15:00:39.961+0700 I -        [conn5] end connection 127.0.0.1:49808 (3 connections now open)
-2017-09-27T15:00:39.961+0700 I -        [conn8] end connection 127.0.0.1:51674 (2 connections now open)
-2017-09-27T15:02:21.764+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51846 #9 (2 connections now open)
-2017-09-27T15:02:22.160+0700 I NETWORK  [conn9] received client metadata from 127.0.0.1:51846 conn9: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T15:02:22.590+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51850 #10 (3 connections now open)
-2017-09-27T15:02:22.598+0700 I NETWORK  [conn10] received client metadata from 127.0.0.1:51850 conn10: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T15:14:20.862+0700 I -        [conn10] end connection 127.0.0.1:51850 (3 connections now open)
-2017-09-27T15:15:53.839+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52265 #11 (3 connections now open)
-2017-09-27T15:15:53.842+0700 I NETWORK  [conn11] received client metadata from 127.0.0.1:52265 conn11: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T15:46:21.184+0700 I -        [conn11] end connection 127.0.0.1:52265 (3 connections now open)
-2017-09-27T15:51:53.259+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53405 #12 (3 connections now open)
-2017-09-27T15:51:53.260+0700 I NETWORK  [conn12] received client metadata from 127.0.0.1:53405 conn12: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T16:22:21.574+0700 I -        [conn12] end connection 127.0.0.1:53405 (3 connections now open)
-2017-09-27T16:42:40.582+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54943 #13 (3 connections now open)
-2017-09-27T16:42:40.583+0700 I NETWORK  [conn13] received client metadata from 127.0.0.1:54943 conn13: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T16:43:32.552+0700 I -        [conn9] end connection 127.0.0.1:51846 (3 connections now open)
-2017-09-27T16:43:32.553+0700 I -        [conn13] end connection 127.0.0.1:54943 (2 connections now open)
-2017-09-27T16:56:16.488+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55324 #14 (2 connections now open)
-2017-09-27T16:56:16.576+0700 I NETWORK  [conn14] received client metadata from 127.0.0.1:55324 conn14: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T16:56:16.927+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55325 #15 (3 connections now open)
-2017-09-27T16:56:16.933+0700 I NETWORK  [conn15] received client metadata from 127.0.0.1:55325 conn15: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T17:27:16.648+0700 I -        [conn15] end connection 127.0.0.1:55325 (3 connections now open)
-2017-09-27T17:31:30.348+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57811 #16 (3 connections now open)
-2017-09-27T17:31:30.348+0700 I NETWORK  [conn16] received client metadata from 127.0.0.1:57811 conn16: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T17:53:16.759+0700 I -        [conn16] end connection 127.0.0.1:57811 (3 connections now open)
-2017-09-27T17:57:38.593+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:60916 #17 (3 connections now open)
-2017-09-27T17:57:38.594+0700 I NETWORK  [conn17] received client metadata from 127.0.0.1:60916 conn17: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-27T18:13:16.887+0700 I -        [conn17] end connection 127.0.0.1:60916 (3 connections now open)
-2017-09-27T20:31:17.079+0700 I -        [conn14] end connection 127.0.0.1:55324 (2 connections now open)
-2017-09-30T08:58:05.697+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-30T08:58:06.553+0700 I CONTROL  [initandlisten] MongoDB starting : pid=17228 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-30T08:58:06.553+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-30T08:58:06.553+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-30T08:58:06.553+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten] modules: none
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten] build environment:
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-30T08:58:06.554+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-30T08:58:06.555+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-30T08:58:06.555+0700 W -        [initandlisten] Detected unclean shutdown - D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db\mongod.lock is not empty.
-2017-09-30T08:58:06.567+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-30T08:58:06.568+0700 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
-2017-09-30T08:58:06.569+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-30T08:58:07.837+0700 I CONTROL  [initandlisten] 
-2017-09-30T08:58:07.837+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-30T08:58:07.838+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-30T08:58:07.838+0700 I CONTROL  [initandlisten] 
-2017-09-30T08:58:08.367+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-30T08:58:08.368+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-30T08:58:08.465+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50271 #1 (1 connection now open)
-2017-09-30T08:58:08.525+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:50271 conn1: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T08:58:09.364+0700 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
-2017-09-30T08:58:46.466+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50345 #2 (2 connections now open)
-2017-09-30T08:58:46.468+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:50345 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-30T08:58:53.768+0700 I -        [conn1] end connection 127.0.0.1:50271 (2 connections now open)
-2017-09-30T09:00:03.861+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50558 #3 (2 connections now open)
-2017-09-30T09:00:03.979+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:50558 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T09:00:04.444+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50559 #4 (3 connections now open)
-2017-09-30T09:00:04.452+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:50559 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T09:23:40.002+0700 I -        [conn3] end connection 127.0.0.1:50558 (3 connections now open)
-2017-09-30T09:23:40.007+0700 I -        [conn4] end connection 127.0.0.1:50559 (2 connections now open)
-2017-09-30T09:23:48.215+0700 I -        [conn2] end connection 127.0.0.1:50345 (1 connection now open)
-2017-09-30T09:23:50.902+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-30T09:23:50.903+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-30T09:23:50.904+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-30T09:23:50.905+0700 I NETWORK  [consoleTerminate] closing listening socket: 532
-2017-09-30T09:23:50.906+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-30T09:23:50.908+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-30T09:23:50.940+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-30T09:23:51.361+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-30T09:23:51.364+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-30T09:23:51.364+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-30T09:23:51.364+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-30T11:19:53.411+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-30T11:19:54.231+0700 I CONTROL  [initandlisten] MongoDB starting : pid=23368 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-30T11:19:54.231+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-30T11:19:54.231+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] modules: none
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] build environment:
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-30T11:19:54.232+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-30T11:19:54.237+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-30T11:19:54.237+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-30T11:19:55.242+0700 I CONTROL  [initandlisten] 
-2017-09-30T11:19:55.242+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-30T11:19:55.243+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-30T11:19:55.243+0700 I CONTROL  [initandlisten] 
-2017-09-30T11:19:55.742+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-30T11:19:55.747+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-30T11:19:55.809+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52998 #1 (1 connection now open)
-2017-09-30T11:19:55.864+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:52998 conn1: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T11:20:17.855+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53043 #2 (2 connections now open)
-2017-09-30T11:20:17.856+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:53043 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-30T11:20:21.681+0700 I -        [conn1] end connection 127.0.0.1:52998 (2 connections now open)
-2017-09-30T11:28:09.329+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53965 #3 (2 connections now open)
-2017-09-30T11:28:09.397+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:53965 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T11:28:09.649+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53966 #4 (3 connections now open)
-2017-09-30T11:28:09.655+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:53966 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T11:40:09.375+0700 I -        [conn4] end connection 127.0.0.1:53966 (3 connections now open)
-2017-09-30T11:46:58.190+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56093 #5 (3 connections now open)
-2017-09-30T11:46:58.191+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:56093 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T12:11:10.214+0700 I -        [conn5] end connection 127.0.0.1:56093 (3 connections now open)
-2017-09-30T12:15:07.271+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:59294 #6 (3 connections now open)
-2017-09-30T12:15:07.273+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:59294 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T12:19:02.104+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-30T12:19:02.104+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-30T12:19:02.105+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-30T12:19:02.105+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-09-30T12:19:02.106+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-30T12:19:02.107+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-30T12:19:03.184+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-30T12:19:03.873+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-30T12:19:03.875+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-30T12:19:03.876+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-30T12:19:03.877+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-09-30T12:29:18.781+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-30T12:29:19.399+0700 I CONTROL  [initandlisten] MongoDB starting : pid=5600 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-30T12:29:19.399+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] modules: none
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] build environment:
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-30T12:29:19.400+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-30T12:29:19.404+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-30T12:29:19.405+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-30T12:29:20.258+0700 I CONTROL  [initandlisten] 
-2017-09-30T12:29:20.258+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-30T12:29:20.259+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-30T12:29:20.259+0700 I CONTROL  [initandlisten] 
-2017-09-30T12:29:20.711+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-30T12:29:20.715+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-30T12:29:56.877+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49711 #1 (1 connection now open)
-2017-09-30T12:29:56.881+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:49711 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-30T12:36:55.471+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49868 #2 (2 connections now open)
-2017-09-30T12:36:55.614+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:49868 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T12:36:56.062+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49870 #3 (3 connections now open)
-2017-09-30T12:36:56.069+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:49870 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T12:38:06.964+0700 I -        [conn3] end connection 127.0.0.1:49870 (3 connections now open)
-2017-09-30T12:38:06.967+0700 I -        [conn2] end connection 127.0.0.1:49868 (2 connections now open)
-2017-09-30T13:26:02.721+0700 I -        [conn1] end connection 127.0.0.1:49711 (1 connection now open)
-2017-09-30T13:26:05.505+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-30T13:26:05.506+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-30T13:26:05.506+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-30T13:26:05.507+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-09-30T13:26:05.507+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-30T13:26:05.509+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-30T13:26:05.540+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-30T13:26:05.876+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-30T13:26:05.878+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-30T13:26:05.878+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-30T13:26:05.878+0700 2017-09-30T13:51:56.809+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-30T13:51:57.359+0700 I CONTROL  [initandlisten] MongoDB starting : pid=3080 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-30T13:51:57.359+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-30T13:51:57.359+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-30T13:51:57.359+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-30T13:51:57.359+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten] modules: none
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten] build environment:
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-30T13:51:57.360+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-30T13:51:57.365+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-30T13:51:57.365+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-30T13:51:57.984+0700 I CONTROL  [initandlisten] 
-2017-09-30T13:51:57.985+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-30T13:51:57.985+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-30T13:51:57.985+0700 I CONTROL  [initandlisten] 
-2017-09-30T13:51:58.271+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-30T13:51:58.272+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-30T13:52:01.017+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50231 #1 (1 connection now open)
-2017-09-30T13:52:01.018+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:50231 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-30T14:23:15.206+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50435 #2 (2 connections now open)
-2017-09-30T14:23:15.294+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:50435 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T14:23:15.650+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50436 #3 (3 connections now open)
-2017-09-30T14:23:15.662+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:50436 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T14:24:01.569+0700 I -        [conn3] end connection 127.0.0.1:50436 (3 connections now open)
-2017-09-30T14:24:01.569+0700 I -        [conn2] end connection 127.0.0.1:50435 (3 connections now open)
-2017-09-30T14:47:33.701+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50599 #4 (2 connections now open)
-2017-09-30T14:47:33.765+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:50599 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T14:47:33.999+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50600 #5 (3 connections now open)
-2017-09-30T14:47:34.005+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:50600 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T14:58:33.704+0700 I -        [conn5] end connection 127.0.0.1:50600 (3 connections now open)
-2017-09-30T15:04:11.040+0700 I -        [conn4] end connection 127.0.0.1:50599 (2 connections now open)
-2017-09-30T15:27:09.994+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50778 #6 (2 connections now open)
-2017-09-30T15:27:10.092+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:50778 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T15:27:10.352+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50779 #7 (3 connections now open)
-2017-09-30T15:27:10.356+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:50779 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T15:52:10.206+0700 I -        [conn7] end connection 127.0.0.1:50779 (3 connections now open)
-2017-09-30T15:52:33.119+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:50898 #8 (3 connections now open)
-2017-09-30T15:52:33.120+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:50898 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T16:21:10.308+0700 I -        [conn8] end connection 127.0.0.1:50898 (3 connections now open)
-2017-09-30T16:24:02.844+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51115 #9 (3 connections now open)
-2017-09-30T16:24:02.857+0700 I NETWORK  [conn9] received client metadata from 127.0.0.1:51115 conn9: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T16:29:56.887+0700 I -        [conn6] end connection 127.0.0.1:50778 (3 connections now open)
-2017-09-30T16:29:56.888+0700 I -        [conn9] end connection 127.0.0.1:51115 (2 connections now open)
-2017-09-30T17:28:26.531+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51318 #10 (2 connections now open)
-2017-09-30T17:28:26.615+0700 I NETWORK  [conn10] received client metadata from 127.0.0.1:51318 conn10: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T17:28:26.860+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51319 #11 (3 connections now open)
-2017-09-30T17:28:26.865+0700 I NETWORK  [conn11] received client metadata from 127.0.0.1:51319 conn11: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-09-30T17:52:15.029+0700 I -        [conn10] end connection 127.0.0.1:51318 (3 connections now open)
-2017-09-30T17:52:15.029+0700 I -        [conn11] end connection 127.0.0.1:51319 (3 connections now open)
-2017-09-30T18:53:29.117+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-09-30T18:53:30.147+0700 I CONTROL  [initandlisten] MongoDB starting : pid=17192 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-09-30T18:53:30.147+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-09-30T18:53:30.147+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-09-30T18:53:30.148+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-09-30T18:53:30.148+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-09-30T18:53:30.148+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-09-30T18:53:30.148+0700 I CONTROL  [initandlisten] modules: none
-2017-09-30T18:53:30.149+0700 I CONTROL  [initandlisten] build environment:
-2017-09-30T18:53:30.149+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-09-30T18:53:30.149+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-09-30T18:53:30.149+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-09-30T18:53:30.149+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-09-30T18:53:30.160+0700 W -        [initandlisten] Detected unclean shutdown - D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db\mongod.lock is not empty.
-2017-09-30T18:53:30.270+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-09-30T18:53:30.271+0700 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
-2017-09-30T18:53:30.272+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-09-30T18:53:31.593+0700 I CONTROL  [initandlisten] 
-2017-09-30T18:53:31.593+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-09-30T18:53:31.594+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-09-30T18:53:31.594+0700 I CONTROL  [initandlisten] 
-2017-09-30T18:53:32.282+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-09-30T18:53:32.284+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-09-30T18:53:33.073+0700 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
-2017-09-30T18:53:43.747+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51692 #1 (1 connection now open)
-2017-09-30T18:53:43.748+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:51692 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-09-30T20:03:45.967+0700 I -        [conn1] end connection 127.0.0.1:51692 (1 connection now open)
-2017-09-30T20:03:49.028+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-09-30T20:03:49.028+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-09-30T20:03:49.029+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-09-30T20:03:49.029+0700 I NETWORK  [consoleTerminate] closing listening socket: 536
-2017-09-30T20:03:49.030+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-09-30T20:03:49.030+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-09-30T20:03:49.058+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-09-30T20:03:49.376+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-09-30T20:03:49.381+0700 I CONTROL  [consoleTerminate] now exiting
-2017-09-30T20:03:49.381+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-09-30T20:03:49.381+0700 2017-10-01T10:06:47.888+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] MongoDB starting : pid=2488 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] modules: none
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten] build environment:
-2017-10-01T10:06:48.472+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-10-01T10:06:48.473+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-10-01T10:06:48.473+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-10-01T10:06:48.473+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-10-01T10:06:48.477+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-10-01T10:06:48.477+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-10-01T10:06:49.054+0700 I CONTROL  [initandlisten] 
-2017-10-01T10:06:49.054+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-10-01T10:06:49.054+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-10-01T10:06:49.054+0700 I CONTROL  [initandlisten] 
-2017-10-01T10:06:49.590+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-10-01T10:06:49.594+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-10-01T10:06:53.529+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54611 #1 (1 connection now open)
-2017-10-01T10:06:53.533+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:54611 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-10-01T16:37:29.706+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55960 #2 (2 connections now open)
-2017-10-01T16:37:29.811+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:55960 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T16:37:30.208+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55961 #3 (3 connections now open)
-2017-10-01T16:37:30.213+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:55961 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T16:53:29.939+0700 I -        [conn3] end connection 127.0.0.1:55961 (3 connections now open)
-2017-10-01T17:03:18.972+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:56456 #4 (3 connections now open)
-2017-10-01T17:03:18.972+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:56456 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:10:19.295+0700 I -        [conn4] end connection 127.0.0.1:56456 (3 connections now open)
-2017-10-01T17:10:19.295+0700 I -        [conn2] end connection 127.0.0.1:55960 (3 connections now open)
-2017-10-01T17:44:58.379+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57582 #5 (2 connections now open)
-2017-10-01T17:44:58.473+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:57582 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:44:58.808+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57583 #6 (3 connections now open)
-2017-10-01T17:44:58.815+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:57583 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:47:45.877+0700 I -        [conn6] end connection 127.0.0.1:57583 (3 connections now open)
-2017-10-01T17:47:45.878+0700 I -        [conn5] end connection 127.0.0.1:57582 (2 connections now open)
-2017-10-01T17:52:47.976+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57792 #7 (2 connections now open)
-2017-10-01T17:52:48.096+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:57792 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:52:48.411+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57793 #8 (3 connections now open)
-2017-10-01T17:52:48.418+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:57793 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:53:54.947+0700 I -        [conn8] end connection 127.0.0.1:57793 (3 connections now open)
-2017-10-01T17:53:54.948+0700 I -        [conn7] end connection 127.0.0.1:57792 (3 connections now open)
-2017-10-01T17:54:58.399+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57872 #9 (2 connections now open)
-2017-10-01T17:54:58.476+0700 I NETWORK  [conn9] received client metadata from 127.0.0.1:57872 conn9: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:54:58.728+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57873 #10 (3 connections now open)
-2017-10-01T17:54:58.733+0700 I NETWORK  [conn10] received client metadata from 127.0.0.1:57873 conn10: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:56:08.058+0700 I -        [conn9] end connection 127.0.0.1:57872 (3 connections now open)
-2017-10-01T17:56:08.059+0700 I -        [conn10] end connection 127.0.0.1:57873 (2 connections now open)
-2017-10-01T17:59:30.542+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57986 #11 (2 connections now open)
-2017-10-01T17:59:30.626+0700 I NETWORK  [conn11] received client metadata from 127.0.0.1:57986 conn11: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T17:59:30.854+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57987 #12 (3 connections now open)
-2017-10-01T17:59:30.860+0700 I NETWORK  [conn12] received client metadata from 127.0.0.1:57987 conn12: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-01T18:02:19.400+0700 I -        [conn12] end connection 127.0.0.1:57987 (3 connections now open)
-2017-10-01T18:02:19.400+0700 I -        [conn11] end connection 127.0.0.1:57986 (3 connections now open)
-2017-10-01T20:43:12.391+0700 I -        [conn1] end connection 127.0.0.1:54611 (1 connection now open)
-2017-10-01T20:43:15.203+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-10-01T20:43:15.203+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-10-01T20:43:15.204+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-10-01T20:43:15.204+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-10-01T20:43:15.205+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-10-01T20:43:15.207+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-10-01T20:43:15.232+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-10-01T20:43:15.460+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-10-01T20:43:15.465+0700 I CONTROL  [consoleTerminate] now exiting
-2017-10-01T20:43:15.466+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-10-01T20:43:15.466+07002017-10-02T12:08:14.120+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-10-02T12:08:15.548+0700 I CONTROL  [initandlisten] MongoDB starting : pid=2016 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-10-02T12:08:15.548+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-10-02T12:08:15.548+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-10-02T12:08:15.549+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-10-02T12:08:15.549+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-10-02T12:08:15.549+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-10-02T12:08:15.550+0700 I CONTROL  [initandlisten] modules: none
-2017-10-02T12:08:15.550+0700 I CONTROL  [initandlisten] build environment:
-2017-10-02T12:08:15.550+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-10-02T12:08:15.550+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-10-02T12:08:15.550+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-10-02T12:08:15.551+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-10-02T12:08:15.596+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-10-02T12:08:15.597+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-10-02T12:08:16.570+0700 I CONTROL  [initandlisten] 
-2017-10-02T12:08:16.571+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-10-02T12:08:16.571+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-10-02T12:08:16.571+0700 I CONTROL  [initandlisten] 
-2017-10-02T12:08:17.485+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-10-02T12:08:17.508+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-10-02T12:08:18.016+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:61725 #1 (1 connection now open)
-2017-10-02T12:08:18.027+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:61725 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-10-02T12:09:53.824+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:61890 #2 (2 connections now open)
-2017-10-02T12:09:53.995+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:61890 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T12:09:56.174+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:61893 #3 (3 connections now open)
-2017-10-02T12:09:56.188+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:61893 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T12:28:53.787+0700 I -        [conn3] end connection 127.0.0.1:61893 (3 connections now open)
-2017-10-02T12:36:12.334+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62157 #4 (3 connections now open)
-2017-10-02T12:36:12.335+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:62157 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T13:05:46.530+0700 I -        [conn2] end connection 127.0.0.1:61890 (3 connections now open)
-2017-10-02T13:05:46.530+0700 I -        [conn4] end connection 127.0.0.1:62157 (3 connections now open)
-2017-10-02T13:15:53.034+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62717 #5 (2 connections now open)
-2017-10-02T13:15:53.122+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:62717 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T13:15:53.534+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62718 #6 (3 connections now open)
-2017-10-02T13:15:53.539+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:62718 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T13:26:52.974+0700 I -        [conn6] end connection 127.0.0.1:62718 (3 connections now open)
-2017-10-02T13:26:59.694+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62800 #7 (3 connections now open)
-2017-10-02T13:26:59.695+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:62800 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T13:47:06.398+0700 I -        [conn5] end connection 127.0.0.1:62717 (3 connections now open)
-2017-10-02T13:47:06.398+0700 I -        [conn7] end connection 127.0.0.1:62800 (2 connections now open)
-2017-10-02T16:40:50.352+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64242 #8 (2 connections now open)
-2017-10-02T16:40:50.516+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:64242 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T16:40:51.004+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:64243 #9 (3 connections now open)
-2017-10-02T16:40:51.011+0700 I NETWORK  [conn9] received client metadata from 127.0.0.1:64243 conn9: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T16:51:49.258+0700 I -        [conn1] end connection 127.0.0.1:61725 (3 connections now open)
-2017-10-02T16:51:51.471+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-10-02T16:51:51.471+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-10-02T16:51:51.472+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-10-02T16:51:51.472+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-10-02T16:51:51.474+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-10-02T16:51:51.475+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-10-02T16:51:51.491+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-10-02T16:51:51.926+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-10-02T16:51:51.927+0700 I CONTROL  [consoleTerminate] now exiting
-2017-10-02T16:51:51.927+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-10-02T16:51:51.927+0700 I CONTROL  [initandlisten] shutting down with code:12
-2017-10-02T20:05:38.266+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] MongoDB starting : pid=3680 port=27017 dbpath=D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] db version v3.4.7
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] allocator: tcmalloc
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] modules: none
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten] build environment:
-2017-10-02T20:05:39.127+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
-2017-10-02T20:05:39.128+0700 I CONTROL  [initandlisten]     distarch: x86_64
-2017-10-02T20:05:39.128+0700 I CONTROL  [initandlisten]     target_arch: x86_64
-2017-10-02T20:05:39.128+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\log\mongo.log" } }
-2017-10-02T20:05:39.132+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2017-10-02T20:05:39.132+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2017-10-02T20:05:40.149+0700 I CONTROL  [initandlisten] 
-2017-10-02T20:05:40.150+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2017-10-02T20:05:40.150+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2017-10-02T20:05:40.150+0700 I CONTROL  [initandlisten] 
-2017-10-02T20:05:41.187+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise/Enterprise.MongoDB/db/diagnostic.data'
-2017-10-02T20:05:41.191+0700 I NETWORK  [thread1] waiting for connections on port 27017
-2017-10-02T20:05:41.493+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:65091 #1 (1 connection now open)
-2017-10-02T20:05:41.497+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:65091 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
-2017-10-02T20:10:25.287+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:65261 #2 (2 connections now open)
-2017-10-02T20:10:25.580+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:65261 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T20:10:26.047+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:65262 #3 (3 connections now open)
-2017-10-02T20:10:26.073+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:65262 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T20:21:24.996+0700 I -        [conn3] end connection 127.0.0.1:65262 (3 connections now open)
-2017-10-02T20:31:33.429+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:49190 #4 (3 connections now open)
-2017-10-02T20:31:33.441+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:49190 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
-2017-10-02T20:37:20.696+0700 I -        [conn2] end connection 127.0.0.1:65261 (3 connections now open)
-2017-10-02T20:37:20.697+0700 I -        [conn4] end connection 127.0.0.1:49190 (2 connections now open)
-2017-10-02T20:37:49.055+0700 I -        [conn1] end connection 127.0.0.1:65091 (1 connection now open)
-2017-10-02T20:37:51.871+0700 I CONTROL  [thread2] Ctrl-C signal
-2017-10-02T20:37:51.871+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
-2017-10-02T20:37:51.872+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
-2017-10-02T20:37:51.872+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
-2017-10-02T20:37:51.874+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
-2017-10-02T20:37:51.875+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
-2017-10-02T20:37:51.909+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
-2017-10-02T20:37:52.385+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
-2017-10-02T20:37:52.388+0700 I CONTROL  [consoleTerminate] now exiting
-2017-10-02T20:37:52.388+0700 I CONTROL  [consoleTerminate] shutting down with code:12
-2017-10-02T20:37:52.389+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-04T06:41:02.964-0700 I CONTROL  [initandlisten] MongoDB starting : pid=9464 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-04T06:41:02.964-0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-04T06:41:02.965-0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-04T06:41:02.965-0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-04T06:41:02.965-0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-04T06:41:02.965-0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-04T06:41:02.965-0700 I CONTROL  [initandlisten] modules: none
+2017-10-04T06:41:02.966-0700 I CONTROL  [initandlisten] build environment:
+2017-10-04T06:41:02.966-0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-04T06:41:02.966-0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-04T06:41:02.966-0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-04T06:41:02.966-0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-04T06:41:02.978-0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-04T06:41:02.980-0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-04T06:41:03.685-0700 I CONTROL  [initandlisten] 
+2017-10-04T06:41:03.685-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-04T06:41:03.685-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-04T06:41:03.686-0700 I CONTROL  [initandlisten] 
+2017-10-04T20:41:04.332+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-04T20:41:04.334+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-04T20:41:22.471+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52837 #1 (1 connection now open)
+2017-10-04T20:41:22.478+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:52837 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-04T21:17:35.377+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53229 #2 (2 connections now open)
+2017-10-04T21:17:35.958+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:53229 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-04T21:17:37.549+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53234 #3 (3 connections now open)
+2017-10-04T21:17:37.560+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:53234 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-04T21:47:40.152+0700 I -        [conn3] end connection 127.0.0.1:53234 (3 connections now open)
+2017-10-04T21:47:45.170+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53770 #4 (3 connections now open)
+2017-10-04T21:47:45.172+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:53770 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-04T22:02:17.546+0700 I -        [conn4] end connection 127.0.0.1:53770 (3 connections now open)
+2017-10-04T22:02:17.548+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53893 #5 (3 connections now open)
+2017-10-04T22:02:17.550+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:53893 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-04T22:24:40.110+0700 I -        [conn2] end connection 127.0.0.1:53229 (3 connections now open)
+2017-10-04T22:24:40.110+0700 I -        [conn5] end connection 127.0.0.1:53893 (3 connections now open)
+2017-10-04T22:24:50.268+0700 I -        [conn1] end connection 127.0.0.1:52837 (1 connection now open)
+2017-10-04T22:24:52.720+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-04T22:24:52.720+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-04T22:24:52.720+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-04T22:24:52.721+0700 I NETWORK  [consoleTerminate] closing listening socket: 508
+2017-10-04T22:24:52.724+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-04T22:24:52.725+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-04T22:24:52.966+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-04T22:24:53.381+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-04T22:24:53.382+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-04T22:24:53.382+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-04T22:24:53.382+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-05T12:12:08.957+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] MongoDB starting : pid=7980 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] modules: none
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten] build environment:
+2017-10-05T12:12:09.663+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-05T12:12:09.664+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-05T12:12:09.664+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-05T12:12:09.664+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-05T12:12:09.669+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-05T12:12:09.669+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-05T12:12:10.418+0700 I CONTROL  [initandlisten] 
+2017-10-05T12:12:10.418+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-05T12:12:10.418+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-05T12:12:10.418+0700 I CONTROL  [initandlisten] 
+2017-10-05T12:12:10.905+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-05T12:12:10.906+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-05T12:12:11.920+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55326 #1 (1 connection now open)
+2017-10-05T12:12:11.920+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:55326 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-05T12:14:14.872+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55380 #2 (2 connections now open)
+2017-10-05T12:14:14.975+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:55380 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-05T12:14:15.273+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:55381 #3 (3 connections now open)
+2017-10-05T12:14:15.278+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:55381 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-05T12:28:14.866+0700 I -        [conn3] end connection 127.0.0.1:55381 (3 connections now open)
+2017-10-05T17:02:36.313+0700 I -        [conn2] end connection 127.0.0.1:55380 (2 connections now open)
+2017-10-05T17:03:05.772+0700 I -        [conn1] end connection 127.0.0.1:55326 (1 connection now open)
+2017-10-05T17:03:09.018+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-05T17:03:09.019+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-05T17:03:09.019+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-05T17:03:09.020+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
+2017-10-05T17:03:09.023+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-05T17:03:09.024+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-05T17:03:09.050+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-05T17:03:09.537+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-05T17:03:09.540+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-05T17:03:09.540+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-05T17:03:09.540+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-07T07:27:15.918+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-07T07:27:16.930+0700 I CONTROL  [initandlisten] MongoDB starting : pid=15276 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-07T07:27:16.930+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-07T07:27:16.930+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] modules: none
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] build environment:
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-07T07:27:16.931+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-07T07:27:16.942+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-07T07:27:16.943+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-07T07:27:17.675+0700 I CONTROL  [initandlisten] 
+2017-10-07T07:27:17.676+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-07T07:27:17.676+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-07T07:27:17.676+0700 I CONTROL  [initandlisten] 
+2017-10-07T07:27:18.211+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-07T07:27:18.231+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-07T07:27:20.837+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62305 #1 (1 connection now open)
+2017-10-07T07:27:20.840+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:62305 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-07T08:02:24.221+0700 I -        [conn1] end connection 127.0.0.1:62305 (1 connection now open)
+2017-10-07T08:02:25.911+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-07T08:02:25.912+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-07T08:02:25.912+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-07T08:02:25.913+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
+2017-10-07T08:02:25.917+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-07T08:02:25.918+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-07T08:02:25.951+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-07T08:02:26.229+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-07T08:02:26.238+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-07T08:02:26.238+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-07T08:02:26.238+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-07T08:55:03.826+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] MongoDB starting : pid=19916 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-07T08:55:04.363+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten] modules: none
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten] build environment:
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-07T08:55:04.364+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-07T08:55:04.368+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-07T08:55:04.369+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-07T08:55:05.144+0700 I CONTROL  [initandlisten] 
+2017-10-07T08:55:05.145+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-07T08:55:05.145+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-07T08:55:05.145+0700 I CONTROL  [initandlisten] 
+2017-10-07T08:55:05.495+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-07T08:55:05.497+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-07T08:55:10.244+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:62854 #1 (1 connection now open)
+2017-10-07T08:55:10.244+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:62854 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-07T20:09:56.185+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-07T20:09:56.300+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-07T20:09:56.303+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-07T20:09:56.304+0700 I NETWORK  [consoleTerminate] closing listening socket: 540
+2017-10-07T20:09:56.307+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-07T20:09:56.308+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-07T20:09:56.431+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-07T20:09:56.858+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-07T20:09:56.859+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-07T20:09:56.859+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-07T21:19:22.186+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] MongoDB starting : pid=11952 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] modules: none
+2017-10-07T21:19:22.853+0700 I CONTROL  [initandlisten] build environment:
+2017-10-07T21:19:22.854+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-07T21:19:22.854+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-07T21:19:22.854+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-07T21:19:22.854+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-07T21:19:22.858+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-07T21:19:22.859+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-07T21:19:23.682+0700 I CONTROL  [initandlisten] 
+2017-10-07T21:19:23.683+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-07T21:19:23.683+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-07T21:19:23.683+0700 I CONTROL  [initandlisten] 
+2017-10-07T21:19:24.210+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-07T21:19:24.211+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-07T21:19:37.552+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:51129 #1 (1 connection now open)
+2017-10-07T21:19:37.553+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:51129 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-07T23:53:34.834+0700 I -        [conn1] end connection 127.0.0.1:51129 (1 connection now open)
+2017-10-07T23:53:37.848+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-07T23:53:37.848+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-07T23:53:37.850+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-07T23:53:37.850+0700 I NETWORK  [consoleTerminate] closing listening socket: 536
+2017-10-07T23:53:37.853+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-07T23:53:37.854+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-07T23:53:37.889+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-07T23:53:38.355+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-07T23:53:38.356+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-07T23:53:38.356+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-07T23:53:38.357+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-08T09:28:59.586+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-08T09:29:00.808+0700 I CONTROL  [initandlisten] MongoDB starting : pid=10668 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-08T09:29:00.808+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] modules: none
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten] build environment:
+2017-10-08T09:29:00.809+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-08T09:29:00.810+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-08T09:29:00.810+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-08T09:29:00.810+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-08T09:29:00.817+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-08T09:29:00.818+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-08T09:29:01.738+0700 I CONTROL  [initandlisten] 
+2017-10-08T09:29:01.739+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-08T09:29:01.739+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-08T09:29:01.739+0700 I CONTROL  [initandlisten] 
+2017-10-08T09:29:02.649+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-08T09:29:02.668+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-08T09:29:11.314+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57622 #1 (1 connection now open)
+2017-10-08T09:29:11.320+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:57622 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-08T11:24:55.474+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63405 #2 (2 connections now open)
+2017-10-08T11:24:55.624+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:63405 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T11:24:56.368+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63406 #3 (3 connections now open)
+2017-10-08T11:24:56.375+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:63406 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T11:35:55.193+0700 I -        [conn3] end connection 127.0.0.1:63406 (3 connections now open)
+2017-10-08T12:00:57.200+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63753 #4 (3 connections now open)
+2017-10-08T12:00:57.202+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:63753 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T12:11:55.392+0700 I -        [conn4] end connection 127.0.0.1:63753 (3 connections now open)
+2017-10-08T12:17:17.771+0700 I -        [conn2] end connection 127.0.0.1:63405 (2 connections now open)
+2017-10-08T16:01:27.518+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53679 #5 (2 connections now open)
+2017-10-08T16:01:28.496+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:53679 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T16:01:29.407+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53680 #6 (3 connections now open)
+2017-10-08T16:01:29.421+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:53680 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T16:12:19.165+0700 I -        [conn6] end connection 127.0.0.1:53680 (3 connections now open)
+2017-10-08T16:12:19.336+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54058 #7 (3 connections now open)
+2017-10-08T16:12:19.403+0700 I NETWORK  [conn7] received client metadata from 127.0.0.1:54058 conn7: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T16:42:28.418+0700 I -        [conn7] end connection 127.0.0.1:54058 (3 connections now open)
+2017-10-08T18:05:35.938+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:57070 #8 (3 connections now open)
+2017-10-08T18:05:35.940+0700 I NETWORK  [conn8] received client metadata from 127.0.0.1:57070 conn8: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-08T18:16:28.886+0700 I -        [conn8] end connection 127.0.0.1:57070 (3 connections now open)
+2017-10-08T20:35:54.736+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-08T20:35:54.736+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-08T20:35:54.737+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-08T20:35:54.737+0700 I NETWORK  [consoleTerminate] closing listening socket: 524
+2017-10-08T20:35:54.740+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-08T20:35:54.742+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-08T20:35:54.953+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-08T20:35:55.271+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-08T20:35:55.272+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-08T20:35:55.273+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-09T21:36:22.237+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-09T21:36:22.995+0700 I CONTROL  [initandlisten] MongoDB starting : pid=20152 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-09T21:36:22.996+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-09T21:36:22.996+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-09T21:36:22.996+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-09T21:36:22.996+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten] modules: none
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten] build environment:
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-09T21:36:22.997+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-09T21:36:23.007+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-09T21:36:23.008+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-09T21:36:23.756+0700 I CONTROL  [initandlisten] 
+2017-10-09T21:36:23.756+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-09T21:36:23.756+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-09T21:36:23.756+0700 I CONTROL  [initandlisten] 
+2017-10-09T21:36:24.093+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-09T21:36:24.094+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-09T21:36:28.544+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:63933 #1 (1 connection now open)
+2017-10-09T21:36:28.548+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:63933 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-09T23:10:36.272+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-09T23:10:36.273+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-09T23:10:36.274+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-09T23:10:36.275+0700 I NETWORK  [consoleTerminate] closing listening socket: 532
+2017-10-09T23:10:36.277+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-09T23:10:36.278+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-09T23:10:36.305+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-09T23:10:36.721+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-09T23:10:36.722+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-09T23:10:36.722+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-09T23:10:36.722+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-10T20:38:00.713+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-10T20:38:01.324+0700 I CONTROL  [initandlisten] MongoDB starting : pid=19064 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-10T20:38:01.324+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-10T20:38:01.324+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-10T20:38:01.324+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-10T20:38:01.324+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten] modules: none
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten] build environment:
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-10T20:38:01.325+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-10T20:38:01.330+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-10T20:38:01.330+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-10T20:38:02.114+0700 I CONTROL  [initandlisten] 
+2017-10-10T20:38:02.115+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-10T20:38:02.115+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-10T20:38:02.115+0700 I CONTROL  [initandlisten] 
+2017-10-10T20:38:03.027+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-10T20:38:03.031+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-10T20:38:07.123+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:52816 #1 (1 connection now open)
+2017-10-10T20:38:07.128+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:52816 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-10T21:18:35.948+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53355 #2 (2 connections now open)
+2017-10-10T21:18:36.032+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:53355 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-10T21:18:36.246+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53356 #3 (3 connections now open)
+2017-10-10T21:18:36.251+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:53356 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-10T21:29:35.865+0700 I -        [conn3] end connection 127.0.0.1:53356 (3 connections now open)
+2017-10-10T21:31:48.150+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53459 #4 (3 connections now open)
+2017-10-10T21:31:48.151+0700 I NETWORK  [conn4] received client metadata from 127.0.0.1:53459 conn4: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-10T21:42:35.920+0700 I -        [conn4] end connection 127.0.0.1:53459 (3 connections now open)
+2017-10-10T21:50:01.976+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53550 #5 (3 connections now open)
+2017-10-10T21:50:02.045+0700 I NETWORK  [conn5] received client metadata from 127.0.0.1:53550 conn5: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-10T22:18:36.199+0700 I -        [conn5] end connection 127.0.0.1:53550 (3 connections now open)
+2017-10-10T22:20:22.632+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:53816 #6 (3 connections now open)
+2017-10-10T22:20:22.634+0700 I NETWORK  [conn6] received client metadata from 127.0.0.1:53816 conn6: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-10T22:40:55.219+0700 I -        [conn6] end connection 127.0.0.1:53816 (3 connections now open)
+2017-10-10T22:40:55.229+0700 I -        [conn2] end connection 127.0.0.1:53355 (2 connections now open)
+2017-10-10T22:41:01.453+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-10T22:41:01.453+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-10T22:41:01.454+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-10T22:41:01.454+0700 I NETWORK  [consoleTerminate] closing listening socket: 532
+2017-10-10T22:41:01.458+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-10T22:41:01.459+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-10T22:41:01.489+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-10T22:41:01.741+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-10T22:41:01.743+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-10T22:41:01.744+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-10T22:41:01.744+0700 I CONTROL  [initandlisten] shutting down with code:12
+2017-10-11T06:53:46.575+0700 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] MongoDB starting : pid=6464 port=27017 dbpath=D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db 64-bit host=DESKTOP-69R5JG5
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1u-fips  22 Sep 2016
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] modules: none
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten] build environment:
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-11T06:53:47.128+0700 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-11T06:53:47.129+0700 I CONTROL  [initandlisten] options: { config: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\mongod.cfg", storage: { dbPath: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db" }, systemLog: { destination: "file", logAppend: true, path: "D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\log\mongo.log" } }
+2017-10-11T06:53:47.152+0700 I -        [initandlisten] Detected data files in D:\Projects\Enterprise\Enterprise.Database\Enterprise.MongoDB\db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-10-11T06:53:47.152+0700 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7474M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-11T06:53:47.975+0700 I CONTROL  [initandlisten] 
+2017-10-11T06:53:47.975+0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-10-11T06:53:47.975+0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-10-11T06:53:47.975+0700 I CONTROL  [initandlisten] 
+2017-10-11T06:53:48.265+0700 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Projects/Enterprise/Enterprise.Database/Enterprise.MongoDB/db/diagnostic.data'
+2017-10-11T06:53:48.266+0700 I NETWORK  [thread1] waiting for connections on port 27017
+2017-10-11T06:54:04.833+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54408 #1 (1 connection now open)
+2017-10-11T06:54:04.835+0700 I NETWORK  [conn1] received client metadata from 127.0.0.1:54408 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.7" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2017-10-11T07:06:41.727+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54591 #2 (2 connections now open)
+2017-10-11T07:06:41.817+0700 I NETWORK  [conn2] received client metadata from 127.0.0.1:54591 conn2: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-11T07:06:42.052+0700 I NETWORK  [thread1] connection accepted from 127.0.0.1:54592 #3 (3 connections now open)
+2017-10-11T07:06:42.057+0700 I NETWORK  [conn3] received client metadata from 127.0.0.1:54592 conn3: { driver: { name: "mongo-csharp-driver", version: "2.4.4.0" }, os: { type: "Windows", name: "Microsoft Windows 10.0.15063", architecture: "x86_64", version: "10.0.15063" }, platform: ".NET Core 4.6.00001.0" }
+2017-10-11T07:19:42.840+0700 I -        [conn3] end connection 127.0.0.1:54592 (3 connections now open)
+2017-10-11T07:19:42.840+0700 I -        [conn2] end connection 127.0.0.1:54591 (3 connections now open)
+2017-10-11T07:19:49.533+0700 I -        [conn1] end connection 127.0.0.1:54408 (1 connection now open)
+2017-10-11T07:19:51.232+0700 I CONTROL  [thread2] Ctrl-C signal
+2017-10-11T07:19:51.232+0700 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2017-10-11T07:19:51.233+0700 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2017-10-11T07:19:51.233+0700 I NETWORK  [consoleTerminate] closing listening socket: 528
+2017-10-11T07:19:51.236+0700 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2017-10-11T07:19:51.237+0700 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2017-10-11T07:19:51.368+0700 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2017-10-11T07:19:51.578+0700 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2017-10-11T07:19:51.579+0700 I CONTROL  [consoleTerminate] now exiting
+2017-10-11T07:19:51.580+0700 I CONTROL  [consoleTerminate] shutting down with code:12
+2017-10-11T07:19:51.580+0700 

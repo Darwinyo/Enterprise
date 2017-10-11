@@ -16,6 +16,7 @@ namespace Enterprise.Core.BusinessLogics.User.Abstract
         bool IsPhoneRegistered(string phone);
         bool IsUserLoginRegistered(string userLogin);
         TblUserLogin CreateUserLogin(object value);
+        void DeleteUser(string user);
         void SaveUser();
     }
 }

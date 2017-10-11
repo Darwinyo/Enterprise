@@ -1,14 +1,14 @@
-<a>
+<a id="categorycardanchor" (click)="redirectToCategoryPage(productCategory.categoryId)">
   <div class="col-md-2 product-category-card">
     <div class="ibox">
       <div class="ibox-content product-box">
         <div class="product-imitation">
           <div class="product-category-image-holder">
-              <img class="product-category-image" [src]="productCategory.categoryImageUrl">
+              <img id="categorycardimage" class="product-category-image" [src]="productCategory.categoryImageUrl">
           </div>
         </div>
         <div class="product-desc">
-          <a href="#" class="product-name text-center">{{productCategory.categoryName}}</a>
+          <a id="categorycardname" href="#" class="product-name text-center">{{productCategory.categoryName}}</a>
         </div>
       </div>
     </div>

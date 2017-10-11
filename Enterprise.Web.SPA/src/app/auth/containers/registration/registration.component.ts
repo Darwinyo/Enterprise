@@ -12,7 +12,7 @@ import 'rxjs/add/operator/debounceTime'
 import 'rxjs/add/operator/distinctUntilChanged'
 import { UserRegistrationResponseModel } from './../../models/responses/user-registration-response/user-registration-response.model';
 import * as fromAuth from './../../reducers/auth-state.reducer';
-import * as AuthActions from './../../actions/auth.actions';
+import * as RegistrationActions from './../../actions/registration-page.actions';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -172,6 +172,6 @@ export class RegistrationComponent implements OnInit, AfterViewInit, OnDestroy {
       phoneNumber: registrationForm.value['phone'],
       password: registrationForm.value['password']
     }
-    this.store.dispatch(new AuthActions.Registration(userLoginModel));
+    this.store.dispatch(new RegistrationActions.Registration(userLoginModel));
   }
 }

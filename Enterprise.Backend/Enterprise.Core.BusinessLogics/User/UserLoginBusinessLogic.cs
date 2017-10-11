@@ -30,6 +30,12 @@ namespace Enterprise.Core.BusinessLogics.User
             };
         }
 
+        public void DeleteUser(string user)
+        {
+            _userLoginRepository.Delete(_userLoginRepository.GetSingle(x => x.UserLogin == user));
+            _userLoginRepository.Commit();
+        }
+
         public IEnumerable<string> GetSameRecord(TblUserLogin userLogin)
         {
             List<string> lstError = new List<string>();

@@ -1,13 +1,10 @@
-<div class="small-chat-box fadeInRight animated">
-
+<div [style.display]="(toggleChat$|async)?'block':'none'" class="small-chat-box fadeInRight animated">
   <div class="heading" draggable="true">
     <small class="chat-date pull-right">
-                    02.19.2015
+                    {{datenow}}
     </small> Small chat
   </div>
-
   <div class="content">
-
     <div [class]="chat.userId===userId?left:right" *ngFor="let chat of chatModel">
       <div class="author-name">
         {{chat.userId}}
@@ -18,9 +15,7 @@
       <div class="chat-message" [class.active]="chat.userId===userId">
         {{chat.message}}
       </div>
-
     </div>
-
   </div>
   <form class="form-chat" (ngSubmit)="send(chatForm)" #chatForm="ngForm">
     <div class="input-group input-group-sm">

@@ -54,4 +54,9 @@ export class UserService {
             (res) => res.json()
         )
     }
+    deleteUser(userId: string) {
+        this.http.delete(this.urlUserRegistrationController + '/' + userId).map(
+            null
+        )
+    }
 }

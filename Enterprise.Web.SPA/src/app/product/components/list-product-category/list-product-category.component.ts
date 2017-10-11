@@ -1,19 +1,29 @@
 import { ProductCategoryModel } from './../../models/product/product-category/product-category.model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 const pageLength = 1200;
 const itemLength = 150;
 @Component({
   selector: 'app-list-product-category',
   templateUrl: './list-product-category.component.html',
-  styleUrls: ['./list-product-category.component.css']
+  styleUrls: ['./list-product-category.component.css'],
+
 })
 
 export class ListProductCategoryComponent implements OnInit {
   @Input() categoryitems: ProductCategoryModel[];
+  @Output() redirectCategoryPage: EventEmitter<string>;
   marginleft: number;
   constructor() {
     this.marginleft = 0;
+    this.redirectCategoryPage = new EventEmitter();
   }
   ngOnInit() {
   }
@@ -30,5 +40,8 @@ export class ListProductCategoryComponent implements OnInit {
     } else {
       this.marginleft -= pageLength;
     }
+  }
+  redirectToCategoryPage(categoryId: string) {
+    this.redirectCategoryPage.emit(categoryId);
   }
 }

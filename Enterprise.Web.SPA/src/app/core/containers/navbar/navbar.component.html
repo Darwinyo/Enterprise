@@ -11,7 +11,7 @@
         </a>
       </div>
       <div class="pull-right">
-        <ul id="b-nav" class="topbar-nav" *ngIf="logged">
+        <ul id="b-nav" class="topbar-nav" *ngIf="logged$|async">
           <li id="notification" class="dropdown-hover dropdown-right">
             <a (click)="toggleDropNotif()" class="dropdown-hover-toggle">
               <div class="relative">
@@ -88,15 +88,14 @@
             </ul>
           </li>
         </ul>
-        <ul id="b-nav" class="topbar-nav" *ngIf="!logged">
+        <ul id="b-nav" class="topbar-nav" *ngIf="!(logged$|async)">
           <li class="dropdown-single"><a routerLink="/register">Register</a></li>
           <li class="dropdown-hover dropdown-right ml-15 mr-15" id="iframe-login">
             <button class="btn-login dropdown-hover-toggle" id="login-ddl-link" (click)="toggleDropLogin()">Login</button>
             <ul *ngIf="toggleLogin$|async" class="dropdown-menu dropdown-login" role="menu" aria-labelledby="dropdownMenu" id="accounts-menu">
               <li>
                 <div id="div-accounts">
-                  <!-- <app-login (loginEvent)="loginUser($event)"></app-login> -->
-                  <app-login-nav></app-login-nav>
+                  <app-login-nav (loginEvent)="loginUser($event)"></app-login-nav>
                 </div>
               </li>
             </ul>

@@ -47,5 +47,10 @@ namespace Enterprise.Core.Services.User
             userLoginResponse.IsLogged = await _decryptionService.DecryptText(encrypted) == password;
             return userLoginResponse;
         }
+
+        public void DeleteUser(string user)
+        {
+            _userLoginBusinessLogic.DeleteUser(user);
+        }
     }
 }

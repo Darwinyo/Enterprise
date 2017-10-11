@@ -15,9 +15,9 @@ export interface State extends fromRoot.State {
 }
 
 export const authStateReducer = {
-    userReducer: fromAuth.authReducer,
-    loginReducer: fromLogin.loginReducer,
-    registrationReducer: fromRegistration.registrationReducer
+    userState: fromAuth.authReducer,
+    loginState: fromLogin.loginReducer,
+    registrationState: fromRegistration.registrationReducer
 }
 
 export const selectAuthState = createFeatureSelector<AuthState>('auth');

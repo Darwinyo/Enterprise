@@ -11,6 +11,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/map';
 import * as fromCore from './../../core/reducers/core-state.reducer';
+import * as ChatActions from './../../core/actions/chat.actions';
 @Injectable()
 export class LoginEffects {
 
@@ -37,13 +38,14 @@ export class LoginEffects {
         .ofType(AuthActions.LOG_IN_SUCCESS)
         .do(() => {
             alert('youre logged in');
-            this.navStore.dispatch(new NavbarActions.NavLogged());
+            this.coreStore.dispatch(new NavbarActions.NavLogged());
+            this.coreStore.dispatch(new ChatActions.ConnectingChatHub());
             this.router.navigate(['/home']);
         });
     @Effect({ dispatch: false })
     loginFailure$ = this.actions$
         .ofType(AuthActions.LOG_IN_FAILURE)
-        .do((err) => alert((<AuthActions.RegistrationFailure>err).payload));
+        .do((err) => alert((<AuthActions.LoginFailure>err).payload));
     @Effect({ dispatch: false })
     logout$ = this.actions$
         .ofType(AuthActions.LOG_OUT)
@@ -52,6 +54,7 @@ export class LoginEffects {
         private actions$: Actions,
         private userService: UserService,
         private router: Router,
-        private navStore: Store<fromCore.State>
+        private coreStore: Store<fromCore.State>
+
     ) { }
 }

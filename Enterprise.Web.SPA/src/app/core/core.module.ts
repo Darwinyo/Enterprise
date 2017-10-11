@@ -1,3 +1,7 @@
+import { ChatHub } from './signalr/chathub/chat.hub';
+import { ChatService } from './services/chat/chat.service';
+import { ChatEffects } from './effects/chat.effects';
+import { ChatComponent } from './components/chat/chat.component';
 import { NavbarEffects } from './effects/navbar.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { coreStateReducer } from './reducers/core-state.reducer';
@@ -14,7 +18,6 @@ import { AuthModule } from 'app/auth/auth.module';
 // Components
 import { NavSearchbarComponent } from './components/nav-searchbar/nav-searchbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ChatComponent } from './components/chat/chat.component';
 import { CartComponent } from './components/cart/cart.component';
 
 // Containers
@@ -25,20 +28,19 @@ import { ErrorNotFoundComponent } from './containers/error-not-found/error-not-f
 import { AppRouteModule } from './routes/app-route.module';
 
 // Services
-import { ChatService } from './services/chat/chat.service';
+
 
 // SignalR
-import { ChatHub } from './signalr/chathub/chat.hub';
 
 
 @NgModule({
   declarations: [
     CartComponent,
-    ChatComponent,
     FooterComponent,
     NavSearchbarComponent,
     ErrorNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChatComponent
   ],
   imports: [
     AuthModule,
@@ -48,17 +50,17 @@ import { ChatHub } from './signalr/chathub/chat.hub';
     RouterModule,
     FormsModule,
     StoreModule.forFeature('core', coreStateReducer),
-    EffectsModule.forFeature([NavbarEffects])
+    EffectsModule.forFeature([NavbarEffects, ChatEffects])
   ],
   exports: [
-    ChatComponent,
     FooterComponent,
     ErrorNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChatComponent
   ],
   providers: [
     ChatService,
-    ChatHub
+    ChatHub,
   ]
 })
 export class CoreModule { }

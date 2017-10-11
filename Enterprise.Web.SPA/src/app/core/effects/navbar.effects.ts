@@ -1,12 +1,18 @@
+import { Store } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import * as NavbarActions from './../actions/navbar.actions';
+import * as fromCore from './../reducers/core-state.reducer';
+import 'rxjs/add/operator/do';
 @Injectable()
 export class NavbarEffects {
     @Effect({ dispatch: false })
     logged$ = this.actions$
         .ofType(NavbarActions.NAV_LOGGED)
-        .do(() => console.log('navbar logged'));
+        .do(() => {
+            console.log('navbar logged');
+            this.coreStore.dispatch(new NavbarActions.ToggleLogin());
+        });
     @Effect({ dispatch: false })
     toggleUser$ = this.actions$
         .ofType(NavbarActions.TOGGLE_USER)
@@ -24,5 +30,5 @@ export class NavbarEffects {
         .ofType(NavbarActions.TOGGLE_NOTIF)
         .do(() => console.log('Nav Notif Toggled'));
 
-    constructor(private actions$: Actions) { }
+    constructor(private actions$: Actions, private coreStore: Store<fromCore.State>) { }
 }

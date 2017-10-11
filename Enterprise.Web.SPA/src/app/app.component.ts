@@ -1,83 +1,93 @@
+import { Observable } from 'rxjs/Rx';
+import { Store } from '@ngrx/store';
 import { ChatComponent } from './core/components/chat/chat.component';
 import { ChatModel } from './core/models/chat/chat.model';
 import { ChatService } from './core/services/chat/chat.service';
 import { Router, NavigationEnd } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { SignalRConnectionStatus } from './core/signalr/chathub/abstract/chat.signalr';
+import * as fromCore from './core/reducers/core-state.reducer';
+import * as chatActions from './core/actions/chat.actions';
+import * as fromAuth from './auth/reducers/auth-state.reducer';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+
   @ViewChild('chat') chat: ChatComponent;
-  chatModel: ChatModel[];
-  userId: string;
-  groupId: string;
-  chatItem: ChatModel;
+  showChat$: Observable<boolean>;
+  chatModel$: Observable<ChatModel[]>;
+  groupId$: Observable<string>;
+  userLogin$: Observable<string>;
   connectionId: string;
-  error: any;
-  constructor(private router: Router, private chatService: ChatService) {
+  constructor(private router: Router,
+    private chatService: ChatService,
+    private coreStore: Store<fromCore.State>) {
+    this.groupId$ = this.coreStore.select(fromCore.getGroupId);
+    this.showChat$ = this.coreStore.select(fromCore.getShowChat);
+    this.chatModel$ = this.coreStore.select(fromCore.getChats);
+    this.userLogin$ = this.coreStore.select(fromAuth.getUserLogin);
   }
   ngOnInit(): void {
-    this.userId = prompt('Input UserId Please', 'User');
-    this.groupId = 'TestGroup';
-    this.chatService.initSignalRConnection().subscribe(
-      null,
-      error => console.log('Error on init: ' + error)
-    )
-    this.listenToConnection();
-    this.listenToConnectionState();
-    this.chatService.addChat.subscribe(
-      message => {
-        console.log('received..');
-        console.log(message);
-        this.chatModel.push(message)
+    this.subscribeConnection();
+  }
+  ngAfterViewInit(): void {
+    this.subscribeChats();
+  }
+  subscribeChats() {
+    this.showChat$.subscribe(
+      (show) => {
+        if (show) {
+          console.log('subscribing chat model');
+          this.chatModel$.subscribe(
+            (chats) => this.chat.populateChats(chats),
+            (error) => this.coreStore.dispatch(new chatActions.ConnectionFailureChatHub(error))
+          )
+          this.chatService.addChat.subscribe(
+            message => {
+              this.coreStore.dispatch(new chatActions.ChatReceived(message));
+            }
+          )
+        }
       }
     )
   }
-  fetchChats(groupId: string) {
-    this.chatService.getChatHistoryByGroupId(groupId).subscribe(
-      (result) => this.chatModel = result,
-      (err) => console.log(err),
-      () => this.chat.populateChats(this.chatModel)
-    )
-  }
-  listenToConnection() {
+  subscribeConnection() {
     this.chatService.setConnectionId.subscribe(
       id => {
-        console.log(id);
         this.connectionId = id;
-      }
+        console.log('setConnectionId Called');
+      },
+      error => this.coreStore.dispatch(new chatActions.ConnectionFailureChatHub(error))
     )
-  }
-  listenToConnectionState() {
     this.chatService.connectionState.subscribe(
       connectionState => {
         if (connectionState === SignalRConnectionStatus.Connected) {
-          console.log('Connected');
-          this.fetchChats(this.groupId);
+          console.log('dispatching connected action');
+          this.coreStore.dispatch(new chatActions.ConnectedChatHub(this.connectionId));
         } else {
-          console.log(connectionState.toString());
+          this.coreStore.dispatch(new chatActions.ConnectionFailureChatHub('Connection Failure'));
         }
       },
-      error => {
-        this.error = error;
-        console.log(error);
-      }
+      error => this.coreStore.dispatch(new chatActions.ConnectionFailureChatHub(error))
     )
   }
   send(event) {
-    this.chatItem = <ChatModel>{
-      userId: this.userId,
-      groupId: this.groupId,
-      message: event,
-      messageDatetime: new Date()
-    }
-    this.chatService.postChat(this.chatItem).subscribe(
-      x => console.log('Posted'),
-      (err) => console.log(),
-      () => console.log('Post Complete')
+    this.userLogin$.mergeMap((userlogin) =>
+      this.groupId$.map((groupId) => {
+        const chatItem = <ChatModel>{
+          userId: userlogin,
+          groupId: groupId,
+          message: event,
+          messageDatetime: new Date()
+        };
+        this.coreStore.dispatch(new chatActions.SendChat(chatItem));
+      })
     )
+  }
+  toggleChat() {
+    this.coreStore.dispatch(new chatActions.ToggleChat());
   }
 }
